@@ -9,9 +9,14 @@ Version: 0.1
 @import url(../argo-foundation/css/foundation.css?v=1);
 
 
-/* .container_12 {
+.container_12 {
 background: #fff url(../argo-foundation/img/dev-images/12_col.gif) repeat-y;
-}*/
+}
+
+/************** HEADER ******************/
+
+
+/*global nav */
 
 .global-nav h4 {
 float: left;
@@ -44,11 +49,7 @@ font-size: 13px;
 line-height: 1;
 }
 
-#category-nav {
-position: relative;
-z-index: 100;
-margin-left: 320px;
-}
+/*global branding */
 
 #global-branding {
 width: 940px;
@@ -74,8 +75,50 @@ width: 300px;
 margin: 0;
 }
 
+/*category nav */
 
+#category-nav {
+position: relative;
+z-index: 100;
+margin-left: 320px;
+}
 
 #category-nav #topnav .sub {
 left: -318px;
+}
+
+/************** FOOTER ******************/
+
+#ft-archive select {
+width: 215px;
+}
+
+#s1 {
+width: 170px;
+}
+
+.ft-reporter img {
+float: left;
+margin-bottom: 10px;
+margin-right: 10px;
+}
+
+.ft-reporter h4 {
+margin: 0;
+line-height: 1;
+}
+
+.ft-reporter h5 {
+margin-bottom: 10px;
+font-weight: normal;
+}
+
+#site-footer .donate {
+margin-top: 5px;
+}
+
+#site-footer .donate a {
+font-weight: bold;
+background-color: #3366cc;
+padding: 5px;
 }

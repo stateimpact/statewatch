@@ -13,109 +13,54 @@ $blogger = argo_get_primary_blogger();
 <!--[if lte IE 8]>   <div id="site-footer" class="clearfix"> <![endif]-->
 
 <div class="container_12">
-<div class="grid_2">
-
-<div class="bio">
-    <?php if ( $blogger ): ?>
-        <?php echo get_avatar( $blogger->ID, 140 ); ?>
-        <p>Questions, comments, story ideas. Get in touch.</p>
-        <h6><a href="<?php echo argo_get_in_touch_link(); ?>" title="get in touch">GET IN TOUCH</a></h6>
-    <?php endif; ?>
-</div> <!-- /.bio -->
-
-<div class="elsewhere">
-    <h4>FOLLOW US</h4>
-
-    <ul>
-        <li class="subscribe"><?php echo the_feed_link( 'RSS' ); ?></li>
-    
-    <?php if ( get_option( 'podcast_link' ) ) :?>
-        <li class="podcast">
-            <a href="<?php echo get_option( 'podcast_link' ); ?>">Podcast</a>
-        </li>
-    <?php endif; ?>
-    
-    <?php if ( get_option( 'facebook_link' ) ) : ?>
-        <li>
-            <img src="<?php bloginfo('template_directory'); ?>/img/fb16.png" alt="facebook-fav" width="16" height="16" />
-            <a href="<?php echo get_option( 'facebook_link' ); ?>" title="Facebook">Facebook</a>
-        </li>
-    <?php endif; ?>
-
-    <?php if ( get_option( 'twitter_link' ) ) : ?>
-        <li>
-            <img src="<?php bloginfo('template_directory'); ?>/img/twitter16.png" alt="twitter-fav" width="16" height="16" />
-            <a href="<?php echo get_option( 'twitter_link' ); ?>" title="twitter">Twitter</a>
-        </li>
-    <?php endif; ?>
-
-    <?php if ( get_option( 'youtube_link' ) ) : ?>
-        <li>
-            <img src="<?php bloginfo('template_directory'); ?>/img/youtube16.png" alt="youtube-fav" width="16" height="16" />
-            <a href="<?php echo get_option( 'youtube_link' ); ?>" title="youtube">YouTube</a>
-        </li>
-    <?php endif; ?>
-
-    <?php if ( get_option( 'flickr_link' ) ) : ?>
-        <li>
-            <img src="<?php bloginfo('template_directory'); ?>/img/flickr16.png" alt="flickr-fav" width="16" height="16" />
-            <a href="<?php echo get_option( 'flickr_link' ); ?>" title="flickr">Flickr</a>
-        </li>
-    <?php endif; ?>
-    </ul>
-</div>
-<?php do_action( 'navis_below_footer_bio' ); ?>
-<!-- /.elsewhere -->
-<!--
-<div class="email">
-    <h4 class='email-footer'>Receive Daily Email Updates</h4>
-        <form id='feedburner-subscribe-sidebar' class='feedburner sidebar'
-        action='http://feedburner.google.com/fb/a/mailverify' method='post' target='popupwindow' 
-        onsubmit='window.open('http://feedburner.google.com/fb/a/mailverify?uri=$uri', 'popupwindow', 'scrollbars=yes,width=550,height=520');
-        return true'>
-        <input type='text' style='width:140px' name='email' placeholder='email address' />
-        <input type='submit' value='Subscribe' /><p>
-        <input type='hidden' value='$uri' name='uri'/>
-        <input type='hidden' name='loc' value='en_US'/>
-        </form>
-</div>
--->
-</div>
-<!-- /.grid_2 -->
-
-<div class="grid_6">
-
-<div class="about-site">
-<?php if ( get_option( 'support_link' ) ) : ?>
-    <h6><a href="<?php echo get_option( 'support_link' ); ?>" title="support">SUPPORT THIS SITE</a></h6>
-<?php endif; ?>
-
-<?php if ( $blogger ) : ?>
-    <h3>ABOUT THIS SITE</h3>
-    <p><?php echo $blogger->description; ?></p>
-<?php endif; ?>
+<div class="grid_3">
+<h3><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
+            <?php bloginfo('name'); ?>
+        </a></h3>
+<ul>
+<li><?php argo_copyright_message(); ?></li>
+<li><a href="#">Terms of Use</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li class="donate"><a href="#">Donate</a></li>
+</ul>
 
 </div>
-<!-- /.about-site -->
+<!-- /.grid_3 -->
+<div class="grid_3">
+<h3>Staff</h3>
 
-<div class="missed-it">
-    <?php $missedit = navis_get_featured_posts( array( 'offset' => 3, 'showposts' => 2 ) );
-          if ( $missedit->have_posts() ) : ?>
-              <h3>IN CASE YOU MISSED IT</h3>
-              <?php while ( $missedit->have_posts() ) : $missedit->the_post(); ?>
-                  <div class="post-lead">
-                      <?php the_post_thumbnail( '60x60' ); ?>
-                      <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                     <?php the_excerpt(); ?>
-                  </div> <!-- /.post-lead -->
-            <?php endwhile;
-         endif; ?>
-</div> <!-- /.missed-it -->
+<div class="ft-reporter clearfix">
+<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/60x60.png" alt="60x60" width="60" height="60" />
+<h4><a href="#">Reporter Name</a></h4>
+<h5>Reporter Title</h5>
+</div><!-- /.ft-reporter -->
+
+<div class="ft-reporter clearfix">
+<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/60x60.png" alt="60x60" width="60" height="60" />
+<h4><a href="#">Reporter Name</a></h4>
+<h5>Reporter Title</h5>
+</div><!-- /.ft-reporter -->
 
 </div>
-<!-- /.grid_6 -->
+<!-- /.grid_3 -->
 
-<div class="grid_4">
+<div class="grid_3">
+<h3>Partner Stations</h3>
+
+<dl class="partner-station">
+<dt><a href="#">WAMU</a></dt>
+<dd>Washington, DC</dd>
+</dl>
+
+<dl class="partner-station">
+<dt><a href="#">WETA</a></dt>
+<dd>Washington, DC</dd>
+</dl>
+
+</div>
+<!-- /.grid_3 -->
+
+<div class="grid_3">
 
 <form role="search" method="get" id="searchform-footer" action="<?php bloginfo('url'); ?>">
 	<div><label class="visuallyhidden" for="s1">Search for:</label>
@@ -124,17 +69,9 @@ $blogger = argo_get_primary_blogger();
 	</div>
 </form>
 <!-- /#searchform-footer -->
-<div class="must-read-footer">
-    <h3>READ MORE ABOUT:</h3>
-    <?php wp_nav_menu( array( 'theme_location' => 'read-more-about', 'container' => false ) ); ?>
-    <p><a href="<?php echo get_static_page_link( 'topic-index' ); ?>" title="view all topics">View all topics</a></p>
-</div>
-<!-- /.must-read-footer -->
-
-
 
 <div id="ft-archive">
-    <h3>BROWSE ARCHIVES BY DATE</h3>
+    <h3>Archives</h3>
     
    <select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'> 
   <option value="">Select Month</option> 
@@ -142,22 +79,10 @@ $blogger = argo_get_primary_blogger();
 </div>
 
 </div>
-<!-- /.grid_4 -->
+<!-- /.grid_3 -->
 
 <div id="boilerplate" class="grid_12">
-    <dl class="our-partners">
-        <dt>OUR PARTNERS</dt>
-        <dd><a href="http://www.knightfoundation.org/" title="Knight Foundation" target="_blank">
-            <img src="<?php bloginfo('template_directory'); ?>/img/logo-knight-30.png" alt="Knight Logo" width="142" height="30" /></a></dd>
-        <dd><a href="http://www.cpb.org/" title="Corporation for Public Broadcasting" target="_blank">
-            <img src="<?php bloginfo('template_directory'); ?>/img/logo-cpb-30x30.png" alt="Corporation for Public Broadcasting" width="30" height="30" />
-        </a></dd>
-        <dd><a href="http://www.npr.org/" title="NPR" target="_blank">
-            <img src="<?php bloginfo('template_directory'); ?>/img/logo-npr-footer.png" alt="NPR" width="90" height="30" />
-        </a></dd>
-    </dl>
-    <!-- /.our-partners -->
-    <p><?php argo_copyright_message(); ?></p>
+
     <?php wp_nav_menu( array( 'theme_location' => 'footer', 'container' => false ) ); ?>
     <p class="back-to-top"><a href="#main">Back to top &uarr;</a></p>
 </div>
