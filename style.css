@@ -7,3 +7,75 @@ Version: 0.1
 */
 @import url(../argo-foundation/css/960.css?v=1);
 @import url(../argo-foundation/css/foundation.css?v=1);
+
+
+/* .container_12 {
+background: #fff url(../argo-foundation/img/dev-images/12_col.gif) repeat-y;
+}*/
+
+.global-nav h4 {
+float: left;
+margin: 9px 0 0 0;
+font-size: 13px;
+line-height: 1;
+}
+
+.global-nav-bg {
+background-color: #ccc;
+}
+
+.global-nav {
+height: 35px;
+}
+
+#npr-bug {
+position: absolute;
+top: 8px;
+right: 0;
+}
+
+.global-nav ul {
+float: left;
+margin-left: 10px;
+}
+
+.global-nav li {
+font-size: 13px;
+line-height: 1;
+}
+
+#category-nav {
+position: relative;
+z-index: 100;
+margin-left: 320px;
+}
+
+#global-branding {
+width: 940px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 20px;
+}
+
+#global-branding header {
+width: 300px;
+float: left;
+}
+
+#global-branding header h1 {
+font-size: 30px;
+width: 300px;
+margin: 0;
+}
+
+#global-branding header h2 {
+font-size: 14px;
+width: 300px;
+margin: 0;
+}
+
+
+
+#category-nav #topnav .sub {
+left: -318px;
+}
