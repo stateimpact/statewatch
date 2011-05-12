@@ -62,6 +62,14 @@ $blogger = argo_get_primary_blogger();
 
 <div class="grid_3">
 
+<div id="ft-archive">
+    <h3>Archives</h3>
+    
+   <select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'> 
+  <option value="">Select Month</option> 
+  <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?> </select>
+</div>
+
 <form role="search" method="get" id="searchform-footer" action="<?php bloginfo('url'); ?>">
 	<div><label class="visuallyhidden" for="s1">Search for:</label>
 	<input type="text" placeholder="SEARCH" value="" name="s" id="s1" />
@@ -70,13 +78,7 @@ $blogger = argo_get_primary_blogger();
 </form>
 <!-- /#searchform-footer -->
 
-<div id="ft-archive">
-    <h3>Archives</h3>
-    
-   <select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'> 
-  <option value="">Select Month</option> 
-  <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?> </select>
-</div>
+<h4><a href="#">View all topics</a></h4>
 
 </div>
 <!-- /.grid_3 -->

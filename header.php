@@ -85,7 +85,11 @@
 <nav class="global-nav">
         <span class="visuallyhidden"><a href="#main" title="Skip to content">Skip to content</a></span>
 <h4>States:</h4>
-        <?php wp_nav_menu( array( 'theme_location' => 'station', 'container' => false ) ); ?>
+<ul>
+<li><a href="#">Ohio</a></li>
+<li><a href="#">New Hampshire</a></li>
+<li><a href="#">About StateWatch</a></li>
+</ul>
 <img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo-npr-header.png" alt="NPR logo" width="54" height="18" id="npr-bug">
 </nav>
        <!-- /.global-nav -->
