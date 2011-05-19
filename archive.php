@@ -26,25 +26,28 @@
 <nav class="archive-dropdown">
 <select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value=""><?php echo esc_attr(__('Select Month')); ?></option> <?php wp_get_archives(apply_filters('widget_archives_dropdown_args', array('type' => 'monthly', 'format' => 'option', 'show_post_count' => $c))); ?> </select>
 </nav>
-<?php endif; ?>
 
 <h3 class="page-title">
     <?php if ( is_month() ) : ?>
         <?php printf( 'Monthly Archives: <span>%s</span>', get_the_date('F Y') ); ?>
     <?php elseif ( is_year() ) : ?>
         <?php printf( 'Yearly Archives: <span>%s</span>', get_the_date('Y') ); ?>
-    <?php elseif ( is_author() ) : ?>
-        <?php printf( 'Author Archives: <span class="author">%s</span>', get_the_author() ); ?>
     <?php else : ?>
         Blog Archives
     <?php endif; ?>
 </h3>
-	<?php if ( is_author() ): ?>
-	<h4><?php the_author_meta( 'sw_title' ); ?></h4>
-	<div class="author-description">
-	    <?php the_author_meta( 'description' ); ?>
-	</div>
-	<?php endif; ?>
+<?php endif; ?>
+
+<?php if ( is_author() ) : ?>
+    <h3 class="page-title"><?php the_author(); ?></h3>
+    <div class="author-info">
+        <?php echo get_avatar( get_the_author() ); ?>
+        <h4><?php the_author_meta( 'sw_title' ); ?></h4>
+        <div class="author-description">
+            <?php the_author_meta( 'description' ); ?>
+        </div>
+    </div>
+<?php endif; ?>
 <nav>		
 <ul class="list-pagination">
     <li class="older-posts"><?php next_posts_link( 'Older posts' ); ?></li>
