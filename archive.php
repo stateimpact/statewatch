@@ -36,18 +36,7 @@
         Blog Archives
     <?php endif; ?>
 </h3>
-<?php endif; ?>
 
-<?php if ( is_author() ) : ?>
-    <h3 class="page-title"><?php the_author(); ?></h3>
-    <div class="author-info">
-        <?php echo get_avatar( get_the_author() ); ?>
-        <h4><?php the_author_meta( 'sw_title' ); ?></h4>
-        <div class="author-description">
-            <?php the_author_meta( 'description' ); ?>
-        </div>
-    </div>
-<?php endif; ?>
 <nav>		
 <ul class="list-pagination">
     <li class="older-posts"><?php next_posts_link( 'Older posts' ); ?></li>
@@ -55,6 +44,28 @@
 </ul>
 </nav>
 <!--/.pagination-->
+<?php endif; ?>
+
+<?php if ( is_author() ) : ?>
+
+<div id="author-bio" class="clearfix">
+<img src="http://argoproject.org/prototypes/statewatch/pantry/img/140x140.png" alt="140x140" width="140" height="140">
+
+<!-- this avitar is the wrong size. it needs to be 140x140  
+<?php echo get_avatar( get_the_author() ); ?> 
+-->
+
+<h4><?php the_author(); ?></h4>
+<h5><?php the_author_meta( 'sw_title' ); ?></h5>	
+<p><?php the_author_meta( 'description' ); ?></p>
+
+<ul>
+<li><b>Email:</b> reporter(at)statewatch-florida.org</li>
+<li><b>Twitter:</b> <a href="#">@reporter</a></li>
+</ul>	
+</div> <!-- /author-bio -->
+<?php endif; ?>
+
 
 <?php
 	/* Since we called the_post() above, we need to
