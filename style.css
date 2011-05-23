@@ -87,6 +87,39 @@ margin-left: 320px;
 left: -318px;
 }
 
+/* author page */
+
+#author-bio {
+margin-bottom: 20px;
+padding: 10px 0 15px 0;
+border-bottom: 1px solid #ddd;
+border-top: 1px solid #ddd;
+}
+
+#author-bio img {
+float: left;
+margin-top: 3px
+}
+
+#author-bio h4, #author-bio h5, #author-bio p, #author-bio ul {
+margin-left: 160px;
+margin-bottom: 0;
+} 
+
+#author-bio p {
+font-size: 12px;
+}
+
+#author-bio ul {
+margin-top: 10px;
+}
+
+#author-bio li {
+float: left;
+font-size: 12px;
+margin-right: 8px;
+}
+
 /************** FOOTER ******************/
 
 #ft-archive select {
