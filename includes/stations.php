@@ -18,7 +18,9 @@ function create_station_post_types() {
                 'not_found_in_trash' => 'No stations found in trash',
             ),
         'description' => 'Partner Stations',
+        'exclude_from_search' => true,
         'public' => true,
+        'supports' => array('title', 'excerpt', 'thumbnail'),
         'taxonomies' => array(),
         )
     );
