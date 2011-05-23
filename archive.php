@@ -49,11 +49,10 @@
 <?php if ( is_author() ) : ?>
 
 <div id="author-bio" class="clearfix">
+<!--
 <img src="http://argoproject.org/prototypes/statewatch/pantry/img/140x140.png" alt="140x140" width="140" height="140">
-
-<!-- this avitar is the wrong size. it needs to be 140x140  
-<?php echo get_avatar( get_the_author() ); ?> 
 -->
+<?php echo get_avatar( get_the_author(), 140 ); ?> 
 
 <h4><?php the_author(); ?></h4>
 <h5><?php the_author_meta( 'sw_title' ); ?></h5>	
