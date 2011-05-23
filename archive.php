@@ -59,8 +59,15 @@
 <p><?php the_author_meta( 'description' ); ?></p>
 
 <ul>
-<li><b>Email:</b> reporter(at)statewatch-florida.org</li>
-<li><b>Twitter:</b> <a href="#">@reporter</a></li>
+<?php if ( get_the_author_meta( 'email' ) ): ?>
+<li><b>Email:</b> <?php the_author_meta( 'email' ); ?></li>
+<?php endif; ?>
+<?php if ( get_the_author_meta( 'sw_twitter' ) ): ?>
+<li>
+    <b>Twitter:</b> 
+    <a href="http://twitter.com/<?php the_author_meta( 'sw_twitter' ); ?>">@<?php the_author_meta( 'sw_twitter' ); ?></a>
+</li>
+<?php endif; ?>
 </ul>	
 </div> <!-- /author-bio -->
 <?php endif; ?>
