@@ -11,20 +11,46 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 <header>
+
+<h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
         <h2><?php the_title(); ?></h2>
         <?php if (function_exists('the_subheading')) { the_subheading('<p>', '</p>'); } ?>
         <div class="post-meta">
-            <h6><?php argo_posted_on(); ?> | By <?php the_author_posts_link(); ?></h6>
-            <ul class="labels">
-                <?php argo_the_post_labels( get_the_ID() ); ?>
-            </ul>
+            <h6>By <?php the_author_posts_link(); ?></h6>
+
             <?php get_template_part( 'post-meta', 'single' ); ?>
         </div> <!-- /.post-meta -->
 </header><!-- / entry header -->
         <?php the_content(); ?>
+        
+        <div class="post-meta">
+			<?php if ( argo_has_categories_or_tags() ): ?>
+			<h5>FILED UNDER: <?php echo argo_the_categories_and_tags(); ?></h5>
+			<?php endif; ?>
+			
+            <?php get_template_part( 'post-meta', 'single' ); ?>
+        </div> <!-- /.post-meta -->
 
     </div> <!-- #post-## --> 
     
+<div class="post-author clearfix">
+<img src="http://statewatch.argoproject.org/florida/wp-content/themes/statewatch/img/dev-img/60x60.png" alt="60x60" width="60" height="60">
+<h4><a href="#">Reporter Name</a></h4>
+<h5>Reporter Title</h5>
+<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line <a href="#">More...</a></p>
+</div> <!-- /.post-author -->
+
+<nav>
+<ul class="post-nav clearfix">
+<li class="n-post"><h5>Newer Post</h5><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link' ) . '</span>' ); ?></li>
+<li class="p-post"><h5>Older Post</h5><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link' ) . '</span> %title' ); ?></li>
+</ul></nav><!-- .post-nav -->
+    
+<article>
+    <a name="comments"></a>
+    <?php comments_template( '', true ); ?>
+</article><!-- / comments -->
+
 <?php $rel_topics = argo_get_post_related_topics( 6 ); if ( $rel_topics ) { ?>
 <div id="related-posts" class="idTabs clearfix">
     <ul id="related-post-nav">
@@ -59,17 +85,6 @@
 </div> <!-- /#related-posts -->
 <?php } // if ( $rel_posts ) ?>
 
-<nav>
-<ul class="post-nav clearfix">
-<li class="n-post"><h5>Newer Post</h5><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link' ) . '</span>' ); ?></li>
-<li class="p-post"><h5>Older Post</h5><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link' ) . '</span> %title' ); ?></li>
-</ul></nav><!-- .post-nav -->
-    
-<article>
-    <a name="comments"></a>
-    <?php comments_template( '', true ); ?>
-</article><!-- / comments -->
-
 <?php endwhile; // end of the loop. ?>
 
 </article><!-- / #content .grid8 -->
@@ -77,5 +92,7 @@
 <aside id="sidebar" class="grid_4">
     <?php get_sidebar('post'); ?>
 </aside> <!-- /.grid_4 -->
+
+<?php get_template_part( 'featured'); ?>
 
 <?php get_footer(); ?>

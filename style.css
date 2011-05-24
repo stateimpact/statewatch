@@ -87,6 +87,29 @@ margin-left: 320px;
 left: -318px;
 }
 
+/* featured topics/posts module */
+
+.featured-topics {
+margin-bottom: 20px;
+}
+
+.featured-topics img {
+float: left;
+margin-top: 3px;
+}
+
+.featured-topics h3, .featured-topics h4 {
+margin:0 0 0 80px;
+}
+
+.featured-topics h3 {
+font-size: 18px;
+}
+
+.featured-topics h4 {
+font-size: 12px;
+}
+
 /* author page */
 
 #author-bio {
@@ -218,6 +241,39 @@ margin-bottom: 3px;
 }
 
 #main .partner-station dd {
+font-size: 12px;
+}
+
+/************** POST (single.php) ******************/
+
+#content .entry-date {
+font-size: 11px;
+margin-bottom: 0;
+font-weight: normal;
+}
+
+#content h2 {
+margin-top: 0;
+}
+
+.post-author {
+margin-bottom: 20px;
+padding: 10px 0 15px 0;
+border-bottom: 1px solid #ddd;
+border-top: 1px solid #ddd;
+}
+
+.post-author img {
+float: left;
+margin-top: 3px;
+}
+
+.post-author h4, .post-author h5, .post-author p {
+margin-left: 80px;
+margin-bottom: 0;
+} 
+
+.post-author p {
 font-size: 12px;
 }
 
