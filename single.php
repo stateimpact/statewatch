@@ -93,6 +93,6 @@
     <?php get_sidebar('post'); ?>
 </aside> <!-- /.grid_4 -->
 
-<?php get_template_part( 'featured'); ?>
+<?php get_template_part( 'featured-topics' ); ?>
 
 <?php get_footer(); ?>
