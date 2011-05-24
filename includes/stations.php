@@ -34,6 +34,7 @@ function add_station_metabox() {
 function station_metabox($post) {
     $freq = get_post_meta( $post->ID, 'frequency', true );
     $city = get_post_meta( $post->ID, 'city', true );
+    $url = get_post_meta( $post->ID, 'url', true);
     $support_url = get_post_meta( $post->ID, 'support_url', true); ?>
     <table class="form-tabel">
         <tr>
@@ -50,6 +51,13 @@ function station_metabox($post) {
             </td>
         </tr>
         <tr>
+            <th><label for="url">URL: </label></th>
+            <td>
+                <input type="text" name="url" value="<?php echo esc_attr( $url ); ?>"/>
+                <span class="description">Your station's main URL</span>
+            </td>
+        </tr>
+        <tr>
             <th><label for="support_url">Support URL: </label></th>
             <td>
                 <input type="text" name="support_url" value="<?php echo esc_attr( $support_url ); ?>"/>
@@ -62,11 +70,24 @@ function station_metabox($post) {
 
 add_action( 'save_post', 'save_station_metadata' );
 function save_station_metadata($post_id) {
-    $fields = array('frequency', 'city', 'support_url');
+    $fields = array('frequency', 'city', 'url', 'support_url');
     foreach ($fields as $field) {
         update_post_meta( $post_id, $field, 
             strip_tags( $_POST[$field] ));
     };
+}
+
+function get_stations() {
+    $stations = new WP_Query(
+            array(
+                'post_type'      => 'partner_station',
+                'orderby'        => 'title',
+                'order'          => 'ASC',
+                'posts_per_page' => -1
+            )
+        );
+    
+    return $stations;
 }
 
 ?>

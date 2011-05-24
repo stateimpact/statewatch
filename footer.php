@@ -45,18 +45,15 @@ $blogger = argo_get_primary_blogger();
 <!-- /.grid_3 -->
 
 <div class="grid_3">
-<h3>Partner Stations</h3>
-
-<dl class="partner-station">
-<dt><a href="#">WAMU</a></dt>
-<dd>Washington, DC</dd>
-</dl>
-
-<dl class="partner-station">
-<dt><a href="#">WETA</a></dt>
-<dd>Washington, DC</dd>
-</dl>
-
+    <h3>Partner Stations</h3>
+    <?php $stations = get_stations(); ?>
+    <?php while ( $stations->have_posts() ): ?>
+        <?php $stations->the_post(); ?>
+        <dl class="partner-station">
+            <dt><a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a></dt>
+            <dd><?php echo get_post_meta( get_the_ID(), 'city', true ); ?></dd>
+        </dl>
+    <?php endwhile; ?>
 </div>
 <!-- /.grid_3 -->
 
