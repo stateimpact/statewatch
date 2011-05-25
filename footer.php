@@ -29,13 +29,13 @@ $blogger = argo_get_primary_blogger();
 <div class="grid_3">
     <h3>Staff</h3>
     <?php $users = get_staff(); ?>
-    <?php foreach ( $users as $user ) { ?>
+    <?php foreach ( $users as $user ): ?>
         <div class="ft-reporter clearfix">
-            <?php echo get_avatar( $user, 60 ); ?>
+            <?php echo get_avatar( $user->ID, 60 ); ?>
             <h4><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php the_author_meta( 'display_name', $user->ID ); ?></a></h4>
             <h5><?php the_author_meta( 'sw_title', $user->ID ); ?></h5>
         </div><!-- /.ft-reporter -->
-    <?php }; ?>
+    <?php endforeach; ?>
 </div>
 <!-- /.grid_3 -->
 

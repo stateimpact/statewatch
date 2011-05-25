@@ -15,11 +15,9 @@
 <div class="grid_4 alpha">
 
 <div class="sw-about">
-<h3>About StateWatch Florida</h3>
+<h3><?php the_title(); ?></h3>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<div class="content"><?php the_content(); ?></div>
 
 <ul class="sw-social clearfix">
 <li class="sw-twitter"><a href="#">Twitter</a></li>
@@ -38,30 +36,32 @@
 <div class="grid_4 alpha">
 
 <h3>Staff</h3>
-
+<?php $staff = get_staff(); ?>
+<?php foreach ( $staff as $user ): ?>
 <div class="abt-staff clearfix">
-<img src="http://argoproject.org/prototypes/statewatch/pantry/img/60x60.png" alt="60x60" width="60" height="60" />
-<h4><a href="#">Reporter Name</a></h4>
-<h5>Reporter Title</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+    <?php echo get_avatar( $user->ID, 60 ); ?>
+    <h4><a href="#"><?php the_author_meta( 'display_name', $user->ID ); ?></a></h4>
+    <h5><?php the_author_meta( 'sw_title', $user->ID ); ?></h5>
+    <?php the_author_meta( 'description', $user->ID ); ?>
 </div><!-- /.abt-staff -->
-
-<div class="abt-staff clearfix">
-<img src="http://argoproject.org/prototypes/statewatch/pantry/img/60x60.png" alt="60x60" width="60" height="60" />
-<h4><a href="#">Reporter Name</a></h4>
-<h5>Reporter Title</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-</div><!-- /.abt-staff -->
+<? endforeach; ?>
 
 <h3>Partner Stations</h3>
-
-<dl class="partner-station">
-<dt><a href="#">WAMU</a></dt>
-<dd class="station-logo"><img src="http://argoproject.org/prototypes/statewatch/pantry/img/wamu100.png" alt="wamu100" width="100" height="50" /></dd>
-<dd>Washington <b>88.5</b></dd>
-<dd><a href="#">Support</a></dd>
-</dl>
-
+<?php $stations = get_stations(); ?>
+<?php while ( $stations->have_posts() ): ?>
+    <?php $stations->the_post(); ?>
+    
+    <dl class="partner-station">
+        <dt><a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a></dt>
+        <dd class="station-logo">
+        <?php if ( has_post_thumbnail() ) { the_post_thumbnail( array(100, 50) ); } ?>
+        <!-- <img src="http://argoproject.org/prototypes/statewatch/pantry/img/wamu100.png" alt="wamu100" width="100" height="50" />
+        -->
+        </dd>
+        <dd><?php echo get_post_meta( get_the_ID(), 'city', true); ?> <b><?php echo get_post_meta( get_the_ID(), 'frequency', true ); ?></b></dd>
+        <dd><a href="<?php echo get_post_meta( get_the_ID(), 'support_url', true ); ?>">Support</a></dd>
+    </dl>
+<?php endwhile; ?>
 </div><!-- / .grid_4 alpha -->
 
 <div class="grid_4 omega">
