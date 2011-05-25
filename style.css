@@ -148,6 +148,9 @@ margin-right: 8px;
 /* About site sidebar module and about page intro */
 .sw-about {
 margin-bottom: 20px;
+width: 300px;
+float: left;
+padding-right: 10px;
 }
 
 .sw-about p {
@@ -204,7 +207,7 @@ float: left;
 margin: 2px 0 10px 0;
 }
 
-.abt-staff h4, .abt-staff h5, .abt-staff p {
+.abt-staff h4, .abt-staff h5, #main .abt-staff p {
 margin-left: 80px;
 }
 
