@@ -18,7 +18,8 @@ function create_station_post_types() {
             ),
         'description' => 'Partner Stations',
         'exclude_from_search' => true,
-        'public' => true,
+        'public' => false,
+        'show_ui' => true,
         'supports' => array('title', 'excerpt', 'thumbnail'),
         'taxonomies' => array(),
         )
