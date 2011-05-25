@@ -12,10 +12,10 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-<div class="grid_4 alpha">
+<div class="grid_8 alpha">
 
 <div class="sw-about">
-<h3><?php the_title(); ?></h3>
+<h3><?php the_title(); ?> <?php bloginfo('name'); ?></h3>
 
 <div class="content"><?php the_content(); ?></div>
 
@@ -27,11 +27,11 @@
 
 </div><!-- .sw-about -->
 
-</div><!-- / .grid_4 alpha -->
-
-<div class="grid_4 omega">
 <img src="http://argoproject.org/prototypes/statewatch/pantry/img/florida.png" alt="florida" width="300" height="233" />
-</div><!-- / .grid_4 omega -->
+
+</div><!-- / .grid_8 alpha -->
+
+
 
 <div class="grid_4 alpha">
 
@@ -42,7 +42,7 @@
     <?php echo get_avatar( $user->ID, 60 ); ?>
     <h4><a href="#"><?php the_author_meta( 'display_name', $user->ID ); ?></a></h4>
     <h5><?php the_author_meta( 'sw_title', $user->ID ); ?></h5>
-    <?php the_author_meta( 'description', $user->ID ); ?>
+    <p><?php the_author_meta( 'description', $user->ID ); ?></p>
 </div><!-- /.abt-staff -->
 <? endforeach; ?>
 
@@ -54,7 +54,7 @@
     <dl class="partner-station">
         <dt><a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a></dt>
         <dd class="station-logo">
-        <?php if ( has_post_thumbnail() ) { the_post_thumbnail( array(100, 50) ); } ?>
+        <?php if ( has_post_thumbnail() ) { the_post_thumbnail( array(140) ); } ?>
         <!-- <img src="http://argoproject.org/prototypes/statewatch/pantry/img/wamu100.png" alt="wamu100" width="100" height="50" />
         -->
         </dd>

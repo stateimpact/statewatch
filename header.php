@@ -73,7 +73,7 @@
 
 <!-- Outbound links analytics -->
 <script type="text/javascript">
-	var NavisAnalyticsFileTypes = ['pdf'];
+	var NavisAnalyticsFileTypes = ['pdf','mp3'];
 </script>
 <script src="<?php bloginfo('template_directory'); ?>/js/outbound-links.js"></script>
 </head>
