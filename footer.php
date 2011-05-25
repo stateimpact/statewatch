@@ -27,36 +27,28 @@ $blogger = argo_get_primary_blogger();
 </div>
 <!-- /.grid_3 -->
 <div class="grid_3">
-<h3>Staff</h3>
-
-<div class="ft-reporter clearfix">
-<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/60x60.png" alt="60x60" width="60" height="60" />
-<h4><a href="#">Reporter Name</a></h4>
-<h5>Reporter Title</h5>
-</div><!-- /.ft-reporter -->
-
-<div class="ft-reporter clearfix">
-<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/60x60.png" alt="60x60" width="60" height="60" />
-<h4><a href="#">Reporter Name</a></h4>
-<h5>Reporter Title</h5>
-</div><!-- /.ft-reporter -->
-
+    <h3>Staff</h3>
+    <?php $users = get_staff(); ?>
+    <?php foreach ( $users as $user ) { ?>
+        <div class="ft-reporter clearfix">
+            <?php echo get_avatar( $user, 60 ); ?>
+            <h4><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php the_author_meta( 'display_name', $user->ID ); ?></a></h4>
+            <h5><?php the_author_meta( 'sw_title', $user->ID ); ?></h5>
+        </div><!-- /.ft-reporter -->
+    <?php }; ?>
 </div>
 <!-- /.grid_3 -->
 
 <div class="grid_3">
-<h3>Partner Stations</h3>
-
-<dl class="partner-station">
-<dt><a href="#">WAMU</a></dt>
-<dd>Washington, DC</dd>
-</dl>
-
-<dl class="partner-station">
-<dt><a href="#">WETA</a></dt>
-<dd>Washington, DC</dd>
-</dl>
-
+    <h3>Partner Stations</h3>
+    <?php $stations = get_stations(); ?>
+    <?php while ( $stations->have_posts() ): ?>
+        <?php $stations->the_post(); ?>
+        <dl class="partner-station">
+            <dt><a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a></dt>
+            <dd><?php echo get_post_meta( get_the_ID(), 'city', true ); ?></dd>
+        </dl>
+    <?php endwhile; ?>
 </div>
 <!-- /.grid_3 -->
 
