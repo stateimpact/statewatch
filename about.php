@@ -19,11 +19,15 @@
 
 <div class="content"><?php the_content(); ?></div>
 
-<ul class="sw-social clearfix">
-<li class="sw-twitter"><a href="#">Twitter</a></li>
-<li class="sw-fb"><a href="#">Facebook</a></li>
-<li class="sw-rss"><a href="#">RSS</a></li>
-</ul>
+    <ul class="sw-social clearfix">
+    <?php if ( get_option( 'twitter_link' ) ): ?>
+        <li class="sw-twitter"><a href="<?php echo get_option( 'twitter_link' ); ?>">Twitter</a></li>
+    <?php endif; ?>
+    <?php if ( get_option( 'facebook_link' ) ): ?>
+        <li class="sw-fb"><a href="<?php echo get_option( 'facebook_link' ); ?>">Facebook</a></li>
+    <?php endif; ?>
+        <li class="sw-rss"><?php echo the_feed_link( 'RSS' ); ?></li>
+    </ul>
 
 </div><!-- .sw-about -->
 
@@ -40,7 +44,7 @@
 <?php foreach ( $staff as $user ): ?>
 <div class="abt-staff clearfix">
     <?php echo get_avatar( $user->ID, 60 ); ?>
-    <h4><a href="#"><?php the_author_meta( 'display_name', $user->ID ); ?></a></h4>
+    <h4><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php the_author_meta( 'display_name', $user->ID ); ?></a></h4>
     <h5><?php the_author_meta( 'sw_title', $user->ID ); ?></h5>
     <p><?php the_author_meta( 'description', $user->ID ); ?></p>
 </div><!-- /.abt-staff -->
@@ -55,8 +59,6 @@
         <dt><a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a></dt>
         <dd class="station-logo">
         <?php if ( has_post_thumbnail() ) { the_post_thumbnail( array(140) ); } ?>
-        <!-- <img src="http://argoproject.org/prototypes/statewatch/pantry/img/wamu100.png" alt="wamu100" width="100" height="50" />
-        -->
         </dd>
         <dd><?php echo get_post_meta( get_the_ID(), 'city', true); ?> <b><?php echo get_post_meta( get_the_ID(), 'frequency', true ); ?></b></dd>
         <dd><a href="<?php echo get_post_meta( get_the_ID(), 'support_url', true ); ?>">Support</a></dd>
