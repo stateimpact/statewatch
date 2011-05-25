@@ -113,7 +113,7 @@
 </article><!-- / #content .grid8 -->
 
 <aside id="sidebar" class="grid_4">
-<?php get_sidebar(); ?>
+<?php get_sidebar( 'about' ); ?>
 </aside>
 <!-- /.grid_4 -->
 <?php get_footer(); ?>
