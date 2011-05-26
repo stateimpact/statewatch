@@ -24,6 +24,8 @@ function create_station_post_types() {
         'taxonomies' => array(),
         )
     );
+    
+    add_image_size( 'station-thumb', 140, 9999, true);
 };
 
 add_action( 'add_meta_boxes', 'add_station_metabox');
