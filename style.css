@@ -143,10 +143,91 @@ font-size: 12px;
 margin-right: 8px;
 }
 
+/* network news widget */
+
+.sw-network-news h3, .sw-network-news h4, .sw-network-news h6, .sw-network-news p {
+margin: 0;
+}
+ 
+.sw-network-news .swnn-tagline {
+font-size: 14px;
+margin-top: 5px;
+}
+ 
+.sw-network-news p {
+line-height: 1.4;
+font-size: 12px
+}
+ 
+.sw-network-news img {
+float: right;
+margin-left: 10px;
+}
+ 
+.sw-network-news h4 {
+font-size: 20px;
+line-height: 1;
+margin-bottom: 10px;
+}
+ 
+.sw-network-news h6 {
+margin-top: 15px;
+font-size: 12px;
+font-weight: normal;
+line-height: 1;
+color: #666;
+font-style: italic;
+}
+
+/* beyond statewatch widget */
+
+#beyond-statewatch li {
+margin-top: 5px;
+border-bottom: none;
+}
+ 
+#beyond-statewatch h5 {
+font-size: 14px;
+margin: 0 0 8px 0;
+line-height: 1.1;
+font-weight: normal;
+}
+ 
+#beyond-statewatch a {
+font-weight: normal;
+}
+ 
+#beyond-statewatch p {
+font-size: 11px;
+color: #666;
+}
+ 
+#beyond-statewatch p img {
+float: left;
+margin-right: 10px;
+}
+
+
+/* about widget */
+
+.sw-about {
+margin-bottom: 20px;
+}
+
+.sw-about .sw-about-search {
+height: 19px;
+width: 250px;
+padding: 2px;
+margin: 0 5px 0 0;
+float: left;
+font-size: 11px;
+color: #999;
+}
+
 /************** ABOUT PAGE ******************/
 
 /* About site sidebar module and about page intro */
-.sw-about {
+#content .sw-about {
 margin-bottom: 20px;
 width: 300px;
 float: left;
