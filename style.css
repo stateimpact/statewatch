@@ -340,15 +340,30 @@ font-size: 12px;
 
 /* home page */
 
+.post-metadata {
+text-align: right;
+color: #666;
+}
+
+#content .post-metadata h6 {
+font-weight: normal;
+}
+
 .post-metadata p {
 font-size: 10px;
 }
 
 .post-metadata li {
-margin: 5px 10px 5px 0;
+margin: 0;
 font-size: 11px;
-background: transparent url(../argo-foundation/img/icons-buttons.png) no-repeat top left;
+/* background: transparent url(../argo-foundation/img/icons-buttons.png) no-repeat top left; */
 list-style-type: none;
+}
+
+
+#content .post-metadata a {
+font-weight: normal;
+color: #666;
 }
 
 .post-metadata .meta-comments { 

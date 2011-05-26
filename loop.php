@@ -63,21 +63,6 @@ query_posts( argo_post_types_qs() );
 		<div class="grid_2 alpha post-metadata">
         <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
             <h6>By <?php the_author_posts_link(); ?></h6>
-            
-			<ul>
-			<li class="meta-comments"><span class="comments-link"><?php comments_popup_link( 'Leave a comment', '<strong>1</strong> Comment ', ' <strong>%</strong> Comments' ); ?></span></li>
-			<li> 
-<a href="<?php echo esc_url( 'http://twitter.com/share?url=' . get_permalink() . '&text=' ) . argo_get_twitter_title(); ?>" class="twitter-share-button" data-count="horizontal">Tweet</a>
-			</li>
-			<li class="fb">
-			<a name="fb_share" share_url="<?php the_permalink(); ?>" type="button_count" href="<?php echo esc_url( 'http://www.facebook.com/sharer.php?u=' . get_permalink() . '&t=' ) . get_the_title();  ?>">Share</a>
-			</li>
-			<?php argo_the_email_link(); ?>
-			</ul>
-            
-            <?php if ( argo_has_categories_or_tags() ): ?>
-			<p>FILED UNDER: <?php echo argo_the_categories_and_tags(); ?></p>
-			<?php endif; ?>
         </div> <!-- /.grid_2 alpha-->
         
 </header><!-- / entry header -->
