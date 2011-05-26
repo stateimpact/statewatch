@@ -13,6 +13,15 @@ Version: 0.1
 background: #fff url(../argo-foundation/img/dev-images/12_col.gif) repeat-y;
 } */
 
+/* Basic HTML */
+
+body {
+	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	color: #333;
+}
+
+
 /************** HEADER ******************/
 
 
@@ -88,6 +97,11 @@ left: -318px;
 }
 
 /* featured topics/posts module */
+
+.home .featured-topics {
+padding-bottom: 20px;
+border-bottom: 4px solid #ccc;
+}
 
 .featured-topics {
 margin-bottom: 20px;
@@ -312,11 +326,7 @@ position: relative;
 margin-bottom: 20px;
 }
 
-#main .partner-station img {
-position: absolute;
-top: 0;
-left: 0;
-}
+
 
 #main .partner-station dt, #main .partner-station dd {
 margin-left: 160px;
@@ -328,16 +338,31 @@ margin-bottom: 3px;
 font-size: 12px;
 }
 
+/* home page */
+
+.post-metadata p {
+font-size: 10px;
+}
+
+.post-metadata li {
+margin: 5px 10px 5px 0;
+font-size: 11px;
+background: transparent url(../argo-foundation/img/icons-buttons.png) no-repeat top left;
+list-style-type: none;
+}
+
+.post-metadata .meta-comments { 
+background-position: 0 -222px; 
+height: 18px; 
+padding-left: 20px;
+} 
+
 /************** POST (single.php) ******************/
 
 #content .entry-date {
 font-size: 11px;
 margin-bottom: 0;
 font-weight: normal;
-}
-
-#content h2 {
-margin-top: 0;
 }
 
 .post-author {
@@ -359,6 +384,20 @@ margin-bottom: 0;
 
 .post-author p {
 font-size: 12px;
+}
+
+/* meta gestures 2 column */
+
+#content .entry-title {
+margin-left: 160px;
+margin-bottom: 30px;
+font-size: 24px;
+line-height: 1.2;
+font-weight: bold;
+}
+
+#content .entry-title a {
+font-weight: bold;
 }
 
 /************** COLLECTION PAGE (tag.php) ******************/

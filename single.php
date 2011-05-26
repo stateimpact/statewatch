@@ -11,25 +11,33 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 <header>
+<h2 class="entry-title"><?php the_title(); ?></h2>
 
-<h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
-        <h2><?php the_title(); ?></h2>
+		<div class="grid_2 alpha  post-metadata">
+        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
+		<h6>By <?php the_author_posts_link(); ?></h6>
+
+			<ul>
+			<li class="meta-comments"><span class="comments-link"><?php comments_popup_link( 'Leave a comment', '<strong>1</strong> Comment ', ' <strong>%</strong> Comments' ); ?></span></li>
+			<li> 
+<a href="<?php echo esc_url( 'http://twitter.com/share?url=' . get_permalink() . '&text=' ) . argo_get_twitter_title(); ?>" class="twitter-share-button" data-count="horizontal">Tweet</a>
+			</li>
+			<li class="fb">
+			<a name="fb_share" share_url="<?php the_permalink(); ?>" type="button_count" href="<?php echo esc_url( 'http://www.facebook.com/sharer.php?u=' . get_permalink() . '&t=' ) . get_the_title();  ?>">Share</a>
+			</li>
+			<?php argo_the_email_link(); ?>
+			</ul>
+
+		<?php if ( argo_has_categories_or_tags() ): ?>
+		<p>FILED UNDER: <?php echo argo_the_categories_and_tags(); ?></p>
+		<?php endif; ?>
+		</div> <!-- /.grid_2 alpha-->
+
         <?php if (function_exists('the_subheading')) { the_subheading('<p>', '</p>'); } ?>
-        <div class="post-meta">
-            <h6>By <?php the_author_posts_link(); ?></h6>
-
-            <?php get_template_part( 'post-meta', 'single' ); ?>
-        </div> <!-- /.post-meta -->
 </header><!-- / entry header -->
+	<div class="grid_6 omega">
         <?php the_content(); ?>
-        
-        <div class="post-meta">
-			<?php if ( argo_has_categories_or_tags() ): ?>
-			<h5>FILED UNDER: <?php echo argo_the_categories_and_tags(); ?></h5>
-			<?php endif; ?>
-			
-            <?php get_template_part( 'post-meta', 'single' ); ?>
-        </div> <!-- /.post-meta -->
+        </div> <!-- /.grid_6 omega -->
 
     </div> <!-- #post-## --> 
     
