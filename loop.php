@@ -1,9 +1,9 @@
 <?php
-/**
+/***
 Loop documentation
 http://codex.wordpress.org/The_Loop to understand it and
 http://codex.wordpress.org/Template_Tags to understand
- */
+***/
 ?>
 <?php 
 /*

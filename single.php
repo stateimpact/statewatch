@@ -38,10 +38,10 @@
     </div> <!-- #post-## --> 
     
 <div class="post-author clearfix">
-<img src="http://statewatch.argoproject.org/florida/wp-content/themes/statewatch/img/dev-img/60x60.png" alt="60x60" width="60" height="60">
-<h4><a href="#">Reporter Name</a></h4>
-<h5>Reporter Title</h5>
-<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line <a href="#">More...</a></p>
+<?php echo get_avatar( get_the_author_meta( 'email' ), 60 ); ?>
+<h4><?php the_author_posts_link(); ?></h4>
+<h5><?the_author_meta( 'sw_title' ); ?></h5>
+<p><?php the_author_meta( 'description' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">More...</a></p>
 </div> <!-- /.post-author -->
 
 <nav>
