@@ -55,16 +55,19 @@
 <?php while ( $stations->have_posts() ): ?>
     <?php $stations->the_post(); ?>
     
-    <dl class="partner-station">
-        <dt><a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a></dt>
-        <dd class="station-logo">
-        <?php if ( has_post_thumbnail() ) { the_post_thumbnail( array(140) ); } ?>
-        </dd>
-        <dd><?php echo get_post_meta( get_the_ID(), 'city', true); ?> <b><?php echo get_post_meta( get_the_ID(), 'frequency', true ); ?></b></dd>
-        <dd><a href="<?php echo get_post_meta( get_the_ID(), 'support_url', true ); ?>">Support</a></dd>
-    </dl>
+    <div class="partner-station clearfix">
+    <?php if ( has_post_thumbnail() ) { ?>
+        <a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>">
+        <?php the_post_thumbnail( array(140) ); ?>
+		</a>
+	<?php } ?>
+	
+        <h4><a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a></h4>
+		<h5><?php echo get_post_meta( get_the_ID(), 'city', true); ?> <b><?php echo get_post_meta( get_the_ID(), 'frequency', true ); ?></b></h5>
+        <h5><a href="<?php echo get_post_meta( get_the_ID(), 'support_url', true ); ?>">Support</a></h5>
+    </div><!-- / .partner-station -->
 <?php endwhile; ?>
-</div><!-- / .grid_4 alpha -->
+</div>
 
 <div class="grid_4 omega">
 
