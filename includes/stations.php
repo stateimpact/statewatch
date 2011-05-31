@@ -1,6 +1,6 @@
 <?php
-add_action( 'init', 'create_station_post_types' );
-function create_station_post_types() {
+add_action( 'init', 'sw_create_station_post_types' );
+function sw_create_station_post_types() {
     register_post_type( 'partner_station', 
         array(
             'labels' => array(
@@ -28,13 +28,13 @@ function create_station_post_types() {
     add_image_size( 'station-thumb', 140, 9999, true);
 };
 
-add_action( 'add_meta_boxes', 'add_station_metabox');
-function add_station_metabox() {
+add_action( 'add_meta_boxes', 'sw_add_station_metabox');
+function sw_add_station_metabox() {
     add_meta_box( 'station_metadata', 'Station Metadata', 
-                  'station_metabox', 'partner_station', 'normal', 'high');
+                  'sw_station_metabox', 'partner_station', 'normal', 'high');
 };
 
-function station_metabox($post) {
+function sw_station_metabox($post) {
     $freq = get_post_meta( $post->ID, 'frequency', true );
     $city = get_post_meta( $post->ID, 'city', true );
     $url = get_post_meta( $post->ID, 'url', true);
@@ -71,8 +71,8 @@ function station_metabox($post) {
 <?php 
 }
 
-add_action( 'save_post', 'save_station_metadata' );
-function save_station_metadata($post_id) {
+add_action( 'save_post', 'sw_save_station_metadata' );
+function sw_save_station_metadata($post_id) {
     $fields = array('frequency', 'city', 'url', 'support_url');
     foreach ($fields as $field) {
         update_post_meta( $post_id, $field, 
@@ -80,7 +80,7 @@ function save_station_metadata($post_id) {
     };
 }
 
-function get_stations() {
+function sw_get_stations() {
     $stations = new WP_Query(
             array(
                 'post_type'      => 'partner_station',

@@ -28,7 +28,7 @@ $blogger = argo_get_primary_blogger();
 <!-- /.grid_3 -->
 <div class="grid_3">
     <h3>Staff</h3>
-    <?php $users = get_staff(); ?>
+    <?php $users = sw_get_staff(); ?>
     <?php foreach ( $users as $user ): ?>
         <div class="ft-reporter clearfix">
             <?php echo get_avatar( $user->ID, 60 ); ?>
@@ -41,7 +41,7 @@ $blogger = argo_get_primary_blogger();
 
 <div class="grid_3">
     <h3>Partner Stations</h3>
-    <?php $stations = get_stations(); ?>
+    <?php $stations = sw_get_stations(); ?>
     <?php while ( $stations->have_posts() ): ?>
         <?php $stations->the_post(); ?>
         <dl class="partner-station">

@@ -47,7 +47,7 @@ function sw_update_staff_fields( $user_id ) {
 	update_usermeta( $user_id, 'sw_is_staff', $_POST['sw_is_staff']);
 }
 
-function get_staff() {
+function sw_get_staff() {
     return get_users(
             array(
                 'meta_key' => 'sw_is_staff',
