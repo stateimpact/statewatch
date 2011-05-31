@@ -40,7 +40,7 @@
 <div class="grid_4 alpha">
 
 <h3>Staff</h3>
-<?php $staff = get_staff(); ?>
+<?php $staff = sw_get_staff(); ?>
 <?php foreach ( $staff as $user ): ?>
 <div class="abt-staff clearfix">
     <?php echo get_avatar( $user->ID, 60 ); ?>
@@ -51,7 +51,7 @@
 <? endforeach; ?>
 
 <h3>Partner Stations</h3>
-<?php $stations = get_stations(); ?>
+<?php $stations = sw_get_stations(); ?>
 <?php while ( $stations->have_posts() ): ?>
     <?php $stations->the_post(); ?>
     
