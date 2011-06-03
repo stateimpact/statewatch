@@ -30,6 +30,12 @@ foreach ( $taxonomies as $taxonomy ) {
 
 function sw_explainer_form( $taxonomy ) {
     $post_type = "collection";
+    $post = get_default_post_to_edit( $post_type, true );
+    $post_ID = $post->ID;
+    add_action( 'admin_print_footer_scripts', 'wp_tiny_mce', 25 );
+	add_action( 'admin_print_footer_scripts', 'wp_tiny_mce_preload_dialogs', 30 );
+	wp_enqueue_script('quicktags');
+	
     include(ABSPATH . 'wp-admin/edit-form-advanced.php');
 }
 ?>
