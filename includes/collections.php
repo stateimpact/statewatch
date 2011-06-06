@@ -36,6 +36,6 @@ function sw_explainer_form( $taxonomy ) {
 	add_action( 'admin_print_footer_scripts', 'wp_tiny_mce_preload_dialogs', 30 );
 	wp_enqueue_script('quicktags');
 	
-    include(ABSPATH . 'wp-admin/edit-form-advanced.php');
+    include('post-form-bare.php');
 }
 ?>
