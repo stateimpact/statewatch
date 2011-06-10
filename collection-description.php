@@ -1,13 +1,14 @@
+<?php
+$cat = $wp_query->get_queried_object();
+$topic = argo_get_topic_for( $cat );
+?>
+
 <div id="coll-intro" class="grid_12 coll-dl"> 
-<h2><?php single_tag_title(); ?></h2> 
+<h2><?php echo $topic->post_title; ?></h2> 
 
 <div class="coll-desc clearfix"> 
 <h6>Background</h6>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p> 
-
-<p>Ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+<?php echo apply_filters( 'the_content', $topic->post_content ); ?>
 </div>
 
 <div class="coll-links">
