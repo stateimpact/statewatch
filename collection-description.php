@@ -9,7 +9,7 @@ $first_link = $links[0];
 <?php if ( $topic->post_content ): ?>
 <div class="coll-desc clearfix"> 
 <h6>Background</h6>
-    <?php echo $topic->post_content; ?>    
+    <?php echo apply_filters( 'the_content', $topic->post_content ); ?>
 </div>
 <?php endif; ?>
 <?php if ( $first_link['url'] ) { ?>
