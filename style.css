@@ -139,7 +139,7 @@ p  { font-size:16px; line-height: 1.4; }
 		border-radius: 5px;
 		-webkit-border-radius: 5px;
 	}
-		#topnav li .sub a { font-family: "Helvetica Neue",Arial,sans-serif; }
+		#topnav li .sub a { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; letter-spacing: 0; }
 		#topnav li .sub ul { width: 620px; border-radius: 5px; -webkit-border-radius: 5px; }
 		#topnav li .sub ul li {	padding: 0;	border-radius: 5px;	-webkit-border-radius: 5px;	}
 		.mega-feature { width: 600px; }
@@ -243,7 +243,15 @@ article header h2 { font-weight: 900; }
 
 /* Footer */
 #site-footer { background: url(./img/footer-bg.png) repeat-x; text-shadow: #000 0 1px 3px; }
-	#site-footer h3 { font-size: 12px; text-transform: uppercase; color: #fff; font-weight: bold; padding-bottom: 5px; border-bottom: 2px solid #fff;  }
+	#site-footer h3 { 
+		font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
+		font-size: 18px; 
+		text-transform: uppercase; 
+		color: #fff; 
+		font-weight: bold; 
+		padding-bottom: 5px; 
+		border-bottom: 4px solid #fff; 
+	}
 	#site-footer #footerlogo { border-bottom: none; }
 	#footerlogo a { display: block; width: 181px; height: 71px; background: url(./img/logo.png) no-repeat; text-indent: -999px; position: relative; left: -10px; }
 	.ft-reporter h5, .partner-station dd { font-size: 13px; margin-left: 0; color: #666; }
@@ -287,7 +295,19 @@ article header h2 { font-weight: 900; }
 /************** ABOUT PAGE ******************/
 
 /* About site sidebar module and about page intro */
+
+.page-template-about-php #content h3, .page-template-about-php #content h4 { 
+	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
+	font-size: 18px; 
+	text-transform: uppercase; 
+	font-weight: bold; 
+	padding-bottom: 5px; 
+}
+#content .abt-staff h4, #content .partner-station h4 { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; }
 #content .sw-about{margin-bottom:20px;width:300px;float:left;padding-right:10px;}
+#content .abt-staff img { margin-right: 20px; }
+#content #sw-abt-network h4 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; text-transform: none; }
+#sw-network-partners li a { width: 150px; display: inline-block; }
 .sw-about p{font-size:12px;margin-bottom:10px;}
 .sw-social{margin-bottom:5px;}
 .sw-social li{float:left;margin-right:5px;text-indent:-10000px;}
