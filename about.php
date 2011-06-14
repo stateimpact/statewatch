@@ -75,29 +75,31 @@
 <h3>About the network</h3>
 
 <h4>Issues that matter. Close to Home</h4>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives.</p>
+    <p>We aim to put news in context, providing insight and background rather than just the latest headlines. We work to give you the information they need to hold state government accountable. We look at the costs of government action, and of not taking action. Our reporters travel the state to learn about issues from the people affected by them, and we invite discussion on this site about those issues.</p>
+    <p>StateImpact is a collaboration of local public radio stations in eight states and NPR. The participating stations in each state have chosen one of four policy areas to focus on: state budgets, education, energy and the economy.</p>
 </div> <!-- /#sw-abt-network -->
 
 <div id="sw-network-partners">
-<h4>Network Partners</h4>
-<ul>
-<li><a href="#">Florida</a> <b>Education</b></li>
-<li><a href="#">Idaho</a> <b>Economy</b></li>
-<li><a href="#">Ohio</a> <b>Education</b></li>
-</ul>
+    <h4>Network Partners</h4>
+    <ul>
+        <li><a href="#">Florida</a> <b>Education</b></li>
+        <li><a href="#">Idaho</a> <b>State budget</b></li>
+        <li><a href="#">Ohio</a> <b>Education</b></li>
+        <li><a href="#">Indiana</a> <b>Education</b></li>
+        <li><a href="#">New Hampshire</a> <b>State economy</b></li>
+        <li><a href="#">Oklahoma</a> <b>State budget</b></li>
+        <li><a href="#">Pennsylvania</a> <b>Energy</b></li>
+        <li><a href="#">Texas</a> <b>Energy</b></li>
+    </ul>
 </div> <!-- /#sw-network-partners -->
 
 <div id="sw-abt-npr">
 <h4>About NPR</h4>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-
-<ul>
-<li><a href="#">Station Finder</a></li>
-</ul>
+    <p>A thriving media organization at the forefront of digital innovation, NPR creates and distributes award-winning news, information, and music programming to a network of 900 independent stations. Through them, NPR programming reaches 26.8 million listeners every week. <a href="http://www.npr.org/about/aboutnpr/">More information</a>.</p>
+    <ul>
+        <li><a href="#">Station Finder</a></li>
+    </ul>
 </div> <!-- /#sw-abt-npr -->
 
 <div id="sw-sponsors">
