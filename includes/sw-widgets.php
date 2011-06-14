@@ -59,8 +59,8 @@ class About_StateImpact extends WP_Widget_Text {
             </ul> 
             
             <ul class="sw-info clearfix"> 
-                <?php if ( get_option( 'support_url' ) ): ?>
-                    <li><a href="<?php echo get_option( 'support_url' ); ?>">Support <?php bloginfo( 'name' ); ?></a></li>
+                <?php if ( get_option( 'support_link' ) ): ?>
+                    <li><a href="<?php echo get_option( 'support_link' ); ?>">Support <?php bloginfo( 'name' ); ?></a></li>
                 <?endif; ?>
                 <li><a href="<?php echo get_option('about_link', get_option( 'url') . 'about/'); ?>">Learn more about <?php bloginfo( 'name' ); ?></a></li> 
             </ul> 
