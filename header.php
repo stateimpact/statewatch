@@ -33,6 +33,10 @@
 		}
 	?>
 	</title>
+	
+	<script type="text/javascript" src="http://use.typekit.com/xah5jnf.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 	
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=1" />
@@ -82,35 +86,35 @@
 
 <div id="wrapper" class="hfeed">
     <div class="global-nav-bg"> 
-<nav class="global-nav">
-        <span class="visuallyhidden"><a href="#main" title="Skip to content">Skip to content</a></span>
-<h4>States:</h4>
-<ul>
-<li><a href="#">Ohio</a></li>
-<li><a href="#">New Hampshire</a></li>
-<li><a href="#">About StateWatch</a></li>
-</ul>
-<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo-npr-header.png" alt="NPR logo" width="54" height="18" id="npr-bug">
-</nav>
-       <!-- /.global-nav -->
+		<nav class="global-nav">
+	
+				<h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">StateImpact</a></h1>
+				<h2><a href="http://npr.org" title="Visit npr.org">In partnership with NPR</a></h2>
+				<div class="global-utils"><a href="./about/">About StateImpact</a> | <a id="apanel-trigger" href="#">Other states</a></div>
+		        <span class="visuallyhidden"><a href="#main" title="Skip to content">Skip to content</a></span>
+
+		<!--<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo-npr-header.png" alt="NPR logo" width="54" height="18" id="npr-bug"> -->
+		</nav><!-- /.global-nav -->
+		<div id="argo-panel-wrapper"><div id="argo-panel"></div></div><!-- /#argo-panel-wrapper -->
     </div> <!-- /.global-nav-bg -->
-<div id="global-branding" class="clearfix">
+<div id="local-wrapper">
+	<div id="global-branding" class="clearfix">
 
-<header>
-    <h1>
-        <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
-            <?php bloginfo('name'); ?>
-        </a>
-    </h1>
-    <h2><?php bloginfo('description'); ?></h2>
-</header>
+		<header>
+		    <h2>
+		        <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
+		            <?php bloginfo('name'); ?>
+		        </a>
+		    </h2>
+		    <h3><?php bloginfo('description'); ?></h3>
+		</header>
 
-   <div id="category-nav">
-        <nav>
-        <?php wp_nav_menu( array( 'theme_location' => 'categories', 'container' => false , 'menu_id' => 'topnav', 'walker' => new Argo_Categories_Walker, 'depth' => 1 ) ); ?>
-        </nav><!-- /#mega menu -->
-	</div> <!-- /main-nav -->
+	   <div id="category-nav">
+	        <nav>
+	        <?php wp_nav_menu( array( 'theme_location' => 'categories', 'container' => false , 'menu_id' => 'topnav', 'walker' => new Argo_Categories_Walker, 'depth' => 1 ) ); ?>
+	        </nav><!-- /#mega menu -->
+		</div> <!-- /main-nav -->
 
-</div><!-- /#global-branding -->
+	</div><!-- /#global-branding -->
 
-<div id="main" class="container_12 clearfix">
+	<div id="main" class="container_12 clearfix">

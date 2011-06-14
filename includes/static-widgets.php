@@ -39,7 +39,7 @@ class iog_abt_Widget extends WP_Widget {
 		echo $before_widget; ?>
 
 <div class="sw-about"> 
-<h3>About StateWatch Florida</h3> 
+<h3>About StateImpact New Hampshire</h3> 
  
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p> 
  
@@ -52,13 +52,13 @@ class iog_abt_Widget extends WP_Widget {
 </ul> 
  
 <ul class="sw-info clearfix"> 
-<li><a href="#">Learn more about StateWatch</a></li> 
-<li><a href="#">Support StateWatch</a></li> 
+<li><a href="#">Learn more about StateImpact</a></li> 
+<li><a href="#">Support StateImpact</a></li> 
 </ul> 
  
 <form role="search" method="get" action="http://statewatch.argoproject.org/florida"> 
 	<div><label class="visuallyhidden" for="s1">Search for:</label> 
-	<input type="text" placeholder="Search StateWatch Virgina" value="" name="s" class="sw-about-search" /> 
+	<input type="text" placeholder="Search StateImpact <?php bloginfo('name'); ?>" value="" name="s" class="sw-about-search" /> 
 	<input type="image" src="http://statewatch.argoproject.org/florida/wp-content/themes/argo-foundation/img/btn-go.png" alt="Submit" width="32" height="24" id="search-submit" /> 
 	</div> 
 </form> 
@@ -97,17 +97,16 @@ class iog_network_news_Widget extends WP_Widget {
 		echo $before_widget; ?>
 
 <div class="sw-network-news"> 
-<h3>StateWatch Network News</h3> 
-<p class="swnn-tagline">Issues that matter. Close to home.</p> 
-<h6>StateWatch Florida</h6> 
+<h3>StateImpact Network News</h3> 
+<h6>StateImpact Florida</h6> 
 <h4><a href="#">Lorem ipsum dolor sit amet</a></h4> 
 <img src="http://statewatch.argoproject.org/florida/wp-content/themes/statewatch/img/dev-img/60x60.png"> 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p> 
  
-<h6>StateWatch Ohio</h6> 
+<h6>StateImpact Ohio</h6> 
 <h5><a href="#">Lorem ipsum dolor sit amet</a></h5> 
  
-<h6>StateWatch Idaho</h6> 
+<h6>StateImpact Idaho</h6> 
 <h5><a href="#">Lorem ipsum dolor sit amet</a></h5> 
  
 </div><!-- .sw-network-news -->
@@ -143,7 +142,7 @@ class iog_links_Widget extends WP_Widget {
 		echo $before_widget; ?>
 
 <div id="beyond-statewatch"> 
-<h3>Beyond StateWatch</h3> 
+<h3>Beyond StateImpact</h3> 
 <ul> 
 <li> 
 <h5><a href="#">A National Lab Develops Grid Controls to Handle Renewable Energy</a></h5> 

@@ -7,16 +7,18 @@
  */
 $blogger = argo_get_primary_blogger(); 
 ?>
-</div> <!-- #main .container_12 -->
+	</div> <!-- #main .container_12 -->
+</div> <!-- #local-wrapper -->
 
 <!--[if (gte IE 9)|!(IE)]><!-->   <footer id="site-footer" class="clearfix"><!--<![endif]-->
 <!--[if lte IE 8]>   <div id="site-footer" class="clearfix"> <![endif]-->
 
 <div class="container_12">
 <div class="grid_3">
-<h3><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
+<h3 id="footerlogo"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">StateImpact</a></h3>
+<h4><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
             <?php bloginfo('name'); ?>
-        </a></h3>
+        </a></h4>
 <ul>
 <li><?php argo_copyright_message(); ?></li>
 <li><a href="#">Terms of Use</a></li>
@@ -78,7 +80,7 @@ $blogger = argo_get_primary_blogger();
 <div id="boilerplate" class="grid_12">
 
     <?php wp_nav_menu( array( 'theme_location' => 'footer', 'container' => false ) ); ?>
-    <p class="back-to-top"><a href="#main">Back to top &uarr;</a></p>
+    <p class="back-to-top visuallyhidden"><a href="#main">Back to top &uarr;</a></p>
 </div>
 <!-- /.grid_12 -->
 </div>
@@ -164,5 +166,96 @@ if ( current_user_can( 'administrator' ) ) {
 }
  */
 ?>
+
+<!-- argo network panel -->
+<script src="http://statewatch.argoproject.org/florida/wp-content/themes/argo-foundation/js/jquery.idTabs.js"></script>
+<script src="http://statewatch.argoproject.org/florida/wp-content/themes/argo-foundation/js/jquery.collapser.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#apanel-trigger').collapser({
+        target: '#argo-panel',
+        expandHtml: 'Other states',
+        collapseHtml: 'Close states',
+        expandClass: 'cpanel',
+        collapseClass: 'opanel'
+    });
+
+    // toggle panel
+    $('#apanel-trigger').click(function() {
+        $('#apanel-content').slideToggle(400);
+        return false;
+    });
+	
+    // delay image loading
+    var delayedLoad = function(event) {
+        $('div.panel-featured-img').each(function(i) {
+            var src = $(this).attr('data-src');
+            if (src) {
+                var img = $('<img/>')
+                    .attr('src', src)
+                    .attr('alt', 'f-story')
+                    .attr('height', '60')
+                    .attr('width', '60');
+                $(this).prepend(img);
+        };
+        });
+        $('#apanel-trigger').unbind('click', delayedLoad);
+    };
+    $('#apanel-trigger').click(delayedLoad);
+
+    
+    // show network features
+    var starter = function() {
+            var links, index, blog, id;
+            links = $('div#panel-network').find('a'); 
+            index = Math.floor( Math.random() * links.length ); 
+            blog = links[index];
+            if (blog) return blog.getAttribute('href');
+    };
+    $("#panel-network").idTabs(starter()); 
+});
+</script>
+
+<div id="apanel-content" class="container_12"> 
+    <div id="argo-inner-panel">
+        <div id="panel-about" class="grid_4 alpha">
+            <h5>About StateImpact</h5>
+            <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives. <br><a href="http://www.npr.org/templates/story/story.php?storyId=128777262">Learn More...</a></p>
+        </div>
+
+        <div id="topic-budget" class="network-sites grid_2">
+			<h5>Budget</h5>
+			<ul>
+				<li>Oklahoma</li>
+			</ul>
+		</div>
+
+		<div id="topic-economy" class="network-sites grid_2">
+			 <h5>Economy</h5>
+			<ul>
+				<li><a href="#">New Hampshire</a></li>
+				<li>Idaho</li>
+			 </ul>
+	    </div>
+	
+		<div id="topic-economy" class="network-sites grid_2">
+			<h5>Education</h5>
+			<ul>
+				<li><a href="#">Florida</a></li>
+				<li><a href="#">Ohio</a></li>
+				<li>Indiana</li>
+			</ul>
+		</div>
+		<div id="topic-economy" class="network-sites grid_2 omega">
+			<h5>Energy</h5>
+			<ul>
+				<li><a href="#">Pennsylvania</a></li>
+				<li>Texas</li>
+			</ul>
+		</div>
+
+    </div> <!-- /#argo-inner-panel -->
+</div> <!-- /#apanel-content -->
+
 </body>
 </html>

@@ -60,26 +60,26 @@ query_posts( argo_post_types_qs() );
 
 <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
-		<div class="grid_2 alpha post-metadata">
+		<div class="post-metadata">
         <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
             <h6>By <?php the_author_posts_link(); ?></h6>
+			<?php if ( argo_has_categories_or_tags() ): ?>
+			<p>FILED UNDER: <?php echo argo_the_categories_and_tags(); ?></p>
+			<?php endif; ?>
         </div> <!-- /.grid_2 alpha-->
         
 </header><!-- / entry header -->
 
     <?php if ( is_archive() ) :  ?>
-        <div class="grid_6 omega">
+
             <?php the_content( 'Continue reading <span class="meta-nav">&rarr;</span>' ); ?>
 	    <?php wp_link_pages( array( 'before' => '<div class="page-link">Pages:', 'after' => '</div>' ) ); ?>
-
-	</div><!-- .grid_6 -->		
+	
     <?php else : ?>
-        <div class="grid_6 omega">
             <?php the_content( 'Continue reading <span class="meta-nav">&rarr;</span>' ); ?>
 
             <?php wp_link_pages( array( 'before' => '<div class="page-link">Pages:', 'after' => '</div>' ) ); ?>
 
-        </div><!-- .grid_6 -->
     <?php endif; ?>
 <?php endif; // is_sticky() ?>
     <!--  ############## removed .entry-utility ######### -->

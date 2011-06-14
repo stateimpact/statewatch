@@ -13,7 +13,7 @@
 <header>
 <h2 class="entry-title"><?php the_title(); ?></h2>
 
-		<div class="grid_2 alpha  post-metadata">
+		<div class="post-metadata">
         <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
 		<h6>By <?php the_author_posts_link(); ?></h6>
 
@@ -31,9 +31,9 @@
 
         <?php if (function_exists('the_subheading')) { the_subheading('<p>', '</p>'); } ?>
 </header><!-- / entry header -->
-	<div class="grid_6 omega">
+
         <?php the_content(); ?>
-        </div> <!-- /.grid_6 omega -->
+
 
     </div> <!-- #post-## --> 
     
