@@ -1,4 +1,8 @@
 <?php
+
+// site names should just be state names
+DEFINE( 'SITE_NAME_PREFIX', 'StateImpact ' );
+
 // includes
 require_once( 'includes/users.php' );
 require_once( 'includes/sidebars.php' );

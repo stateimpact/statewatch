@@ -15,7 +15,7 @@
 <div class="grid_8 alpha">
 
 <div class="sw-about">
-<h3><?php the_title(); ?> <?php bloginfo('name'); ?></h3>
+<h3><?php the_title(); ?></h3>
 
 <div class="content"><?php the_content(); ?></div>
 

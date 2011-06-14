@@ -9,7 +9,7 @@ function sw_add_widgets() {
 class About_StateImpact extends WP_Widget_Text {
     
     function About_StateImpact() {
-        $site_title = get_option('blogname', 'StateImpact');
+		$site_title = SITE_NAME_PREFIX . get_option('blogname');
         $widget_opts = array(
             'classname' => 'sw-about',
             'description' => 'About StateImpact'
@@ -18,7 +18,7 @@ class About_StateImpact extends WP_Widget_Text {
     }
     
     function form( $instance ) {
-    	$site_title = get_option('blogname', 'StateImpact');
+		$site_title = SITE_NAME_PREFIX . get_option('blogname');
 		$blurb = get_option('site_blurb');
 		
     	$instance = wp_parse_args( (array) $instance, array( 'title' => "About $site_title", 'text' => $blurb ) );
@@ -36,12 +36,12 @@ class About_StateImpact extends WP_Widget_Text {
     
 	function widget( $args, $instance ) {
 		extract($args);
-		$site_title = get_option('blogname', 'StateImpact');
+		$site_title = SITE_NAME_PREFIX . get_option('blogname');
 		$blurb = get_option('site_blurb');
 		$title = apply_filters( 'widget_title', empty($instance['title']) ? "About $site_title" : $instance['title'], $instance, $this->id_base);
 		$text = apply_filters( 'widget_text', empty($instance['text']) ? $blurb : $instance['text'], $instance );
 		echo $before_widget;
-		if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } ?>
+		if ( !empty( $title ) ) { echo "<h3>$title</h3>"; } ?>
 			<div class="textwidget"><?php echo $instance['filter'] ? wpautop($text) : "<p>$text</p>"; ?></div>
             <ul class="sw-social clearfix">
                 <?php if ( get_option( 'twitter_link' ) ) : ?>
@@ -60,9 +60,9 @@ class About_StateImpact extends WP_Widget_Text {
             
             <ul class="sw-info clearfix"> 
                 <?php if ( get_option( 'support_link' ) ): ?>
-                    <li><a href="<?php echo get_option( 'support_link' ); ?>">Support <?php bloginfo( 'name' ); ?></a></li>
+                    <li><a href="<?php echo get_option( 'support_link' ); ?>">Support <?php echo SITE_NAME_PREFIX . get_bloginfo( 'name' ); ?></a></li>
                 <?endif; ?>
-                <li><a href="<?php echo get_option('about_link', get_option( 'url') . 'about/'); ?>">Learn more about <?php bloginfo( 'name' ); ?></a></li> 
+                <li><a href="<?php echo get_option('about_link', get_option( 'url') . 'about/'); ?>">Learn more about <?php echo SITE_NAME_PREFIX . get_bloginfo( 'name' ); ?></a></li> 
             </ul> 
 
             <form role="search" method="get"> 
