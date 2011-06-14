@@ -31,7 +31,7 @@
 
 </div><!-- .sw-about -->
 
-<img src="<?php bloginfo('template_directory'); ?>/img/dev-img/pennsylvania.png" alt="florida" width="300" height="233" />
+<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/pennsylvania.png" alt="pennsylvania" width="300" height="233" />
 
 </div><!-- / .grid_8 alpha -->
 
