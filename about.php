@@ -98,10 +98,11 @@
 <h4>About NPR</h4>
     <p>A thriving media organization at the forefront of digital innovation, NPR creates and distributes award-winning news, information, and music programming to a network of 900 independent stations. Through them, NPR programming reaches 26.8 million listeners every week. <a href="http://www.npr.org/about/aboutnpr/">More information</a>.</p>
     <ul>
-        <li><a href="#">Station Finder</a></li>
+        <li><a href="http://www.npr.org/templates/stations/stations/">Station Finder</a></li>
     </ul>
 </div> <!-- /#sw-abt-npr -->
 
+<!--
 <div id="sw-sponsors">
 <h4>Sponsors</h4>
 
