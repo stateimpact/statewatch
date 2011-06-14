@@ -48,7 +48,7 @@ class About_StateImpact extends WP_Widget_Text {
             <form role="search" method="get"> 
             	<div><label class="visuallyhidden" for="s1">Search for:</label> 
             	<input type="text" placeholder="Search <?php bloginfo( 'name' ); ?>" value="" name="s" class="sw-about-search" /> 
-            	<input type="image" src="http://statewatch.argoproject.org/florida/wp-content/themes/argo-foundation/img/btn-go.png" alt="Submit" width="32" height="24" id="search-submit" /> 
+            	<input type="image" src="<?php bloginfo( 'template_url' )?>/img/btn-go.png" alt="Submit" width="32" height="24" id="search-submit" /> 
             	</div> 
             </form> 
         
