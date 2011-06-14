@@ -15,11 +15,30 @@ class About_StateImpact extends WP_Widget_Text {
         );
         $this->WP_Widget( 'about-widget', "About $site_title", $widget_opts);
     }
-        
+    
+    function form( $instance ) {
+    	$site_title = get_option('blogname', 'StateImpact');
+		$blurb = get_option('site_blurb');
+		
+    	$instance = wp_parse_args( (array) $instance, array( 'title' => "About $site_title", 'text' => $blurb ) );
+    	$title = strip_tags($instance['title']);
+    	$text = esc_textarea($instance['text']);
+    ?>
+    	<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+    	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+
+		<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+
+	    <p><input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox" <?php checked(isset($instance['filter']) ? $instance['filter'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e('Automatically add paragraphs'); ?></label></p>
+    <?php
+	}
+    
 	function widget( $args, $instance ) {
 		extract($args);
-		$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
-		$text = apply_filters( 'widget_text', $instance['text'], $instance );
+		$site_title = get_option('blogname', 'StateImpact');
+		$blurb = get_option('site_blurb');
+		$title = apply_filters( 'widget_title', empty($instance['title']) ? "About $site_title" : $instance['title'], $instance, $this->id_base);
+		$text = apply_filters( 'widget_text', empty($instance['text']) ? $blurb : $instance['text'], $instance );
 		echo $before_widget;
 		if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } ?>
 			<div class="textwidget"><?php echo $instance['filter'] ? wpautop($text) : $text; ?></div>
