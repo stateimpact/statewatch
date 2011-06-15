@@ -52,10 +52,11 @@
 </div>
 
 <div class="abt-module">
-	<h3 class="module-title">Partner Stations</h3>
+	<h3 class="module-title">Partners</h3>
 	<?php $stations = sw_get_stations(); ?>
 	<?php while ( $stations->have_posts() ): ?>
 	    <?php $stations->the_post(); ?>
+
     
 	    <div class="partner-station clearfix">
 	    <?php if ( has_post_thumbnail() ) { ?>

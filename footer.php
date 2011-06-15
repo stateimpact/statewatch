@@ -42,7 +42,7 @@ $blogger = argo_get_primary_blogger();
 <!-- /.grid_3 -->
 
 <div class="grid_3">
-    <h3>Partner Stations</h3>
+    <h3>Partners</h3>
     <?php $stations = sw_get_stations(); ?>
     <?php while ( $stations->have_posts() ): ?>
         <?php $stations->the_post(); ?>
@@ -168,8 +168,8 @@ if ( current_user_can( 'administrator' ) ) {
 ?>
 
 <!-- argo network panel -->
-<script src="http://statewatch.argoproject.org/florida/wp-content/themes/argo-foundation/js/jquery.idTabs.js"></script>
-<script src="http://statewatch.argoproject.org/florida/wp-content/themes/argo-foundation/js/jquery.collapser.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/jquery.idTabs.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/jquery.collapser.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     $('#apanel-trigger').collapser({
@@ -220,7 +220,8 @@ $(document).ready(function(){
     <div id="argo-inner-panel">
         <div id="panel-about" class="grid_4 alpha">
             <h5>About StateImpact</h5>
-            <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives. <br><a href="http://www.npr.org/templates/story/story.php?storyId=128777262">Learn More...</a></p>
+            <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives. <br>
+                <a href="<?php echo get_bloginfo('url') . "/about/"; ?>">Learn More...</a></p>
         </div>
 
         <div id="topic-budget" class="network-sites grid_2">
