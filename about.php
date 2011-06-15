@@ -50,7 +50,7 @@
 </div><!-- /.abt-staff -->
 <? endforeach; ?>
 
-<h3>Partner Stations</h3>
+<h3>Partners</h3>
 <?php $stations = sw_get_stations(); ?>
 <?php while ( $stations->have_posts() ): ?>
     <?php $stations->the_post(); ?>

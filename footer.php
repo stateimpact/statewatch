@@ -42,7 +42,7 @@ $blogger = argo_get_primary_blogger();
 <!-- /.grid_3 -->
 
 <div class="grid_3">
-    <h3>Partner Stations</h3>
+    <h3>Partners</h3>
     <?php $stations = sw_get_stations(); ?>
     <?php while ( $stations->have_posts() ): ?>
         <?php $stations->the_post(); ?>
@@ -168,8 +168,8 @@ if ( current_user_can( 'administrator' ) ) {
 ?>
 
 <!-- argo network panel -->
-<script src="http://statewatch.argoproject.org/florida/wp-content/themes/argo-foundation/js/jquery.idTabs.js"></script>
-<script src="http://statewatch.argoproject.org/florida/wp-content/themes/argo-foundation/js/jquery.collapser.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/jquery.idTabs.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/jquery.collapser.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     $('#apanel-trigger').collapser({
