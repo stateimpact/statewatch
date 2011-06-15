@@ -78,16 +78,23 @@ p  { font-size:16px; line-height: 1.4; }
 		.alltopics { position: absolute; top: 0; right: 0; font-size: 12px; line-height: 1; font-weight: bold;  }
 	
 	/* Network Panel */
+	#argo-panel { height: 200px; }
 	#wrapper #apanel-trigger {
-		display: inline;
+		display: inline-block;
 		width: auto;
-		height: auto;
+		height: 14px;
 		text-indent: 0;
 		position: static;
 		outline: none;
-		background-image: none;
-		background-position: 0 -190px;
+		background-image: url(./img/panel-arrows.png);
+		background-repeat: no-repeat; 
+		background-position: 100% 4px;
+		padding: 0 20px 0 0;
+		line-height: 14px; 
+		overflow: hidden;
 	}
+		#wrapper .global-utils a.cpanel { background-position: 100% 4px; }
+		#wrapper #apanel-trigger.opanel { background-position: 100% -18px; }
 	#argo-panel-wrapper { background: none; border: none; color: #222; }
 	#apanel-content { top: 60px; color: #222; }
 		#apanel-content h5 { 
@@ -109,7 +116,7 @@ p  { font-size:16px; line-height: 1.4; }
 		#panel-about { width: 300px; position: inherit; left: auto; top: auto; }
 			#panel-about p { font-style: normal; font-size: 14px; }
 
-#global-branding { position: relative; z-index: 10; margin: 0 auto; text-shadow: #000 0 1px 3px; }
+#global-branding { position: relative; z-index: 10; margin: 0 auto; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
 	#global-branding header { width: 460px; margin-top: 18px; }
 	#category-nav { position: absolute; right: 0; top: 54px; }
 		#topnav li { border-left: 1px solid rgba(0,0,0,.5); padding: 0; }
@@ -137,8 +144,11 @@ p  { font-size:16px; line-height: 1.4; }
 		width: 620px;
 		border: none; 
 		box-shadow: 0 3px 10px #666;
+		-webkit-box-shadow: 0 3px 10px #666;
+		-moz-box-shadow: 0 3px 10px #666;
 		border-radius: 5px;
 		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
 	}
 		#topnav li .sub a { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; letter-spacing: 0; }
 		#topnav li .sub ul { width: 620px; border-radius: 5px; -webkit-border-radius: 5px; }
@@ -239,11 +249,12 @@ article header h2 { font-weight: 900; }
 		padding: 0;
 		margin: 0 0 10px;
 	}
+.link-list li a { font-weight: bold; }
 #sidebar p { font-size: 14px; }
-
+#sidebar .ad { border-bottom: none; }
 
 /* Footer */
-#site-footer { background: url(./img/footer-bg.png) repeat-x; text-shadow: #000 0 1px 3px; }
+#site-footer { background: url(./img/footer-bg.png) repeat-x; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
 	#site-footer h3 { 
 		font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
 		font-size: 18px; 
@@ -292,24 +303,29 @@ article header h2 { font-weight: 900; }
 /* about widget */
 .sw-about { margin-bottom:20px; }
 .sw-about .sw-about-search { height:19px; width:250px; padding:2px; margin:0 5px 0 0; float:left; font-size:11px; color:#999; }
+.abt-module { margin-bottom: 20px; padding-top: 5px; border-top: 4px solid #999; }
 
 /************** ABOUT PAGE ******************/
 
 /* About site sidebar module and about page intro */
 
-.page-template-about-php #content h3, .page-template-about-php #content h4 { 
+#content .module-title { 
 	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
-	font-size: 18px; 
+	font-size: 24px; 
 	text-transform: uppercase; 
 	font-weight: 600;
 	color: #000; 
-	padding-bottom: 5px; 
+	line-height: 32px; 
+	margin-bottom: 5px;
 }
+	#content h2.module-title { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 32px; text-transform: capitalize; }
+	#content h4.module-title { font-size: 18px; }
 .page-template-about-php #content p { font-size: 14px; }
 #content .abt-staff h4, #content .partner-station h4 { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; }
-#content .sw-about { margin-bottom:20px; width:300px; float:left; padding-right:10px; }
+#content .sw-about { margin-bottom:20px; width:300px; float:left; padding-right:10px; border-top: none; }
 #content .abt-staff img { margin-right: 20px; }
-#content #sw-abt-network h4 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; text-transform: none; }
+#content #sw-abt-network h4 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; text-transform: none; margin-bottom: 10px; }
+#sw-network-partners { border-top: none; }
 #sw-network-partners li { text-transform: capitalize; }
 #sw-network-partners li a { width: 150px; display: inline-block; }
 .sw-social { margin-bottom:5px; }

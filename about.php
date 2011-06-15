@@ -14,8 +14,8 @@
 
 <div class="grid_8 alpha">
 
-<div class="sw-about">
-<h3><?php the_title(); ?></h3>
+<div class="sw-about abt-module">
+<h2 class="module-title"><?php the_title(); ?></h2>
 
 <div class="content"><?php the_content(); ?></div>
 
@@ -31,57 +31,59 @@
 
 </div><!-- .sw-about -->
 
-<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/pennsylvania.png" alt="pennsylvania" width="300" height="233" />
+<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/pennsylvania.png" alt="pennsylvania" width="300" />
 
 </div><!-- / .grid_8 alpha -->
 
 
 
 <div class="grid_4 alpha">
-
-<h3>Staff</h3>
-<?php $staff = sw_get_staff(); ?>
-<?php foreach ( $staff as $user ): ?>
-<div class="abt-staff clearfix">
-    <?php echo get_avatar( $user->ID, 60 ); ?>
-    <h4><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php the_author_meta( 'display_name', $user->ID ); ?></a></h4>
-    <h5><?php the_author_meta( 'sw_title', $user->ID ); ?></h5>
-    <p><?php the_author_meta( 'description', $user->ID ); ?></p>
-</div><!-- /.abt-staff -->
-<? endforeach; ?>
-
-<h3>Partner Stations</h3>
-<?php $stations = sw_get_stations(); ?>
-<?php while ( $stations->have_posts() ): ?>
-    <?php $stations->the_post(); ?>
-    
-    <div class="partner-station clearfix">
-    <?php if ( has_post_thumbnail() ) { ?>
-        <a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>">
-        <?php the_post_thumbnail( array(140) ); ?>
-		</a>
-	<?php } ?>
-	
-        <h4><a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a></h4>
-		<h5><?php echo get_post_meta( get_the_ID(), 'city', true); ?> <b><?php echo get_post_meta( get_the_ID(), 'frequency', true ); ?></b></h5>
-        <h5><a href="<?php echo get_post_meta( get_the_ID(), 'support_url', true ); ?>">Support</a></h5>
-    </div><!-- / .partner-station -->
-<?php endwhile; ?>
+<div class="abt-module">
+	<h3 class="module-title">Staff</h3>
+	<?php $staff = sw_get_staff(); ?>
+	<?php foreach ( $staff as $user ): ?>
+	<div class="abt-staff clearfix">
+	    <?php echo get_avatar( $user->ID, 60 ); ?>
+	    <h4><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php the_author_meta( 'display_name', $user->ID ); ?></a></h4>
+	    <h5><?php the_author_meta( 'sw_title', $user->ID ); ?></h5>
+	    <p><?php the_author_meta( 'description', $user->ID ); ?></p>
+	</div><!-- /.abt-staff -->
+	<? endforeach; ?>
 </div>
 
+<div class="abt-module">
+	<h3 class="module-title">Partner Stations</h3>
+	<?php $stations = sw_get_stations(); ?>
+	<?php while ( $stations->have_posts() ): ?>
+	    <?php $stations->the_post(); ?>
+    
+	    <div class="partner-station clearfix">
+	    <?php if ( has_post_thumbnail() ) { ?>
+	        <a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>">
+	        <?php the_post_thumbnail( array(140) ); ?>
+			</a>
+		<?php } ?>
+	
+	        <h4><a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a></h4>
+			<h5><?php echo get_post_meta( get_the_ID(), 'city', true); ?> <b><?php echo get_post_meta( get_the_ID(), 'frequency', true ); ?></b></h5>
+	        <h5><a href="<?php echo get_post_meta( get_the_ID(), 'support_url', true ); ?>">Support</a></h5>
+	    </div><!-- / .partner-station -->
+	<?php endwhile; ?>
+	</div>
+</div>
 <div class="grid_4 omega">
 
-<div id="sw-abt-network">
-<h3>About the network</h3>
+<div id="sw-abt-network" class="abt-module">
+	<h3 class="module-title">About the network</h3>
 
-<h4>Issues that matter. Close to home</h4>
-    <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives.</p>
-    <p>We aim to put news in context, providing insight and background rather than just the latest headlines. We work to give you the information they need to hold state government accountable. We look at the costs of government action, and of not taking action. Our reporters travel the state to learn about issues from the people affected by them, and we invite discussion on this site about those issues.</p>
-    <p>StateImpact is a collaboration of local public radio stations in eight states and NPR. The participating stations in each state have chosen one of four policy areas to focus on: state budgets, education, energy and the economy.</p>
+	<h4>Issues that matter. Close to home.</h4>
+	    <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives.</p>
+	    <p>We aim to put news in context, providing insight and background rather than just the latest headlines. We work to give you the information they need to hold state government accountable. We look at the costs of government action, and of not taking action. Our reporters travel the state to learn about issues from the people affected by them, and we invite discussion on this site about those issues.</p>
+	    <p>StateImpact is a collaboration of local public radio stations in eight states and NPR. The participating stations in each state have chosen one of four policy areas to focus on: state budgets, education, energy and the economy.</p>
 </div> <!-- /#sw-abt-network -->
 
 <div id="sw-network-partners">
-    <h4>Network Partners</h4>
+    <h4 class="module-title">Network Partners</h4>
     <ul>
         <li><a href="#">Florida</a> <b>Education</b></li>
         <li><a href="#">Idaho</a> <b>State budget</b></li>
@@ -95,10 +97,10 @@
 </div> <!-- /#sw-network-partners -->
 
 <div id="sw-abt-npr">
-<h4>About NPR</h4>
-    <p>A thriving media organization at the forefront of digital innovation, NPR creates and distributes award-winning news, information, and music programming to a network of 900 independent stations. Through them, NPR programming reaches 26.8 million listeners every week. <a href="http://www.npr.org/about/aboutnpr/">More information</a>.</p>
+	<h4 class="module-title">About NPR</h4>
+    <p>A thriving media organization at the forefront of digital innovation, NPR creates and distributes award-winning news, information, and music programming to a network of 900 independent stations. Through them, NPR programming reaches 26.8 million listeners every week. <a href="http://www.npr.org/about/aboutnpr/">More information &raquo;</a></p>
     <ul>
-        <li><a href="http://www.npr.org/templates/stations/stations/">Station Finder</a></li>
+        <li><a href="http://www.npr.org/templates/stations/stations/">Station Finder &raquo;</a></li>
     </ul>
 </div> <!-- /#sw-abt-npr -->
 
