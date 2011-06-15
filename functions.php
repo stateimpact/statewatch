@@ -13,4 +13,9 @@ require_once( 'includes/sw-widgets.php');
 
 define( 'LARGE_WIDTH', 460 );
 define( 'MEDIUM_WIDTH', 230 );
+
+add_action( 'init', 'remove_argo_actions' );
+function remove_argo_actions() {
+    remove_action( 'wp_footer', 'argo_build_network_panel' );
+}
 ?>
