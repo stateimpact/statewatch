@@ -21,5 +21,7 @@
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/4.jpg">
 		<h3><a href="#">Woman "made unrecognizeable" by barium poisoning</a></h3>
 	</div>
+	
+	<div class="alltopics"><a href="#">View all topics &raquo;</a></div>
 
 </div><!-- .grid_12 -->
