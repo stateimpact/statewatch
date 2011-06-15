@@ -220,7 +220,8 @@ $(document).ready(function(){
     <div id="argo-inner-panel">
         <div id="panel-about" class="grid_4 alpha">
             <h5>About StateImpact</h5>
-            <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives. <br><a href="http://www.npr.org/templates/story/story.php?storyId=128777262">Learn More...</a></p>
+            <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives. <br>
+                <a href="<?php echo get_bloginfo('url') . "/about/"; ?>">Learn More...</a></p>
         </div>
 
         <div id="topic-budget" class="network-sites grid_2">
