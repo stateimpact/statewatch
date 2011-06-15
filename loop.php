@@ -86,11 +86,13 @@ query_posts( argo_post_types_qs() );
     </article><!-- #post-## -->
     <?php comments_template( '', true ); ?>
 <?php endwhile; // End the loop. Whew. ?>
+<?php if ( next_posts_link() || previous_posts_link() ) :  ?>
 <div class="grid_8 alpha">
-<nav>
-<ul class="list-pagination">
-    <li class="older-posts"><?php next_posts_link( 'Older posts' ); ?></li>
-    <li class="newer-posts"><?php previous_posts_link( 'Newer posts' ); ?></li>
-</ul>
-</nav><!-- .list-pagination -->
+	<nav>
+		<ul class="list-pagination">
+		    <li class="older-posts"><?php next_posts_link( 'Older posts' ); ?></li>
+		    <li class="newer-posts"><?php previous_posts_link( 'Newer posts' ); ?></li>
+		</ul>
+	</nav><!-- .list-pagination -->
 </div> <!-- .grid_8 alpha -->
+<?php endif; // check for pagination ?>
