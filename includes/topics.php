@@ -42,6 +42,9 @@ class SW_Topics_Walker extends Walker {
     
     function start_el( &$output, $item, $depth, $args ) {
     	$obj = get_post( $item->object_id );
+    	if ( $obj->post_type == "topic" ) {
+    	    // get term for topic, use term permalink
+    	}
     	$output .= '<div class="grid_3 alpha">';
     	if ( has_post_thumbnail( $obj->ID ) ) {
     	    $output .= get_the_post_thumbnail( $obj->ID, array(60, 60) );
