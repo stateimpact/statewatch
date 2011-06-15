@@ -23,7 +23,7 @@ body {
 #local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; }
 #main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 20px 10px; }
 
-#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin: 0; }
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin: 0 0 10px; }
 h1 { font-size:36px; line-height: 1; }
 h2 { font-size:24px; line-height: 36px; }
 h3 { font-size:18px; line-height: 1; }
@@ -276,6 +276,7 @@ article header h2 { font-weight: 900; }
 	.ft-reporter h5 { margin-bottom:10px; font-weight:normal; }
 	#site-footer .donate { margin-top:5px; }
 	#site-footer .donate a { font-weight:bold; background-color:#3366cc; padding:5px; }
+#boilerplate { padding-top: 0; }
 
 /* author page */
 #author-bio { margin-bottom:20px; padding:10px 0 15px 0; border-bottom:1px solid #ddd; border-top:1px solid #ddd; }
