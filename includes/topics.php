@@ -8,8 +8,53 @@ function sw_topic_setup() {
     if ( has_action( 'edited_term', 'argo_create_topic_page' ) ) {
         remove_action( 'edited_term', 'argo_create_topic_page', 10, 3 );
     }
+    
 }
 
+add_action( 'init', 'sw_setup_menus' );
+function sw_setup_menus() {
+    $location = 'featured-topics';
+    $label = __('Featured Topics');
+    register_nav_menus(array(
+        $location => $label
+    ));
+    
+    if ( ! has_nav_menu( $location ) ) {
+
+        // get or create the nav menu
+        $nav_menu = wp_get_nav_menu_object( $label );
+        if ( ! $nav_menu ) {
+            $new_menu_id = wp_create_nav_menu( $label );
+            $nav_menu = wp_get_nav_menu_object( $new_menu_id );
+        }
+
+        // wire it up to the location
+        $locations = get_theme_mod( 'nav_menu_locations' );
+        $locations[ $location ] = $nav_menu->term_id;
+        set_theme_mod( 'nav_menu_locations', $locations );
+    }
+}
+
+class SW_Topics_Walker extends Walker {
+    
+    var $tree_type = array( 'post_type', 'taxonomy', 'custom' );
+    var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
+    
+    function start_el( &$output, $item, $depth, $args ) {
+    	$obj = get_post( $item->object_id );
+    	$output .= '<div class="grid_3 alpha">';
+    	if ( has_post_thumbnail( $obj->ID ) ) {
+    	    $output .= get_the_post_thumbnail( $obj->ID, array(60, 60) );
+    	}
+    	$output .= '	<h3><a href="'. get_permalink( $obj->ID ) . '">' . $obj->post_title . '</a></h3>';
+    }
+    
+    function end_el( &$output, $item, $depth ) {
+        $output .= '	</div>';
+    }
+}
+
+// topic links
 add_action( 'add_meta_boxes', 'sw_topic_links_metabox' );
 function sw_topic_links_metabox() {
     add_meta_box( 'featured-links', 'Featured Links', 'sw_featured_links',
