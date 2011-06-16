@@ -44,7 +44,7 @@ class SW_Topics_Walker extends Walker {
     	if ( $obj->post_type == "topic" ) {
     	    // get term for topic, use term permalink
     	}
-    	$output .= '<div class="grid_3 alpha">';
+    	$output .= '<div class="grid_3">';
     	if ( has_post_thumbnail( $obj->ID ) ) {
     	    $output .= get_the_post_thumbnail( $obj->ID, array(60, 60) );
     	}
