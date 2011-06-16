@@ -48,7 +48,7 @@ class SW_Topics_Walker extends Walker {
     	if ( has_post_thumbnail( $obj->ID ) ) {
     	    $output .= get_the_post_thumbnail( $obj->ID, array(60, 60) );
     	}
-    	$output .= '	<h3><a href="'. get_permalink( $obj->ID ) . '">' . $obj->post_title . '</a></h3>';
+    	$output .= '	<h3><a href="'. sw_get_topic_permalink( $obj ) . '">' . $obj->post_title . '</a></h3>';
     }
     
     function end_el( &$output, $item, $depth ) {
@@ -63,15 +63,33 @@ function sw_topic_term_metabox() {
                  'topic', 'side', 'high');
 }
 
-function sw_show_topic_term($post) { 
+function sw_get_term_for_topic($post) {
     $term = get_the_category($post->ID);
     if (! $term ) {
         $term = get_the_terms( $post->ID, 'post_tag' ); }
-    if ($term) { $term = $term[0]; }
-    ?>
+    if ($term) { 
+        return $term[0]; 
+    } else {
+        return false;
+    }
+}
+
+function sw_show_topic_term($post) { 
+    $term = sw_get_term_for_topic($post);
+    if ($term): ?>
     <h4><?php echo $term->name; ?></h4>
     <p>Content for this topic buildout will show up with this term.</p>
-    <?php
+    <div><?php var_dump($term); ?></div>
+    <?php endif;
+}
+
+function sw_get_topic_permalink($post) {
+    $term = sw_get_term_for_topic($post);
+    if ($term) {
+        return get_term_link($term, $term->taxonomy);
+    } else {
+        return '';
+    }
 }
 
 // topic links
