@@ -1,14 +1,13 @@
 <?php
 add_action( 'init', 'sw_topic_setup' );
 function sw_topic_setup() {
-    if ( has_action( 'save_post', 'argo_update_topic_taxonomy' ) ) {
-        remove_action( 'save_post', 'argo_update_topic_taxonomy', 10, 2 );
+    if (has_action( 'edited_term', 'argo_create_topic_page' )) {
+        remove_action( 'edited_term', 'argo_create_topic_page' );
     }
     
-    if ( has_action( 'edited_term', 'argo_create_topic_page' ) ) {
-        remove_action( 'edited_term', 'argo_create_topic_page', 10, 3 );
+    if (has_action( 'save_post', 'argo_update_topic_taxonomy' )) {
+        remove_action( 'save_post', 'argo_update_topic_taxonomy' );
     }
-    
 }
 
 add_action( 'init', 'sw_setup_menus' );
@@ -55,6 +54,24 @@ class SW_Topics_Walker extends Walker {
     function end_el( &$output, $item, $depth ) {
         $output .= '	</div>';
     }
+}
+
+// post admin
+add_action( 'add_meta_boxes', 'sw_topic_term_metabox' );
+function sw_topic_term_metabox() {
+    add_meta_box( 'topic-term', 'Term', 'sw_show_topic_term',
+                 'topic', 'side', 'high');
+}
+
+function sw_show_topic_term($post) { 
+    $term = get_the_category($post->ID);
+    if (! $term ) {
+        $term = get_the_terms( $post->ID, 'post_tag' ); }
+    if ($term) { $term = $term[0]; }
+    ?>
+    <h4><?php echo $term->name; ?></h4>
+    <p>Content for this topic buildout will show up with this term.</p>
+    <?php
 }
 
 // topic links
