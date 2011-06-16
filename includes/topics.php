@@ -1,15 +1,97 @@
 <?php
 add_action( 'init', 'sw_topic_setup' );
 function sw_topic_setup() {
-    if ( has_action( 'save_post', 'argo_update_topic_taxonomy' ) ) {
-        remove_action( 'save_post', 'argo_update_topic_taxonomy', 10, 2 );
+    if (has_action( 'edited_term', 'argo_create_topic_page' )) {
+        remove_action( 'edited_term', 'argo_create_topic_page' );
     }
     
-    if ( has_action( 'edited_term', 'argo_create_topic_page' ) ) {
-        remove_action( 'edited_term', 'argo_create_topic_page', 10, 3 );
+    if (has_action( 'save_post', 'argo_update_topic_taxonomy' )) {
+        remove_action( 'save_post', 'argo_update_topic_taxonomy' );
     }
 }
 
+add_action( 'init', 'sw_setup_menus' );
+function sw_setup_menus() {
+    $location = 'featured-topics';
+    $label = __('Featured Topics');
+    register_nav_menus(array(
+        $location => $label
+    ));
+    
+    if ( ! has_nav_menu( $location ) ) {
+
+        // get or create the nav menu
+        $nav_menu = wp_get_nav_menu_object( $label );
+        if ( ! $nav_menu ) {
+            $new_menu_id = wp_create_nav_menu( $label );
+            $nav_menu = wp_get_nav_menu_object( $new_menu_id );
+        }
+
+        // wire it up to the location
+        $locations = get_theme_mod( 'nav_menu_locations' );
+        $locations[ $location ] = $nav_menu->term_id;
+        set_theme_mod( 'nav_menu_locations', $locations );
+    }
+}
+
+class SW_Topics_Walker extends Walker {
+    
+    var $tree_type = array( 'post_type', 'taxonomy', 'custom' );
+    var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
+    
+    function start_el( &$output, $item, $depth, $args ) {
+    	$obj = get_post( $item->object_id );
+    	if ( $obj->post_type == "topic" ) {
+    	    // get term for topic, use term permalink
+    	}
+    	$output .= '<div class="grid_3">';
+    	if ( has_post_thumbnail( $obj->ID ) ) {
+    	    $output .= get_the_post_thumbnail( $obj->ID, array(60, 60) );
+    	}
+    	$output .= '	<h3><a href="'. sw_get_topic_permalink( $obj ) . '">' . $obj->post_title . '</a></h3>';
+    }
+    
+    function end_el( &$output, $item, $depth ) {
+        $output .= '	</div>';
+    }
+}
+
+// post admin
+add_action( 'add_meta_boxes', 'sw_topic_term_metabox' );
+function sw_topic_term_metabox() {
+    add_meta_box( 'topic-term', 'Term', 'sw_show_topic_term',
+                 'topic', 'side', 'high');
+}
+
+function sw_get_term_for_topic($post) {
+    $term = get_the_category($post->ID);
+    if (! $term ) {
+        $term = get_the_terms( $post->ID, 'post_tag' ); }
+    if ($term) { 
+        return $term[0]; 
+    } else {
+        return false;
+    }
+}
+
+function sw_show_topic_term($post) { 
+    $term = sw_get_term_for_topic($post);
+    if ($term): ?>
+    <h4><?php echo $term->name; ?></h4>
+    <p>Content for this topic buildout will show up with this term.</p>
+    <?php endif;
+}
+
+function sw_get_topic_permalink($post) {
+    $term = sw_get_term_for_topic($post);
+    if ($term) {
+        return get_term_link($term, $term->taxonomy);
+    } else {
+        return '';
+    }
+}
+
+// topic links
 add_action( 'add_meta_boxes', 'sw_topic_links_metabox' );
 function sw_topic_links_metabox() {
     add_meta_box( 'featured-links', 'Featured Links', 'sw_featured_links',

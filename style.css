@@ -71,6 +71,9 @@ p  { font-size:16px; line-height: 1.4; }
 	.single .featured-topics { border-top: 4px solid #ccc; }
 		.single .featured-topics h2 { padding-top: 5px; }
 	.featured-topics { margin-bottom: 20px; position: relative; }
+		.featured-topics .grid_3:first-child { margin-left: none; }
+		.featured-topics .grif_3:last-child { margin-right: none; }
+		
 		.featured-topics img { float: left; margin-top: 3px; }
 		.featured-topics h2 { font-size: 12px; line-height: 1; font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 6px; }
 		.featured-topics h3 { font-size: 14px; font-weight: bold; }
@@ -109,22 +112,23 @@ p  { font-size:16px; line-height: 1.4; }
 			text-transform: uppercase; 
 		}
 		#apanel-content p { margin-bottom: 9px; font-size: 12px; }
-		#apanel-content a { color: #000; }
-		#apanel-content a:hover { color: #666; }
+		#apanel-content li a { color: #000; }
+		#apanel-content li a:hover { color: #666; }
 		#apanel-content li { color: #aaa; font-size: 12px; }
 	#argo-inner-panel { width: 940px; height: 170px; margin-top: 9px; padding-top: 9px;  }
 		#argo-inner-panel>div { height: 170px; }
 		#panel-about { width: 300px; position: inherit; left: auto; top: auto; }
 			#panel-about p { font-style: normal; font-size: 14px; }
-
+			#panel-about p a { padding-top: 10px; color: #174E82; display: block; }
+			#panel-about p a:hover { color: #444; text-decoration: underline; }
 #global-branding { position: relative; z-index: 10; margin: 0 auto; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
 	#global-branding header { width: 460px; margin-top: 18px; }
 	#category-nav { position: absolute; right: 0; top: 54px; }
 		#topnav li { border-left: 1px solid rgba(0,0,0,.5); padding: 0; }
 		#topnav .first { border-left: none; }
+			#topnav .first a { margin-left: 0; }
 		#topnav li a { 
 			color: #fff; 
-			font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
 			font-weight: 600; 
 			letter-spacing: .1em;
 			background-image: none; 
@@ -132,6 +136,11 @@ p  { font-size:16px; line-height: 1.4; }
 			padding: 6px 18px; 
 			margin: 0; 
 			line-height: 18px;
+			font-size: 14px;
+		}
+		/* Only use these styles if webfonts are active to prevent layout problems */
+		.wf-active #topnav li a { 
+			font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
 			font-size: 18px;
 			text-transform: uppercase;
 		}
@@ -259,11 +268,17 @@ article header h2 { font-weight: 900; }
 }
 
 .post-nav { border-bottom: none; }
+#content #related-post-nav a.selected { color: #fff; background: url(./img/related-arrow.png) no-repeat; border: none; font-weight: bold; }
+	#content #related-post-nav a.selected .fold { display: none; }
+#content #related-post-nav h4 { padding: 0 3px;}
+#content #related-posts .items .top-related h3 a { font-weight: bold; font-size: 16px; }
+#content #related-posts .top-related p { font-size: 14px; }
+#content #related-posts .items li a { font-weight: bold; font-size: 12px; }
 
 /* Sidebar */
 #sidebar h3 { 
 	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
-	font-size: 20px; 
+	font-size: 24px; 
 	text-transform: uppercase; 
 	font-weight: 600; 
 	border-top: 4px solid #ddd; 
@@ -278,7 +293,11 @@ article header h2 { font-weight: 900; }
 		padding: 0;
 		margin: 0 0 10px;
 	}
-.link-list li a { font-weight: bold; }
+.link-list li a { font-weight: bold; display: block; }
+.link-list li span,.link-list li a { padding-left: 30px; }
+.link-sources { border-bottom: 1px solid #ddd; }
+.widget-list .link-sources a { padding: 0 5px; border-left: 1px solid #ddd; border-right: none; font-weight: bold; }
+	.widget-list .link-sources a:first-child { border-left: none; padding: 0 5px 0 0; }
 #sidebar p { font-size: 14px; }
 #sidebar .ad { border-bottom: none; }
 
@@ -410,3 +429,16 @@ article header h2 { font-weight: 900; }
 .coll-l .coll-links { padding-top:20px; border-top:1px solid #eee; }
 .coll-l h6 { float:left; width:125px; }
 .coll-l .coll-links li { float:left; margin-left:35px; width:125px; list-style-type:decimal; font-size:12px; }
+
+/* Tag index */
+.tag-letter h3 { 
+	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif; 
+	font-weight: 700; 
+	background: #333; 
+}
+.abc_tags { border-top: none; }
+.abc_tags ul { margin-left: 130px; }
+.abc_tags li:first-child { border-top: 4px solid #999; }
+.abc_tags li { padding: 5px 0; }
+.alpha-nav a { background-color: #ddd; color: #999; -webkit-transition: .1s all ease-in; }
+.alpha-nav a:hover { background-color: #333; color: #fff; }
