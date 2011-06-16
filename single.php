@@ -13,16 +13,18 @@
 <header>
 <h2 class="entry-title"><?php the_title(); ?></h2>
 
-		<div class="post-metadata">
-        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
-		<h6>By <?php the_author_posts_link(); ?></h6>
-
+	<div class="post-metadata">
+		<div class="grid_3 alpha">
+	        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
+			<h6>By <?php the_author_posts_link(); ?></h6>
+			
+			
+		</div>
+		<div class="grid_5 omega">
 		<?php get_template_part( 'post', 'meta' ); ?>
-
-		<?php if ( argo_has_categories_or_tags() ): ?>
-		<p>FILED UNDER: <?php echo argo_the_categories_and_tags(); ?></p>
-		<?php endif; ?>
-		</div> <!-- /.grid_2 alpha-->
+		</div>
+		<div class="clearfix"></div>
+	</div> <!-- /.post-metadata-->
 
         <?php if (function_exists('the_subheading')) { the_subheading('<p>', '</p>'); } ?>
 </header><!-- / entry header -->
@@ -31,7 +33,11 @@
 
 
     </div> <!-- #post-## --> 
-    
+
+<?php if ( argo_has_categories_or_tags() ): ?>
+<p class="tags">Filed under: <?php echo argo_the_categories_and_tags(); ?></p>
+<?php endif; ?>    
+
 <div class="post-author clearfix">
 <?php echo get_avatar( get_the_author_meta( 'email' ), 60 ); ?>
 <h4><?php the_author_posts_link(); ?></h4>
@@ -39,12 +45,17 @@
 <p><?php the_author_meta( 'description' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">More...</a></p>
 </div> <!-- /.post-author -->
 
+
 <nav>
 <ul class="post-nav clearfix">
+<?php if ( get_next_post() ): ?>
 <li class="n-post"><h5>Newer Post</h5><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link' ) . '</span>' ); ?></li>
+<?php endif; ?>
+<?php if ( get_previous_post() ): ?>
 <li class="p-post"><h5>Older Post</h5><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link' ) . '</span> %title' ); ?></li>
+<?php endif; ?>
 </ul></nav><!-- .post-nav -->
-    
+  
 <article>
     <a name="comments"></a>
     <?php comments_template( '', true ); ?>

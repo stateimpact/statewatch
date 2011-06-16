@@ -63,9 +63,6 @@ query_posts( argo_post_types_qs() );
 		<div class="post-metadata">
         <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
             <h6>By <?php the_author_posts_link(); ?></h6>
-			<?php if ( argo_has_categories_or_tags() ): ?>
-			<p>FILED UNDER: <?php echo argo_the_categories_and_tags(); ?></p>
-			<?php endif; ?>
         </div> <!-- /.grid_2 alpha-->
         
 </header><!-- / entry header -->

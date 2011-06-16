@@ -6,7 +6,7 @@ function sw_add_widgets() {
 }
 
 
-class About_StateImpact extends WP_Widget_Text {
+class About_StateImpact extends WP_Widget {
     
     function About_StateImpact() {
 		$site_title = SITE_NAME_PREFIX . get_option('blogname');
@@ -16,33 +16,18 @@ class About_StateImpact extends WP_Widget_Text {
         );
         $this->WP_Widget( 'about-widget', "About $site_title", $widget_opts);
     }
-    
-    function form( $instance ) {
-		$site_title = SITE_NAME_PREFIX . get_option('blogname');
-		$blurb = get_option('site_blurb');
-		
-    	$instance = wp_parse_args( (array) $instance, array( 'title' => "About $site_title", 'text' => $blurb ) );
-    	$title = strip_tags($instance['title']);
-    	$text = esc_textarea($instance['text']);
-    ?>
-    	<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
-    	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
-
-		<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
-
-	    <p><input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox" <?php checked(isset($instance['filter']) ? $instance['filter'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e('Automatically add paragraphs'); ?></label></p>
-    <?php
-	}
-    
+        
 	function widget( $args, $instance ) {
 		extract($args);
 		$site_title = SITE_NAME_PREFIX . get_option('blogname');
-		$blurb = get_option('site_blurb');
-		$title = apply_filters( 'widget_title', empty($instance['title']) ? "About $site_title" : $instance['title'], $instance, $this->id_base);
-		$text = apply_filters( 'widget_text', empty($instance['text']) ? $blurb : $instance['text'], $instance );
+		$about = get_static_page('about');
+		$title = apply_filters( 'widget_title', "About $site_title", $instance, $this->id_base);
+		$text = apply_filters( 'widget_text', $about->post_content, $instance );
 		echo $before_widget;
 		if ( !empty( $title ) ) { echo "<h3>$title</h3>"; } ?>
-			<div class="textwidget"><?php echo $instance['filter'] ? wpautop($text) : "<p>$text</p>"; ?></div>
+			
+			<div class="textwidget"><?php echo $text; ?></div>
+            
             <ul class="sw-social clearfix">
                 <?php if ( get_option( 'twitter_link' ) ) : ?>
                     <li class="sw-twitter">
@@ -62,7 +47,7 @@ class About_StateImpact extends WP_Widget_Text {
                 <?php if ( get_option( 'support_link' ) ): ?>
                     <li><a href="<?php echo get_option( 'support_link' ); ?>">Support <?php echo SITE_NAME_PREFIX . get_bloginfo( 'name' ); ?></a></li>
                 <?endif; ?>
-                <li><a href="<?php echo get_option('about_link', get_option( 'url') . 'about/'); ?>">Learn more</a></li> 
+                <li><a href="<?php echo get_permalink( $about->ID ); ?>">Learn more</a></li>
             </ul> 
 
             <form role="search" method="get"> 
