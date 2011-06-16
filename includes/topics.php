@@ -79,7 +79,6 @@ function sw_show_topic_term($post) {
     if ($term): ?>
     <h4><?php echo $term->name; ?></h4>
     <p>Content for this topic buildout will show up with this term.</p>
-    <div><?php var_dump($term); ?></div>
     <?php endif;
 }
 
