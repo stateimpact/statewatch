@@ -328,9 +328,10 @@ article header h2 { font-weight: 900; }
 /* beyond statewatch widget */
 #beyond-statewatch li { margin-top:5px; border-bottom:none; }
 #beyond-statewatch h5 { font-size:14px; margin:0 0 8px 0; line-height:1.1; font-weight:normal; }
-#beyond-statewatch a  {  font-weight:bold; }
+#beyond-statewatch a  {  font-weight:bold; display: block; }
+#beyond-statewatch li a, #beyond-statewatch li span { padding-left: 30px; }
 #beyond-statewatch p { font-size:11px; color:#666; }
-#beyond-statewatch p img { float:left; margin-right:10px; }
+#beyond-statewatch p img { float:left; }
 .agg_meta { font-size: 11px; }
 
 /* about widget */
