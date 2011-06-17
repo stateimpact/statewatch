@@ -44,7 +44,7 @@ p  { font-size:16px; line-height: 1.4; }
 .global-nav { position: relative; height:35px; font-size: 11px; }
 .global-nav h1, .global-nav h2 { margin: 0; }
 .global-nav h1 a { display: block; background: url(./img/logo.png) no-repeat; position: absolute; left: -15px; top: -15px; text-indent: -999px; width: 196px; height: 73px; }
-.global-nav h2 a { display: block; background: url(./img/npr.png) no-repeat; position: absolute; left: 197px; top: 10px; text-indent: -999px; width: 152px; height: 17px; }
+.global-nav h2 a { display: block; background: url(./img/npr.png) no-repeat; position: absolute; left: 197px; top: 10px; text-indent: -999px; width: 279px; height: 17px; }
 .global-nav .global-utils { position: absolute; right: 0; bottom: 6px;}
 	.global-nav .global-utils a { font-weight: bold; color: #555; }
 	
