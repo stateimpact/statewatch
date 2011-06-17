@@ -37,6 +37,7 @@
 	<script type="text/javascript" src="http://use.typekit.com/xah5jnf.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	
+	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicon.png"/>
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 	
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=1" />

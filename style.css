@@ -230,7 +230,7 @@ article header h2 { font-weight: 900; }
 .post-author { margin-bottom:20px; padding:10px 0 15px 0; border-bottom:1px solid #ddd; border-top:4px solid #ddd; }
 .post-author img { float:left; margin: 3px 20px 0 0; }
 .post-author h4,.post-author h5,.post-author p { margin-left:80px;margin-bottom:0; }
-.post-author p { font-size:12px; }
+.post-author p { font-size:14px; }
 #content .entry-title { 
 	margin-bottom: 15px; 
 	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
@@ -402,8 +402,14 @@ article header h2 { font-weight: 900; }
 #content .partner-station h4,#content .partner-station h5 { margin:0 0 0 160px; font-size:12px; font-weight:normal; }
 
 /************** COLLECTION PAGE (tag.php) ******************/
-#coll-intro { border-top:1px solid #eee; border-bottom:1px solid #eee; padding-top:10px; color:#333; }
-#coll-intro h2 { margin:0 0 20px 0; font-size:36px; color:#333; font-weight:normal; }
+#coll-intro { border-bottom:1px solid #ddd; color:#333; }
+#coll-intro h2 { 
+	margin:0 0 20px 0; 
+	font-size:36px; 
+	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
+	color:#333; 
+	font-weight:normal; 
+}
 #content #crp { padding-bottom:10px; border-bottom:1px solid #eee; overflow:hidden; }
 #content #crp h6 { margin:0; padding:0; font-size:14px; }
 .key-source { display:block; font-size:11px; color:#ccc; }

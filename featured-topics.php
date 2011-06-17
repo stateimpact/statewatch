@@ -7,5 +7,5 @@
 	    'container'      => false,
 	    'walker'         => new SW_Topics_Walker
 	) ); ?>
-    
+    <div class="alltopics"><a href="/pennsylvania/topic-index-41/">View all topics &raquo;</a></div>
 </div><!-- .grid_12 -->
