@@ -66,7 +66,7 @@ function sw_topic_term_metabox() {
 function sw_get_term_for_topic($post) {
     $term = get_the_category($post->ID);
     if (! $term ) {
-        $term = get_the_terms( $post->ID, 'post_tag' ); }
+        $term = get_the_tags( $post->ID ); }
     if ($term) { 
         return $term[0]; 
     } else {
