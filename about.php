@@ -30,9 +30,8 @@
     </ul>
 
 </div><!-- .sw-about -->
-
-<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/pennsylvania.png" alt="pennsylvania" width="300" />
-
+<?php $state_img = strtolower( str_replace(' ', '', get_bloginfo('name'))); ?>
+<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/<?php echo $state_img; ?>.png" alt="<? bloginfo('name'); ?>" width="300" />
 </div><!-- / .grid_8 alpha -->
 
 
