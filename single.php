@@ -20,9 +20,6 @@
 		</div>
 		<div class="grid_5 omega">
 		<?php get_template_part( 'post', 'meta' ); ?>
-		<ul class="labels">
-            <?php argo_the_post_labels( get_the_ID() ); ?>
-        </ul>
 		</div>
 		<div class="clearfix"></div>
 	</div> <!-- /.post-metadata-->

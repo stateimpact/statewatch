@@ -15,7 +15,7 @@ $blogger = argo_get_primary_blogger();
 
 <div class="container_12">
 <div class="grid_3">
-<h3 id="footerlogo"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">StateImpact</a></h3>
+<h3 id="footerlogo"><a href="<?php bloginfo('stylesheet_directory'); ?>/hub.html" title="StateImpact" class="unitPng">StateImpact</a></h3>
 <h4><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
             <?php bloginfo('name'); ?>
         </a></h4>

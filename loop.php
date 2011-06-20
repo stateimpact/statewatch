@@ -60,10 +60,18 @@ query_posts( argo_post_types_qs() );
 
 <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
-		<div class="post-metadata">
-        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
-            <h6>By <?php the_author_posts_link(); ?></h6>
-        </div> <!-- /.grid_2 alpha-->
+	<div class="post-metadata">
+		<div class="grid_3 alpha">
+	        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
+			<h6>By <?php the_author_posts_link(); ?></h6>
+		</div>
+		<div class="grid_5 omega">
+		<ul class="labels">
+            <?php argo_the_post_labels( get_the_ID() ); ?>
+        </ul>
+		</div>
+		<div class="clearfix"></div>
+	</div> <!-- /.post-metadata-->
         
 </header><!-- / entry header -->
 
@@ -83,12 +91,12 @@ query_posts( argo_post_types_qs() );
     </article><!-- #post-## -->
     <?php comments_template( '', true ); ?>
 <?php endwhile; // End the loop. Whew. ?>
-<?php if ( next_posts_link() || previous_posts_link() ) :  ?>
+<?php if ( get_next_post() || get_previous_post() ) :  ?>
 <div class="grid_8 alpha">
 	<nav>
 		<ul class="list-pagination">
-		    <li class="older-posts"><?php next_posts_link( 'Older posts' ); ?></li>
-		    <li class="newer-posts"><?php previous_posts_link( 'Newer posts' ); ?></li>
+		    <li class="older-posts"><?php next_posts_link( '&laquo; Older posts' ); ?></li>
+		    <li class="newer-posts"><?php previous_posts_link( 'Newer posts &raquo;' ); ?></li>
 		</ul>
 	</nav><!-- .list-pagination -->
 </div> <!-- .grid_8 alpha -->

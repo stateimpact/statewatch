@@ -118,6 +118,8 @@
 				background: #fff;
 				background: rgba(255,255,255,.9);
 				-webkit-border-radius: 5px; 
+				-moz-border-radius: 5px; 
+				border-radius: 5px; 
 				text-shadow: none;
 				-webkit-box-shadow: #000 0 1px 6px;
 				-moz-box-shadow: #000 0 1px 6px;
@@ -233,13 +235,32 @@
 
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js?ver=1.5.2'></script>  
 <script src="./js/raphael-min.js"></script>
-<script src="./js/popup.js"></script>
 <script src="./js/us-map-svg.js"></script>
 <script>
 $(window).load(function() {
     $(document).mousemove(function(e) {
-        $('#popup').css('right', $(document).width() - e.pageX);
-        $('#popup').css('top', e.pageY + 20);
+		if ( e.pageX + 150 > $(document).width()){
+			$('#popup').css({
+				'right' : $(document).width() - e.pageX,
+				'left' : 'auto'
+			});
+		} else {
+			$('#popup').css({
+				'left' : e.pageX,
+				'right' : 'auto'
+			});
+		}
+		if ( e.pageY - $(document).scrollTop() + $('#popup').height() > $(window).height()){
+			$('#popup').css({
+				'bottom' : $(window).height() - e.pageY + 10,
+				'top' : 'auto' 
+			});
+		} else {
+			$('#popup').css({
+				'top' : e.pageY + 20,
+				'bottom' : 'auto'
+			});
+		}   
     });
     var R = Raphael("map", 940, 600),
     attr = {
@@ -310,7 +331,7 @@ $(window).load(function() {
 
             st.hover(
             function() {
-                st.animate({ fill:"#778787" },500);
+                st.animate({ fill:"#446C6B" },500);
                 st.animate({ stroke: "#fff" }, 500);
                 switch (state) {
                 case "oh":

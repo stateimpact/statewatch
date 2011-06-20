@@ -89,7 +89,7 @@
     <div class="global-nav-bg"> 
 		<nav class="global-nav">
 	
-				<h1><a href="<?php bloginfo('stylesheet_directory'); ?>/hub.html" title="<?php bloginfo('name'); ?>" class="unitPng">StateImpact</a></h1>
+				<h1><a href="<?php bloginfo('stylesheet_directory'); ?>/hub.html" title="StateImpact" class="unitPng">StateImpact</a></h1>
 				<h2><a href="http://npr.org" title="Visit npr.org">In partnership with NPR</a></h2>
 				<div class="global-utils"><a href="./about/">About StateImpact</a> | <a id="apanel-trigger" href="#">Other states</a></div>
 		        <span class="visuallyhidden"><a href="#main" title="Skip to content">Skip to content</a></span>
