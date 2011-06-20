@@ -4,14 +4,14 @@ add_action( 'show_user_profile', 'sw_staff_fields' );
 add_action( 'edit_user_profile', 'sw_staff_fields' );
 
 function sw_staff_fields( $user ) { ?>
-    <h3>StateWatch</h3>
+    <h3>StateImpact</h3>
 
 	<table class="form-table">
 		<tr>
 			<th><label for="sw_title">Title</label></th>
 			<td>
 				<input type="text" name="sw_title" id="sw_title" value="<?php echo esc_attr( get_the_author_meta( 'sw_title', $user->ID ) ); ?>" class="regular-text" /><br />
-				<span class="description">Please enter your staff title for the StateWatch project.</span>
+				<span class="description">Please enter your staff title for the StateImpact project.</span>
 			</td>
 		</tr>
 		

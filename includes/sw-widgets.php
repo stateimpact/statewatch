@@ -63,8 +63,19 @@ class About_StateImpact extends WP_Widget {
     
 }
 
+$SITES = array(
+    'texas'         => 'Texas',
+    'indiana'       => 'Indiana',
+    'pennsylvania'  => 'Pennsylvania',
+    'new-hampshire' => 'New Hampshire',
+    'florida'       => 'Florida',        
+    'ohio'          => 'Ohio',
+    'oklahoma'      => 'Oklahoma',
+    'idaho'         => 'Idaho'
+);
+
 class Impact_Network_Widget extends WP_Widget {
-    
+        
     function Impact_Network_Widget() {
         $widget_opts = array(
             'classname' => 'iog_network_news',
@@ -73,9 +84,19 @@ class Impact_Network_Widget extends WP_Widget {
         $this->WP_Widget( 'impact-network-widget', __('Impact Network Widget', 'network'), $widget_opts );
     }
     
-	function widget( $args, $instance ) {
+    function get_site_info( $url ) {
+        global $SITES;
+        foreach ( $SITES as $state => $title ) {
+            if ( preg_match( "/\/$state\//", $url ) ) {
+                return array( $state, $title );
+            }
+        }
+        return array( 'stateimpact', 'StateImpact' );
+    }
+    
+	function widget( $args, $instance ) {        
     	extract( $args );
-        $feed_url = get_option('feed_url', 'http://pipes.yahoo.com/pipes/pipe.run?_id=ead495cc3467b86874819c5faa72f01d&_render=rss');
+        $feed_url = get_option('network_feed_url', 'http://pipes.yahoo.com/pipes/pipe.run?_id=ead495cc3467b86874819c5faa72f01d&_render=rss');
     	$title = empty($instance['title']) ? "StateImpact Network News" : $instance['title'];
     	/* Before widget (defined by themes). */
             echo $before_widget;
@@ -96,17 +117,20 @@ class Impact_Network_Widget extends WP_Widget {
             foreach ( array_slice( $feed->get_items(), 0, 5 ) as $item ) {
                 $encs = $item->get_enclosures();
                 $thumbnail = '';
-                foreach ( $encs as $enc ) {
-                    if ( $enc->get_thumbnail() ) {
-                        $thumbnail = $enc->get_thumbnail();
-                        break;
+                if ($encs) {
+                    foreach ( $encs as $enc ) {
+                        if ( $enc->get_thumbnail() ) {
+                            $thumbnail = $enc->get_thumbnail();
+                            break;
+                        }
                     }
                 }
 
-                $site_info  = get_site_info( $item->get_permalink() );
-                $site_name = $site_info[ 0 ];
-                $theme_dir = $site_info[ 1 ];
-                $hostname  = $site_info[ 2 ];
+                $site_info  = $this->get_site_info( $item->get_permalink() );
+                $hostname = "http://stateimpact.npr.org";
+                $themedir = "statewatch";
+                $state = $site_info[ 0 ];
+                $site_name  = $site_info[ 1 ];
 
                 // Use the touch icon as a backup thumbnail.
                 if ( ! $thumbnail ) {
