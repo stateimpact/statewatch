@@ -221,7 +221,7 @@ $(document).ready(function(){
         <div id="panel-about" class="grid_4 alpha">
             <h5>About StateImpact</h5>
             <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives. <br>
-                <a href="<?php echo get_bloginfo('url') . "/about/"; ?>">Learn More...</a></p>
+                <a href="<?php bloginfo('stylesheet_directory'); ?>/hub.html" title="<?php bloginfo('name'); ?>">Learn More &raquo;</a></p>
         </div>
 
         <div id="topic-budget" class="network-sites grid_2">

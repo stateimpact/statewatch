@@ -21,7 +21,7 @@ body {
 }
 .container_12 { background: transparent; }
 #local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; }
-#main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 20px 10px; }
+#main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 20px 8px; }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin: 0 0 10px; }
 h1 { font-size:36px; line-height: 1; }
@@ -278,9 +278,9 @@ article header h2 { font-weight: 900; }
 /* Sidebar */
 #sidebar h3 { 
 	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
-	font-size: 24px; 
+	font-size: 18px; 
 	text-transform: uppercase; 
-	font-weight: 600; 
+	font-weight: 800; 
 	border-top: 4px solid #ddd; 
 	padding: 10px 0 0; 
 	margin: 10px 0; 
