@@ -180,14 +180,14 @@ p  { font-size:16px; line-height: 1.4; }
 	.global-nav ul a:hover { color: #000; }
 	.global-nav li { float: left; margin: 10px 20px 0 0; }
 
-#wrapper #global-branding header h2 { 
+#wrapper #global-branding header h2, #footerstate { 
 	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
 	font-size: 24px; 
 	font-weight: bold; 
 	margin-bottom: 6px; 
 }	
 	#wrapper #global-branding header h2 a { color: #fff; }
-#wrapper #global-branding header h3, #footerstate { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 18px; color: #fff; font-size: 24px; }
+#wrapper #global-branding header h3 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 18px; color: #fff; }
 
 /* Loop */
 .home .post, 
