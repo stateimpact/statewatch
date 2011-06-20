@@ -13,7 +13,11 @@ if ( $topic->post_content && $first_link['url'] ) {
 }
 ?>
 <div id="coll-intro" class="grid_12 <?php echo $layout_class; ?>"> 
-<h2><?php echo $topic->post_title; ?></h2>
+<?php if ($topic->post_title): ?>
+    <h2><?php echo $topic->post_title; ?></h2>
+<?php else: ?>
+    <h2><?php echo $cat->name; ?></h2>
+<?php endif; ?>
 <?php if ( $topic->post_content ): ?>
 <div class="coll-desc clearfix"> 
 <h6>Background</h6>
