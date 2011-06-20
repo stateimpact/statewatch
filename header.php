@@ -15,21 +15,21 @@
 	<title>
 	<?php // Returns the title based on what is being viewed
 		if ( is_single() ) { // single posts
-			single_post_title(); echo ' | '; bloginfo( 'name' );
+			single_post_title(); echo ' | StateImpact '; bloginfo( 'name' );
 		// The home page or, if using a static front page, the blog posts page.
 		} elseif ( is_home() || is_front_page() ) {
-			bloginfo( 'name' );
+			echo 'StateImpact ' . get_bloginfo( 'name' );
 			if( get_bloginfo( 'description' ) )
 				echo ' | ' ; bloginfo( 'description' );
 			argo_the_page_number();
 		} elseif ( is_page() ) { // WordPress Pages
 			single_post_title( '' ); echo ' | '; bloginfo( 'name' );
 		} elseif ( is_search() ) { // Search results
-			printf( 'Search results for %s', '"'.get_search_query().'"' ); argo_the_page_number(); echo ' | '; bloginfo( 'name' );
+			printf( 'Search results for %s', '"'.get_search_query().'"' ); argo_the_page_number(); echo ' | StateImpact '; bloginfo( 'name' );
 		} elseif ( is_404() ) {  // 404 (Not Found)
-			echo 'Not Found | '; bloginfo( 'name' );
+			echo 'Not Found | StateImpact '; bloginfo( 'name' );
 		} else { // Otherwise:
-			wp_title( '' ); echo ' | '; bloginfo( 'name' ); argo_the_page_number();
+			wp_title( '' ); echo ' | StateImpact '; bloginfo( 'name' ); argo_the_page_number();
 		}
 	?>
 	</title>
