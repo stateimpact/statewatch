@@ -427,16 +427,18 @@ article header h2 { font-weight: 900; }
 #content .partner-station h4,#content .partner-station h5 { margin:0 0 0 160px; font-size:12px; font-weight:normal; }
 
 /************** COLLECTION PAGE (tag.php) ******************/
-#coll-intro { color:#333; padding-bottom:10px; margin-bottom:10px; border-bottom: 1px solid #ddd; }
+#coll-intro { color:#333; margin-bottom:10px; }
 #coll-intro h2 { 
-	padding:0 0 10px 0; 
+	padding:0 0 10px 0;
+	border-bottom: 4px solid #ddd; 
 	font-size:36px; 
 	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
 	color:#333; 
 	font-weight:normal; 
-	border-bottom: 4px solid #ddd; 
 	background: #fff; 
 }
+.coll-dl, .coll-d, .coll-l { border-bottom: 1px solid #ddd; padding-bottom:10px;  }
+
 #content #crp { padding-bottom:10px; overflow:hidden; }
 #content #crp h6, #coll-intro h6 { font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif; 
 font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 10px; }
@@ -464,6 +466,10 @@ font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 10p
 .coll-l .coll-links {  }
 .coll-l h6 { float:left; width:125px; }
 .coll-l .coll-links li { float:left; margin-left:35px; list-style-type:decimal; font-size:12px; }
+
+/* no description, links */
+.coll { border-bottom: none; }
+
 
 /* Tag index */
 .tag-letter h3 { 

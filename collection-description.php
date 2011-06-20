@@ -10,6 +10,8 @@ if ( $topic->post_content && $first_link['url'] ) {
     $layout_class = "coll-d";
 } elseif ( $first_link['url'] ) {
     $layout_class = "coll-l";
+} else {
+	$layout_class = "coll";
 }
 ?>
 <div id="coll-intro" class="grid_12 <?php echo $layout_class; ?>"> 
