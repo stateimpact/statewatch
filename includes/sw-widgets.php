@@ -45,9 +45,9 @@ class About_StateImpact extends WP_Widget {
             
             <ul class="sw-info clearfix"> 
                 <?php if ( get_option( 'support_link' ) ): ?>
-                    <li><a href="<?php echo get_option( 'support_link' ); ?>">Support <?php echo SITE_NAME_PREFIX . get_bloginfo( 'name' ); ?></a></li>
+                    <li><a href="<?php echo get_option( 'support_link' ); ?>">Support <?php echo SITE_NAME_PREFIX . get_bloginfo( 'name' ); ?> &raquo;</a></li>
                 <?endif; ?>
-                <li><a href="<?php echo get_permalink( $about->ID ); ?>">Learn more</a></li>
+                <li><a href="<?php echo get_permalink( $about->ID ); ?>">Learn more &raquo;</a></li>
             </ul> 
 
             <form role="search" method="get"> 

@@ -29,9 +29,9 @@ h2 { font-size:24px; line-height: 36px; }
 h3 { font-size:18px; line-height: 1; }
 h4 { font-size:14px; line-height: 1.2; }
 p  { font-size:16px; line-height: 1.4; }
-#content a, 
-#content a:link, 
-#content a:visited,
+#main a, 
+#main a:link, 
+#main a:visited,
 #sidebar a, 
 #sidebar a:link, 
 #sidebar a:visited { color: #174E82; }
@@ -187,7 +187,7 @@ p  { font-size:16px; line-height: 1.4; }
 	margin-bottom: 6px; 
 }	
 	#wrapper #global-branding header h2 a { color: #fff; }
-#wrapper #global-branding header h3 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 18px; color: #fff; }
+#wrapper #global-branding header h3, #footerstate { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 18px; color: #fff; font-size: 24px; }
 
 /* Loop */
 .home .post, 
@@ -344,6 +344,9 @@ article header h2 { font-weight: 900; }
 	.ft-reporter h5 { margin-bottom:10px; font-weight:normal; }
 	#site-footer .donate { margin-top:5px; }
 	#site-footer .donate a { font-weight:bold; background-color:#3366cc; padding:5px; }
+	#colophon { font-size: 13px; }
+		#colophon .donate { margin-top: 20px; }
+		#colophon a { font-weight: bold; }
 #boilerplate { padding-top: 0; }
 
 /* author page */
@@ -354,6 +357,7 @@ article header h2 { font-weight: 900; }
 #author-bio p { font-size:12px; }
 #author-bio ul { margin-top:10px; }
 #author-bio li { float:left; font-size:12px; margin-right:8px; }
+
 
 /* network news widget */
 .sw-network-news h3,.sw-network-news h4,.sw-network-news h6,.sw-network-news p { margin:0; }
@@ -375,6 +379,7 @@ article header h2 { font-weight: 900; }
 
 /* about widget */
 .sw-about { margin-bottom:20px; }
+.sw-about .textwidget { margin-bottom: 10px; }
 .sw-about .sw-about-search { height:19px; width:250px; padding:2px; margin:0 5px 0 0; float:left; font-size:11px; color:#999; }
 .abt-module { margin-bottom: 20px; padding-top: 5px; border-top: 4px solid #999; }
 
@@ -422,39 +427,43 @@ article header h2 { font-weight: 900; }
 #content .partner-station h4,#content .partner-station h5 { margin:0 0 0 160px; font-size:12px; font-weight:normal; }
 
 /************** COLLECTION PAGE (tag.php) ******************/
-#coll-intro { border-bottom:1px solid #ddd; color:#333; }
+#coll-intro { color:#333; padding-bottom:10px; margin-bottom:10px; border-bottom: 1px solid #ddd; }
 #coll-intro h2 { 
-	margin:0 0 20px 0; 
+	padding:0 0 10px 0; 
 	font-size:36px; 
 	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
 	color:#333; 
 	font-weight:normal; 
+	border-bottom: 4px solid #ddd; 
+	background: #fff; 
 }
-#content #crp { padding-bottom:10px; border-bottom:1px solid #eee; overflow:hidden; }
-#content #crp h6 { margin:0; padding:0; font-size:14px; }
-.key-source { display:block; font-size:11px; color:#ccc; }
+#content #crp { padding-bottom:10px; overflow:hidden; }
+#content #crp h6, #coll-intro h6 { font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif; 
+font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 10px; }
+.key-source { display:block; font-size:12px; color:#999; }
 .coll-links h6 { margin-bottom:10px; color:#333; }
 .coll-links ul { margin-bottom:0; }
-.coll-links li { font-size:12px; margin-bottom:10px; }
+.coll-links li { font-size:13px; margin-bottom:10px; }
+.coll-links li a { font-weight: bold; }
 
 /* description and links */
-.coll-dl { padding-bottom:20px; margin-bottom:10px; }
-.coll-dl .coll-desc { width:520px; float:left; margin-bottom:10px; }
-.coll-dl .coll-links { float:right; width:360px; border-left:1px solid #ddd; padding-left:30px; }
-.coll-dl p { font-size:14px; line-height:1.4; color:#909090; }
+.coll-dl { background: url(./img/ddd.png) 630px 0 repeat-y;}
+.coll-dl .coll-desc { width:620px; float:left; margin-bottom:10px; }
+.coll-dl .coll-links { float:right; width:300px; margin-left: 20px; }
+.coll-dl p { font-size:14px; line-height:1.4; color:#444; }
 
 /* description only */
 .coll-d { margin-bottom:10px; }
 .coll-d .coll-desc { color:#333; }
 .coll-d .coll-desc h6 { margin-bottom:5px; }
 .coll-d .coll-desc { width:780px; }
-.coll-d .coll-desc p { color:#666; font-size:16px; }
+.coll-d .coll-desc p { color:#444; font-size:16px; }
 
 /* links only */
-.coll-l { padding-bottom:10px; margin-bottom:10px; }
-.coll-l .coll-links { padding-top:20px; border-top:1px solid #eee; }
+.coll-l { padding-bottom:10px; margin-bottom:10px; float: left; }
+.coll-l .coll-links {  }
 .coll-l h6 { float:left; width:125px; }
-.coll-l .coll-links li { float:left; margin-left:35px; width:125px; list-style-type:decimal; font-size:12px; }
+.coll-l .coll-links li { float:left; margin-left:35px; list-style-type:decimal; font-size:12px; }
 
 /* Tag index */
 .tag-letter h3 { 
