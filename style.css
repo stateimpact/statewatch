@@ -21,7 +21,7 @@ body {
 }
 .container_12 { background: transparent; }
 #local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; }
-#main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 20px 8px; }
+#main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 25px 20px; }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin: 0 0 10px; }
 h1 { font-size:36px; line-height: 1; }
@@ -43,7 +43,7 @@ p  { font-size:16px; line-height: 1.4; }
 .global-nav-bg { margin-bottom: 0; }
 .global-nav { position: relative; height:35px; font-size: 11px; }
 .global-nav h1, .global-nav h2 { margin: 0; }
-.global-nav h1 a { display: block; background: url(./img/logo.png) no-repeat; position: absolute; left: -15px; top: -15px; text-indent: -999px; width: 196px; height: 73px; }
+.global-nav h1 a { display: block; background: url(./img/logo.png) no-repeat; position: absolute; left: -20px; top: -15px; text-indent: -999px; width: 191px; height: 71px; }
 .global-nav h2 a { display: block; background: url(./img/npr.png) no-repeat; position: absolute; left: 197px; top: 10px; text-indent: -999px; width: 279px; height: 17px; }
 .global-nav .global-utils { position: absolute; right: 0; bottom: 6px; line-height: 26px; height: 26px; overflow: hidden; }
 	.global-nav .global-utils li { display: block; float: left; font-size: 11px; margin: 0 0 0 10px; padding: 0; line-height: 26px; }
@@ -338,7 +338,7 @@ article header h2 { font-weight: 900; }
 		border-bottom: 4px solid #fff; 
 	}
 	#site-footer #footerlogo { border-bottom: none; }
-	#footerlogo a { display: block; width: 181px; height: 71px; background: url(./img/logo.png) no-repeat; text-indent: -999px; position: relative; left: -10px; }
+	#footerlogo a { display: block; width: 191px; height: 71px; background: url(./img/logo.png) no-repeat; text-indent: -999px; position: relative; left: -10px; }
 	.ft-reporter h5, .partner-station dd { font-size: 13px; margin-left: 0; color: #666; }
 	#boilerplate { border-top: none; }
 	#ft-archive { margin-top: 0; }
