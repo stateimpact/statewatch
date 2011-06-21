@@ -45,7 +45,8 @@ p  { font-size:16px; line-height: 1.4; }
 .global-nav h1, .global-nav h2 { margin: 0; }
 .global-nav h1 a { display: block; background: url(./img/logo.png) no-repeat; position: absolute; left: -15px; top: -15px; text-indent: -999px; width: 196px; height: 73px; }
 .global-nav h2 a { display: block; background: url(./img/npr.png) no-repeat; position: absolute; left: 197px; top: 10px; text-indent: -999px; width: 279px; height: 17px; }
-.global-nav .global-utils { position: absolute; right: 0; bottom: 6px;}
+.global-nav .global-utils { position: absolute; right: 0; bottom: 6px; line-height: 26px; height: 26px; overflow: hidden; }
+	.global-nav .global-utils li { display: block; float: left; font-size: 11px; margin: 0 0 0 10px; padding: 0; line-height: 26px; }
 	.global-nav .global-utils a { font-weight: bold; color: #555; }
 	
 	/*global nav */
@@ -85,31 +86,35 @@ p  { font-size:16px; line-height: 1.4; }
 	/* Network Panel */
 	#argo-panel { height: 200px; }
 	#wrapper #apanel-trigger {
-		display: inline-block;
+		display: block;
+		float: right;
 		width: auto;
-		height: 14px;
+		height: 26px;
+		width: 102px;
 		text-indent: 0;
 		position: static;
 		outline: none;
-		background-image: url(./img/panel-arrows.png);
+		background-image: url(./img/panel-button.png);
 		background-repeat: no-repeat; 
-		background-position: 100% 4px;
-		padding: 0 20px 0 0;
-		line-height: 14px; 
+		background-position: 0 0;
+		text-indent: -999em;
+		padding: 0;
+		line-height: 26px; 
 		overflow: hidden;
 	}
-		#wrapper .global-utils a.cpanel { background-position: 100% 4px; }
-		#wrapper #apanel-trigger.opanel { background-position: 100% -18px; }
+		#wrapper #apanel-trigger:hover { background-position: 0 -26px; }
+		#wrapper .global-utils a.cpanel { background-position: 0 0; }
+			#wrapper .global-utils a.cpanel:hover { background-position: 0 -26px; }
+		#wrapper #apanel-trigger.opanel { background-position: 0 -52px; }
+			#wrapper #apanel-trigger.opanel:hover { background-position: 0 -78px; }
 	#argo-panel-wrapper { background: none; border: none; color: #222; }
 	#apanel-content { top: 60px; color: #222; }
 		#apanel-content h5 { 
-			font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
-			font-size: 18px;
-			letter-spacing: .1em;
+			font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
+			font-size: 16px;
 			color: #000; 
 			margin-bottom: 6px; 
 			border-bottom: 4px solid #999; 
-			text-transform: uppercase; 
 		}
 		#apanel-content p { margin-bottom: 9px; font-size: 12px; }
 		#apanel-content li a { color: #000; }
@@ -365,7 +370,7 @@ article header h2 { font-weight: 900; }
 .sw-network-news p { line-height:1.4; font-size:12px; }
 .sw-network-news img { float:right; margin-left:10px; }
 .sw-network-news h4 { font-size:20px; line-height:1; margin-bottom:10px; }
-.sw-network-news h6 { margin-top:10px 0 3px; font-size:11px; font-weight:normal; line-height:1; color:#999; text-transform: uppercase; }
+.sw-network-news h6 { margin:10px 0 3px; font-size:11px; font-weight:normal; line-height:1; color:#999; text-transform: uppercase; }
 #sidebar .swnn-tagline { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 16px; margin-bottom: 10px;  }
 
 /* beyond statewatch widget */
@@ -431,17 +436,17 @@ article header h2 { font-weight: 900; }
 #coll-intro h2 { 
 	padding:0 0 10px 0;
 	border-bottom: 4px solid #ddd; 
-	font-size:36px; 
+	font-size:42px; 
 	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
 	color:#333; 
-	font-weight:normal; 
+	font-weight:300; 
 	background: #fff; 
 }
 .coll-dl, .coll-d, .coll-l { border-bottom: 1px solid #ddd; padding-bottom:10px;  }
 
 #content #crp { padding-bottom:10px; overflow:hidden; }
 #content #crp h6, #coll-intro h6 { font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif; 
-font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 10px; }
+font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 0; }
 .key-source { display:block; font-size:12px; color:#999; }
 .coll-links h6 { margin-bottom:10px; color:#333; }
 .coll-links ul { margin-bottom:0; }
@@ -481,8 +486,8 @@ font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 10p
 .abc_tags ul { margin-left: 130px; }
 .abc_tags li:first-child { border-top: 4px solid #999; }
 .abc_tags li { padding: 5px 0; }
-.alpha-nav a { background-color: #ddd; color: #999; -webkit-transition: .1s all ease-in; }
-.alpha-nav a:hover { background-color: #333; color: #fff; }
+#main .alpha-nav a { background-color: #ddd; color: #999; -webkit-transition: .1s all ease-in; }
+#main .alpha-nav a:hover { background-color: #333; color: #fff; }
 
 
 /* Buttons */
