@@ -11,7 +11,7 @@ $topic = argo_get_topic_for( $cat );
 <?php get_template_part( 'collection-description' ); ?>
 
 <div id="content" class="grid_8" role="main">
-<div id="crp"><h6>Recent</h6></div> 
+<div id="crp"><h6>Recent Posts</h6></div> 
 <?php 
 /* Run the loop for the category page to output the posts.
 * If you want to overload this in a child theme then include a file

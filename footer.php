@@ -16,10 +16,10 @@ $blogger = argo_get_primary_blogger();
 <div class="container_12">
 <div class="grid_3">
 <h3 id="footerlogo"><a href="<?php bloginfo('stylesheet_directory'); ?>/hub.html" title="StateImpact" class="unitPng">StateImpact</a></h3>
-<h4><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
+<h4 id="footerstate"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
             <?php bloginfo('name'); ?>
         </a></h4>
-<ul>
+<ul id="colophon">
 <li><?php argo_copyright_message(); ?></li>
 <li><a href="#">Terms of Use</a></li>
 <li><a href="#">Privacy Policy</a></li>
@@ -72,7 +72,7 @@ $blogger = argo_get_primary_blogger();
 </form>
 <!-- /#searchform-footer -->
 
-<h4><a href="#">View all topics</a></h4>
+<h4><a href="#">View all topics &raquo;</a></h4>
 
 </div>
 <!-- /.grid_3 -->

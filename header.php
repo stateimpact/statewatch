@@ -91,7 +91,10 @@
 	
 				<h1><a href="<?php bloginfo('stylesheet_directory'); ?>/hub.html" title="StateImpact" class="unitPng">StateImpact</a></h1>
 				<h2><a href="http://npr.org" title="Visit npr.org">In partnership with NPR</a></h2>
-				<div class="global-utils"><a href="./about/">About StateImpact</a> | <a id="apanel-trigger" href="#">Other states</a></div>
+				<ul class="global-utils">
+					<li><a href="./about/">About StateImpact</a> </li>
+					<li><a id="apanel-trigger" href="#">Other states</a></li>
+				</ul>
 		        <span class="visuallyhidden"><a href="#main" title="Skip to content">Skip to content</a></span>
 
 		<!--<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo-npr-header.png" alt="NPR logo" width="54" height="18" id="npr-bug"> -->
