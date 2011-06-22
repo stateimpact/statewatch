@@ -21,7 +21,7 @@ body {
 }
 .container_12 { background: transparent; }
 #local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; }
-#main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 25px 20px; }
+#main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 25px 20px; overflow: hidden; }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin: 0 0 10px; }
 h1 { font-size:36px; line-height: 1; }
@@ -45,7 +45,7 @@ p  { font-size:16px; line-height: 1.4; }
 .global-nav h1, .global-nav h2 { margin: 0; }
 .global-nav h1 a { display: block; background: url(./img/logo.png) no-repeat; position: absolute; left: -20px; top: -15px; text-indent: -999px; width: 191px; height: 71px; }
 .global-nav h2 a { display: block; background: url(./img/npr.png) no-repeat; position: absolute; left: 197px; top: 10px; text-indent: -999px; width: 279px; height: 17px; }
-.global-nav .global-utils { position: absolute; right: 0; bottom: 6px; line-height: 26px; height: 26px; overflow: hidden; }
+.global-nav .global-utils { position: absolute; float: left; right: 0; bottom: 6px; line-height: 26px; height: 26px; overflow: hidden; }
 	.global-nav .global-utils li { display: block; float: left; font-size: 11px; margin: 0 0 0 10px; padding: 0; line-height: 26px; }
 	.global-nav .global-utils a { font-weight: bold; color: #555; }
 	
@@ -54,13 +54,7 @@ p  { font-size:16px; line-height: 1.4; }
 	.global-nav h4{ float:left; margin:9px 0 0 0; font-size:13px; line-height:1; }
 	.global-nav-bg{background-color:#ccc;}
 	#npr-bug{position:absolute;top:8px;right:0;}
-	.global-nav ul{float:left;margin-left:10px;}
-	.global-nav li{font-size:13px;line-height:1;}
-	/*global branding */
-	#global-branding{width:940px;margin-left:auto;margin-right:auto;margin-bottom:20px;}
-	#global-branding header{width:300px;float:left;}
-	#global-branding header h1{font-size:30px;width:300px;margin:0;}
-	#global-branding header h2{font-size:14px;width:300px;margin:0;}
+
 	/*category nav */
 	#category-nav{position:relative;z-index:100;margin-left:320px;}
 	#category-nav #topnav .sub{left:-318px;}
@@ -76,7 +70,7 @@ p  { font-size:16px; line-height: 1.4; }
 		.featured-topics .grid_3:last-child { margin-right: 0; }
 		
 		.featured-topics img { float: left; margin-top: 3px; }
-		.featured-topics h2 { font-size: 12px; line-height: 1; font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 6px; }
+		.featured-topics h2 { font-size: 12px; line-height: 1; font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
 		.featured-topics h3 { font-size: 14px; font-weight: bold; }
 		.featured-topics h3, .featured-topics h4 { margin:0 0 0 70px; }
 		.featured-topics h4 { font-size: 12px; }
@@ -87,7 +81,7 @@ p  { font-size:16px; line-height: 1.4; }
 	#argo-panel { height: 200px; }
 	#wrapper #apanel-trigger {
 		display: block;
-		float: right;
+		float: left;
 		width: auto;
 		height: 26px;
 		width: 102px;
@@ -126,9 +120,9 @@ p  { font-size:16px; line-height: 1.4; }
 			#panel-about p { font-style: normal; font-size: 14px; }
 			#panel-about p a { padding-top: 10px; color: #174E82; display: block; }
 			#panel-about p a:hover { color: #444; text-decoration: underline; }
-#global-branding { position: relative; z-index: 10; margin: 0 auto; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
+#global-branding { position: relative; z-index: 10; width: 940px; margin: 0 auto 5px; padding: 5px 0 0; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
 	#global-branding header { width: 460px; margin-top: 18px; }
-	#category-nav { position: absolute; right: 0; top: 54px; }
+	#category-nav { position: absolute; right: 0; top: 59px; }
 		#topnav li { border-left: 1px solid rgba(0,0,0,.5); padding: 0; }
 		#topnav .first { border-left: none; }
 			#topnav .first a { margin-left: 0; }
