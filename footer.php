@@ -20,10 +20,10 @@ $blogger = argo_get_primary_blogger();
             <?php bloginfo('name'); ?>
         </a></h4>
 <ul id="colophon">
-<li><?php argo_copyright_message(); ?></li>
-<li><a href="#">Terms of Use</a></li>
-<li><a href="#">Privacy Policy</a></li>
-<li class="donate"><a href="#">Donate</a></li>
+<li><?php echo "Copyright " . date('Y') . " " . get_option('copyright_holder'); ?></li>
+<li><a href="<?php echo get_option('tos_link'); ?>">Terms of Use</a></li>
+<li><a href="<?php echo get_option('privacy_link'); ?>">Privacy Policy</a></li>
+<li class="donate"><a href="<?php get_option('support_link'); ?>">Support</a></li>
 </ul>
 
 </div>
