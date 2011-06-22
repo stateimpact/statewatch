@@ -85,14 +85,14 @@
 <div id="sw-network-partners">
     <h4 class="module-title">Network Partners</h4>
     <ul>
-        <li><a href="#">Florida</a> <b>Education</b></li>
-        <li><a href="#">Idaho</a> <b>State budget</b></li>
-        <li><a href="#">Ohio</a> <b>Education</b></li>
-        <li><a href="#">Indiana</a> <b>Education</b></li>
-        <li><a href="#">New Hampshire</a> <b>State economy</b></li>
-        <li><a href="#">Oklahoma</a> <b>State budget</b></li>
-        <li><a href="#">Pennsylvania</a> <b>Energy</b></li>
-        <li><a href="#">Texas</a> <b>Energy</b></li>
+        <li><a href="/florida/">Florida</a> <b>Education</b></li>
+        <li><a href="/idaho/">Idaho</a> <b>State budget</b></li>
+        <li><a href="/ohio/">Ohio</a> <b>Education</b></li>
+        <li><a href="/indiana/">Indiana</a> <b>Education</b></li>
+        <li><a href="/new-hampshire/">New Hampshire</a> <b>State economy</b></li>
+        <li><a href="/oklahoma/">Oklahoma</a> <b>State budget</b></li>
+        <li><a href="/pennsylvania/">Pennsylvania</a> <b>Energy</b></li>
+        <li><a href="/texas/">Texas</a> <b>Energy</b></li>
     </ul>
 </div> <!-- /#sw-network-partners -->
 
