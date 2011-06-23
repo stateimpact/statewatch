@@ -17,10 +17,10 @@
 
 
 
-<div class="grid_4 alpha">
+<div class="grid_8 alpha">
 	
 	
-	<div class="sw-about abt-module">
+	<div class="sw-about abt-module grid_4 alpha">
 	
 		<h3 class="module-title">StateImpact <? bloginfo('name'); ?></h3>
 		<div class="content"><?php the_content(); ?></div>
@@ -39,7 +39,7 @@
 	<!-- <?php $state_img = strtolower( str_replace(' ', '', get_bloginfo('name'))); ?>
 	<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/<?php echo $state_img; ?>.png" alt="<? bloginfo('name'); ?>" width="300" /> -->	
 	
-	<div class="abt-module">
+	<div class="abt-module grid_4 omega">
 		<h3 class="module-title">Partners</h3>
 		<?php $stations = sw_get_stations(); ?>
 		<?php while ( $stations->have_posts() ): ?>
@@ -62,27 +62,30 @@
 		        <li><a href="http://www.npr.org/templates/stations/stations/">Station Finder &raquo;</a></li>
 		    </ul>
 		</div>
-	
-	
-	<div class="abt-module">
+		<div class="clearfix"></div>
+	</div>
+	<div class="abt-module grid_8 alpha omega abt-field">
 		<h3 class="module-title">Staff</h3>
 		<?php $staff = sw_get_staff(); ?>
-		<?php foreach ( $staff as $user ): ?>
-		<div class="abt-staff clearfix">
-		    <?php echo get_avatar( $user->ID, 60 ); ?>
-		    <h4><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php the_author_meta( 'display_name', $user->ID ); ?></a></h4>
-		    <h5><?php the_author_meta( 'sw_title', $user->ID ); ?></h5>
-		    <p><?php the_author_meta( 'description', $user->ID ); ?></p>
+		<?php foreach ( array_keys($staff) as $key ): ?>
+		<div class="abt-staff grid_4 <?php 
+			$foo = ($key == count($staff)-1) ? "omega" : "alpha"; print $foo; 
+			?>">
+		    <?php echo get_avatar( $staff[$key]->ID, 60 ); ?>
+		    <h4><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php the_author_meta( 'display_name', $staff[$key]->ID ); ?></a></h4>
+		    <h5><?php the_author_meta( 'sw_title', $staff[$key]->ID ); ?></h5>
+		    <p><?php the_author_meta( 'description', $staff[$key]->ID ); ?></p>
 		</div><!-- /.abt-staff -->
 		<? endforeach; ?>
 	</div>
 
-	
-	</div>
-<div class="grid_4 omega">
 
-<div id="sw-abt-network" class="abt-module">
-	<h3 class="module-title">The Network</h3>
+</div>	
+	
+<div class="grid_8 alpha omega abt-field">
+<h3 class="module-title">The Network</h3>
+<div id="sw-abt-network" class="abt-module grid_4 alpha">
+	
 
 	<h4>Issues that matter. Close to home.</h4>
 	    <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives.</p>
