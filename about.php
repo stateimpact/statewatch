@@ -83,7 +83,7 @@
 </div> <!-- /#sw-abt-network -->
 
 <div id="sw-network-partners">
-    <h4 class="module-title">Network Partners</h4>
+    <h4 class="module-title">Participating States</h4>
     <ul>
         <li><a href="/florida/">Florida</a> <b>Education</b></li>
         <li><a href="/idaho/">Idaho</a> <b>State budget</b></li>
