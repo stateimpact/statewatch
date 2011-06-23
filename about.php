@@ -79,8 +79,6 @@
 		<? endforeach; ?>
 	</div>
 
-
-</div>	
 	
 <div class="grid_8 alpha omega abt-field">
 <h3 class="module-title">The Network</h3>
