@@ -395,13 +395,11 @@ article header h2 { font-weight: 900; }
 	line-height: 32px; 
 	margin-bottom: 5px;
 }
-#content .abt-module { border-top: none; }
-	#content h2.module-title { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 32px; text-transform: capitalize; padding-bottom: 6px; border-bottom: 4px solid #ccc; }
+#content .abt-module { border-top: 4px solid #ddd; padding-top: 6px; }
+	#content .abt-module:first-child { border-top: none; }
+	#content h2.module-title { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 32px; text-transform: capitalize; padding-bottom: 6px; border-bottom: 4px solid #ddd; }
 	#content h4.module-title { font-size: 18px; }
 .page-template-about-php #content p { font-size: 14px; }
-#content .abt-staff h4, #content .partner-station h4 { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; }
-#content .sw-about { margin-bottom:20px; width:300px; float:left; padding-right:10px; border-top: none; }
-#content .abt-staff img { margin-right: 20px; }
 #content #sw-abt-network h4 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; text-transform: none; margin-bottom: 10px; }
 #sw-network-partners,#content #sw-abt-network { border-top: none; }
 #sw-network-partners li { text-transform: capitalize; }
@@ -416,6 +414,8 @@ article header h2 { font-weight: 900; }
 .sw-info li { font-size:11px; float:left; margin-right:10px; }
 
 /*staff*/
+#content .abt-staff h4, #content .partner-station h4 { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; }
+#content .abt-staff img { margin-right: 20px; }
 .abt-staff img { float:left; margin:2px 0 10px 0; }
 .abt-staff h4,.abt-staff h5,#main .abt-staff p { margin-left:80px; }
 #main .abt-staff h4 { margin-bottom:0; font-weight:normal; line-height:1; }
