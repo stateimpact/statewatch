@@ -37,8 +37,10 @@ function sw_add_station_metabox() {
 function sw_station_metabox($post) {
     $freq = get_post_meta( $post->ID, 'frequency', true );
     $city = get_post_meta( $post->ID, 'city', true );
-    $url = get_post_meta( $post->ID, 'url', true);
-    $support_url = get_post_meta( $post->ID, 'support_url', true); ?>
+    $url = get_post_meta( $post->ID, 'url', true );
+    $support_url = get_post_meta( $post->ID, 'support_url', true );
+    $primary = get_post_meta( $post->ID, 'is_primary', true );
+    ?>
     <table class="form-tabel">
         <tr>
             <th><label for="frequency">Frequency: </label></th>
@@ -67,13 +69,20 @@ function sw_station_metabox($post) {
                 <span class="description">Where can people give you money?</span>
             </td>
         </tr>
+        <tr>
+            <th><label for="is_primary">Primary partner? </label></th>
+            <td>
+                <input type="checkbox" name="is_primary" value="1" <?php checked($primary, 1); ?> />
+                <span class="description">Primary partners appear in the site footer. Others appear on the About page.</span>
+            </td>
+        </tr>
     </table>
 <?php 
 }
 
 add_action( 'save_post', 'sw_save_station_metadata' );
 function sw_save_station_metadata($post_id) {
-    $fields = array('frequency', 'city', 'url', 'support_url');
+    $fields = array('frequency', 'city', 'url', 'support_url', 'is_primary');
     foreach ($fields as $field) {
         update_post_meta( $post_id, $field, 
             strip_tags( $_POST[$field] ));
@@ -86,6 +95,23 @@ function sw_get_stations() {
                 'post_type'      => 'partner_station',
                 'orderby'        => 'title',
                 'order'          => 'ASC',
+                'meta_key'       => 'is_primary',
+                'meta_value'     => 1,
+                'posts_per_page' => -1
+            )
+        );
+    
+    return $stations;
+}
+
+function sw_get_supporting_orgs() {
+    $stations = new WP_Query(
+            array(
+                'post_type'      => 'partner_station',
+                'orderby'        => 'title',
+                'order'          => 'ASC',
+                'meta_key'       => 'is_primary',
+                'meta_value'     => -1, // the opposite of true
                 'posts_per_page' => -1
             )
         );
