@@ -20,10 +20,14 @@ $blogger = argo_get_primary_blogger();
             <?php bloginfo('name'); ?>
         </a></h4>
 <ul id="colophon">
-<li><?php echo "Copyright " . date('Y') . " " . get_option('copyright_holder'); ?></li>
-<li><a href="<?php echo get_option('tos_link'); ?>">Terms of Use</a></li>
-<li><a href="<?php echo get_option('privacy_link'); ?>">Privacy Policy</a></li>
-<li class="donate"><a href="<?php get_option('support_link'); ?>">Support</a></li>
+    <li><?php echo "Copyright " . date('Y') . " " . get_option('copyright_holder'); ?></li>
+    <li><a href="<?php echo get_option('tos_link'); ?>">Terms of Use</a></li>
+    <li><a href="<?php echo get_option('privacy_link'); ?>">Privacy Policy</a></li>
+    <?php if (get_option('support_link')): ?>
+    <li class="donate"><a href="<?php echo get_option('support_link'); ?>">Support</a></li>
+    <?php else: ?>
+    <li class="donate"><a href="http://www.npr.org/stations/donate/index.php?ps=st273">Support</a></li>
+    <?php endif; ?>
 </ul>
 
 </div>

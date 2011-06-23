@@ -33,6 +33,10 @@ function sw_settings_init() {
     add_settings_field( 'privacy_link', 'Link to Privacy Policy',
         'sw_privacy_callback', 'statewatch', 'statewatch' );
     register_setting( 'statewatch', 'privacy_link' );
+    
+    add_settings_field( 'support_link', 'Link to Support Page', 
+        'sw_support_link_callback', 'statewatch', 'statewatch' );
+    register_setting( 'statewatch', 'support_link' );
 }
 
 function sw_section_callback() {}
@@ -50,6 +54,11 @@ function sw_tos_callback() {
 function sw_privacy_callback() {
     $option = get_option( 'privacy_link' );
     echo "<input type='text' value='$option' name='privacy_link' />"; 
+}
+
+function sw_support_link_callback() {
+    $option = get_option( 'support_link' );
+    echo "<input type='text' value='$option' name='support_link' />"; 
 }
 
 ?>
