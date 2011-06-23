@@ -241,7 +241,7 @@ list-style-type: none; }
 .list-pagination { clear: both; border-top: 1px solid #ddd; border-bottom: none; padding-top: 10px; }
 .list-pagination a { background: none; padding: 0; display: inline; }
 
-	#content .labels li { float: left; margin-right: 5px; }
+	#content .labels li { float: right; margin-left: 5px; }
  	
 /* Article */
 article header h2 { font-weight: 900; }
@@ -395,14 +395,15 @@ article header h2 { font-weight: 900; }
 	line-height: 32px; 
 	margin-bottom: 5px;
 }
-	#content h2.module-title { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 32px; text-transform: capitalize; }
+#content .abt-module { border-top: none; }
+	#content h2.module-title { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 32px; text-transform: capitalize; padding-bottom: 6px; border-bottom: 4px solid #ccc; }
 	#content h4.module-title { font-size: 18px; }
 .page-template-about-php #content p { font-size: 14px; }
 #content .abt-staff h4, #content .partner-station h4 { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; }
 #content .sw-about { margin-bottom:20px; width:300px; float:left; padding-right:10px; border-top: none; }
 #content .abt-staff img { margin-right: 20px; }
 #content #sw-abt-network h4 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; text-transform: none; margin-bottom: 10px; }
-#sw-network-partners { border-top: none; }
+#sw-network-partners,#content #sw-abt-network { border-top: none; }
 #sw-network-partners li { text-transform: capitalize; }
 #sw-network-partners li a { width: 150px; display: inline-block; }
 .sw-social { margin-bottom:5px; }
