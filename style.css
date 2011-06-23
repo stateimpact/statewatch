@@ -417,7 +417,6 @@ article header h2 { font-weight: 900; }
 	/*staff*/
 	#content .abt-staff h4, #content .partner-station h4 { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; }
 	.abt-staff img { float:right; margin:0 0 10px 10px; }
-	.abt-staff h4,.abt-staff h5,#main .abt-staff p { margin-left:80px; }
 	#main .abt-staff h4 { margin-bottom:0; font-weight:normal; line-height:1; }
 	#main .abt-staff h5 { margin-bottom:10px; font-weight:normal; }
 
