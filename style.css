@@ -66,7 +66,8 @@ p  { font-size:16px; line-height: 1.4; }
 	.single .featured-topics { border-top: 4px solid #ccc; }
 		.single .featured-topics h2 { padding-top: 5px; }
 	.featured-topics { margin-bottom: 20px; position: relative; width: 940px; overflow: hidden; }
-		.featured-topics .grid_3 { margin: 0 20px 0 0; }
+		.featured-topics .grid_3 { margin: 0 0 0 20px; }
+		.featured-topics .grid_3:first-child { margin: 0; }
 		
 		.featured-topics img { float: left; margin-top: 3px; }
 		.featured-topics h2 { font-size: 12px; line-height: 1; font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
