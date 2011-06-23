@@ -70,9 +70,10 @@ function sw_station_metabox($post) {
             </td>
         </tr>
         <tr>
-            <th><label for="is_primary">Primary partner? </label></th>
+            <th><label for="is_primary"></label></th>
             <td>
-                <input type="checkbox" name="is_primary" value="1" <?php checked($primary, 1); ?> />
+                <div><input type="radio" name="is_primary" value="1" <?php checked($primary, 1); ?> /> Primary partner</div>
+                <div><input type="radio" name="is_primary" value="2" <?php checked($primary, 2); ?> /> Supporting organization</div>
                 <span class="description">Primary partners appear in the site footer. Others appear on the About page.</span>
             </td>
         </tr>
@@ -105,18 +106,18 @@ function sw_get_stations() {
 }
 
 function sw_get_supporting_orgs() {
-    $stations = new WP_Query(
+    $partners = new WP_Query(
             array(
                 'post_type'      => 'partner_station',
                 'orderby'        => 'title',
                 'order'          => 'ASC',
+                'posts_per_page' => -1,
                 'meta_key'       => 'is_primary',
-                'meta_value'     => -1, // the opposite of true
-                'posts_per_page' => -1
+                'meta_value'     => 2,
             )
         );
     
-    return $stations;
+    return $partners;
 }
 
 ?>
