@@ -4,19 +4,19 @@ function sw_create_station_post_types() {
     register_post_type( 'partner_station', 
         array(
             'labels' => array(
-                'name' => 'Partner Stations',
-                'singular_name' => 'Partner Station',
+                'name' => 'Partners',
+                'singular_name' => 'Partner',
                 'add_new' => 'Add New',
-                'add_new_item' => 'Add New Station',
+                'add_new_item' => 'Add New Partner',
                 'edit' => 'Edit',
-                'edit_item' => 'Edit Station',
+                'edit_item' => 'Edit Partner',
                 'view' => 'View',
-                'view_item' => 'View Station',
-                'search_items' => 'Search Stations',
-                'not_found' => 'No stations found',
-                'not_found_in_trash' => 'No stations found in trash',
+                'view_item' => 'View Partner',
+                'search_items' => 'Search Partners',
+                'not_found' => 'No partners found',
+                'not_found_in_trash' => 'No partners found in trash',
             ),
-        'description' => 'Partner Stations',
+        'description' => 'Partners',
         'exclude_from_search' => true,
         'public' => false,
         'show_ui' => true,
@@ -30,7 +30,7 @@ function sw_create_station_post_types() {
 
 add_action( 'add_meta_boxes', 'sw_add_station_metabox');
 function sw_add_station_metabox() {
-    add_meta_box( 'station_metadata', 'Station Metadata', 
+    add_meta_box( 'station_metadata', 'Partner Metadata', 
                   'sw_station_metabox', 'partner_station', 'normal', 'high');
 };
 
