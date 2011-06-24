@@ -116,7 +116,7 @@ p  { font-size:16px; line-height: 1.4; }
 		#apanel-content li { color: #aaa; font-size: 12px; }
 	#argo-inner-panel { width: 940px; height: 170px; margin-top: 9px; padding-top: 9px;  }
 		#argo-inner-panel>div { height: 170px; }
-		#panel-about { width: 300px; position: inherit; left: auto; top: auto; }
+		#panel-about { width: 300px; position: relative; left: auto; top: auto; }
 			#panel-about p { font-style: normal; font-size: 14px; }
 			#panel-about p a { padding-top: 10px; color: #174E82; display: block; }
 			#panel-about p a:hover { color: #444; text-decoration: underline; }
@@ -124,7 +124,8 @@ p  { font-size:16px; line-height: 1.4; }
 	#global-branding header { width: 460px; margin-top: 18px; }
 	#category-nav { position: absolute; right: 0; top: 59px; }
 		#topnav li { border-left: 1px solid rgba(0,0,0,.5); padding: 0; }
-		#topnav .first { border-left: none; }
+			.no-rgba #topnav li { border-left: 1px solid #999; }
+		#topnav .first, .no-rgba #topnav .first { border-left: none; }
 			#topnav .first a { margin-left: 0; }
 		#topnav li a { 
 			color: #fff; 
@@ -159,6 +160,7 @@ p  { font-size:16px; line-height: 1.4; }
 		-webkit-border-radius: 5px;
 		-moz-border-radius: 5px;
 	}
+	.no-borderradius #category-nav #topnav .sub { border: 2px solid #ccc; }
 		#topnav li .sub a { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; letter-spacing: 0; }
 		#topnav li .sub ul { width: 620px; border-radius: 5px; -webkit-border-radius: 5px; }
 		#topnav li .sub ul li {	padding: 0;	border-radius: 5px;	-webkit-border-radius: 5px;	}
@@ -476,12 +478,49 @@ font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 0; 
 	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif; 
 	font-weight: 700; 
 	background: #333; 
+	line-height: 100px;
+	height: 100px;
+	width: 100px;
+	-webkit-border-radius: 50px; 
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	padding: 0; 
+	margin: 0;
 }
+.alpha-nav { margin-bottom: 20px; }
 .abc_tags { border-top: none; }
+.abc_tags p a { font-size: 12px; font-weight: bold; }
 .abc_tags ul { margin-left: 130px; }
 .abc_tags li:first-child { border-top: 4px solid #999; }
 .abc_tags li { padding: 5px 0; }
-#main .alpha-nav a { background-color: #ddd; color: #999; -webkit-transition: .1s all ease-in; }
+#main .alpha-nav a { 
+	background-color: #ddd; 
+	color: #999; 
+	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif; 
+	font-size: 18px;
+	-webkit-transition: .1s all ease-in; 
+	padding: 0;
+	margin: 0 1px 0 0;
+	width: 22px;
+	line-height: 22px;
+	display: inline-block;
+	text-align: center;
+	height: 22px;
+
+}
+#main .alpha-nav li:first-child a { 
+	padding-left: 3px;
+	-webkit-border-radius: 11px 0 0 11px; 
+	-moz-border-radius: 11px 0 0 11px; 
+	border-radius: 11px 0 0 11px; 
+}
+#main .alpha-nav li:last-child a { 
+	-webkit-border-radius: 0 11px 11px 0; 
+	-moz-border-radius: 0 11px 11px 0; 
+	border-radius: 0 11px 11px 0; 
+	padding-right: 3px;
+}
+
 #main .alpha-nav a:hover { background-color: #333; color: #fff; }
 
 
