@@ -246,9 +246,9 @@ $(document).ready(function(){
 		<div id="topic-economy" class="network-sites grid_2">
 			<h5>Education</h5>
 			<ul>
-				<li>Florida</li>
 				<li><a href="/ohio/">Ohio</a></li>
 				<li><a href="/indiana/">Indiana</a></li>
+				<li>Florida</li>
 			</ul>
 		</div>
 		<div id="topic-economy" class="network-sites grid_2 omega">
