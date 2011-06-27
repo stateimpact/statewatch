@@ -289,7 +289,7 @@ article header h2 { font-weight: 900; }
 }
 
 .post-nav { border-bottom: none; }
-#content #related-post-nav a.selected { color: #fff; background: url(./img/related-arrow.png) no-repeat; border: none; font-weight: bold; }
+#content #related-post-nav a.selected { color: #fff; background: url(./img/related-arrow.png) 0 center no-repeat; border: none; font-weight: bold; }
 	#content #related-post-nav a.selected .fold { display: none; }
 #content #related-post-nav h4 { padding: 0 3px;}
 #content #related-posts .items .top-related h3 a { font-weight: bold; font-size: 16px; }
