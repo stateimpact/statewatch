@@ -90,7 +90,7 @@
     <div class="global-nav-bg"> 
 		<nav class="global-nav">
 	
-				<h1><a href="<?php bloginfo('stylesheet_directory'); ?>/hub.html" title="StateImpact" class="unitPng">StateImpact</a></h1>
+				<h1><a href="/" title="StateImpact" class="unitPng">StateImpact</a></h1>
 				<h2><a href="http://npr.org" title="Visit npr.org">In partnership with NPR</a></h2>
 				<ul class="global-utils">
 					<li><a href="./about/">About StateImpact</a> </li>

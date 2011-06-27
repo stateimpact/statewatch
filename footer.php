@@ -15,7 +15,7 @@ $blogger = argo_get_primary_blogger();
 
 <div class="container_12">
 <div class="grid_3">
-<h3 id="footerlogo"><a href="<?php bloginfo('stylesheet_directory'); ?>/hub.html" title="StateImpact" class="unitPng">StateImpact</a></h3>
+<h3 id="footerlogo"><a href="/" title="StateImpact" class="unitPng">StateImpact</a></h3>
 <h4 id="footerstate"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
             <?php bloginfo('name'); ?>
         </a></h4>
@@ -225,7 +225,7 @@ $(document).ready(function(){
         <div id="panel-about" class="grid_4 alpha">
             <h5>About StateImpact</h5>
             <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives. <br>
-                <a href="<?php bloginfo('stylesheet_directory'); ?>/hub.html" title="<?php bloginfo('name'); ?>">Learn More &raquo;</a></p>
+                <a href="/">Learn More &raquo;</a></p>
         </div>
 
         <div id="topic-budget" class="network-sites grid_2">
@@ -238,7 +238,7 @@ $(document).ready(function(){
 		<div id="topic-economy" class="network-sites grid_2">
 			 <h5>Economy</h5>
 			<ul>
-				<li><a href="#">New Hampshire</a></li>
+				<li>New Hampshire</li>
 				<li>Idaho</li>
 			 </ul>
 	    </div>
@@ -246,15 +246,15 @@ $(document).ready(function(){
 		<div id="topic-economy" class="network-sites grid_2">
 			<h5>Education</h5>
 			<ul>
-				<li><a href="#">Florida</a></li>
-				<li><a href="#">Ohio</a></li>
-				<li>Indiana</li>
+				<li>Florida</li>
+				<li><a href="/ohio/">Ohio</a></li>
+				<li><a href="/indiana/">Indiana</a></li>
 			</ul>
 		</div>
 		<div id="topic-economy" class="network-sites grid_2 omega">
 			<h5>Energy</h5>
 			<ul>
-				<li><a href="#">Pennsylvania</a></li>
+				<li><a href="/pennsylvania/">Pennsylvania</a></li>
 				<li>Texas</li>
 			</ul>
 		</div>
