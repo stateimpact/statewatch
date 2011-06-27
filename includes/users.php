@@ -24,10 +24,10 @@ function sw_staff_fields( $user ) { ?>
 		</tr>
 		
 		<tr>
-		    <th><label for="sw_is_staff">Staff status</label></th>
+		    <th><label for="sw_is_staff">Staff reporter status</label></th>
 		    <td>
 		        <input type="checkbox" name="sw_is_staff" id="sw_is_staff" value="1" <?php checked( 1, get_the_author_meta( 'sw_is_staff', $user->ID ) ); ?> /><br />
-		        <span class="description">Are you on staff?</span>
+		        <span class="description">Staff reporters show up in the site footer</span>
 		    </td>
 		</tr>
 	</table>
