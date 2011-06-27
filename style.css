@@ -450,6 +450,8 @@ font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 0; 
 .coll-links li { font-size:13px; margin-bottom:10px; }
 .coll-links li a { font-weight: bold; }
 
+#coll-intro .coll-desc li { list-style: disc; margin: 0 0 20px 10px; }
+
 /* description and links */
 .coll-dl { background: url(./img/ddd.png) 630px 0 repeat-y;}
 .coll-dl .coll-desc { width:620px; float:left; margin-bottom:10px; }
