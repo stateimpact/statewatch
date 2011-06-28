@@ -381,7 +381,11 @@ article header h2 { font-weight: 900; }
 /* about widget */
 .sw-about { margin-bottom:20px; }
 .sw-about .textwidget { margin-bottom: 10px; }
-.sw-about .sw-about-search { height:19px; width:250px; padding:2px; margin:0 5px 0 0; float:left; font-size:11px; color:#999; }
+
+/* Search widget */
+input.sw-about-search, input#s1 { height: 32px; width: 250px; border: 1px solid #aaa; background: url(./img/search-bg.png) repeat-x; padding: 1px; display: inline-block; font-size: 18px; text-transform: none; }
+input#s1 { width: 160px; }
+#search-submit { height: 36px; width: 36px; background: url(./img/search_36x36.png) no-repeat; text-indent: -999px; }
 .abt-module { margin-bottom: 20px; padding-top: 5px; border-top: 4px solid #999; }
 
 /************** ABOUT PAGE ******************/
@@ -524,6 +528,15 @@ font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 0; 
 }
 
 #main .alpha-nav a:hover { background-color: #333; color: #fff; }
+
+/* Social Icons*/
+
+.sw-social li a { height: 36px; width: 36px; display: block; }
+.sw-fb a { background: url(./img/facebook_36x36.png) no-repeat; }
+.sw-rss a { background: url(./img/rss_36x36.png) no-repeat; }
+.sw-twitter a { background: url(./img/twitter_36x36.png) no-repeat; }
+
+
 
 
 /* Buttons */
