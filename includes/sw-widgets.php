@@ -31,16 +31,16 @@ class About_StateImpact extends WP_Widget {
             <ul class="sw-social clearfix">
                 <?php if ( get_option( 'twitter_link' ) ) : ?>
                     <li class="sw-twitter">
-                        <a href="<?php echo get_option( 'twitter_link' ); ?>">Twitter</a>
+                        <a href="<?php echo get_option( 'twitter_link' ); ?>" title="Follow us on Twitter">Twitter</a>
                     </li> 
                 <?php endif; ?>
                 <?php if ( get_option( 'facebook_link' ) ) : ?>
                     <li class="sw-fb">
-                        <a href="<?php echo get_option( 'facebook_link' ); ?>">Facebook</a>
+                        <a href="<?php echo get_option( 'facebook_link' ); ?>" title="Follow us on Facebook">Facebook</a>
                     </li>
                 <?php endif ?> 
                 
-                <li class="sw-rss"><?php echo the_feed_link( 'RSS' ); ?></li>
+                <li class="sw-rss" title="Subscribe with RSS"><?php echo the_feed_link( 'RSS' ); ?></li>
             </ul> 
             
             <ul class="sw-info clearfix"> 
