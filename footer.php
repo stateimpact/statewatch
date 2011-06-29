@@ -76,7 +76,8 @@ $blogger = argo_get_primary_blogger();
 </form>
 <!-- /#searchform-footer -->
 
-<h4><a href="#">View all topics &raquo;</a></h4>
+<?php $topics = get_static_page('topic-index'); ?>
+<h4><a href="<? echo get_permalink( $topics->ID ); ?>">View all topics &raquo;</a></h4>
 
 </div>
 <!-- /.grid_3 -->
