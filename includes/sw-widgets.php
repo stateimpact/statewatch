@@ -102,8 +102,7 @@ class Impact_Network_Widget extends WP_Widget {
             echo $before_widget;
             include_once( ABSPATH . WPINC . '/class-feed.php' );
             $feed = new SimplePie();
-            // $feed->set_cache_duration( 600 );
-            $feed->set_cache_duration( 0 );
+            $feed->set_cache_duration( 600 );
             $feed->set_cache_location( '/tmp' );
             // XXX: temporary
             $feed->set_feed_url( $feed_url );
