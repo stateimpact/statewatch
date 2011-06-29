@@ -102,7 +102,8 @@ class Impact_Network_Widget extends WP_Widget {
             echo $before_widget;
             include_once( ABSPATH . WPINC . '/class-feed.php' );
             $feed = new SimplePie();
-            $feed->set_cache_duration( 600 );
+            // $feed->set_cache_duration( 600 );
+            $feed->set_cache_duration( 0 );
             $feed->set_cache_location( '/tmp' );
             // XXX: temporary
             $feed->set_feed_url( $feed_url );
@@ -114,7 +115,7 @@ class Impact_Network_Widget extends WP_Widget {
             <h3><?php echo $title ?></h3>
             <p class="swnn-tagline">Issues that matter. Close to home.</p>
             <ul> <?php
-            foreach ( array_slice( $feed->get_items(), 0, 5 ) as $item ) {
+            foreach ( array_slice( $feed->get_items(), 0, 5 ) as $i => $item ):
                 $encs = $item->get_enclosures();
                 $thumbnail = '';
                 if ($encs) {
@@ -125,36 +126,35 @@ class Impact_Network_Widget extends WP_Widget {
                         }
                     }
                 }
-
+                
+                // grab all our metadata
                 $site_info  = $this->get_site_info( $item->get_permalink() );
                 $hostname = "http://stateimpact.npr.org";
                 $themedir = "statewatch";
                 $state = $site_info[ 0 ];
                 $site_name  = $site_info[ 1 ];
 
-                // Use the touch icon as a backup thumbnail.
-                if ( ! $thumbnail ) {
-                    $thumbnail = sprintf( 'http://%s/wp-content/themes/%s/img/apple-touch-icon.png', $hostname, $theme_dir );
-                }
-    ?>
-
+        // actual template is html
+        if ( $i < 1 ): ?>
+        <h6><?php echo $site_name; ?></h6>
+        <h4><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a></h4>
+        <?php if ($thumbnail):?>
+            <img src="<?php echo $thumbnail ?>">
+        <?endif; ?>
+        <?php echo $item->get_description(); ?>
+        
+        <?php else: ?>
         <h6><?php echo $site_name; ?></h6>
         <h5><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a></h5>
-        <!--
-        <li class="clearfix">
-            <a href="<?php echo $item->get_permalink(); ?>"><img src="<?php echo $thumbnail; ?>" alt="<?php echo $item->get_title(); ?>" width="60" height="60" /></a>
-            <h5><a href="<?php echo $item->get_permalink(); ?>" title="<?php echo $item->get_title(); ?>"><?php echo $item->get_title(); ?></a> <span class="source-name">(<?php echo $site_name; ?>)</span></h5>
-        </li>
-        -->
-    <?php
-            }
-    ?>
-        </div>
-    <?php /* After widget (defined by themes). */
-    		echo $after_widget;
-    
+        <?php endif; ?>
+    <?php endforeach; ?>
+        </div> <!-- /.network-news -->
+        
+    <?php /* After widget (defined by themes). */ ?>
+    <?php echo $after_widget;
+    // close out the function
     }
-    
+// close out the class
 }
 
 ?>
