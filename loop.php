@@ -60,7 +60,7 @@ query_posts( argo_post_types_qs() );
 
 <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
-	<div class="post-metadata clearfix">
+	<div class="post-metadata grid_8 alpha omega">
 		<div class="grid_3 alpha">
 	        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
 			<h6>By <?php the_author_posts_link(); ?></h6>
