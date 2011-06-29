@@ -47,7 +47,7 @@ query_posts( argo_post_types_qs() );
         else: // navis_post_has_features ?> 
         <div class="sticky-solo clearfix">
 <?php endif; // navis_post_has_features(); ?>
-            <h5>BIG STORY</h5> 
+            <h5>Featured</h5> 
 <?php if ( has_post_thumbnail() ): ?>
     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 <?php endif; ?>
