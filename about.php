@@ -66,10 +66,11 @@
 			<?php $supporters = sw_get_supporting_orgs(); ?>
 			<?php if ( $supporters->have_posts() ): ?>
 			<div class="supporting-orgs clearfix">
-			    <h3 class="module-title">Supporting Organizations</h3>
-				<h4><?php while ( $supporters->have_posts() ): $supporters->the_post(); ?>
-			        <a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a> 
-				<?php endwhile; ?></h4>
+			    <h4 class="module-title">Supporting Organizations</h4>
+				<h5><?php while ( $supporters->have_posts() ): $supporters->the_post(); ?>
+					<?php $post_counter++; ?>
+			        <a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a><?php if( $post_counter < $supporters->post_count ) echo ', '; ?>
+			<?php endwhile; ?></h5>
 			</div>
 			<?php endif; ?>
 		</div>

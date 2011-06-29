@@ -13,7 +13,7 @@
 <header>
 <h2 class="entry-title"><?php the_title(); ?></h2>
 
-	<div class="post-metadata">
+	<div class="post-metadata clearfix">
 		<div class="grid_3 alpha">
 	        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
 			<h6>By <?php the_author_posts_link(); ?></h6>
