@@ -102,16 +102,24 @@
 
 <div id="sw-network-partners">
     <h4 class="module-title">Participating States</h4>
-    <ul>
-        <li><a href="/florida/">Florida</a> <b>Education</b></li>
-        <li><a href="/idaho/">Idaho</a> <b>State budget</b></li>
-        <li><a href="/ohio/">Ohio</a> <b>Education</b></li>
-        <li><a href="/indiana/">Indiana</a> <b>Education</b></li>
-        <li><a href="/new-hampshire/">New Hampshire</a> <b>State economy</b></li>
-        <li><a href="/oklahoma/">Oklahoma</a> <b>State budget</b></li>
-        <li><a href="/pennsylvania/">Pennsylvania</a> <b>Energy</b></li>
-        <li><a href="/texas/">Texas</a> <b>Energy</b></li>
-    </ul>
+    <dl>
+        <dt><strong>Florida</strong></dt>
+		  <dd>Education</dd>
+        <dt><strong>Idaho</strong></dt>
+		  <dd>State budget</dd>
+        <dt><a href="/ohio/">Ohio</a></dt>
+		  <dd>Education</dd>
+        <dt><a href="/indiana/">Indiana</a></dt>
+		  <dd>Education</dd>
+        <dt><strong>New Hampshire</strong></dt>
+		  <dd>State economy</dd>
+        <dt><strong>Oklahoma</strong></dt>
+		  <dd>State budget</dd>
+        <dt><a href="/pennsylvania/">Pennsylvania</a></dt>
+		  <dd>Energy</dd>
+        <dt><strong>Texas</strong></dt>
+		  <dd>Energy</dd>
+    </dl>
 </div> <!-- /#sw-network-partners -->
 
 <div id="sw-abt-npr">

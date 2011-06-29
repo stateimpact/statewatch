@@ -351,7 +351,7 @@ article header h2 { font-weight: 900; }
 #boilerplate { padding-top: 0; }
 
 /* author page */
-#author-bio { margin-bottom:20px; padding:10px 0 15px 0; border-bottom:4px solid #ddd; }
+#author-bio { margin-bottom:20px; padding: 0; border-bottom: none; }
 #author-bio img { float:left; margin-top:3px; }
 #author-bio h4 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 24px; }
 #author-bio h4,#author-bio h5,#author-bio p,#author-bio ul { margin-left:160px; margin-bottom:0; }
@@ -410,8 +410,11 @@ input#s1 { width: 160px; }
 .page-template-about-php #content p { font-size: 14px; }
 #content #sw-abt-network h4 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; text-transform: none; margin-bottom: 10px; }
 	#sw-network-partners,#content #sw-abt-network { border-top: none; }
-	#sw-network-partners li { text-transform: capitalize; }
-	#sw-network-partners li a { width: 150px; display: inline-block; }
+	#sw-network-partners dl { font-size: 14px; width: 300px; float: left; }
+	#sw-network-partners dt { float: left; clear: left; }
+		#sw-network-partners dt a { color: #fff; font-weight: 700; text-decoration: none; }
+		#sw-network-partners dt a:hover { text-decoration: underline; }
+	#sw-network-partners dd { float: right; clear: right; width: 150px; text-transform: capitalize; }
 	.sw-social { margin-bottom:5px; }
 	.sw-social li { float:left; margin-right:5px; text-indent:-10000px; }
 	.sw-social li a { height:16px; width:16px; display:block; background-repeat: none; background-position: 0 0;}
