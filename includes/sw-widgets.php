@@ -53,7 +53,7 @@ class About_StateImpact extends WP_Widget {
             <form role="search" method="get"> 
             	<div><label class="visuallyhidden" for="s1">Search for:</label> 
             	<input type="text" placeholder="Search <?php bloginfo( 'name' ); ?>" value="" name="s" class="sw-about-search" /> 
-            	<input type="image" src="<?php bloginfo( 'stylesheet_directory' )?>/img/search_36x36.png" alt="Submit" width="32" height="24" id="search-submit" /> 
+            	<input type="button" alt="Submit" width="32" height="24" class="search-submit" /> 
             	</div> 
             </form> 
         

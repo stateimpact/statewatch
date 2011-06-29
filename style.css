@@ -385,7 +385,8 @@ article header h2 { font-weight: 900; }
 /* Search widget */
 input.sw-about-search, input#s1 { height: 32px; width: 250px; border: 1px solid #aaa; background: url(./img/search-bg.png) repeat-x; padding: 1px; display: inline-block; font-size: 18px; text-transform: none; }
 input#s1 { width: 160px; }
-#search-submit { height: 36px; width: 36px; background: url(./img/search_36x36.png) no-repeat; text-indent: -999px; }
+#wrapper .search-submit { height: 36px; width: 36px; background: url(./img/search_36x36.png) 0 -36px no-repeat; text-indent: -999px; margin: 0; padding: 0; border: none; display: inline-block; }
+#wrapper .search-submit:hover { background: url(./img/search_36x36.png) 0 0 no-repeat; }
 .abt-module { margin-bottom: 20px; padding-top: 5px; border-top: 4px solid #999; }
 
 /************** ABOUT PAGE ******************/
@@ -413,10 +414,11 @@ input#s1 { width: 160px; }
 	#sw-network-partners li a { width: 150px; display: inline-block; }
 	.sw-social { margin-bottom:5px; }
 	.sw-social li { float:left; margin-right:5px; text-indent:-10000px; }
-	.sw-social li a { height:16px; width:16px; display:block; }
-	.sw-twitter a { background:transparent url(img/twitter16.png) no-repeat; }
-	.sw-fb a { background:transparent url(img/fb16.png) no-repeat; }
-	.sw-rss a { background:transparent url(img/rss16.png) no-repeat; }
+	.sw-social li a { height:16px; width:16px; display:block; background-repeat: none; background-position: 0 0;}
+	.sw-social li a:hover { background-position: 0 -36px; }
+	.sw-twitter a { background-image: url(img/twitter16.png); }
+	.sw-fb a { background-image:transparent url(img/fb16.png); }
+	.sw-rss a { background-image:transparent url(img/rss16.png); }
 	.sw-info { margin-bottom:10px; }
 	.sw-info li { font-size:11px; float:left; margin-right:10px; }
 
