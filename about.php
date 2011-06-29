@@ -61,16 +61,19 @@
 			<ul>
 		        <li><a href="http://www.npr.org/templates/stations/stations/">Station Finder &raquo;</a></li>
 		    </ul>
+		
+		
+			<?php $supporters = sw_get_supporting_orgs(); ?>
+			<?php if ( $supporters->have_posts() ): ?>
+			<div class="supporting-orgs clearfix">
+			    <h3 class="module-title">Supporting Organizations</h3>
+				<h4><?php while ( $supporters->have_posts() ): $supporters->the_post(); ?>
+			        <a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a> 
+				<?php endwhile; ?></h4>
+			</div>
+			<?php endif; ?>
 		</div>
-		<?php $supporters = sw_get_supporting_orgs(); ?>
-		<?php if ( $supporters->have_posts() ): ?>
-		<div class="supporting-orgs clearfix">
-		    <h3 class="module-title">Supporting Organizations</h3>
-			<?php while ( $supporters->have_posts() ): $supporters->the_post(); ?>
-		        <h4><a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a></h4>
-			<?php endwhile; ?>
-		</div>
-		<?php endif; ?>
+		
 		<div class="clearfix"></div>
 	</div>
 	<div class="abt-module grid_8 alpha omega abt-field">
