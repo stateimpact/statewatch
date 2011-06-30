@@ -12,6 +12,12 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<?php if (is_single()): ?>
+	    <?php $post = get_queried_object(); ?>
+	    <meta name="description" content="<?php echo sw_get_excerpt_anywhere(); ?>">
+	<? else: ?>
+	    <meta name="description" content="<?php bloginfo('description'); ?>">
+	<? endif; ?>
 	<title>
 	<?php // Returns the title based on what is being viewed
 		if ( is_single() ) { // single posts
@@ -81,7 +87,16 @@
 <script type="text/javascript">
 	var NavisAnalyticsFileTypes = ['pdf','mp3'];
 </script>
-<script src="<?php bloginfo('template_directory'); ?>/js/outbound-links.js"></script>
+<script>
+// what things can i click on that should be tracked
+_clickEvents = [
+    // selector, category
+    {category: 'Featured Topics', selector: 'div.featured-topics a'},
+    {category: 'Mega Menu', selector: '#topnav a'}
+];
+
+</script>
+<script src="<?php bloginfo('template_directory'); ?>/js/tracking.js"></script>
 </head>
 
 <body <?php body_class(); ?>>

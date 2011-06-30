@@ -11,6 +11,7 @@ require_once( 'includes/static-widgets.php' );
 require_once( 'includes/topics.php' );
 require_once( 'includes/sw-widgets.php');
 require_once( 'includes/settings.php' );
+require_once( 'includes/template.php' );
 
 add_action( 'admin_init', 'sw_agg_settings' );
 function sw_agg_settings() {
