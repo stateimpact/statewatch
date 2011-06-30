@@ -80,14 +80,14 @@
 	<div class="abt-module grid_8 alpha omega abt-field">
 		<h3 class="module-title">Staff</h3>
 		<?php $staff = sw_get_staff(); ?>
-		<?php foreach ( array_keys($staff) as $key ): ?>
+		<?php foreach ( $staff as $key => $user ): ?>
 		<div class="abt-staff grid_4 <?php 
-			$foo = ($key == count($staff)-1) ? "omega" : "alpha"; print $foo; 
+			$foo = ($key == count($staff)-1) ? "omega" : "alpha"; echo $foo; 
 			?>">
-		    <?php echo get_avatar( $staff[$key]->ID, 60 ); ?>
-		    <h4><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php the_author_meta( 'display_name', $staff[$key]->ID ); ?></a></h4>
-		    <h5><?php the_author_meta( 'sw_title', $staff[$key]->ID ); ?></h5>
-		    <p><?php the_author_meta( 'description', $staff[$key]->ID ); ?></p>
+		    <?php echo get_avatar( $user->ID, 60 ); ?>
+		    <h4><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php the_author_meta( 'display_name', $user->ID ); ?></a></h4>
+		    <h5><?php the_author_meta( 'sw_title', $user->ID ); ?></h5>
+		    <p><?php the_author_meta( 'description', $user->ID ); ?></p>
 		</div><!-- /.abt-staff -->
 		<? endforeach; ?>
 	</div>
