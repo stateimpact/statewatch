@@ -1,7 +1,8 @@
 <?php
 
 // get a post excerpt outside the loop
-function sw_get_excerpt_anywhere() {
+add_action('meta_tags', 'sw_meta_description');
+function sw_meta_description() {
     global $wp_query;
     $post = $wp_query->get_queried_object();
     $excerpt = $post->post_excerpt;
@@ -12,6 +13,12 @@ function sw_get_excerpt_anywhere() {
     }
     
     // just to be sure
-    return htmlentities(strip_tags($excerpt), ENT_QUOTES);
+    $excerpt = htmlentities(strip_tags($excerpt), ENT_QUOTES);
+    if (is_single()): ?>
+	    <meta name="description" content="<?php echo $excerpt; ?>">
+	<?php else: ?>
+	    <meta name="description" content="<?php bloginfo('description'); ?>">
+	<?php endif; ?>
+	<?php
 }
 ?>

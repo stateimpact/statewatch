@@ -12,12 +12,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<?php if (is_single()): ?>
-	    <?php $post = get_queried_object(); ?>
-	    <meta name="description" content="<?php echo sw_get_excerpt_anywhere(); ?>">
-	<? else: ?>
-	    <meta name="description" content="<?php bloginfo('description'); ?>">
-	<? endif; ?>
+	<?php do_action('meta_tags'); ?>
 	<title>
 	<?php // Returns the title based on what is being viewed
 		if ( is_single() ) { // single posts
