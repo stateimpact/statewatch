@@ -100,8 +100,8 @@ _clickEvents = [
     <div class="global-nav-bg"> 
 		<nav class="global-nav">
 	
-				<h1><a href="/" title="StateImpact" class="unitPng">StateImpact</a></h1>
-				<h2><a href="http://npr.org" title="Visit npr.org">In partnership with NPR</a></h2>
+				<h2><a href="/" title="StateImpact" class="unitPng">StateImpact</a></h2>
+				<h4><a href="http://npr.org" title="Visit npr.org">In partnership with NPR</a></h4>
 				<ul class="global-utils">
 					<li><a href="./about/">About StateImpact</a> </li>
 					<li><a id="apanel-trigger" href="#">Other states</a></li>
@@ -116,12 +116,12 @@ _clickEvents = [
 	<div id="global-branding" class="clearfix">
 
 		<header>
-		    <h2>
+		    <h3>
 		        <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
 		            <?php bloginfo('name'); ?>
 		        </a>
-		    </h2>
-		    <h3><?php bloginfo('description'); ?></h3>
+		    </h3>
+		    <h4><?php bloginfo('description'); ?></h4>
 		</header>
 
 	   <div id="category-nav">
@@ -131,5 +131,4 @@ _clickEvents = [
 		</div> <!-- /main-nav -->
 
 	</div><!-- /#global-branding -->
-
 	<div id="main" class="container_12 clearfix">
