@@ -42,9 +42,9 @@ p  { font-size:16px; line-height: 1.4; }
 /* Header */
 .global-nav-bg { margin-bottom: 0; }
 .global-nav { position: relative; height:35px; font-size: 11px; }
-.global-nav h1, .global-nav h2 { margin: 0; }
-.global-nav h1 a { display: block; background: url(./img/logo.png) no-repeat; position: absolute; left: -20px; top: -15px; text-indent: -999px; width: 191px; height: 71px; }
-.global-nav h2 a { display: block; background: url(./img/npr.png) no-repeat; position: absolute; left: 197px; top: 10px; text-indent: -999px; width: 279px; height: 17px; }
+.global-nav h2, .global-nav h3 { margin: 0; }
+.global-nav h2 a { display: block; background: url(./img/logo.png) no-repeat; position: absolute; left: -20px; top: -15px; text-indent: -999px; width: 191px; height: 71px; }
+.global-nav h4 a { display: block; background: url(./img/npr.png) no-repeat; position: absolute; left: 197px; top: 10px; text-indent: -999px; width: 279px; height: 17px; }
 .global-nav .global-utils { position: absolute; float: left; right: 0; bottom: 6px; line-height: 26px; height: 26px; overflow: hidden; }
 	.global-nav .global-utils li { display: block; float: left; font-size: 11px; margin: 0 0 0 10px; padding: 0; line-height: 26px; }
 	.global-nav .global-utils a { font-weight: bold; color: #555; }
@@ -122,7 +122,7 @@ p  { font-size:16px; line-height: 1.4; }
 			#panel-about p a:hover { color: #444; text-decoration: underline; }
 #global-branding { position: relative; z-index: 10; width: 940px; margin: 0 auto 5px; padding: 5px 0 0; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
 	#global-branding header { width: 460px; margin-top: 18px; }
-	#category-nav { position: absolute; right: 0; top: 59px; }
+	#category-nav { position: absolute; right: 0; bottom: -5px; }
 		#topnav li { border-left: 1px solid rgba(0,0,0,.5); padding: 0; }
 			.no-rgba #topnav li { border-left: 1px solid #999; }
 		#topnav .first, .no-rgba #topnav .first { border-left: none; }
@@ -181,14 +181,14 @@ p  { font-size:16px; line-height: 1.4; }
 	.global-nav ul a:hover { color: #000; }
 	.global-nav li { float: left; margin: 10px 20px 0 0; }
 
-#wrapper #global-branding header h2, #footerstate { 
+#wrapper #global-branding header h3, #footerstate { 
 	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
 	font-size: 24px; 
 	font-weight: bold; 
 	margin-bottom: 6px; 
 }	
-	#wrapper #global-branding header h2 a { color: #fff; }
-#wrapper #global-branding header h3 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 18px; color: #fff; }
+	#wrapper #global-branding header h3 a { color: #fff; }
+#wrapper #global-branding header h4 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 18px; color: #fff; }
 
 /* Loop */
 .home .post, 
@@ -558,70 +558,3 @@ font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 0; 
 .sw-fb a { background: url(./img/facebook_36x36.png) no-repeat; }
 .sw-rss a { background: url(./img/rss_36x36.png) no-repeat; }
 .sw-twitter a { background: url(./img/twitter_36x36.png) no-repeat; }
-
-
-
-
-/* Buttons */
-a.button, 
-	button,
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"] {
-		background: #eee; /* Old browsers */
-		background: -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
-		background: -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
-		background: linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
-	  border: 1px solid #aaa;
-	  border-top: 1px solid #ccc;
-	  border-left: 1px solid #ccc;
-	  padding: 4px 12px;
-	  -moz-border-radius: 3px;
-	  -webkit-border-radius: 3px;
-	  border-radius: 3px;
-	  color: #444;
-	  display: inline-block;
-	  font-size: 11px;
-	  font-weight: bold;
-	  text-decoration: none;
-	  text-shadow: 0 1px rgba(255, 255, 255, .75);
-	  cursor: pointer;
-	  margin-bottom: 20px;
-	  line-height: 21px;
-	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-	a.button:hover, 
-	button:hover,
-	input[type="submit"]:hover,
-	input[type="reset"]:hover,
-	input[type="button"]:hover {
-		color: #222;
-		background: #eee; /* Old browsers */
-		background: -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Opera11.10+ */
-		background: -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
-		background: linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
-	  border: 1px solid #888;
-	  border-top: 1px solid #aaa;
-	  border-left: 1px solid #aaa; }
-
-  a.button:active, 
-  button:active,
-	input[type="submit"]:active,
-	input[type="reset"]:active,
-	input[type="button"]:active {
-    background: #eee; /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(255,255,255,.3) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,.3)), color-stop(100%,rgba(255,255,255,.3))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* Opera11.10+ */
-    background: -ms-linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* IE10+ */
-    background: linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* W3C */
-    border: 1px solid #888;
-    border-bottom: 1px solid #aaa;
-    border-right: 1px solid #aaa; }
