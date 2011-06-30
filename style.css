@@ -122,7 +122,7 @@ p  { font-size:16px; line-height: 1.4; }
 			#panel-about p a:hover { color: #444; text-decoration: underline; }
 #global-branding { position: relative; z-index: 10; width: 940px; margin: 0 auto 5px; padding: 5px 0 0; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
 	#global-branding header { width: 460px; margin-top: 18px; }
-	#category-nav { position: absolute; right: 0; bottom: -5px; }
+	#category-nav { position: absolute; right: 0; top: 50px; }
 		#topnav li { border-left: 1px solid rgba(0,0,0,.5); padding: 0; }
 			.no-rgba #topnav li { border-left: 1px solid #999; }
 		#topnav .first, .no-rgba #topnav .first { border-left: none; }
