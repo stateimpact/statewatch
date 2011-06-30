@@ -8,20 +8,13 @@ Version: 0.1
 @import url(../argo-foundation/css/960.css?v=1);
 @import url(../argo-foundation/css/foundation.css?v=1);
 
-
-/* .container_12 {
-background: #fff url(../argo-foundation/img/dev-images/12_col.gif) repeat-y;
-} */
-
 /* Global */
 
-body { 
-	font-family: "Helvetica Neue",Arial,sans-serif;
-	color: #444;
-}
+body { font-family: "Helvetica Neue",Arial,sans-serif; color: #444; }
+#wrapper { position: static; }
 .container_12 { background: transparent; }
 #local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; }
-#main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 25px 20px; overflow: hidden; }
+#main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 25px 20px;  }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin: 0 0 10px; }
 h1 { font-size:36px; line-height: 1; }

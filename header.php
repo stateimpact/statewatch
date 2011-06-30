@@ -121,5 +121,4 @@
 		</div> <!-- /main-nav -->
 
 	</div><!-- /#global-branding -->
-
 	<div id="main" class="container_12 clearfix">
