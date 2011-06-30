@@ -27,6 +27,13 @@ class About_StateImpact extends WP_Widget {
 		if ( !empty( $title ) ) { echo "<h3>$title</h3>"; } ?>
 			
 			<div class="textwidget"><?php echo $text; ?></div>
+			
+			<ul class="sw-info clearfix"> 
+                <li><a href="<?php echo get_permalink( $about->ID ); ?>">Learn more &raquo;</a></li>
+				<?php if ( get_option( 'support_link' ) ): ?>
+                    <li><a href="<?php echo get_option( 'support_link' ); ?>">Support <?php echo SITE_NAME_PREFIX . get_bloginfo( 'name' ); ?> &raquo;</a></li>
+                <?endif; ?>
+            </ul>
             
             <ul class="sw-social clearfix">
                 <?php if ( get_option( 'twitter_link' ) ) : ?>
@@ -41,13 +48,6 @@ class About_StateImpact extends WP_Widget {
                 <?php endif ?> 
                 
                 <li class="sw-rss" title="Subscribe with RSS"><?php echo the_feed_link( 'RSS' ); ?></li>
-            </ul> 
-            
-            <ul class="sw-info clearfix"> 
-                <?php if ( get_option( 'support_link' ) ): ?>
-                    <li><a href="<?php echo get_option( 'support_link' ); ?>">Support <?php echo SITE_NAME_PREFIX . get_bloginfo( 'name' ); ?> &raquo;</a></li>
-                <?endif; ?>
-                <li><a href="<?php echo get_permalink( $about->ID ); ?>">Learn more &raquo;</a></li>
             </ul> 
 
             <form role="search" method="get"> 

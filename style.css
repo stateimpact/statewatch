@@ -11,7 +11,7 @@ Version: 0.1
 /* Global */
 
 body { font-family: "Helvetica Neue",Arial,sans-serif; color: #444; }
-#wrapper { position: static; }
+#wrapper { position: static; } /* Defeats foundation.css style that contributed to IE7 jumping margins bug */
 .container_12 { background: transparent; }
 #local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; }
 #main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 25px 20px;  }
