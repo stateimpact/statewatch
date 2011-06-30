@@ -71,7 +71,7 @@ $blogger = argo_get_primary_blogger();
 <form role="search" method="get" id="searchform-footer" action="<?php bloginfo('url'); ?>">
 	<div><label class="visuallyhidden" for="s1">Search for:</label>
 	<input type="text" class="footer-search" placeholder="Search" value="" name="s" id="s1" />
-	<input type="button" alt="Submit" width="36" height="36" class="search-submit" />
+	<input type="submit" alt="Submit" width="36" height="36" class="search-submit" />
 	</div>
 </form>
 <!-- /#searchform-footer -->
