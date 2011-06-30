@@ -8,6 +8,7 @@ function sw_get_excerpt_anywhere() {
     if ( !$excerpt ) {
         $words = explode(' ', $post->post_content);
         $excerpt = implode(' ', array_slice($words, 0, 55) );
+        $excerpt = strip_shortcodes( $excerpt );
     }
     
     // just to be sure
