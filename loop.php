@@ -72,7 +72,7 @@ query_posts( argo_post_types_qs() );
 		</div>
 		<div class="clearfix"></div>
 	</div> <!-- /.post-metadata-->
-        
+    <div class="clearfix"></div>    
 </header><!-- / entry header -->
 
     <?php if ( is_archive() ) :  ?>
