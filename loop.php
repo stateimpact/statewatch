@@ -77,11 +77,11 @@ query_posts( argo_post_types_qs() );
 
     <?php if ( is_archive() ) :  ?>
 
-            <?php the_content( 'Continue reading <span class="meta-nav">&rarr;</span>' ); ?>
+            <?php the_content( 'Continue Reading <span class="meta-nav">&rarr;</span>' ); ?>
 	    <?php wp_link_pages( array( 'before' => '<div class="page-link">Pages:', 'after' => '</div>' ) ); ?>
 	
     <?php else : ?>
-            <?php the_content( 'Continue reading <span class="meta-nav">&rarr;</span>' ); ?>
+            <?php the_content( 'Continue Reading <span class="meta-nav">&rarr;</span>' ); ?>
 
             <?php wp_link_pages( array( 'before' => '<div class="page-link">Pages:', 'after' => '</div>' ) ); ?>
 

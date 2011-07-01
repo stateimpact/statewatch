@@ -70,14 +70,14 @@ $blogger = argo_get_primary_blogger();
 
 <form role="search" method="get" id="searchform-footer" action="<?php bloginfo('url'); ?>">
 	<div><label class="visuallyhidden" for="s1">Search for:</label>
-	<input type="text" class="footer-search" placeholder="Search" value="" name="s" id="s1" />
+	<input type="text" class="footer-search" placeholder="Search This Site" value="" name="s" id="s1" />
 	<input type="submit" alt="Submit" width="36" height="36" class="search-submit" />
 	</div>
 </form>
 <!-- /#searchform-footer -->
 
 <?php $topics = get_static_page('topic-index'); ?>
-<h4><a href="<? echo get_permalink( $topics->ID ); ?>">View all topics &raquo;</a></h4>
+<h4><a href="<? echo get_permalink( $topics->ID ); ?>">View All Topics &raquo;</a></h4>
 
 </div>
 <!-- /.grid_3 -->
@@ -85,7 +85,7 @@ $blogger = argo_get_primary_blogger();
 <div id="boilerplate" class="grid_12">
 
     <?php wp_nav_menu( array( 'theme_location' => 'footer', 'container' => false ) ); ?>
-    <p class="back-to-top visuallyhidden"><a href="#main">Back to top &uarr;</a></p>
+    <p class="back-to-top visuallyhidden"><a href="#main">Back To Top &uarr;</a></p>
 </div>
 <!-- /.grid_12 -->
 </div>
@@ -239,17 +239,17 @@ $(document).ready(function(){
 		<div id="topic-economy" class="network-sites grid_2">
 			 <h5>Economy</h5>
 			<ul>
-				<li>New Hampshire</li>
 				<li>Idaho</li>
+				<li>New Hampshire</li>
 			 </ul>
 	    </div>
 	
 		<div id="topic-economy" class="network-sites grid_2">
 			<h5>Education</h5>
 			<ul>
-				<li><a href="/ohio/">Ohio</a></li>
-				<li><a href="/indiana/">Indiana</a></li>
 				<li>Florida</li>
+				<li><a href="/indiana/">Indiana</a></li>
+				<li><a href="/ohio/">Ohio</a></li>
 			</ul>
 		</div>
 		<div id="topic-economy" class="network-sites grid_2 omega">
