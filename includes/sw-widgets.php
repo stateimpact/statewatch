@@ -3,7 +3,7 @@ add_action('widgets_init', 'sw_add_widgets');
 function sw_add_widgets() {
     register_widget( 'About_StateImpact' );
     register_widget( 'Impact_Network_Widget' );
-    add_filter( 'feedburner_widget_title', 'sw_feedburner_widget_title' );
+    add_filter( 'navis_feedburner_widget_title', 'sw_feedburner_widget_title' );
 }
 
 function sw_feedburner_widget_title($title) {
