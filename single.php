@@ -23,7 +23,7 @@
 		</div>
 		<div class="clearfix"></div>
 	</div> <!-- /.post-metadata-->
-
+	<div class="clearfix"></div>
         <?php if (function_exists('the_subheading')) { the_subheading('<p>', '</p>'); } ?>
 </header><!-- / entry header -->
 
