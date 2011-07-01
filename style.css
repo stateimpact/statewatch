@@ -315,7 +315,7 @@ article header h2 { font-weight: 900; }
 	font-weight: 800;
 	border-top: 4px solid #DDD;
 	padding: 5px 0;
-	margin: 10px 0;
+	margin: 0 0 10px;
 	text-align: center;
 	background: #406384; /* Old browsers */
 	background: -moz-linear-gradient(top, #406384 0%, #23323f 100%); /* FF3.6+ */
@@ -330,15 +330,12 @@ article header h2 { font-weight: 900; }
 	box-shadow: 0 1px 2px #999;
 	border: 1px solid white;
 	-webkit-font-smoothing: antialiased;
+	clear:both;
 }
 .widget-container, .widget { 
 	border-bottom: none; 
 }
-	#sidebar .widget-container:first-child h3, #sidebar .widget:first-child h3 {
-		border-top: none;
-		padding: 0;
-		margin: 0 0 10px;
-	}
+
 .link-list li a { font-weight: bold; display: block; }
 .link-list li span,.link-list li a { padding-left: 30px; }
 .link-sources { border-bottom: 1px solid #ddd; }
@@ -444,9 +441,9 @@ input#s1 { width: 160px; }
 	.sw-social li { float:left; margin-right:5px; text-indent:-10000px; }
 	.sw-social li a { height:16px; width:16px; display:block; background-repeat: none; background-position: 0 0;}
 	.sw-social li a:hover { background-position: 0 -36px; }
-	.sw-twitter a { background-image: url(img/twitter16.png); }
-	.sw-fb a { background-image:transparent url(img/fb16.png); }
-	.sw-rss a { background-image:transparent url(img/rss16.png); }
+	.sw-twitter a { background-image: url(./img/twitter16.png); }
+	.sw-fb a { background-image:transparent url(./img/fb16.png); }
+	.sw-rss a { background-image:transparent url(./img/rss16.png); }
 	.sw-info { margin-bottom:10px; }
 	.sw-info li { font-size:11px; float:left; margin-right:10px; }
 
@@ -468,11 +465,15 @@ input#s1 { width: 160px; }
 	padding:0 0 10px 0;
 	border-bottom: 4px solid #ddd; 
 	font-size:42px; 
+	line-height: 1.1;
 	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
 	color:#333; 
 	font-weight:300; 
 	background: #fff; 
 }
+#coll-intro .wp-media-credit, #coll-intro .wp-caption-text { font-size: 11px; color: #666; }
+	#coll-intro .wp-media-credit { text-align: right; display: block; font-size: 10px; }
+	#coll-intro .wp-caption-text { font-size: 12px; }
 .coll-dl, .coll-d, .coll-l { border-bottom: 1px solid #ddd; padding-bottom:10px;  }
 
 #content #crp { padding-bottom:10px; overflow:hidden; }
