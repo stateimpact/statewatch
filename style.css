@@ -405,10 +405,11 @@ article header h2 { font-weight: 900; }
 .sw-about .textwidget { margin-bottom: 10px; }
 
 /* Search widget */
-input.sw-about-search, input#s1 { height: 32px; width: 250px; border: 1px solid #aaa; background: url(./img/search-bg.png) repeat-x; padding: 1px; display: inline-block; font-size: 18px; text-transform: none; }
+#s2 { position: static; }
+input.sw-about-search, input#s1, .error404 #s2 { height: 32px; width: 250px; border: 1px solid #aaa; background: url(./img/search-bg.png) repeat-x; padding: 1px; display: inline-block; font-size: 18px; text-transform: none; }
 input#s1 { width: 160px; }
-#wrapper .search-submit { height: 36px; width: 36px; background: url(./img/search_36x36.png) 0 -36px no-repeat; text-indent: -999px; margin: 0; padding: 0; border: none; display: inline-block; }
-#wrapper .search-submit:hover { background: url(./img/search_36x36.png) 0 0 no-repeat; }
+#wrapper .search-submit, .error404 .search-submit { height: 36px; width: 36px; background: url(./img/search_36x36.png) 0 -36px no-repeat; text-indent: -999px; margin: 0; padding: 0; border: none; display: inline-block; }
+#wrapper .search-submit:hover, .error404 .search-submit:hover { background: url(./img/search_36x36.png) 0 0 no-repeat; }
 .abt-module { margin-bottom: 20px; padding-top: 5px; border-top: 4px solid #999; }
 
 /************** ABOUT PAGE ******************/
@@ -463,6 +464,7 @@ input#s1 { width: 160px; }
 #coll-intro { color:#333; margin-bottom:10px; }
 #coll-intro h2 { 
 	padding:0 0 10px 0;
+	margin: 0 0 5px;
 	border-bottom: 4px solid #ddd; 
 	font-size:42px; 
 	line-height: 1.1;
@@ -472,8 +474,8 @@ input#s1 { width: 160px; }
 	background: #fff; 
 }
 #coll-intro .wp-media-credit, #coll-intro .wp-caption-text { font-size: 11px; color: #666; }
-	#coll-intro .wp-media-credit { text-align: right; display: block; font-size: 10px; }
-	#coll-intro .wp-caption-text { font-size: 12px; }
+	#coll-intro .wp-media-credit { text-align: right; display: block; font-size: 10px; margin-bottom: 5px; text-transform: uppercase; }
+	#coll-intro p.wp-caption-text { font-size: 12px; line-height: 1.3; }
 .coll-dl, .coll-d, .coll-l { border-bottom: 1px solid #ddd; padding-bottom:10px;  }
 
 #content #crp { padding-bottom:10px; overflow:hidden; }
