@@ -86,7 +86,7 @@
                     <li><a href="<?php echo get_permalink( $rel_post->ID ); ?>" onClick="_gaq.push(['_trackEvent', 'RelatedPost', '<?php echo esc_attr($topic->name); ?>', '<?php echo esc_attr($rel_post->post_title); ?>']);"><?php echo $rel_post->post_title; ?></a></li>
                 <?php endforeach; ?>
             </ul>
-                <p><a href="<?php echo get_term_link( $topic, $topic->taxonomy ); ?>" onClick="_gaq.push(['_trackEvent', 'RelatedPost', '<?php echo esc_attr($topic->name); ?>', 'archive page']);"><strong>View all <?php echo $topic->name; ?> posts &raquo;</strong></a></p>
+                <p><a href="<?php echo get_term_link( $topic, $topic->taxonomy ); ?>" onClick="_gaq.push(['_trackEvent', 'RelatedPost', '<?php echo esc_attr($topic->name); ?>', 'archive page']);"><strong>View All <?php echo $topic->name; ?> Posts &raquo;</strong></a></p>
         </div> <!-- /#rpX -->
         <?php endforeach; ?>
     </div> <!-- /.items -->
