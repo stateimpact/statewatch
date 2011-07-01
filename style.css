@@ -317,9 +317,9 @@ article header h2 { font-weight: 900; }
 	padding: 10px 0 0; 
 	margin: 10px 0; */
 	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
-	font-size: 24px;
+	font-size: 22px;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: 800;
 	border-top: 4px solid #DDD;
 	padding: 5px 0;
 	margin: 10px 0;
@@ -336,6 +336,7 @@ article header h2 { font-weight: 900; }
 	text-shadow: 0 -1px 1px black;
 	box-shadow: 0 1px 2px #999;
 	border: 1px solid white;
+	-webkit-font-smoothing: antialiased;
 }
 .widget-container, .widget { 
 	border-bottom: none; 
