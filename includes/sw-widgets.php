@@ -4,10 +4,20 @@ function sw_add_widgets() {
     register_widget( 'About_StateImpact' );
     register_widget( 'Impact_Network_Widget' );
     add_filter( 'navis_feedburner_widget_title', 'sw_feedburner_widget_title' );
+    add_filter( 'navis_feedburner_blogname', 'sw_feedburner_blogname' );
+    add_filter( 'navis_feedburner_placeholder', 'sw_feedburner_placeholder' );
 }
 
 function sw_feedburner_widget_title($title) {
-    return "StateImpact " . get_bloginfo('name');
+    return "";
+}
+
+function sw_feedburner_blogname($name) {
+    return "StateImpact " . get_option('blogname');
+}
+
+function sw_feedburner_placeholder($placeholder) {
+    return "Email Address";
 }
 
 class About_StateImpact extends WP_Widget {
