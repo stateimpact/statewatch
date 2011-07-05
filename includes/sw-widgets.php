@@ -126,7 +126,7 @@ class Impact_Network_Widget extends WP_Widget {
             ?>
             <div class="sw-network-news"> 
             <h3><?php echo $title ?></h3>
-            <p class="swnn-tagline">Issues that matter. Close to home.</p>
+            <p class="swnn-tagline">Issues That Matter. Close To Home.</p>
             <ul> <?php
             foreach ( array_slice( $feed->get_items(), 0, 5 ) as $i => $item ):
                 $encs = $item->get_enclosures();
