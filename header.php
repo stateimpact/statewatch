@@ -24,7 +24,7 @@
 				echo ' | ' ; bloginfo( 'description' );
 			argo_the_page_number();
 		} elseif ( is_page() ) { // WordPress Pages
-			single_post_title( '' ); echo ' | '; bloginfo( 'name' );
+			single_post_title( '' ); echo " |  StateImpact " . get_bloginfo( 'name' );
 		} elseif ( is_search() ) { // Search results
 			printf( 'Search results for %s', '"'.get_search_query().'"' ); argo_the_page_number(); echo ' | StateImpact '; bloginfo( 'name' );
 		} elseif ( is_404() ) {  // 404 (Not Found)
