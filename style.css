@@ -344,6 +344,7 @@ article header h2 { font-weight: 900; }
 	-webkit-font-smoothing: antialiased;
 	clear:both;
 }
+	.no-boxshadow #sidebar h3 { border: none; }
 .widget-container, .widget { 
 	border-bottom: none; 
 }
@@ -482,7 +483,7 @@ article header h2 { font-weight: 900; }
 	  cursor: pointer;
 	  margin-bottom: 0;
 	  line-height: 26px;
-	  width: auto; height: 36px; }
+	  width: 90px; height: 36px; }
 
 #feedburner-subscribe-sidebar .widget-submit:hover {
 		color: #222;
