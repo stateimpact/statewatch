@@ -516,7 +516,7 @@ article header h2 { font-weight: 900; }
 #s2 { position: static; }
 input.sw-about-search, input#s1, .error404 #s2 { height: 32px; width: 250px; border: 1px solid #aaa; background: url(./img/search-bg.png) repeat-x; padding: 1px; display: inline-block; font-size: 18px; text-transform: none; }
 input#s1 { width: 160px; }
-#wrapper .search-submit, .error404 .search-submit { height: 36px; width: 36px; background: url(./img/search_36x36.png) 0 -36px no-repeat; text-indent: -999px; margin: 0; padding: 0; border: none; display: inline-block; }
+#wrapper .search-submit, .error404 .search-submit { height: 36px; width: 36px; background: url(./img/search_36x36.png) 0 -36px no-repeat; text-indent: -999px; margin: 0; padding: 0; border: none; display: inline-block; font-size: 0; line-height: 0; /* For IE6/IE7 */ }
 #wrapper .search-submit:hover, .error404 .search-submit:hover { background: url(./img/search_36x36.png) 0 0 no-repeat; }
 .abt-module { margin-bottom: 20px; padding-top: 5px; border-top: 4px solid #999; }
 
