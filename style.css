@@ -317,6 +317,13 @@ article header h2 { font-weight: 900; }
 #content #related-posts .top-related p { font-size: 14px; }
 #content #related-posts .items li a { font-weight: bold; font-size: 12px; }
 
+
+/* Full page template 
+============================================*/
+
+.page-template-full-page-php table p { font-size: 14px; }
+
+
 /* Sidebar 
 ============================================*/
 
