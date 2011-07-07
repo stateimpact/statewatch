@@ -133,8 +133,10 @@ function sw_update_topic_links($post_id) {
     foreach( range(0, 4) as $i ) {
         foreach( $fields as $field ) {
             $name = "link_" . $i . "_" . $field;
-            $value = $_POST[$name];
-            update_post_meta( $post_id, $name, $value );
+            if ( isset($_POST[$name]) ) {
+                $value = $_POST[$name];
+                update_post_meta( $post_id, $name, $value );
+            }
         }
     }
 }
