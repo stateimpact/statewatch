@@ -100,7 +100,7 @@ p  { font-size:16px; line-height: 1.4; }
 	#argo-panel-wrapper { background: none; border: none; color: #222; }
 	#apanel-content { top: 60px; color: #222; }
 		#apanel-content h5 { 
-			font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
+			font-family: proxima-nova,sans-serif;
 			font-size: 16px;
 			color: #000; 
 			margin-bottom: 6px; 
@@ -136,7 +136,7 @@ p  { font-size:16px; line-height: 1.4; }
 		}
 		/* Only use these styles if webfonts are active to prevent layout problems */
 		.wf-active #topnav li a { 
-			font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
+			font-family: proxima-nova-extra-condensed,sans-serif;
 			font-size: 18px;
 			text-transform: uppercase;
 		}
@@ -178,13 +178,13 @@ p  { font-size:16px; line-height: 1.4; }
 	.global-nav li { float: left; margin: 10px 20px 0 0; }
 
 #wrapper #global-branding header h3, #footerstate { 
-	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
+	font-family: proxima-nova,sans-serif;
 	font-size: 24px; 
 	font-weight: bold; 
 	margin-bottom: 6px; 
 }	
 #wrapper #global-branding header h3 a { color: #fff; }
-#wrapper #global-branding header h4 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 18px; color: #fff; }
+#wrapper #global-branding header h4 { font-family: proxima-nova,sans-serif; font-size: 18px; color: #fff; }
 
 /* Loop  
 ============================================*/
@@ -246,7 +246,7 @@ list-style-type: none; }
 	/* Sticky posts */
 	.sticky-solo, .sticky-related { border: none; background: transparent; padding: 0; }
 		#content .sticky h5 { 
-			font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif; 
+			font-family: proxima-nova-extra-condensed,sans-serif; 
 			font-size: 18px; 
 			border-bottom: none; 
 			color: #333; 
@@ -255,7 +255,7 @@ list-style-type: none; }
 			padding: 0; 
 		}
  		#content .sticky h2 { 
-			font-family: "proxima-nova-1","proxima-nova-2",sans-serif; 
+			font-family: proxima-nova,sans-serif; 
 			line-height: 1.2;
 		}
 		#content .sticky h2 a { color: #000; font-weight: bold; }
@@ -274,7 +274,7 @@ article header h2 { font-weight: 900; }
 .post-author p { font-size:14px; }
 #content .entry-title { 
 	margin-bottom: 15px; 
-	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
+	font-family: proxima-nova,sans-serif;
 	font-size: 32px; 
 	line-height: 1.2; 
 	font-weight: bold; 
@@ -293,7 +293,7 @@ article header h2 { font-weight: 900; }
 .post img { box-shadow: #999 0 0 1px; }
 .post blockquote p, .post blockquote li { font-size: inherit; }
 #content .pull-quote p {
-	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
+	font-family: proxima-nova-extra-condensed,sans-serif;
 	font-weight: 600;
 	font-size: 32px;
 	font-style: normal;
@@ -304,7 +304,7 @@ article header h2 { font-weight: 900; }
 	color: #666;
 }
 #content .aside dt { 
-	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif; 
+	font-family: proxima-nova-extra-condensed,sans-serif; 
 	font-weight: 600;
 	font-size: 24px;
 }
@@ -328,7 +328,7 @@ article header h2 { font-weight: 900; }
 ============================================*/
 
 #sidebar h3 { 
-	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
+	font-family: proxima-nova-extra-condensed,sans-serif;
 	font-size: 22px;
 	text-transform: uppercase;
 	font-weight: 800;
@@ -369,7 +369,7 @@ article header h2 { font-weight: 900; }
 
 #site-footer { background: #000 url(./img/footer-bg.png) repeat-x; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
 	#site-footer h3 { 
-		font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
+		font-family: proxima-nova-extra-condensed,sans-serif;
 		font-size: 18px; 
 		text-transform: uppercase; 
 		color: #fff; 
@@ -390,7 +390,7 @@ article header h2 { font-weight: 900; }
 	#site-footer a { font-weight: bold; }
 	#site-footer .donate { margin-top:5px; }
 	#site-footer .donate a { 
-		font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
+		font-family: proxima-nova,sans-serif;
 		font-size: 16px;
 		text-transform: uppercase;
 		border: 1px solid #23323f;
@@ -425,7 +425,7 @@ article header h2 { font-weight: 900; }
 
 #author-bio { margin-bottom:20px; padding: 0; border-bottom: none; }
 #author-bio img { float:left; margin-top:3px; }
-#author-bio h4 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 24px; }
+#author-bio h4 { font-family: proxima-nova,sans-serif; font-size: 24px; }
 #author-bio h4,#author-bio h5,#author-bio p,#author-bio ul { margin-left:160px; margin-bottom:0; }
 #author-bio p { font-size:12px; }
 #author-bio ul { margin-top:10px; }
@@ -441,7 +441,7 @@ article header h2 { font-weight: 900; }
 .sw-network-news img { float:right; margin-left:10px; }
 .sw-network-news h4 { font-size:20px; line-height:1; margin-bottom:10px; }
 .sw-network-news h6 { margin:10px 0 3px; font-size:11px; font-weight:normal; line-height:1; color:#999; text-transform: uppercase; }
-#sidebar .swnn-tagline { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 16px; margin-bottom: 10px;  }
+#sidebar .swnn-tagline { font-family: proxima-nova,sans-serif; font-size: 16px; margin-bottom: 10px;  }
 
 /* beyond statewatch widget  
 ============================================*/
@@ -532,7 +532,7 @@ input#s1 { width: 160px; }
 /* About site sidebar module and about page intro */
 
 #content .module-title { 
-	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif;
+	font-family: proxima-nova-extra-condensed,sans-serif;
 	font-size: 24px; 
 	text-transform: uppercase; 
 	font-weight: 600;
@@ -543,10 +543,10 @@ input#s1 { width: 160px; }
 #content .abt-module { border-top: none; }
 #content .abt-field { border-top: 4px solid #ddd; padding-top: 6px; }
 	#content .abt-module:first-child { border-top: none; }
-	#content h2.module-title { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-size: 32px; text-transform: capitalize; padding-bottom: 6px; border-bottom: 4px solid #ddd; }
+	#content h2.module-title { font-family: proxima-nova,sans-serif; font-size: 32px; text-transform: capitalize; padding-bottom: 6px; border-bottom: 4px solid #ddd; }
 	#content h4.module-title { font-size: 18px; }
 .page-template-about-php #content p { font-size: 14px; }
-#content #sw-abt-network h4 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; text-transform: none; margin-bottom: 10px; }
+#content #sw-abt-network h4 { font-family: proxima-nova,sans-serif; text-transform: none; margin-bottom: 10px; }
 	#sw-network-partners,#content #sw-abt-network { border-top: none; }
 	#sw-network-partners dl { font-size: 14px; width: 300px; float: left; }
 	#sw-network-partners dt { float: left; clear: left; }
@@ -583,7 +583,7 @@ input#s1 { width: 160px; }
 	border-bottom: 4px solid #ddd; 
 	font-size:42px; 
 	line-height: 1.1;
-	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
+	font-family: proxima-nova,sans-serif;
 	color:#333; 
 	font-weight:300; 
 	background: #fff; 
@@ -594,7 +594,7 @@ input#s1 { width: 160px; }
 .coll-dl, .coll-d, .coll-l { border-bottom: 1px solid #ddd; padding-bottom:10px;  }
 
 #content #crp { padding-bottom:10px; overflow:hidden; }
-#content #crp h6, #coll-intro h6 { font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif; 
+#content #crp h6, #coll-intro h6 { font-family: proxima-nova-extra-condensed,sans-serif; 
 font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 0; }
 .key-source { display:block; font-size:12px; color:#999; }
 .coll-links h6 { margin-bottom:10px; color:#333; }
@@ -629,7 +629,7 @@ font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 0; 
 
 /* Tag index */
 .tag-letter h3 { 
-	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif; 
+	font-family: proxima-nova-extra-condensed,sans-serif; 
 	font-weight: 700; 
 	background: #333; 
 	line-height: 100px;
@@ -650,7 +650,7 @@ font-weight: 700; font-size: 18px; text-transform: uppercase; margin-bottom: 0; 
 #main .alpha-nav a { 
 	background-color: #ddd; 
 	color: #999; 
-	font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2",sans-serif; 
+	font-family: proxima-nova-extra-condensed,sans-serif; 
 	font-size: 18px;
 	-webkit-transition: .1s all ease-in; 
 	padding: 0;
