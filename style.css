@@ -282,7 +282,7 @@ article header h2 { font-weight: 900; }
 }
 #content .entry-title a { font-weight:bold; color: #000; }
 #content article p { line-height: 1.5; margin-bottom: 24px; }
-.post blockquote { 
+.post blockquote, .coll-desc blockquote { 
 	background: transparent; 
 	color: #666; 
 	border-left: 1px solid #ddd; 
@@ -291,7 +291,7 @@ article header h2 { font-weight: 900; }
 	font-size: 14px;
 }
 .post img { box-shadow: #999 0 0 1px; }
-.post blockquote p, .post blockquote li { font-size: inherit; }
+.post blockquote p, .post blockquote li, .coll-desc blockquote p { font-size: inherit; }
 #content .pull-quote p {
 	font-family: proxima-nova-extra-condensed,sans-serif;
 	font-weight: 600;
