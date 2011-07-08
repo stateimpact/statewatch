@@ -326,6 +326,7 @@ article header h2 { font-weight: 900; }
 
 /* Sidebar 
 ============================================*/
+.ie8 #sidebar, .ie7 #sidebar { padding-top: 0; }
 
 #sidebar h3 { 
 	font-family: proxima-nova-extra-condensed,sans-serif;
