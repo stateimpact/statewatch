@@ -244,7 +244,7 @@ $(document).ready(function(){
 			 </ul>
 	    </div>
 	
-		<div id="topic-economy" class="network-sites grid_2">
+		<div id="topic-education" class="network-sites grid_2">
 			<h5>Education</h5>
 			<ul>
 				<li>Florida</li>
@@ -252,7 +252,7 @@ $(document).ready(function(){
 				<li><a href="/ohio/">Ohio</a></li>
 			</ul>
 		</div>
-		<div id="topic-economy" class="network-sites grid_2 omega">
+		<div id="topic-energy" class="network-sites grid_2 omega">
 			<h5>Energy</h5>
 			<ul>
 				<li><a href="/pennsylvania/">Pennsylvania</a></li>

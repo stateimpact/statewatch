@@ -620,7 +620,7 @@ input#s1 { width: 160px; }
 .coll-links li { font-size:13px; margin-bottom:10px; }
 .coll-links li a { font-weight: bold; }
 
-#coll-intro .coll-desc li { list-style: disc; margin: 0 0 20px 10px; }
+.coll-desc li { list-style: disc; margin: 0 0 20px 10px; }
 
 	/* description and links */
 	.coll-dl { /* background: url(./img/ddd.png) 630px 0 repeat-y; */ }

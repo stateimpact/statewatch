@@ -138,7 +138,7 @@
 <h5><a href="#">Sponsor Name</a></h5>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-</div> <!-- /#sw-sponsors -->
+</div>  -->
 
 </div><!-- / .grid_4 omega -->
 					
