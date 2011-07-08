@@ -67,7 +67,7 @@ p  { font-size:16px; line-height: 1.4; }
 		
 		.featured-topics img { float: left; margin-top: 3px; }
 		.featured-topics h2 { font-size: 12px; line-height: 1; font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
-		.featured-topics h3 { font-size: 20px; font-family: proxima-nova-extra-condensed,sans-serif; font-weight: 600; }
+		.featured-topics h3 { font-size: 18px; font-family: proxima-nova-extra-condensed,sans-serif; font-weight: 600; }
 		.featured-topics h3, .featured-topics h4 { margin:0 0 0 70px; }
 		.featured-topics h4 { font-size: 12px; }
 		#wrapper .featured-topics h3 a { color: #333; } 
