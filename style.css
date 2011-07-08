@@ -651,6 +651,7 @@ input#s1 { width: 160px; }
 	/* Sidebar */
 	.tag #sidebar .widget-list:first-child .ad, .category #sidebar .widget-list:first-child .ad { border-top: 4px solid #ddd; padding-top: 10px; }
 
+
 /* Tag index 
 =======================================================*/
 .tag-letter h3 { 
