@@ -21,8 +21,8 @@ query_posts( argo_post_types_qs() );
 	 *
 	 * Without further ado, the loop:
 	 */ ?>
-<?php while ( have_posts() ) : the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class('grid_8 alpha'); ?>>
+<?php $c = 0; $style=''; while (have_posts()) : the_post(); $c++; if( $c == 1 ) { $style='first'; } elseif ( $c == $wp_query->post_count ) { $style='last'; } else { $style=''; } ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('grid_8 alpha ' . $style); ?>>
 <?php if ( is_front_page() && is_sticky() ):  ?>
 <?php    if ( navis_post_has_features() ): 
             $feature = navis_get_the_main_feature();
