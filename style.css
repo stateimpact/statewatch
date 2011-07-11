@@ -309,13 +309,33 @@ article header h2 { font-weight: 900; }
 	font-size: 24px;
 }
 
-.post-nav { border-bottom: none; }
-#content #related-post-nav a.selected { color: #fff; background: url(./img/related-arrow.png) 0 center no-repeat; border: none; font-weight: bold; }
-	#content #related-post-nav a.selected .fold { display: none; }
-#content #related-post-nav h4 { padding: 0 3px;}
-#content #related-posts .items .top-related h3 a { font-weight: bold; font-size: 16px; }
-#content #related-posts .top-related p { font-size: 14px; }
-#content #related-posts .items li a { font-weight: bold; font-size: 12px; }
+	.post-nav { border-bottom: none; }
+	
+	article ul.playlist { margin-bottom: 25px; }
+	
+	/* Related Posts */
+	#content #related-post-nav a.selected { color: #fff; background: url(./img/related-arrow.png) 0 center no-repeat; border: none; font-weight: bold; }
+		#content #related-post-nav a.selected .fold { display: none; }
+	#content #related-post-nav h4 { padding: 0 3px;}
+	#content #related-posts .items .top-related h3 a { font-weight: bold; font-size: 16px; }
+	#content #related-posts .top-related p { font-size: 14px; }
+	#content #related-posts .items li a { font-weight: bold; font-size: 12px; }
+
+
+	/* Sharing */
+	.meta-gestures li { line-height: 18px; font-size: 11px; margin-right: 8px; height: 20px;  }
+	#content .meta-gestures li a { color: #666; }
+	.meta-gestures .meta-comments { background: url(./img/comment_16.png) no-repeat; padding-left: 25px;  }
+	.meta-gestures .meta-email { background: url(./img/email_16.png) no-repeat; padding-left: 30px;  }
+
+	/* Tables */
+	article table .text { text-align: left; }
+	article table .num { text-align: right; }
+	article table { font-family: proxima-nova-extra-condensed,sans-serif; font-size: 16px; }
+	article table tr:first-child td, article table tr:first-child th { border-top: none; border-bottom: 1px solid #ddd; background: transparent; }
+	article table td { border-top: 1px solid #ddd; }
+	article table tr:nth-child(even) td { background: #fff; }
+	article table tr:nth-child(odd) td { background: #f5f5f5; }
 
 
 /* Full page template 
