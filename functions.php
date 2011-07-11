@@ -25,6 +25,16 @@ function sw_network_feed_url_callback() {
     echo "<input type='text' value='$option' name='network_feed_url' />"; 
 }
 
+function sw_the_email_link() {
+    if ( get_option( 'show_email_link' ) ) {
+        echo '<li class="meta-email"><a href="mailto:?subject=';
+        the_title();
+        echo '&body=';
+        the_permalink();
+        echo '">Email</a></li>';
+    }
+}
+
 
 add_action( 'init', 'remove_argo_actions' );
 function remove_argo_actions() {    
