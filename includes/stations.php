@@ -74,6 +74,7 @@ function sw_station_metabox($post) {
             <td>
                 <div><input type="radio" name="is_primary" value="1" <?php checked($primary, 1); ?> /> Primary partner</div>
                 <div><input type="radio" name="is_primary" value="2" <?php checked($primary, 2); ?> /> Supporting organization</div>
+                <div><input type="radio" name="is_primary" value="2" <?php checked($primary, 3); ?> /> Sponsor</div>
                 <span class="description">Primary partners appear in the site footer. Others appear on the About page.</span>
             </td>
         </tr>
@@ -85,8 +86,10 @@ add_action( 'save_post', 'sw_save_station_metadata' );
 function sw_save_station_metadata($post_id) {
     $fields = array('frequency', 'city', 'url', 'support_url', 'is_primary');
     foreach ($fields as $field) {
-        update_post_meta( $post_id, $field, 
-            strip_tags( $_POST[$field] ));
+        if ( isset( $_POST[$field] ) ) {
+            update_post_meta( $post_id, $field, 
+                strip_tags( $_POST[$field] ));
+        }
     };
 }
 
@@ -118,6 +121,19 @@ function sw_get_supporting_orgs() {
         );
     
     return $partners;
+}
+
+function sw_get_sponsors() {
+    $sponsors = new WP_Query(
+            array(
+                'post_type'      => 'partner_station',
+                'orderby'        => 'title',
+                'order'          => 'ASC',
+                'posts_per_page' => -1,
+                'meta_key'       => 'is_primary',
+                'meta_value'     => 3,
+            )
+        );
 }
 
 ?>
