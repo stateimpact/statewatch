@@ -148,18 +148,9 @@ class Impact_Network_Widget extends WP_Widget {
                 $site_name  = $site_info[ 1 ];
 
         // actual template is html
-        if ( $i < 1 ): ?>
-        <h6><?php echo $site_name; ?></h6>
-        <h4><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a></h4>
-        <?php if ($thumbnail):?>
-            <img src="<?php echo $thumbnail ?>">
-        <?endif; ?>
-        <?php echo $item->get_description(); ?>
-        
-        <?php else: ?>
+        ?>
         <h6><?php echo $site_name; ?></h6>
         <h5><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a></h5>
-        <?php endif; ?>
     <?php endforeach; ?>
         </div> <!-- /.network-news -->
         
