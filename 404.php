@@ -9,9 +9,8 @@ Template Name: Topic index
 <article class="grid_8">
 <div id="content">
 <h1 class="entry-title">404 - Not Found</h1>
-<p>Sorry. We can't find the page you were looking for. Please try searching for related posts:</p>
+<p>Sorry. We can't find the page you were looking for.</p>
 <div class="clearfix"></div>
-<?php get_search_form(); ?>
 </div>
 </article>
 <!--/.grid_8-->

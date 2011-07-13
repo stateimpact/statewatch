@@ -42,7 +42,7 @@
 	<link rel="apple-touch-icon-precomposed" href="<?php bloginfo('stylesheet_directory'); ?>/img/apple-touch-icon-precomposed.png"/> 
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 	
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=6" />
+	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=7" />
 	<link rel="stylesheet" media="handheld" href="<?php bloginfo('template_directory'); ?>/css/handheld.css?v=1" />
 
 <script src="<?php bloginfo('template_directory'); ?>/js/modernizr-1.6.min.js"></script>
@@ -122,6 +122,13 @@ _clickEvents = [
 		        </a>
 		    </h3>
 		    <h4><?php bloginfo('description'); ?></h4>
+		
+			<form class="sitesearch" role="search" method="get"> 
+            	<div><label class="visuallyhidden" for="s1">Search for:</label> 
+            	<input type="text" placeholder="Search This Site" value="" name="s" class="sw-about-search" /> 
+            	<input type="submit" alt="Submit" width="32" height="24" class="search-submit" /> 
+            	</div> 
+            </form>
 		</header>
 
 	   <div id="category-nav">

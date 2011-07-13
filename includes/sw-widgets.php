@@ -63,13 +63,6 @@ class About_StateImpact extends WP_Widget {
                 
                 <li class="sw-rss" title="Subscribe with RSS"><?php echo the_feed_link( 'RSS' ); ?></li>
             </ul> 
-
-            <form role="search" method="get"> 
-            	<div><label class="visuallyhidden" for="s1">Search for:</label> 
-            	<input type="text" placeholder="Search This Site" value="" name="s" class="sw-about-search" /> 
-            	<input type="submit" alt="Submit" width="32" height="24" class="search-submit" /> 
-            	</div> 
-            </form> 
         
 		<?php
 		echo $after_widget;
