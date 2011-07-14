@@ -42,4 +42,14 @@ function remove_argo_actions() {
     remove_action( 'navis_network_icon', 'argo_network_icon' );
     remove_action( 'wp_footer', 'argo_build_network_panel' );
 }
+
+add_filter( 'bloginfo_rss', 'sw_fix_feed_title', 10, 2);
+function sw_fix_feed_title($info, $show) {
+    if ($show != 'name') {
+        // in this case, we only care about the 'name' option
+        return $info;
+    } else {
+        return SITE_NAME_PREFIX . $info;
+    }
+}
 ?>
