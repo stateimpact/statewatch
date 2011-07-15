@@ -73,6 +73,21 @@
 			<?php endwhile; ?></h5>
 			</div>
 			<?php endif; ?>
+			
+			<?php $sponsors = sw_get_sponsors(); ?>
+			<?php if ( $sponsors->have_posts() ): ?>
+		    <div class="sponsors partner-station clearfix">
+		        <h4 class="module-title">Sponsors</h4>
+		        <?php while ( $sponsors->have_posts() ): $sponsors->the_post(); ?>
+		            <?php if ( has_post_thumbnail() ): ?>
+        		        <a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>">
+        		        <?php the_post_thumbnail( array(140) ); ?>
+        				</a>
+        			<?php endif; ?>
+        		    <h4><a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a></h4>
+		        <?php endwhile; ?>
+		    </div>
+			<?php endif; ?>
 		</div>
 		
 		<div class="clearfix"></div>

@@ -74,7 +74,7 @@ function sw_station_metabox($post) {
             <td>
                 <div><input type="radio" name="is_primary" value="1" <?php checked($primary, 1); ?> /> Primary partner</div>
                 <div><input type="radio" name="is_primary" value="2" <?php checked($primary, 2); ?> /> Supporting organization</div>
-                <div><input type="radio" name="is_primary" value="2" <?php checked($primary, 3); ?> /> Sponsor</div>
+                <div><input type="radio" name="is_primary" value="3" <?php checked($primary, 3); ?> /> Sponsor</div>
                 <span class="description">Primary partners appear in the site footer. Others appear on the About page.</span>
             </td>
         </tr>
@@ -134,6 +134,8 @@ function sw_get_sponsors() {
                 'meta_value'     => 3,
             )
         );
+    
+    return $sponsors;
 }
 
 ?>
