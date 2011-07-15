@@ -43,6 +43,30 @@ function sw_station_metabox($post) {
     ?>
     <table class="form-tabel">
         <tr>
+            <h4>Primary partners appear in the site footer and on the About page. Others appear only on the About page.</h4>
+            <th><label for="is_primary"></label></th>
+            <td>
+                <div>
+                    <input type="radio" name="is_primary" value="1" <?php checked($primary, 1); ?> /> Primary partner
+                </div>
+                <div>
+                    <input type="radio" name="is_primary" value="2" <?php checked($primary, 2); ?> /> Supporting organization
+                    <span class="description">Other editorial contributors, including other public radio stations</span>
+                </div>
+                <div>
+                    <input type="radio" name="is_primary" value="3" <?php checked($primary, 3); ?> /> Sponsor
+                    <span class="description">Financial contributors, such as local foundations</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="url">URL: </label></th>
+            <td>
+                <input type="text" name="url" value="<?php echo esc_attr( $url ); ?>"/>
+                <span class="description">Organization's main URL</span>
+            </td>
+        </tr>
+        <tr>
             <th><label for="frequency">Frequency: </label></th>
             <td>
                 <input type="text" name="frequency" value="<?php echo esc_attr( $freq ); ?>"/>
@@ -56,26 +80,10 @@ function sw_station_metabox($post) {
             </td>
         </tr>
         <tr>
-            <th><label for="url">URL: </label></th>
-            <td>
-                <input type="text" name="url" value="<?php echo esc_attr( $url ); ?>"/>
-                <span class="description">Your station's main URL</span>
-            </td>
-        </tr>
-        <tr>
             <th><label for="support_url">Support URL: </label></th>
             <td>
                 <input type="text" name="support_url" value="<?php echo esc_attr( $support_url ); ?>"/>
                 <span class="description">Where can people give you money?</span>
-            </td>
-        </tr>
-        <tr>
-            <th><label for="is_primary"></label></th>
-            <td>
-                <div><input type="radio" name="is_primary" value="1" <?php checked($primary, 1); ?> /> Primary partner</div>
-                <div><input type="radio" name="is_primary" value="2" <?php checked($primary, 2); ?> /> Supporting organization</div>
-                <div><input type="radio" name="is_primary" value="3" <?php checked($primary, 3); ?> /> Sponsor</div>
-                <span class="description">Primary partners appear in the site footer. Others appear on the About page.</span>
             </td>
         </tr>
     </table>
