@@ -46,7 +46,7 @@
 		    <?php $stations->the_post(); ?>
 
     
-		    <div class="partner-station clearfix">
+		    <div class="partner-station logo-list clearfix">
 		    <?php if ( has_post_thumbnail() ) { ?>
 		        <a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>">
 		        <?php the_post_thumbnail( array(140) ); ?>
@@ -76,7 +76,7 @@
 			
 			<?php $sponsors = sw_get_sponsors(); ?>
 			<?php if ( $sponsors->have_posts() ): ?>
-		    <div class="sponsors partner-station clearfix">
+		    <div class="sponsors logo-list clearfix">
 		        <h4 class="module-title">Sponsors</h4>
 		        <?php while ( $sponsors->have_posts() ): $sponsors->the_post(); ?>
 		            <?php if ( has_post_thumbnail() ): ?>

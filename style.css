@@ -559,20 +559,20 @@ input.sw-about-search, input#s1, .error404 #s2 { height: 15px; width: 162px; bor
 
 /* About site sidebar module and about page intro */
 
-#content .module-title { 
+#content .module-title, #content .sponsors h4.module-title { 
 	font-family: proxima-nova-extra-condensed,sans-serif;
 	font-size: 24px; 
 	text-transform: uppercase; 
 	font-weight: 600;
 	color: #000; 
 	line-height: 32px; 
-	margin-bottom: 5px;
+	margin: 0 0 5px 0;
 }
 #content .abt-module { border-top: none; }
 #content .abt-field { border-top: 4px solid #ddd; padding-top: 6px; }
 	#content .abt-module:first-child { border-top: none; }
 	#content h2.module-title { font-family: proxima-nova,sans-serif; font-size: 32px; text-transform: capitalize; padding-bottom: 6px; border-bottom: 4px solid #ddd; }
-	#content h4.module-title { font-size: 18px; }
+	#content h4.module-title, #content .sponsors h4.module-title { font-size: 18px; }
 .page-template-about-php #content p { font-size: 14px; }
 #content #sw-abt-network h4 { font-family: proxima-nova,sans-serif; text-transform: none; margin-bottom: 10px; }
 	#sw-network-partners,#content #sw-abt-network { border-top: none; }
@@ -599,9 +599,9 @@ input.sw-about-search, input#s1, .error404 #s2 { height: 15px; width: 162px; bor
 	#main .abt-staff p { clear: left; }
 
 	/*partner station */
-	.partner-station { margin-bottom:20px; }
-	.partner-station img { float:left; }
-	#content .partner-station h4,#content .partner-station h5 { margin:0 0 0 160px; font-size:12px; font-weight:normal; }
+	.logo-list { margin-bottom:20px; }
+	.logo-list img { float:left; }
+	#content .logo-list h4,#content .logo-list h5 { margin:0 0 0 160px; font-size:12px; font-weight:normal; }
 
 /* Collection page (tag.php,category.php)
 ===============================================*/
