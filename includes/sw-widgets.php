@@ -105,6 +105,7 @@ class Impact_Network_Widget extends WP_Widget {
     	extract( $args );
         $feed_url = get_option('network_feed_url', 'http://pipes.yahoo.com/pipes/pipe.run?_id=ead495cc3467b86874819c5faa72f01d&_render=rss');
     	$title = empty($instance['title']) ? "StateImpact Network News" : $instance['title'];
+    	$huburl = get_option('hub_url', '/');
     	/* Before widget (defined by themes). */
             echo $before_widget;
             include_once( ABSPATH . WPINC . '/class-feed.php' );
@@ -119,7 +120,7 @@ class Impact_Network_Widget extends WP_Widget {
             ?>
             <div class="sw-network-news"> 
             <h3><?php echo $title ?></h3>
-            <p class="swnn-tagline">Issues That Matter. Close To Home.</p>
+            <p class="swnn-tagline"><a href="<?php echo $huburl; ?>">Issues That Matter. Close To Home.</a></p>
             <ul> <?php
             foreach ( array_slice( $feed->get_items(), 0, 5 ) as $i => $item ):
                 $encs = $item->get_enclosures();
