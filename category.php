@@ -8,9 +8,10 @@ $topic = argo_get_topic_for( $cat );
 ?>
 
 <?php get_header(); ?>
-<?php get_template_part( 'collection-description' ); ?>
+<?php get_template_part( 'includes/collection-header' ); ?>
 
 <div id="content" class="grid_8" role="main">
+<?php get_template_part( 'includes/collection-background' ); ?>	
 <div id="crp"><h6>Recent Posts</h6></div> 
 <?php 
 /* Run the loop for the category page to output the posts.
@@ -23,7 +24,8 @@ get_template_part( 'loop', 'category' ); ?>
 
 
 <aside id="sidebar" class="grid_4">
-<?php get_sidebar('category'); ?>
+	<?php get_template_part( 'includes/collection-links' ); ?>
+	<?php get_sidebar('category'); ?>
 </aside>
 <!-- /.grid_4 -->
 <?php get_footer(); ?>
