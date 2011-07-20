@@ -14,7 +14,7 @@ Version: 0.1
 body { font-family: "Helvetica Neue",Arial,sans-serif; color: #444; }
 #wrapper { position: static; } /* Defeats foundation.css style that contributed to IE7 jumping margins bug */
 .container_12 { background: transparent; }
-#local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; width: 100%; }
+#local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; width: 100%; overflow: hidden; }
 #main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 25px 20px;  }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin: 0 0 10px; }
@@ -136,7 +136,7 @@ p  { font-size:16px; line-height: 1.4; }
 			#panel-about p a:hover { color: #444; text-decoration: underline; }
 #global-branding { position: relative; z-index: 10; width: 940px; margin: 0 auto; padding: 36px 0 10px; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
 	#global-branding header { width: 460px; }
-	#category-nav { position: absolute; right: 0; top: 69px; }
+	#category-nav { position: absolute; right: 0; top: 74px; }
 		#topnav li { border-left: 1px solid rgba(0,0,0,.5); padding: 0; }
 			.no-rgba #topnav li { border-left: 1px solid #999; }
 		#topnav .first, .no-rgba #topnav .first { border-left: none; }
@@ -393,7 +393,7 @@ article header h2 { font-weight: 900; }
 /* Footer  
 ============================================*/
 
-#site-footer { background: #000 url(./img/footer-bg.png) repeat-x; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; width: 100%; }
+#site-footer { background: #000 url(./img/footer-bg.png) repeat-x; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; width: 100%; overflow: hidden; }
 	#site-footer h3 { 
 		font-family: proxima-nova-extra-condensed,sans-serif;
 		font-size: 18px; 
