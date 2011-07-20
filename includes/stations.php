@@ -20,7 +20,7 @@ function sw_create_station_post_types() {
         'exclude_from_search' => true,
         'public' => false,
         'show_ui' => true,
-        'supports' => array('title', 'excerpt', 'thumbnail'),
+        'supports' => array('title', 'excerpt', 'thumbnail', 'menu_order'),
         'taxonomies' => array(),
         )
     );
@@ -40,7 +40,7 @@ function sw_station_metabox($post) {
     $url = get_post_meta( $post->ID, 'url', true );
     $support_url = get_post_meta( $post->ID, 'support_url', true );
     $primary = get_post_meta( $post->ID, 'is_primary', true );
-    $order = get_post_meta( $post->ID, 'partner_order', true);
+    $order = get_post_meta( $post->ID, 'menu_order', true);
     if (empty($order)) {
         $order = 0;
     }
@@ -91,9 +91,9 @@ function sw_station_metabox($post) {
             </td>
         </tr>
         <tr>
-            <th><label for="partner_order">Order: </label></th>
+            <th><label for="menu_order">Order: </label></th>
             <td>
-                <input type="text" name="partner_order" value="<?php echo esc_attr( $order ); ?>" />
+                <input type="text" name="menu_order" value="<?php echo esc_attr( $order ); ?>" />
                 <span class="description">Lower numbers will show up first</span>
             </td>
         </tr>
@@ -104,7 +104,7 @@ function sw_station_metabox($post) {
 add_action( 'save_post', 'sw_save_station_metadata' );
 function sw_save_station_metadata($post_id) {
     $fields = array('frequency', 'city', 'url', 
-        'support_url', 'is_primary', 'partner_order');
+        'support_url', 'is_primary', 'menu_order');
     foreach ($fields as $field) {
         if ( isset( $_POST[$field] ) ) {
             update_post_meta( $post_id, $field, 
@@ -117,8 +117,8 @@ function sw_get_stations() {
     $stations = new WP_Query(
             array(
                 'post_type'      => 'partner_station',
-                'orderby'        => 'partner_order',
-                'order'          => 'DESC',
+                'orderby'        => 'menu_order title',
+                'order'          => 'ASC',
                 'meta_key'       => 'is_primary',
                 'meta_value'     => 1,
                 'posts_per_page' => -1
