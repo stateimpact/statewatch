@@ -17,7 +17,7 @@ $first_link = $links[0];
 		    <li class="fb">
 		        <a name="fb_share" share_url="<?php the_permalink(); ?>" type="button_count" href="<?php echo esc_url( 'http://www.facebook.com/sharer.php?u=' . get_permalink() . '&t=' ) . get_the_title();  ?>">Share</a>
 		    </li>
-		</ul>
+		</ul>	
 	<?php else: ?>
 	    <h2><?php echo $cat->name; ?></h2>
 	<?php endif; ?>
