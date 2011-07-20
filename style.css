@@ -14,7 +14,7 @@ Version: 0.1
 body { font-family: "Helvetica Neue",Arial,sans-serif; color: #444; }
 #wrapper { position: static; } /* Defeats foundation.css style that contributed to IE7 jumping margins bug */
 .container_12 { background: transparent; }
-#local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; width: 100%; overflow: hidden; }
+#local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; width: 100%; overflow: hidden; min-width: 980px; }
 #main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 25px 20px;  }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin: 0 0 10px; }
@@ -136,7 +136,7 @@ p  { font-size:16px; line-height: 1.4; }
 			#panel-about p a:hover { color: #444; text-decoration: underline; }
 #global-branding { position: relative; z-index: 10; width: 940px; margin: 0 auto; padding: 36px 0 10px; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
 	#global-branding header { width: 460px; }
-	#category-nav { position: absolute; right: 0; top: 74px; }
+	#category-nav { position: absolute; right: 0; top: 69px; }
 		#topnav li { border-left: 1px solid rgba(0,0,0,.5); padding: 0; }
 			.no-rgba #topnav li { border-left: 1px solid #999; }
 		#topnav .first, .no-rgba #topnav .first { border-left: none; }
@@ -547,7 +547,7 @@ article header h2 { font-weight: 900; }
 ============================================*/
 
 #s2 { position: static; }
-header .sitesearch { position: absolute; top: 25px; right: 0; }
+header .sitesearch { position: absolute; top: 30px; right: 0; }
 .sitesearch { display: block; width: 220px; height: 33px; position: relative; }
 input.sw-about-search, input#s1, .error404 #s2 { height: 14px; width: 171px; border: none; background: url(./img/search-input-bg.png) repeat-x; padding:7px 0 7px 10px; display: block; font-size: 14px; text-transform: none; margin: 0; position: absolute; left: 0; }
 .sitesearch input[placeholder] { color: #999; }
