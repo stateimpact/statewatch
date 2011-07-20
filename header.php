@@ -123,7 +123,7 @@ _clickEvents = [
 		    </h3>
 		    <h4><?php bloginfo('description'); ?></h4>
 		
-			<form class="sitesearch" role="search" method="get"> 
+			<form class="sitesearch" role="search" action="<?php bloginfo('url'); ?>" method="get"> 
             	<div><label class="visuallyhidden" for="s1">Search for:</label> 
             	<input type="text" placeholder="Search This Site" value="" name="s" class="sw-about-search" /> 
             	<input type="submit" alt="Submit" width="32" height="24" class="search-submit" /> 
