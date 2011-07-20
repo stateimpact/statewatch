@@ -14,7 +14,7 @@ Version: 0.1
 body { font-family: "Helvetica Neue",Arial,sans-serif; color: #444; }
 #wrapper { position: static; } /* Defeats foundation.css style that contributed to IE7 jumping margins bug */
 .container_12 { background: transparent; }
-#local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; }
+#local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; width: 100%; }
 #main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 25px 20px;  }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin: 0 0 10px; }
@@ -393,7 +393,7 @@ article header h2 { font-weight: 900; }
 /* Footer  
 ============================================*/
 
-#site-footer { background: #000 url(./img/footer-bg.png) repeat-x; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
+#site-footer { background: #000 url(./img/footer-bg.png) repeat-x; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; width: 100%; }
 	#site-footer h3 { 
 		font-family: proxima-nova-extra-condensed,sans-serif;
 		font-size: 18px; 
@@ -549,10 +549,10 @@ article header h2 { font-weight: 900; }
 #s2 { position: static; }
 header .sitesearch { position: absolute; top: 25px; right: 0; }
 .sitesearch { display: block; width: 220px; height: 33px; position: relative; }
-input.sw-about-search, input#s1, .error404 #s2 { height: 15px; width: 162px; border: none; background: url(./img/search-input-bg.png) repeat-x; padding:9px 0 9px 10px; display: block; font-size: 14px; text-transform: none; margin: 0; position: absolute; left: 0; }
+input.sw-about-search, input#s1, .error404 #s2 { height: 14px; width: 171px; border: none; background: url(./img/search-input-bg.png) repeat-x; padding:7px 0 7px 10px; display: block; font-size: 14px; text-transform: none; margin: 0; position: absolute; left: 0; }
 .sitesearch input[placeholder] { color: #999; }
-#wrapper .search-submit, .error404 .search-submit { height: 33px; width: 48px; background: url(./img/search-submit-bg.png) 0 0 no-repeat; text-indent: -999px; margin: 0; padding: 0; border: none; display: block; position: absolute; right: 0; font-size: 0; line-height: 0; /* For IE6/IE7 */ }
-#wrapper .search-submit:active, .error404 .search-submit:active { background: url(./img/search-submit-bg.png) 0 -33px no-repeat; }
+#wrapper .search-submit, .error404 .search-submit { height: 28px; width: 40px; background: url(./img/search-submit-bg.png) 0 0 no-repeat; text-indent: -999px; margin: 0; padding: 0; border: none; display: block; position: absolute; right: 0; font-size: 0; line-height: 0; /* For IE6/IE7 */ }
+#wrapper .search-submit:active, .error404 .search-submit:active { background: url(./img/search-submit-bg.png) 0 -28px no-repeat; }
 .abt-module { margin-bottom: 20px; padding-top: 5px; border-top: 4px solid #999; }
 
 /************** ABOUT PAGE ******************/
