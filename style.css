@@ -462,7 +462,7 @@ article header h2 { font-weight: 900; }
 ============================================*/
 
 .sw-network-news h3,.sw-network-news h4,.sw-network-news h6,.sw-network-news p { margin:0; }
-.sw-network-news .swnn-tagline { font-size:14px; margin-top:5px; }
+#sidebar .sw-network-news .swnn-tagline { font-size:14px; margin-top:5px; }
 .sw-network-news .swnn-tagline a { color: #333; }
 .sw-network-news p { line-height:1.4; font-size:12px; }
 .sw-network-news img { float:right; margin-left:10px; }
