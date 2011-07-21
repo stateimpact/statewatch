@@ -132,7 +132,7 @@ function sw_get_supporting_orgs() {
     $partners = new WP_Query(
             array(
                 'post_type'      => 'partner_station',
-                'orderby'        => 'title',
+                'orderby'        => 'menu_order title',
                 'order'          => 'ASC',
                 'posts_per_page' => -1,
                 'meta_key'       => 'is_primary',
@@ -147,7 +147,7 @@ function sw_get_sponsors() {
     $sponsors = new WP_Query(
             array(
                 'post_type'      => 'partner_station',
-                'orderby'        => 'title',
+                'orderby'        => 'menu_order title',
                 'order'          => 'ASC',
                 'posts_per_page' => -1,
                 'meta_key'       => 'is_primary',
