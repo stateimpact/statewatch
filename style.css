@@ -419,7 +419,7 @@ article header h2 { font-weight: 900; }
 		font-family: proxima-nova,sans-serif;
 		font-size: 16px;
 		text-transform: uppercase;
-		border: 1px solid #23323f;
+		border: 1px solid #364E63;
 		background: #406384; /* Old browsers */
 		background: -moz-linear-gradient(top, #406384 0%, #23323f 100%); /* FF3.6+ */
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#406384), color-stop(100%,#23323f)); /* Chrome,Safari4+ */
@@ -463,6 +463,7 @@ article header h2 { font-weight: 900; }
 
 .sw-network-news h3,.sw-network-news h4,.sw-network-news h6,.sw-network-news p { margin:0; }
 .sw-network-news .swnn-tagline { font-size:14px; margin-top:5px; }
+.sw-network-news .swnn-tagline a { color: #333; }
 .sw-network-news p { line-height:1.4; font-size:12px; }
 .sw-network-news img { float:right; margin-left:10px; }
 .sw-network-news h4 { font-size:20px; line-height:1; margin-bottom:10px; }
