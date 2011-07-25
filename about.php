@@ -34,6 +34,10 @@
 	    <?php endif; ?>
 	        <li class="sw-rss"><?php echo the_feed_link( 'RSS' ); ?></li>
 	    </ul>
+	
+		<ul>
+	        <li><a href="http://www.npr.org/templates/stations/stations/">Station Finder &raquo;</a></li>
+	    </ul>
 
 	</div><!-- .sw-about -->
 	<!-- <?php $state_img = strtolower( str_replace(' ', '', get_bloginfo('name'))); ?>
@@ -58,9 +62,7 @@
 		        <h5><a href="<?php echo get_post_meta( get_the_ID(), 'support_url', true ); ?>">Support</a></h5>
 		    </div><!-- / .partner-station -->
 		<?php endwhile; ?>
-			<ul>
-		        <li><a href="http://www.npr.org/templates/stations/stations/">Station Finder &raquo;</a></li>
-		    </ul>
+			
 		
 		
 			<?php $supporters = sw_get_supporting_orgs(); ?>
@@ -143,7 +145,7 @@
 
 <div id="sw-abt-npr">
 	<h4 class="module-title">About NPR</h4>
-    <p>A thriving media organization at the forefront of digital innovation, NPR creates and distributes award-winning news, information, and music programming to a network of 900 independent stations. Through them, NPR programming reaches 26.8 million listeners every week. <a href="http://www.npr.org/about/aboutnpr/">More information &raquo;</a></p>
+    <p><a href="http://npr.org"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/nprlogo_138x46.gif" class="right" /></a>A thriving media organization at the forefront of digital innovation, NPR creates and distributes award-winning news, information, and music programming to a network of 900 independent stations. Through them, NPR programming reaches 26.8 million listeners every week. <a href="http://www.npr.org/about/aboutnpr/">More information &raquo;</a></p>
 </div> <!-- /#sw-abt-npr -->
 
 <!--

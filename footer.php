@@ -56,6 +56,9 @@ $blogger = argo_get_primary_blogger();
             <dd><?php echo get_post_meta( get_the_ID(), 'city', true ); ?></dd>
         </dl>
     <?php endwhile; ?>
+		<dl class="partner-station">
+            <dt><a href="http://npr.org">NPR</a></dt>
+        </dl>
 </div>
 <!-- /.grid_3 -->
 
