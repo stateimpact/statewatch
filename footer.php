@@ -19,18 +19,11 @@ $blogger = argo_get_primary_blogger();
 <h4 id="footerstate"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
             <?php bloginfo('name'); ?>
         </a></h4>
-<ul id="colophon">
-    <li><?php echo "Copyright " . date('Y') . " " . get_option('copyright_holder'); ?></li>
-    <li class="comments-policy"><a href="http://stateimpact.npr.org/comments-policy/">Comments Policy</a></li>
-    <li><a href="<?php echo get_option('tos_link'); ?>">Terms of Use</a></li>
-    <li><a href="<?php echo get_option('privacy_link'); ?>">Privacy Policy</a></li>
-    <?php if (get_option('support_link')): ?>
-    <li class="donate"><a href="<?php echo get_option('support_link'); ?>">Support</a></li>
-    <?php else: ?>
-    <li class="donate"><a href="http://www.npr.org/stations/donate/index.php?ps=st273">Support</a></li>
-    <?php endif; ?>
-</ul>
-
+		<?php if (get_option('support_link')): ?>
+	    <div class="donate"><a href="<?php echo get_option('support_link'); ?>">Support</a></div>
+	    <?php else: ?>
+	    <div class="donate"><a href="http://www.npr.org/stations/donate/index.php?ps=st273">Support</a></div>
+	    <?php endif; ?>
 </div>
 <!-- /.grid_3 -->
 <div class="grid_3">
@@ -56,9 +49,6 @@ $blogger = argo_get_primary_blogger();
             <dd><?php echo get_post_meta( get_the_ID(), 'city', true ); ?></dd>
         </dl>
     <?php endwhile; ?>
-		<dl class="partner-station">
-            <dt><a href="http://npr.org">NPR</a></dt>
-        </dl>
 </div>
 <!-- /.grid_3 -->
 
@@ -85,15 +75,24 @@ $blogger = argo_get_primary_blogger();
 
 </div>
 <!-- /.grid_3 -->
-
 <div id="boilerplate" class="grid_12">
-
+	<ul id="colophon">
+	    <li class="copyright"><?php echo "Copyright " . date('Y') . " " . get_option('copyright_holder'); ?></li>
+	    <li class="comments-policy"><a href="http://stateimpact.npr.org/comments-policy/">Comments Policy</a></li>
+	    <li><a href="<?php echo get_option('tos_link'); ?>">Terms of Use</a></li>
+	    <li><a href="<?php echo get_option('privacy_link'); ?>">Privacy Policy</a></li>
+		<li class="npr">A reporting project of local public media and <a class="nprlogo" href="http://npr.org" title="Visit npr.org">NPR</a></li>
+	</ul>
     <?php wp_nav_menu( array( 'theme_location' => 'footer', 'container' => false ) ); ?>
     <p class="back-to-top visuallyhidden"><a href="#main">Back To Top &uarr;</a></p>
 </div>
 <!-- /.grid_12 -->
 </div>
 <!-- /.container_12 -->
+
+
+
+
 <!--[if (gte IE 9)|!(IE)]><!--> </footer><!--<![endif]-->
 <!--[if lte IE 8]></div><![endif]-->
 <!-- #footer -->
