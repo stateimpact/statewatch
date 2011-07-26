@@ -77,7 +77,7 @@ $blogger = argo_get_primary_blogger();
 <!-- /.grid_3 -->
 <div id="boilerplate" class="grid_12">
 	<ul id="colophon">
-	    <li class="copyright"><?php echo "Copyright " . date('Y') . " " . get_option('copyright_holder'); ?></li>
+	    <li class="copyright"><?php echo "&copy; " . date('Y') . " " . get_option('copyright_holder'); ?></li>
 	    <li class="comments-policy"><a href="http://stateimpact.npr.org/comments-policy/">Comments Policy</a></li>
 	    <li><a href="<?php echo get_option('tos_link'); ?>">Terms of Use</a></li>
 	    <li><a href="<?php echo get_option('privacy_link'); ?>">Privacy Policy</a></li>
