@@ -14,7 +14,7 @@ Version: 0.1
 body { font-family: "Helvetica Neue",Arial,sans-serif; color: #444; }
 #wrapper { position: static; } /* Defeats foundation.css style that contributed to IE7 jumping margins bug */
 .container_12 { background: transparent; }
-#local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; width: 100%; overflow: hidden; min-width: 980px; }
+#local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; width: 100%; min-width: 1000px; }
 #main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 25px 20px;  }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin: 0 0 10px; }
@@ -37,11 +37,11 @@ p  { font-size:16px; line-height: 1.4; }
 ============================================*/
 
 .global-nav-bg { margin-bottom: 0; }
-.global-nav { position: relative; height:35px; font-size: 11px; }
+.global-nav { position: relative; height:35px; width: 940px; padding: 0 30px; font-size: 11px; }
 .global-nav h2, .global-nav h3 { margin: 0; }
-.global-nav h2 a { display: block; background: url(./img/logo.png) no-repeat; position: absolute; left: -20px; top: -15px; text-indent: -999px; width: 191px; height: 71px; }
-.global-nav h4 a { display: block; background: url(./img/npr.png) no-repeat; position: absolute; left: 197px; top: 10px; text-indent: -999px; width: 279px; height: 17px; }
-.global-nav .global-utils { position: absolute; float: left; right: 0; bottom: 6px; line-height: 26px; height: 26px; overflow: hidden; }
+.global-nav h2 a { display: block; background: url(./img/logo.png) no-repeat; position: absolute; left: 10px; top: -15px; text-indent: -999px; width: 191px; height: 71px; }
+.global-nav h4 a { display: block; background: url(./img/npr.png) no-repeat; position: absolute; left: 207px; top: 10px; text-indent: -999px; width: 279px; height: 17px; }
+.global-nav .global-utils { position: absolute; float: left; right: 25px; bottom: 6px; line-height: 26px; height: 26px; overflow: hidden; }
 	.global-nav .global-utils li { display: block; float: left; font-size: 11px; margin: 0 0 0 10px; padding: 0; line-height: 26px; }
 	.global-nav .global-utils a { font-weight: bold; color: #555; }
 
@@ -128,7 +128,7 @@ p  { font-size:16px; line-height: 1.4; }
 		#apanel-content li a { color: #000; }
 		#apanel-content li a:hover { color: #666; }
 		#apanel-content li { color: #aaa; font-size: 12px; }
-	#argo-inner-panel { width: 940px; height: 170px; margin-top: 9px; padding-top: 9px;  }
+	#argo-inner-panel { width: 940px; height: 170px; margin: 9px auto 0; padding: 9px 30px 0;  }
 		#argo-inner-panel>div { height: 170px; }
 		#panel-about { width: 300px; position: relative; left: auto; top: auto; }
 			#panel-about p { font-style: normal; font-size: 14px; }
@@ -410,7 +410,7 @@ article header h2 { font-weight: 900; }
 		padding-bottom: 5px; 
 		border-bottom: 4px solid #fff; 
 	}
-	#site-footer #footerlogo { border-bottom: none; }
+	#site-footer #footerlogo { border-bottom: none; margin-bottom: 0; }
 	#footerlogo a { display: block; width: 191px; height: 71px; background: url(./img/logo.png) no-repeat; text-indent: -999px; position: relative; left: -10px; }
 	.partner-station { margin-bottom: 5px; }
 	.ft-reporter h5, .partner-station dd { font-size: 13px; margin-left: 0; color: #666; }

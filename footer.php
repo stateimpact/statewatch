@@ -19,6 +19,7 @@ $blogger = argo_get_primary_blogger();
 <h4 id="footerstate"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="unitPng">
             <?php bloginfo('name'); ?>
         </a></h4>
+
 		<?php if (get_option('support_link')): ?>
 	    <div class="donate"><a href="<?php echo get_option('support_link'); ?>">Support</a></div>
 	    <?php else: ?>
