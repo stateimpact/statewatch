@@ -243,14 +243,14 @@ $(document).ready(function(){
 			 <h5>Economy</h5>
 			<ul>
 				<li>Idaho</li>
-				<li>New Hampshire</li>
+				<li><a href="/new-hampshire/">New Hampshire</a></li>
 			 </ul>
 	    </div>
 	
 		<div id="topic-education" class="network-sites grid_2">
 			<h5>Education</h5>
 			<ul>
-				<li>Florida</li>
+				<li><a href="/florida">Florida</a></li>
 				<li><a href="/indiana/">Indiana</a></li>
 				<li><a href="/ohio/">Ohio</a></li>
 			</ul>

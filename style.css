@@ -452,7 +452,7 @@ article header h2 { font-weight: 900; }
 	#colophon { font-size: 13px; line-height: 36px;  }
 		#colophon .copyright { border-right: 1px solid #222; padding-right: 15px; }
 		#site-footer .donate { margin-top: 20px; }
-#boilerplate { padding: 5px 0;  height: 36px; border-top: 1px solid #222; color: #666; }
+#boilerplate { padding: 5px 0; margin-top: 10px;  height: 36px; border-top: 1px solid #222; color: #666; }
 	#boilerplate a { color: #999; }
 	#boilerplate li { margin-right: 15px; padding-right: 0; line-height: 36px; }
 	#boilerplate .npr { float: right; line-height: 36px; }

@@ -124,7 +124,7 @@
 <div id="sw-network-partners">
     <h4 class="module-title">Participating States</h4>
     <dl>
-        <dt><strong>Florida</strong></dt>
+        <dt><a href="/florida/">Florida</a></dt>
 		  <dd>Education</dd>
         <dt><strong>Idaho</strong></dt>
 		  <dd>State budget</dd>
@@ -132,7 +132,7 @@
 		  <dd>Education</dd>
         <dt><a href="/indiana/">Indiana</a></dt>
 		  <dd>Education</dd>
-        <dt><strong>New Hampshire</strong></dt>
+        <dt><a href="/new-hampshire/">New Hampshire</a></dt>
 		  <dd>State economy</dd>
         <dt><strong>Oklahoma</strong></dt>
 		  <dd>State budget</dd>
