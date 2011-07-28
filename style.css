@@ -328,8 +328,8 @@ article header h2 { font-weight: 900; }
 	#content .meta-gestures li a { color: #666; }
 	.meta-gestures .meta-comments { background: url(./img/comment_16.png) no-repeat; padding-left: 25px; }
 	.meta-gestures .meta-email { background: url(./img/email_16.png) no-repeat; padding-left: 30px; }
-	.meta-gestures .subscribe { background: url(./img/rss_20x20.png) no-repeat; padding-left: 25px; }
-	#main .meta-gestures .subscribe a { color: #666; font-weight: bold; }
+	.meta-gestures .subscribe { background: none; padding-left: 0; }
+	#main .meta-gestures .subscribe a { background: url(./img/rss_20x20.png) no-repeat; padding-left: 25px; color: #666; font-weight: bold; display: inline-block; height: 20px; }
 
 	/* Tables */
 	.post table .text { text-align: left; }
