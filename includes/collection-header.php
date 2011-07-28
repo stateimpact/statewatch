@@ -11,6 +11,7 @@ $first_link = $links[0];
 	<?php if ($topic->post_title): ?>
 	    <h2><?php echo $topic->post_title; ?></h2>
 		<ul class="meta-gestures">
+			<li class="subscribe"><a href="<?php echo get_term_feed_link( $cat->term_id, $cat->taxonomy ); ?>">Follow this topic</a></li>
 		    <li class="twitter"> 
 		        <a href="<?php echo esc_url( 'http://twitter.com/share?url=' . $topic->guid . '&text=' ) . rawurlencode( $topic->post_title ); ?>" class="twitter-share-button" data-count="horizontal">Tweet</a>
 		    </li>
@@ -20,6 +21,9 @@ $first_link = $links[0];
 		</ul>	
 	<?php else: ?>
 	    <h2><?php echo $cat->name; ?></h2>
+		<ul class="meta-gestures">
+			<li class="subscribe tag-subscribe"><a href="<?php echo get_term_feed_link( $tag->term_id, $tag->taxonomy ); ?>">Follow this topic</a></li>
+		</ul>
 	<?php endif; ?>
 		<div class="alltopics"><a href="<? echo get_permalink( $topics->ID ); ?>">View All Topics &raquo;</a></div>
 	</div>
