@@ -333,13 +333,13 @@ article header h2 { font-weight: 900; }
 	.meta-gestures .meta-email { background: url(./img/email_16.png) no-repeat; padding-left: 30px;  }
 
 	/* Tables */
-	article table .text { text-align: left; }
-	article table .num { text-align: right; }
-	article table { font-family: proxima-nova-extra-condensed,sans-serif; font-size: 16px; }
-	article table tr:first-child td, article table tr:first-child th { border-top: none; border-bottom: 1px solid #ddd; background: transparent; }
-	article table td { border-top: 1px solid #ddd; }
-	article table tr:nth-child(even) td { background: #fff; }
-	article table tr:nth-child(odd) td { background: #f5f5f5; }
+	.post table .text { text-align: left; }
+	.post table .num { text-align: right; }
+	.post table { font-family: proxima-nova-extra-condensed,sans-serif; font-size: 16px; }
+	.post table tr:first-child td, article table tr:first-child th { border-top: none; border-bottom: 1px solid #ddd; background: transparent; }
+	.post table td { border-top: 1px solid #ddd; }
+	.post table tr:nth-child(even) td { background: #fff; }
+	.post table tr:nth-child(odd) td { background: #f5f5f5; }
 
 
 /* Full page template 
