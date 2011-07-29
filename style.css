@@ -175,16 +175,18 @@ p  { font-size:16px; line-height: 1.4; }
 		#topnav li .sub a { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; letter-spacing: 0; }
 		#topnav li .sub ul { width: 620px; }
 		#topnav li .sub ul li {	padding: 0;	}
+		
 		.mega-feature { width: 600px; }
-			.mega-feature h2 { font-size: 18px; padding-bottom: 0; }
+			.mega-feature h2 { font-size: 18px; padding-bottom: 0; color: #333; }
 		.category-topics { margin-left: 0; width: 220px; }
 		.category-articles { width: 360px; }
 		.category-topics, .category-articles { margin-bottom: 10px; }
 			#topnav .category-topics ul { width: 220px !important; }
 			#topnav .category-topics li, .category-articles h4 { border-bottom: none !important; border-top: 1px solid #ddd !important; padding: 5px 0 0 0 !important; margin: 5px 0 0 0 !important; }
 			#topnav .category-topics li a, #topnav .category-articles h4 a { font-size: 12px; }
+			#topnav .category-topics li:first-child, #topnav .category-articles h3 + h4 { border-top: none !important; padding-top: 0 !important; }
 		.inner-menu { width: auto; text-shadow: none; }
-		.inner-menu h3 { font-size: 12px; font-weight: bold; color: #000; padding: 6px 0; border-top: 4px solid #ddd; margin-bottom: 0; }
+		.inner-menu h3 { font-size: 12px; font-weight: bold; color: #000; padding: 6px 0; border-bottom: 4px solid #ccc; margin-bottom: 0; }
 	
 
 /* Loop  
