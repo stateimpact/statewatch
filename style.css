@@ -177,7 +177,7 @@ p  { font-size:16px; line-height: 1.4; }
 		#topnav li .sub ul li {	padding: 0;	}
 		
 		.mega-feature { width: 600px; }
-			.mega-feature h2 { font-size: 18px; padding-bottom: 0; color: #333; }
+			.mega-feature h2 { font-size: 16px; line-height: 1.4; padding-bottom: 0; color: #333; }
 		.category-topics { margin-left: 0; width: 220px; }
 		.category-articles { width: 360px; }
 		.category-topics, .category-articles { margin-bottom: 10px; }
