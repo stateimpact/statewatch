@@ -9,7 +9,7 @@ Version: 0.1
 @import url(../argo-foundation/css/foundation.css?v=1);
 
 /* Global  
-============================================*/
+=================================================*/
 
 body { font-family: "Helvetica Neue",Arial,sans-serif; color: #444; }
 #wrapper { position: static; } /* Defeats foundation.css style that contributed to IE7 jumping margins bug */
@@ -34,7 +34,7 @@ p  { font-size:16px; line-height: 1.4; }
 #sidebar a:hover { color: #444; }
 
 /* Header  
-============================================*/
+=================================================*/
 
 .global-nav-bg { margin-bottom: 0; }
 .global-nav { position: relative; height:35px; width: 940px; padding: 0 30px; font-size: 11px; }
@@ -190,7 +190,7 @@ p  { font-size:16px; line-height: 1.4; }
 	
 
 /* Loop  
-============================================*/
+=================================================*/
 
 .home .post, 
 .archive .post, 
@@ -268,7 +268,7 @@ list-style-type: none; }
 		
 		
 /* Article 
-============================================*/
+=================================================*/
 
 article header h2 { font-weight: 900; }
 #content .entry-date { font-size:13px; margin-bottom:0; font-weight:normal; }
@@ -347,13 +347,13 @@ article header h2 { font-weight: 900; }
 
 
 /* Full page template 
-============================================*/
+=================================================*/
 
 .page-template-full-page-php table p { font-size: 14px; }
 
 
 /* Sidebar 
-============================================*/
+=================================================*/
 .ie8 #sidebar, .ie7 #sidebar { padding-top: 0; }
 
 #sidebar h3 { 
@@ -397,7 +397,7 @@ article header h2 { font-weight: 900; }
 #sidebar .ad { border-bottom: none; margin-bottom: 25px; }
 
 /* Footer  
-============================================*/
+=================================================*/
 
 #site-footer { 
 	background: #000 url(./img/footer-bg.png) repeat-x; 
@@ -468,7 +468,7 @@ article header h2 { font-weight: 900; }
 	#boilerplate .nprlogo { display: inline-block; text-indent: -999em; width: 51px; height: 36px; background: url(./img/npr-transparent.png) center center no-repeat; margin: 0 0 0 3px; }
 
 /* Author page  
-============================================*/
+=================================================*/
 
 #author-bio { margin-bottom:20px; padding: 0; border-bottom: none; }
 #author-bio img { float:left; margin-top:3px; }
@@ -479,7 +479,7 @@ article header h2 { font-weight: 900; }
 #author-bio li { float:left; font-size:12px; margin-right:8px; }
 
 /* Widgets
-============================================*/
+=================================================*/
 
 	/* network news  */
 
@@ -579,9 +579,8 @@ article header h2 { font-weight: 900; }
 	#wrapper .search-submit:active, .error404 .search-submit:active { background: url(./img/search-submit-bg.png) 0 -28px no-repeat; }
 	.abt-module { margin-bottom: 20px; padding-top: 5px; border-top: 4px solid #999; }
 
-/************** ABOUT PAGE ******************/
-
-/* About site sidebar module and about page intro */
+/* About Page and Sidebar Module
+=================================================*/
 
 #content .module-title, #content .sponsors h4.module-title { 
 	font-family: proxima-nova-extra-condensed,sans-serif;
@@ -628,7 +627,7 @@ article header h2 { font-weight: 900; }
 	#content .logo-list h4,#content .logo-list h5 { margin:0 0 0 160px; font-size:12px; font-weight:normal; }
 
 /* Collection page (tag.php,category.php)
-===============================================*/
+=================================================*/
 #coll-intro { color:#333; margin-bottom:10px; }
 #coll-intro h2 { 
 	font-size:42px; 
@@ -703,7 +702,7 @@ article header h2 { font-weight: 900; }
 
 
 /* Tag index 
-=======================================================*/
+=================================================*/
 .tag-letter h3 { 
 	font-family: proxima-nova-extra-condensed,sans-serif; 
 	font-weight: 700; 
@@ -754,9 +753,50 @@ article header h2 { font-weight: 900; }
 #main .alpha-nav a:hover { background-color: #333; color: #fff; }
 
 /* Social Icons
-=========================================================*/
+=================================================*/
 
 .sw-social li a { height: 36px; width: 36px; display: block; }
 .sw-fb a { background: url(./img/facebook_36x36.png) no-repeat; }
 .sw-rss a { background: url(./img/rss_36x36.png) no-repeat; }
 .sw-twitter a { background: url(./img/twitter_36x36.png) no-repeat; }
+
+/* Data vizualization tools
+=================================================*/
+
+
+.key-color { display: inline-block; width: 15px; height: 15px; margin: 0 .5em 0 0; overflow: hidden; }
+
+.red1 { background: #6C2315; }
+.red2 { background: #A23520; }
+.red3 { background: #D8472B; }
+.red4 { background: #E27560; }
+.red5 { background: #ECA395; }
+.red6 { background: #F5D1CA; }
+
+.orange1 { background: #714616; }
+.orange2 { background: #AA6A21; }
+.orange3 { background: #E38D2C; }
+.orange4 { background: #EAAA61; }
+.orange5 { background: #F1C696; }
+.orange6 { background: #F8E2CA; }
+
+.yellow1 { background: #77631B; }
+.yellow2 { background: #B39429; }
+.yellow3 { background: #EFC637; }
+.yellow4 { background: #F3D469; }
+.yellow5 { background: #F7E39B; }
+.yellow6 { background: #FBF1CD; }
+
+.green1 { background: #0B403F; }
+.green2 { background: #11605E; }
+.green3 { background: #17807E; }
+.green4 { background: #51A09E; }
+.green5 { background: #8BC0BF; }
+.green6 { background: #C5DFDF; }
+
+.blue1 { background: #28556F; }
+.blue2 { background: #3D7FA6; }
+.blue3 { background: #51AADE; }
+.blue4 { background: #7DBFE6; }
+.blue5 { background: #A8D5EF; }
+.blue6 { background: #D3EAF7; }
