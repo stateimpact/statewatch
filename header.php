@@ -86,7 +86,8 @@
 _clickEvents = [
     // selector, category
     {category: 'Featured Topics', selector: 'div.featured-topics a'},
-    {category: 'Mega Menu', selector: '#topnav a'}
+    {category: 'Mega Menu', selector: '#topnav a'},
+    {category: 'All Links', selector: 'a[href]'}
 ];
 
 </script>
