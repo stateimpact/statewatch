@@ -763,7 +763,8 @@ article header h2 { font-weight: 900; }
 /* Data vizualization tools
 =================================================*/
 
-
+.horizontal-legend { list-style: none; font-size: 14px; }
+	.horizontal-legend li { display: inline-block; margin: 0 10px 0 0; }
 .key-color { display: inline-block; width: 15px; height: 15px; margin: 0 .5em 0 0; overflow: hidden; }
 
 .red1 { background: #6C2315; }
