@@ -329,7 +329,7 @@ article header h2 { font-weight: 900; }
 
 
 	/* Sharing */
-	.meta-gestures li { line-height: 18px; font-size: 11px; margin-right: 8px; height: 20px; }
+	#content .meta-gestures li { line-height: 18px; font-size: 11px; margin: 0 8px 0 0; height: 20px; }
 	#content .meta-gestures li a { color: #666; }
 	.meta-gestures .meta-comments { background: url(./img/comment_16.png) no-repeat; padding-left: 25px; }
 	.meta-gestures .meta-email { background: url(./img/email_16.png) no-repeat; padding-left: 30px; }
