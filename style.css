@@ -322,7 +322,7 @@ Version: 0.1
 
 
 	/* Sharing */
-	#content .meta-gestures li { line-height: 18px; font-size: 11px; margin: 0 8px 5px 0; height: 20px; }
+	#content .meta-gestures li { line-height: 18px; font-size: 11px; margin: 0 15px 5px 0; height: 20px; }
 	#content .meta-gestures li a { color: #666; }
 	.meta-gestures .meta-comments { background: url(./img/comment_16.png) no-repeat; padding-left: 25px; }
 	.meta-gestures .meta-email { background: url(./img/email_16.png) no-repeat; padding-left: 30px; clear: right; }
