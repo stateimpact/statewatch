@@ -2,6 +2,7 @@
 
 // site names should just be state names
 DEFINE( 'SITE_NAME_PREFIX', 'StateImpact ' );
+DEFINE( 'SW_ROOT', dirname(__FILE__));
 
 // includes
 require_once( 'includes/users.php' );
