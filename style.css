@@ -796,3 +796,8 @@ Version: 0.1
 	.blue4 { background: #7DBFE6; }
 	.blue5 { background: #A8D5EF; }
 	.blue6 { background: #D3EAF7; }
+
+
+/* Stats image
+=================================================*/
+	img#wpstats{width:0px;height:0px;overflow:hidden}
