@@ -35,7 +35,7 @@ function sw_full_width_check($single_template) {
     $wide_assets = get_post_meta($post->ID, 'wide_assets', true);
     foreach( $wide_assets as $key => $value ) {
         if ($value == true) {
-            $single_template = SW_ROOT . '/full-width-post.php';
+            $single_template = SW_ROOT . '/single-full-width.php';
         }
     }
     return $single_template;
