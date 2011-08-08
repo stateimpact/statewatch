@@ -3,6 +3,7 @@ add_action('widgets_init', 'sw_add_widgets');
 function sw_add_widgets() {
     register_widget( 'About_StateImpact' );
     register_widget( 'Impact_Network_Widget' );
+    register_widget( 'StateImpact_LikeBox' );
     add_filter( 'navis_feedburner_widget_title', 'sw_feedburner_widget_title' );
     add_filter( 'navis_feedburner_blogname', 'sw_feedburner_blogname' );
     add_filter( 'navis_feedburner_placeholder', 'sw_feedburner_placeholder' );
@@ -153,6 +154,28 @@ class Impact_Network_Widget extends WP_Widget {
     // close out the function
     }
 // close out the class
+}
+
+class StateImpact_LikeBox extends WP_Widget {
+    
+    function StateImpact_LikeBox() {
+        $widget_opts = array(
+            'classname' => 'sw-facebook',
+            'description' => 'A Facebook LikeBox tied to your site\'s Facebook account as defined in your social media settings.'
+        );
+        $this->WP_Widget( 'facebook-widget', "Follow us on Facebook", $widget_opts);
+    }
+        
+    function widget( $args, $instance ) {
+        extract($args);
+        echo $before_widget; ?>
+            
+            <iframe src="http://www.facebook.com/plugins/likebox.php?href=<?php echo urlencode(get_option( 'facebook_link' )); ?>&amp;width=300&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;height=290" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:290px;" allowTransparency="true"></iframe>
+        
+        <?php
+        echo $after_widget;
+    }
+    
 }
 
 ?>
