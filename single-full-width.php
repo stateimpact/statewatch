@@ -7,7 +7,7 @@
 <?php get_header(); ?>
 
     <article id="content" role="main">
-<div class="grid_12">
+<div class="widepost grid_12">
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 <header>
