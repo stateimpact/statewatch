@@ -346,6 +346,12 @@ Version: 0.1
 	.page-template-full-page-php table p { font-size: 14px; }
 
 
+/* Rich post assets 
+=================================================*/
+	
+	/* Document cloud */
+	.DV-container { margin-bottom: 20px; }
+
 /* Sidebar 
 =================================================*/
 	.ie8 #sidebar, .ie7 #sidebar { padding-top: 0; }
