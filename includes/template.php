@@ -33,6 +33,7 @@ add_filter('single_template', 'sw_full_width_check');
 function sw_full_width_check($single_template) {
     global $post;
     $wide_assets = get_post_meta($post->ID, 'wide_assets', true);
+    if (!$wide_assets) $wide_assets = array();
     foreach( $wide_assets as $key => $value ) {
         if ($value == true) {
             $single_template = SW_ROOT . '/single-full-width.php';
