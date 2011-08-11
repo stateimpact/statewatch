@@ -41,4 +41,5 @@ function sw_full_width_check($single_template) {
     }
     return $single_template;
 }
+
 ?>
