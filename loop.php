@@ -22,7 +22,20 @@ query_posts( argo_post_types_qs() );
 	 * Without further ado, the loop:
 	 */ ?>
 
-<?php $c = 0; $style=''; while (have_posts()) : the_post(); $c++; if( $c == 1 ) { $style='first'; } elseif ( $c == $wp_query->post_count ) { $style='last'; } ?>
+<?php 
+    $c = 0; 
+    $style=''; 
+    if( $c == 0 ) { 
+        $style='first'; 
+    } elseif ( $c == $wp_query->post_count ) { 
+        $style='last'; 
+    } 
+    if(has_term('','feature',$post_ID)) {
+        $style .= ' has-features';
+    }
+    while (have_posts()) : the_post(); 
+    $c++; 
+?>
     <article id="post-<?php the_ID(); ?>" <?php post_class('grid_8 alpha ' . $style); ?>>
 <?php if ( is_front_page() && is_sticky() ):  ?>
 <?php    if ( navis_post_has_features() ): 
@@ -60,17 +73,13 @@ query_posts( argo_post_types_qs() );
 <header>
 
 <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-
+    <ul class="labels">
+        <?php argo_the_post_labels( get_the_ID() ); ?>
+    </ul>
 	<div class="post-metadata grid_8 alpha omega">
-		<div class="grid_3 alpha">
+
 	        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
 			<h6>By <?php the_author_posts_link(); ?></h6>
-		</div>
-		<div class="grid_5 omega">
-		<ul class="labels">
-            <?php argo_the_post_labels( get_the_ID() ); ?>
-        </ul>
-		</div>
 		<div class="clearfix"></div>
 	</div> <!-- /.post-metadata-->
     <div class="clearfix"></div>    

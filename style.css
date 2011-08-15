@@ -244,7 +244,15 @@ Version: 0.1
 	.list-pagination { clear: both; border-top: 1px solid #ddd; border-bottom: none; padding-top: 10px; }
 	.list-pagination a { background: none; padding: 0; display: inline; }
 
-	#content .labels li { float: right; margin-left: 5px; }
+	#content article.feature-audio,
+	#content article.feature-slideshow,
+	#content article.feature-document,
+	#content article.feature-map,
+	#content article.feature-video { padding-top: 30px; position: relative;}
+	#content .has-features .labels { position: absolute; top: 0; left: 0; margin-top: 1px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; list-style: none; width: 100%; line-height: 28px; }
+	#content .has-features .labels li:first-child { margin-left: 0; padding-left: 0; border-left: none; }
+	#content .has-features .labels li { float: left; margin: 0 0 0 5px; padding-left: 5px; border-left: 1px solid #ddd; }
+	#content .has-features .labels li a { font-family: proxima-nova, sans-serif; font-size: 16px; color: #c00; background: none; }
 	
 	/* Sticky posts */
 	.sticky-solo, .sticky-related { border: none; background: transparent; padding: 0; }
