@@ -13,6 +13,7 @@ require_once( 'includes/topics.php' );
 require_once( 'includes/sw-widgets.php');
 require_once( 'includes/settings.php' );
 require_once( 'includes/template.php' );
+require_once( 'includes/media.php' );
 
 add_action( 'admin_init', 'sw_agg_settings' );
 function sw_agg_settings() {
