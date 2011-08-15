@@ -1,3 +1,5 @@
 jQuery(function($) {
-    $('a.fancybox').fancybox();
+    $('a.fancybox').fancybox({
+        titlePosition: 'inside'
+    });
 })
