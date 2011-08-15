@@ -54,4 +54,15 @@ function sw_fix_feed_title($info, $show) {
         return SITE_NAME_PREFIX . $info;
     }
 }
+
+add_filter( 'post_class', 'sw_add_feature_labels', 10, 3);
+function sw_add_feature_labels($classes, $class, $post_id) {
+    global $wp_query;
+    if ($wp_query->current_post == 0) $classes[] = 'first';
+    if ($wp_query->current_post == ($wp_query->post_count - 1)) $classes[] = 'last';
+    if(navis_post_has_features($post_id)) {
+        $classes[] = 'has-features';
+    }
+    return $classes;
+}
 ?>
