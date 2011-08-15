@@ -1,5 +1,4 @@
 <?php
-
 class SW_Fancybox {
     
     function __construct() {
@@ -11,8 +10,8 @@ class SW_Fancybox {
         add_action('wp_print_styles', array(&$this, 'add_stylesheet'));
         
         $this->root = get_bloginfo( 'stylesheet_directory' );
-        
     }
+    
     
     function add_stylesheet() {
         $src = $this->root . '/js/fancybox/jquery.fancybox-1.3.4.css';
@@ -30,12 +29,9 @@ class SW_Fancybox {
         
         wp_enqueue_script('fancybox_config', $js['config'], 
             array('jquery', 'fancybox'), '0.1');
-    }
-    
-    function image_send_to_editor($html, $id, $caption, $title, $align, $url, $size, $alt) {
-        
-    }
+    }    
 }
 
 new SW_Fancybox;
+
 ?>

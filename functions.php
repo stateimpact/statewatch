@@ -54,4 +54,23 @@ function sw_fix_feed_title($info, $show) {
         return SITE_NAME_PREFIX . $info;
     }
 }
+
+// for some reason this only works here, 
+// but should be moved into the SW_Fancybox class at some point
+add_filter('image_send_to_editor', 
+    'sw_fancybox_image_send_to_editor', 10, 8);
+function sw_fancybox_image_send_to_editor($html, $id, $caption, $title, $align, $url, $size, $alt) {
+    $html = get_image_tag($id, $alt, $title, $align, $size);
+
+	$rel = $rel ? ' rel="post-' . esc_attr($id).'"' : '';
+
+	if ( $url ) {
+	    $url = esc_attr($url);
+	    $caption = esc_attr($caption);
+	    $html = "<a class='fancybox' href='{$url}' rel='$rel' title='{$caption}'>$html</a>";
+	}
+	
+    return $html;
+}
+
 ?>
