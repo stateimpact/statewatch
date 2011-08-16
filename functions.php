@@ -60,14 +60,18 @@ function sw_fix_feed_title($info, $show) {
 add_filter('image_send_to_editor', 
     'sw_fancybox_image_send_to_editor', 10, 8);
 function sw_fancybox_image_send_to_editor($html, $id, $caption, $title, $align, $url, $size, $alt) {
-    $html = get_image_tag($id, $alt, $title, $align, $size);
-
-	$rel = $rel ? ' rel="post-' . esc_attr($id).'"' : '';
-
+    // we're only interested in images wrapped in links to uploaded images
 	if ( $url ) {
-	    $url = esc_attr($url);
-	    $caption = esc_attr($caption);
-	    $html = "<a class='fancybox' href='{$url}' rel='$rel' title='{$caption}'>$html</a>";
+	    $uploads_dir = wp_upload_dir();
+	    $uploads_dir = $uploads_dir['baseurl'];
+	    if ( strpos($url, $uploads_dir) === 0 ) {
+    	    // it's an uploaded file, so fancybox it
+    	    $html = get_image_tag($id, $alt, $title, $align, $size);
+        	$rel = $rel ? ' rel="post-' . esc_attr($id).'"' : '';
+    	    $url = esc_attr($url);
+    	    $caption = esc_attr($caption);
+    	    $html = "<a class='fancybox' href='{$url}' rel='$rel' title='{$caption}'>$html</a>";
+	    }
 	}
 	
     return $html;
