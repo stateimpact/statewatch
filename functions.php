@@ -13,7 +13,7 @@ require_once( 'includes/topics.php' );
 require_once( 'includes/sw-widgets.php');
 require_once( 'includes/settings.php' );
 require_once( 'includes/template.php' );
-require_once( 'includes/tables.php' );
+require_once( 'includes/media.php' );
 
 add_action( 'admin_init', 'sw_agg_settings' );
 function sw_agg_settings() {
@@ -65,4 +65,28 @@ function sw_add_feature_labels($classes, $class, $post_id) {
     }
     return $classes;
 }
+
+
+// for some reason this only works here, 
+// but should be moved into the SW_Fancybox class at some point
+add_filter('image_send_to_editor', 
+    'sw_fancybox_image_send_to_editor', 10, 8);
+function sw_fancybox_image_send_to_editor($html, $id, $caption, $title, $align, $url, $size, $alt) {
+    // we're only interested in images wrapped in links to uploaded images
+	if ( $url ) {
+	    $uploads_dir = wp_upload_dir();
+	    $uploads_dir = $uploads_dir['baseurl'];
+	    if ( strpos($url, $uploads_dir) === 0 ) {
+    	    // it's an uploaded file, so fancybox it
+    	    $html = get_image_tag($id, $alt, $title, $align, $size);
+        	$rel = $rel ? ' rel="post-' . esc_attr($id).'"' : '';
+    	    $url = esc_attr($url);
+    	    $caption = esc_attr($caption);
+    	    $html = "<a class='fancybox' href='{$url}' rel='$rel' title='{$caption}'>$html</a>";
+	    }
+	}
+	
+    return $html;
+}
+
 ?>
