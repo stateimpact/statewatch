@@ -25,7 +25,8 @@ function sw_meta_description() {
 	    <meta name="description" content="<?php echo $excerpt; ?>">
 	<?php else: ?>
 	    <?php // check for a manual meta description, then fall back to blog tagline
-	    $description = get_option('meta_description', get_bloginfo('description')); 
+	    $description = get_option('meta_description');
+	    if (!$description) $description = get_bloginfo('description'); 
 	    $description = esc_attr(strip_tags($description)); ?>
 	    <meta name="description" content="<?php echo $description; ?>">
 	<?php endif; ?>
