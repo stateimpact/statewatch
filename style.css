@@ -423,7 +423,7 @@ Version: 0.1
 	}
 	#site-footer #footerlogo { border-bottom: none; margin-bottom: 0; }
 	#footerlogo a { display: block; width: 191px; height: 71px; background: url(./img/logo.png) no-repeat; text-indent: -999px; position: relative; left: -10px; }
-	.partner-station { margin-bottom: 5px; }
+	.partner-station { margin-bottom: 5px; line-height: 1.3; }
 	.ft-reporter h5, .partner-station dd { font-size: 13px; margin-left: 0; color: #666; }
 	#ft-archive { margin-top: 0; }
 	#ft-archive select { width:215px; }
