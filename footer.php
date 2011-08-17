@@ -236,7 +236,7 @@ $(document).ready(function(){
         <div id="topic-budget" class="network-sites grid_2">
 			<h5>Budget</h5>
 			<ul>
-				<li>Oklahoma</li>
+				<li><a href="/oklahoma/">Oklahoma</a></li>
 			</ul>
 		</div>
 

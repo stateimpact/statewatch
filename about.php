@@ -134,8 +134,8 @@
 		  <dd>Education</dd>
         <dt><a href="/new-hampshire/">New Hampshire</a></dt>
 		  <dd>State economy</dd>
-        <dt><strong>Oklahoma</strong></dt>
-		  <dd>State budget</dd>
+        <dt><a href="/oklahoma/">Oklahoma</a></dt>
+		  <dd>Budget</dd>
         <dt><a href="/pennsylvania/">Pennsylvania</a></dt>
 		  <dd>Energy</dd>
         <dt><strong>Texas</strong></dt>
