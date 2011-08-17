@@ -37,6 +37,10 @@ function sw_settings_init() {
     add_settings_field( 'support_link', 'Link to Support Page', 
         'sw_support_link_callback', 'statewatch', 'statewatch' );
     register_setting( 'statewatch', 'support_link' );
+    
+    add_settings_field( 'meta_description', 'Custom meta description for home page',
+        'sw_meta_description_callback', 'statewatch', 'statewatch');
+    register_setting( 'statewatch', 'meta_description' );
 }
 
 function sw_section_callback() {}
@@ -59,6 +63,11 @@ function sw_privacy_callback() {
 function sw_support_link_callback() {
     $option = get_option( 'support_link' );
     echo "<input type='text' value='$option' name='support_link' />"; 
+}
+
+function sw_meta_description_callback() {
+    $option = esc_attr(get_option( 'meta_description' ));
+    echo "<textarea name='meta_description'>$option</textarea>";
 }
 
 ?>
