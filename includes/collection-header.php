@@ -22,7 +22,7 @@ $first_link = $links[0];
 	<?php else: ?>
 	    <h2><?php echo $cat->name; ?></h2>
 		<ul class="meta-gestures">
-			<li class="subscribe tag-subscribe"><a href="<?php echo get_term_feed_link( $tag->term_id, $tag->taxonomy ); ?>">Follow this topic</a></li>
+			<li class="subscribe tag-subscribe"><a rel="alternate nofollow" href="<?php echo get_term_feed_link( $tag->term_id, $tag->taxonomy ); ?>">Follow this topic</a></li>
 		</ul>
 	<?php endif; ?>
 		<div class="alltopics"><a href="<? echo get_permalink( $topics->ID ); ?>">View All Topics &raquo;</a></div>
