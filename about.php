@@ -127,7 +127,7 @@
         <dt><a href="/florida/">Florida</a></dt>
 		  <dd>Education</dd>
         <dt><strong>Idaho</strong></dt>
-		  <dd>State budget</dd>
+		  <dd>State economy</dd>
         <dt><a href="/ohio/">Ohio</a></dt>
 		  <dd>Education</dd>
         <dt><a href="/indiana/">Indiana</a></dt>
