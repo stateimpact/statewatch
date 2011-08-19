@@ -66,7 +66,13 @@ query_posts( argo_post_types_qs() );
 	<div class="post-metadata grid_8 alpha omega">
 
 	        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
-			<h6>By <?php the_author_posts_link(); ?></h6>
+			<h6>By <?php
+			if (function_exists('coauthors_posts_links')):
+                coauthors_posts_links();
+            else:
+                the_author_posts_link();
+            endif; ?>
+			</h6>
 		<div class="clearfix"></div>
 	</div> <!-- /.post-metadata-->
     <div class="clearfix"></div>    
