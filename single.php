@@ -36,13 +36,6 @@
 <p class="tags">Filed under: <?php echo argo_the_categories_and_tags(); ?></p>
 <?php endif; ?>    
 
-<div class="post-author clearfix">
-<?php echo get_avatar( get_the_author_meta( 'email' ), 60 ); ?>
-<h4><?php the_author_posts_link(); ?></h4>
-<h5><?the_author_meta( 'sw_title' ); ?></h5>
-<p><?php the_author_meta( 'description' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">More...</a></p>
-</div> <!-- /.post-author -->
-
 
 <nav>
 <ul class="post-nav clearfix">
