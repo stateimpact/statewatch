@@ -89,4 +89,12 @@ function sw_fancybox_image_send_to_editor($html, $id, $caption, $title, $align, 
     return $html;
 }
 
+add_action('rss2_head', 'sw_feed_noindex');
+add_action('rss_head', 'sw_feed_noindex');
+add_action('atom_head', 'sw_feed_noindex');
+function sw_feed_noindex() {
+    echo "<robots>noindex, follow</robots>";
+}
+
+
 ?>
