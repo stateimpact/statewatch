@@ -96,5 +96,12 @@ function sw_feed_noindex() {
     echo "<robots>noindex, follow</robots>";
 }
 
+add_action('admin_print_scripts-post.php', 'sw_add_wordcount_js');
+add_action('admin_print_scripts-post-new.php', 'sw_add_wordcount_js');
+function sw_add_wordcount_js() {
+    $js = get_bloginfo('stylesheet_directory') . "/js/wordcount.js";
+    wp_enqueue_script('wordcount', $js, array('jquery'), '0.1');
+}
+
 
 ?>
