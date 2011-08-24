@@ -774,14 +774,15 @@ Version: 0.1
 	#content .credit, #content .wp-media-credit { font-style: normal; text-transform: uppercase; }
 	#content .caption, #content .wp-caption-text { font-style: normal; line-height: 1.2; }
 	.post blockquote p, .post blockquote li, .coll-desc blockquote p { font-size: inherit; }
-	#content .pull-quote p {
+	#content .pull-quote {
 		font-family: proxima-nova-extra-condensed,sans-serif;
 		font-weight: 600;
-		font-size: 32px;
-		font-style: normal;
 		line-height: 1.1;
+		border-left: none; 
+		border-top: 10px solid #333;
+		padding: 10px 0;
 	}
-	#content .pull-quote h6 { font-style: normal; color: #666; }
+	#content .pull-quote h6 { font-style: normal; color: #666; font-size: 14px; }
 	#content .aside dt { font-family: proxima-nova-extra-condensed,sans-serif; font-weight: 600; font-size: 24px; }
 
 	.post-nav { 
@@ -1057,9 +1058,9 @@ Version: 0.1
 		margin: 0; 
 		position: absolute; 
 		left: 0; 
-		-webkit-border-radius: 14px 0 0 14px !important;
-		-moz-border-radius: 14px 0 0 14px !important;
-		border-radius: 14px 0 0 14px !important;
+		-webkit-border-radius: 14px !important;
+		-moz-border-radius: 14px !important;
+		border-radius: 14px !important;
 	}
 	.sitesearch input[placeholder] { color: #999; }
 	#wrapper .search-submit, .error404 .search-submit { height: 28px; width: 40px; background: url(./img/search-submit-bg.png) 0 0 no-repeat; text-indent: -999px; margin: 0; padding: 0; border: none; display: block; position: absolute; right: 0; font-size: 0; line-height: 0; /* For IE6/IE7 */ }
