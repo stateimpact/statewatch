@@ -811,6 +811,15 @@ Version: 0.1
 	.meta-gestures .subscribe { background: none; padding-left: 0; }
 	#main .meta-gestures .subscribe a { background: url(./img/rss_20x20.png) no-repeat; padding-left: 25px; color: #666; font-weight: bold; display: inline-block; height: 20px; }
 
+	/* Comments */
+
+	#dsq-content h3 {
+		margin: 0 0 10px;
+		position: static;
+		font-family: proxima-nova,sans-serif;
+		font-weight: 400;
+	}
+
 
 /* Full page template 
 =================================================*/
@@ -823,6 +832,18 @@ Version: 0.1
 	
 	/* Document cloud */
 	.DV-container { margin-bottom: 20px; }
+
+	/* Rich media loop display */
+	article.rich-media .attachment-post-thumbnail {
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+	#content .rich-media h2 a { 
+			font-family: proxima-nova,sans-serif; 
+			line-height: 1.2;
+			color: #000;
+			font-weight: bold;
+	}
 
 /* Sidebar 
 =================================================*/

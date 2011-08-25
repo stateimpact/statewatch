@@ -68,6 +68,7 @@ function sw_add_feature_labels($classes, $class, $post_id) {
     if(navis_post_has_features($post_id)) {
         $classes[] = 'has-features';
     }
+    if (sw_is_rich_media()) $classes[] = 'rich-media';
     return $classes;
 }
 
