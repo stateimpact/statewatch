@@ -40,9 +40,29 @@ function sw_full_width_check($single_template) {
     if (!$wide_assets) $wide_assets = array();
     foreach( $wide_assets as $key => $value ) {
         if ($value == true) {
-            $single_template = SW_ROOT . '/single-full-width.php';
+            $single_template = SW_ROOT . '/' . SINGLE_FULL_WIDTH;
         }
     }
     return $single_template;
+}
+
+function sw_is_rich_media($post_id = null) {
+    if ($post_id) {
+        $post = get_post($post_id);
+    } else {
+        global $post;
+    }
+    
+    $rich_types = explode(' ', RICH_CONTENT_TYPES);
+    if ( in_array( get_post_type($post->ID), $rich_types ) ) {
+        // check by explicit content types
+        return true;
+    } elseif (get_post_meta($post->ID, 'custom_post_template', true) == SINGLE_FULL_WIDTH) {
+        // fall back to custom post types plugin
+        return true;
+    } else {
+        return false;
+    }
+    
 }
 ?>

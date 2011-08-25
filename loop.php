@@ -24,7 +24,7 @@ query_posts( argo_post_types_qs() );
 
 <?php while (have_posts()) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class('grid_8 alpha'); ?>>
-<?php if ( is_front_page() && is_sticky() ):  ?>
+    <?php if ( is_front_page() && is_sticky() ):  ?>
 <?php    if ( navis_post_has_features() ): 
             $feature = navis_get_the_main_feature();
             $feature_posts = argo_get_recent_posts_for_term( $feature, 3, 1 );
@@ -52,6 +52,16 @@ query_posts( argo_post_types_qs() );
 <?php if ( has_post_thumbnail() ): ?>
     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 <?php endif; ?>
+            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
+            <p><?php navis_the_raw_excerpt(); // the_excerpt(); ?> <a href="<?php the_permalink(); ?>">Continue reading <span class="meta-nav">&rarr;</span></a></p> 
+        </div>
+
+<?php elseif (sw_is_rich_media()): ?>
+        <div class="sticky-solo clearfix">
+            <h5>Featured</h5> 
+        <?php if ( has_post_thumbnail() ): ?>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+        <?php endif; ?>
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
             <p><?php navis_the_raw_excerpt(); // the_excerpt(); ?> <a href="<?php the_permalink(); ?>">Continue reading <span class="meta-nav">&rarr;</span></a></p> 
         </div>

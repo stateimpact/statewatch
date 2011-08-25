@@ -4,6 +4,11 @@
 DEFINE( 'SITE_NAME_PREFIX', 'StateImpact ' );
 DEFINE( 'SW_ROOT', dirname(__FILE__));
 
+// for template checking in loop
+// since constants can't be arrays, this is a space-separated list
+DEFINE( 'RICH_CONTENT_TYPES', 'fusiontablesmap');
+DEFINE( 'SINGLE_FULL_WIDTH', 'single-full-width.php' );
+
 // includes
 require_once( 'includes/users.php' );
 require_once( 'includes/sidebars.php' );
