@@ -58,12 +58,27 @@ query_posts( argo_post_types_qs() );
 
 <?php elseif (sw_is_rich_media()): ?>
         <div class="sticky-solo clearfix">
-            <h5>Featured</h5> 
+            <ul class="labels">
+                <?php argo_the_post_labels( get_the_ID() ); ?>
+            </ul>
         <?php if ( has_post_thumbnail() ): ?>
             <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
         <?php endif; ?>
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
             <p><?php navis_the_raw_excerpt(); // the_excerpt(); ?> <a href="<?php the_permalink(); ?>">Continue reading <span class="meta-nav">&rarr;</span></a></p> 
+            <div class="post-metadata grid_8 alpha omega">
+
+        	        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
+        			<h6>By <?php
+        			if (function_exists('coauthors_posts_links')):
+                        coauthors_posts_links();
+                    else:
+                        the_author_posts_link();
+                    endif; ?>
+        			</h6>
+        		<div class="clearfix"></div>
+        	</div> <!-- /.post-metadata-->
+        	
         </div>
 
 <?php else: ?>
