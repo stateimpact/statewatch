@@ -1,7 +1,7 @@
 <?php
-/**
- * Page for displaying a single post.
- */
+/***
+* Template Name Posts: Full Width
+***/
 ?>
 
 <?php get_header(); ?>
