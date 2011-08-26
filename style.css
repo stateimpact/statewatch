@@ -912,6 +912,9 @@ Version: 0.1
 		-webkit-box-shadow: inset 0 1px 0 rgb(255,255,255);
 		   -moz-box-shadow: inset 0 1px 0 rgb(255,255,255);
 		        box-shadow: inset 0 1px 0 rgb(255,255,255);
+		-webkit-transition: all .2s ease-in-out;
+		   -moz-transition: all .2s ease-in-out;
+		        transition: all .2s ease-in-out;
 	}
 	.menu-featured-posts-container li:first-child { border-top: none; }
 	.menu-featured-posts-container li:hover { background: #fff; }
