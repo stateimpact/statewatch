@@ -161,7 +161,7 @@ Version: 0.1
 	  cursor: pointer;
 	}
 	form input[type=text],
-	form input[type=search],
+	input[type=search],
 	form input[type=password],
 	form textarea,
 	form select,
@@ -201,7 +201,7 @@ Version: 0.1
 	  color: #bfbfbf;
 	}
 	form input[type=text],
-	form input[type=search],
+	input[type=search],
 	form input[type=password],
 	form select,
 	form textarea {
@@ -212,7 +212,7 @@ Version: 0.1
 	  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 	  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
-	form input[type=text]:focus, form input[type=password]:focus, form input[type=search]:focus, form textarea:focus {
+	form input[type=text]:focus, form input[type=password]:focus, input[type=search]:focus, form textarea:focus {
 	  outline: none;
 	  border-color: rgba(82, 168, 236, 0.8);
 	  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
