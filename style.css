@@ -860,6 +860,9 @@ Version: 0.1
 		font-weight: 400;
 	}
 
+	/* Jiffy Posts */
+	#content .jiffypost h2 { margin: 0; }
+
 
 /* Full page template 
 =================================================*/
