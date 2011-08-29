@@ -61,10 +61,8 @@ query_posts( argo_post_types_qs() );
             <ul class="labels">
                 <?php argo_the_post_labels( get_the_ID() ); ?>
             </ul>
-        <?php if ( has_post_thumbnail() ): ?>
-            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-        <?php endif; ?>
-            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
+        
+            <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
 
             <div class="post-metadata ">
 
@@ -78,7 +76,9 @@ query_posts( argo_post_types_qs() );
                     </h6>
                 <div class="clearfix"></div>
             </div> <!-- /.post-metadata-->
-
+            <?php if ( has_post_thumbnail() ): ?>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+        <?php endif; ?>
             <p><?php navis_the_raw_excerpt(100); // the_excerpt(); ?> <a href="<?php the_permalink(); ?>">Continue reading <span class="meta-nav">&rarr;</span></a></p> 
         </div>
 
