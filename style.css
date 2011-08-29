@@ -1396,3 +1396,33 @@ Version: 0.1
 /* Stats image
 =================================================*/
 	img#wpstats{ width:0px; height:0px; overflow:hidden; position: absolute; }
+
+/* Print styles
+=================================================*/
+@media print {
+	#main,
+	#content { position: static; display: block; text-indent: 0 !important; margin: 0; padding: .5em 0; }
+
+	.global-nav-bg,
+	.global-nav,
+	.global-nav h2,
+	.global-nav h2 a,
+	#global-branding h3,
+	#global-branding h3 a { display: block !important; text-indent: 0; position: static; margin: .5em 0; padding: 0; left: 0; text-decoration: none; }
+
+	.global-nav h2 { font-size: 3em; }
+
+
+	#topnav,
+	.sitesearch,
+	.global-utils,
+	.meta-gestures,
+	.featured-topics,
+	.tags,
+	#related-posts { display: none !important; }
+
+	#global-branding { margin: 0; padding: 0; width: auto; }
+
+	.single .post-metadata { border: none; }
+
+}
