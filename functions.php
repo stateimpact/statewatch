@@ -109,5 +109,10 @@ function sw_add_wordcount_js() {
     wp_enqueue_script('wordcount', $js, array('jquery'), '0.1');
 }
 
+add_filter('fustiontablesmap_taxonomies', 'sw_add_map_taxonomies', 10, 1);
+function sw_add_map_taxonomies($taxonomies) {
+    array_push($taxonomies, 'feature');
+    return $taxonomies;
+}
 
 ?>
