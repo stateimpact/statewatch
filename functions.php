@@ -111,7 +111,7 @@ function sw_add_wordcount_js() {
 
 add_filter('fustiontablesmap_taxonomies', 'sw_add_map_taxonomies', 10, 1);
 function sw_add_map_taxonomies($taxonomies) {
-    array_push($taxonomies, 'feature');
+    array_push($taxonomies, 'feature', 'prominence');
     return $taxonomies;
 }
 
