@@ -1427,6 +1427,7 @@ Version: 0.1
    		display: none;
 	}
 	.pager { background: none !important; text-align: left !important; position: relative; }
+	.pager .prev, .pager .next { position: static; }
 	.pager .prev:before { content: "\00AB  "; }
 	.pager .next:after { content: " \00BB "; }
 	.pager .pagesize { position: absolute; right: 0; }
