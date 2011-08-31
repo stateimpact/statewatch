@@ -37,6 +37,7 @@
 	
 		<ul>
 	        <li><a href="http://www.npr.org/templates/stations/stations/">Station Finder &raquo;</a></li>
+	        <li><a href="<?php bloginfo('url'); ?>/tag/corrections-and-clarifications/">Corrections and Clarifications &raquo;</a></li>
 	    </ul>
 
 	</div><!-- .sw-about -->
