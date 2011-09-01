@@ -898,7 +898,7 @@ Version: 0.1
 =================================================*/
 	.ie8 #sidebar, .ie7 #sidebar { padding-top: 0; }
 
-	#sidebar h3 { 
+	#sidebar h3, #sidebar .widgettitle { 
 		font-family: proxima-nova-extra-condensed,sans-serif;
 		font-size: 22px;
 		text-transform: none;
@@ -909,7 +909,7 @@ Version: 0.1
 		color: #333;
 		clear:both;
 	}
-	#sidebar li:first-child h3 { border-top: none; }
+	#sidebar li:first-child h3 { border-top: none; padding-top: 0; }
 	.widget-container, .widget { 
 		border-bottom: none; 
 		margin-bottom: 25px;
