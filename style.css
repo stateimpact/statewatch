@@ -867,7 +867,7 @@ Version: 0.1
 	}
 
 	/* Jiffy Posts */
-	#content .jiffypost h2 { margin: 0; }
+	#content article.jiffypost h2 { margin: 0; }
 
 
 /* Full page template 
@@ -1175,7 +1175,7 @@ Version: 0.1
 		text-transform: uppercase; 
 		font-weight: 400;
 		color: #000; 
-		line-height: 1.2; 
+		line-height: 36px; 
 		margin: 0 0 5px 0;
 	}
 	#content .abt-module { border-top: none; }
