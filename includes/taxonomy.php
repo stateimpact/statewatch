@@ -1,7 +1,18 @@
 <?php
-define('MAP_TERM', 'map');
-define('DOCUMENTS_TERM', 'documents');
-define('TABLES_TERM', 'data');
+define('MAP_TERM', 'Map');
+define('DOCUMENTS_TERM', 'Documents');
+define('TABLES_TERM', 'Data');
+
+function sw_get_or_create_term($name, $taxonomy) {
+    $term = get_term_by( 'name', $name, $taxonomy );
+    if (!$term) {
+        $term_data = wp_insert_term( $name, $taxonomy );
+        if (is_array($term_data)) {
+            $term = get_term($term_data[0], $taxonomy);
+        }
+    }
+    return $term;
+}
 
 function sw_add_post_term($post_id, $new_term, $taxonomy) {
     $post_terms = wp_get_object_terms( $post_id, $taxonomy );
@@ -41,13 +52,7 @@ add_action('save_post', 'sw_feature_maps', 10, 2);
 function sw_feature_maps($post_id, $post, $taxonomy = 'feature') {
     if (get_post_type($post_id) !== 'fusiontablesmap') return;
     
-    $term = get_term_by( 'slug', MAP_TERM, $taxonomy );
-    if (!$term) {
-        list($term_id, $tax_id) = wp_insert_term( ucwords(MAP_TERM), $taxonomy );
-        $term = get_term($term_id, $taxonomy);
-    }
-    
-    error_log( print_r( $term, true) );
+    $term = sw_get_or_create_term(MAP_TERM, $taxonomy);
     sw_add_post_term($post_id, $term, $taxonomy);
     
 }
@@ -58,7 +63,7 @@ function sw_feature_docs($post_id, $post, $taxonomy = 'feature') {
     $term = get_term_by( 'slug', DOCUMENTS_TERM, $taxonomy );
 
     if (!$term) {
-        list($term_id, $tax_id) = wp_insert_term( ucwords(DOCUMENTS_TERM), $taxonomy );
+        list($term_id, $tax_id) = wp_insert_term( DOCUMENTS_TERM, $taxonomy );
         $term = get_term($term_id, $taxonomy);
     }
 
