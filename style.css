@@ -689,6 +689,9 @@ Version: 0.1
 	.home .jiffypost, 
 	.archive .jiffypost, 
 	.search .jiffypost, 
+	.home .fusiontablesmap, 
+	.archive .fusiontablesmap, 
+	.search .fusiontablesmap,
 	.home .roundup, 
 	.archive .roundup, 
 	.search .roundup, 
@@ -706,6 +709,9 @@ Version: 0.1
 	.home .jiffypost:first-child, 
 	.archive .jiffypost:first-child, 
 	.search .jiffypost:first-child, 
+	.home .fusiontablesmap:first-child, 
+	.archive .fusiontablesmap:first-child, 
+	.search .fusiontablesmap:first-child, 
 	.home .roundup:first-child, 
 	.archive .roundup:first-child, 
 	.search .roundup:first-child, 
@@ -1427,6 +1433,7 @@ Version: 0.1
    		display: none;
 	}
 	.pager { background: none !important; text-align: left !important; position: relative; }
+	.pager .prev, .pager .next { position: static; }
 	.pager .prev:before { content: "\00AB  "; }
 	.pager .next:after { content: " \00BB "; }
 	.pager .pagesize { position: absolute; right: 0; }
