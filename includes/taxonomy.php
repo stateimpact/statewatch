@@ -60,12 +60,7 @@ function sw_feature_maps($post_id, $post, $taxonomy = 'feature') {
 add_action('save_post', 'sw_feature_docs', 10, 2);
 function sw_feature_docs($post_id, $post, $taxonomy = 'feature') {
     $documents = get_post_meta($post_id, 'documents', true);
-    $term = get_term_by( 'slug', DOCUMENTS_TERM, $taxonomy );
-
-    if (!$term) {
-        list($term_id, $tax_id) = wp_insert_term( DOCUMENTS_TERM, $taxonomy );
-        $term = get_term($term_id, $taxonomy);
-    }
+    $term = sw_get_or_create_term(DOCUMENTS_TERM, $taxonomy);
 
     if ($documents) {
         sw_add_post_term($post_id, $term, $taxonomy);
@@ -76,12 +71,7 @@ function sw_feature_docs($post_id, $post, $taxonomy = 'feature') {
 
 add_action('save_post', 'sw_feature_tables', 10, 2);
 function sw_feature_tables($post_id, $post, $taxonomy = 'feature') {
-    $term = get_term_by( 'slug', TABLES_TERM, $taxonomy );
-
-    if (!$term) {
-        list($term_id, $tax_id) = wp_insert_term( ucwords(TABLES_TERM), $taxonomy );
-        $term = get_term($term_id, $taxonomy);
-    }
+    $term = sw_get_or_create_term(TABLES_TERM, $taxonomy);
     
     if ( strpos($post->post_content, '[spreadsheet') !== false ) {
         sw_add_post_term($post_id, $term, $taxonomy);
