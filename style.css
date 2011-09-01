@@ -1170,7 +1170,7 @@ Version: 0.1
 =================================================*/
 
 	#content .module-title, #content .sponsors h4.module-title { 
-		font-family: proxima-nova-extra-condensed,sans-serif;
+		font-family: proxima-nova,sans-serif;
 		font-size: 14px; 
 		text-transform: uppercase; 
 		font-weight: 400;
