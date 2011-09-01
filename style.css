@@ -901,6 +901,7 @@ Version: 0.1
 	#sidebar h3, #sidebar .widgettitle { 
 		font-family: proxima-nova-extra-condensed,sans-serif;
 		font-size: 22px;
+		line-height: 1;
 		text-transform: none;
 		font-weight: 800;
 		border-top: 4px solid #DDD;
