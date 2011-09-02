@@ -161,7 +161,7 @@ Version: 0.1
 	  cursor: pointer;
 	}
 	form input[type=text],
-	#content .filter input[type=search],
+	#content .table-filter input[type=search],
 	form input[type=password],
 	form textarea,
 	form select,
@@ -1425,8 +1425,9 @@ Version: 0.1
 	.post table tr:nth-child(odd) td { background: #f5f5f5; }
 	#content .post table thead tr .headerSortDown, #content .post table thead tr .headerSortUp { background-color: #C9DAE8; }
 
-	.filter label { display: none; }
-	.filter input[type=search] {
+	.table-filter { width: 220px; float: left; }
+	.table-filter label { display: none; }
+	.table-filter input[type=search] {
 		-webkit-appearance: textfield;
 		-webkit-box-sizing: content-box;
 	}
@@ -1434,11 +1435,13 @@ Version: 0.1
 	{
    		display: none;
 	}
-	.pager { background: none !important; text-align: left !important; position: relative; }
+	#content .pager { background: none !important; text-align: left !important; position: relative; padding: 0; width: 380px; float: right; }
 	.pager .prev, .pager .next { position: static; }
 	.pager .prev:before { content: "\00AB  "; }
 	.pager .next:after { content: " \00BB "; }
-	.pager .pagesize { position: absolute; right: 0; }
+	.pager .pagesize { width: auto; }
+	.pager .pagenav-wrapper	{ position: absolute; right: 0; top: 0; }
+	.pager .pagesize-wrapper { position: absolute; left: 0; top: 0; }
 
 	/* Caspio */
 	#caspioform table { 
