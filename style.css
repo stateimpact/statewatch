@@ -815,13 +815,11 @@ Version: 0.1
 	#content .credit, #content .wp-media-credit { font-style: normal; text-transform: uppercase; }
 	#content .caption, #content .wp-caption-text { font-style: normal; line-height: 1.2; }
 	.post blockquote p, .post blockquote li, .coll-desc blockquote p { font-size: inherit; }
-	#content .pull-quote {
+	#content .pull-quote { border-left: none; border-top: 10px solid #333; padding: 10px 0; }
+	#content .pull-quote, #content .pull-quote p {
 		font-family: proxima-nova-extra-condensed,sans-serif;
 		font-weight: 600;
-		line-height: 1.1;
-		border-left: none; 
-		border-top: 10px solid #333;
-		padding: 10px 0;
+		line-height: 1.2;
 	}
 	#content .pull-quote h6 { font-style: normal; color: #666; font-size: 14px; }
 	#content .aside dt { font-family: proxima-nova-extra-condensed,sans-serif; font-weight: 600; font-size: 24px; }
