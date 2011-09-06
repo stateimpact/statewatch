@@ -1433,7 +1433,16 @@ Version: 0.1
 	{
    		display: none;
 	}
-	#content .pager { background: none !important; text-align: left !important; position: relative; padding: 0; width: 380px; float: right; }
+	#content .pager { 
+		background: none !important; 
+		text-align: left !important; 
+		position: relative; 
+		padding: 0; 
+		width: 380px; 
+		height: 28px;
+		margin-bottom: 24px; 
+		float: right; 
+	}
 	.pager .prev, .pager .next { position: static; }
 	.pager .prev:before { content: "\00AB  "; }
 	.pager .next:after { content: " \00BB "; }
