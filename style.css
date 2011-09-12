@@ -836,6 +836,10 @@ Version: 0.1
 		   -moz-box-shadow: 0 1px 5px rgba(0,0,0,.2);
 		        box-shadow: 0 1px 5px rgba(0,0,0,.2);
 	}
+
+	#content .aligncenter, #content .centered {
+		width: auto;
+	}
 	
 	/* Related Content Sidebar */
 	#content .related-content { border: none; }
