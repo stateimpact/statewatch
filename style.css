@@ -837,6 +837,40 @@ Version: 0.1
 		        box-shadow: 0 1px 5px rgba(0,0,0,.2);
 	}
 	
+	/* Related Content Sidebar */
+	#content .related-content { border: none; }
+	#content .related-content div { padding: 0; }
+	#content .related-content h4 {
+		font-family: proxima-nova-extra-condensed,sans-serif;
+		font-weight: 800;
+		font-size: 22px;
+		background-color: #252C33;
+		background-repeat: repeat-x;
+		background-image: -khtml-gradient(linear, left top, left bottom, from(#385377), to(#252C33));
+		background-image: -moz-linear-gradient(#385377, #252C33);
+		background-image: -ms-linear-gradient(#385377, #252C33);
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #385377), color-stop(100%, #252C33));
+		background-image: -webkit-linear-gradient(#385377, #252C33); 
+		background-image: -o-linear-gradient(#385377, #252C33);
+		background-image: linear-gradient(#385377, #252C33);
+		color: #fff !important;
+		text-shadow: 0 0 2px rgba(0,0,0,.75);  
+		padding: 5px 10px;  
+		border: none;
+		margin: 0;
+	}
+	#content .related-content .links, #content .related-content .topics {
+		border-style: solid; border-width: 0 1px 1px 1px; border-color: #ccc; margin: 0; padding: 10px; 
+		-webkit-box-shadow: 0 1px 0 #fff;
+		   -moz-box-shadow: 0 1px 0 #fff;
+		        box-shadow: 0 1px 0 #fff;
+	}
+	#content .related-content h5 {
+		font: 400 14px/1 proxima-nova,sans-serif;
+		text-transform: uppercase;
+	}
+	#content .related-content .topics p, #content .related-content .links li { line-height: 1.2; }
+
 	/* Related Posts */
 	#content #related-post-nav a.selected { color: #fff; background: url(./img/related-arrow.png) 0 center no-repeat; border: none; font-weight: bold; }
 		#content #related-post-nav a.selected .fold { display: none; }
