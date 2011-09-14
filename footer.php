@@ -63,7 +63,7 @@ $blogger = argo_get_primary_blogger();
   <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?> </select>
 </div>
 
-<form role="search" method="get" class="sitesearch" id="searchform-footer" action="<?php bloginfo('url'); ?>">
+<form role="search" method="get" class="sitesearch" id="searchform-footer" action="<?php echo trailingslashit(get_bloginfo('url')); ?>">
 	<div><label class="visuallyhidden" for="s1">Search for:</label>
 	<input type="text" class="footer-search" placeholder="Search This Site" value="" name="s" id="s1" />
 	<input type="submit" alt="Submit" width="36" height="36" class="search-submit" />
