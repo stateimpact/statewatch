@@ -127,7 +127,7 @@
     <dl>
         <dt><a href="/florida/">Florida</a></dt>
 		  <dd>Education</dd>
-        <dt><strong>Idaho</strong></dt>
+        <dt><a href="/idaho/">Idaho</a></dt>
 		  <dd>State economy</dd>
         <dt><a href="/ohio/">Ohio</a></dt>
 		  <dd>Education</dd>

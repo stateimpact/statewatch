@@ -243,7 +243,7 @@ $(document).ready(function(){
 		<div id="topic-economy" class="network-sites grid_2">
 			 <h5>Economy</h5>
 			<ul>
-				<li>Idaho</li>
+				<li><a href="/idaho/">Idaho</a></li>
 				<li><a href="/new-hampshire/">New Hampshire</a></li>
 			 </ul>
 	    </div>
