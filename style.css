@@ -904,7 +904,7 @@ Version: 0.1
 
 	/* Jiffy Posts */
 	#content article.jiffypost h2 { margin: 0; }
-	#content article.jiffypost { border-bottom: none; margin-bottom: 0; }
+	#content article .jiffypost { border-bottom: none; margin-bottom: 0; }
 
 /* Full page template 
 =================================================*/
