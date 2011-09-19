@@ -41,7 +41,7 @@
 	<link rel="apple-touch-icon-precomposed" href="<?php bloginfo('stylesheet_directory'); ?>/img/apple-touch-icon-precomposed.png"/> 
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 	
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=37" />
+	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=38" />
 	<link rel="stylesheet" media="handheld" href="<?php bloginfo('template_directory'); ?>/css/handheld.css?v=1" />
 
 <script src="<?php bloginfo('template_directory'); ?>/js/modernizr-1.6.min.js"></script>

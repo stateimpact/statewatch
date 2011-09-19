@@ -904,7 +904,7 @@ Version: 0.1
 
 	/* Jiffy Posts */
 	#content article.jiffypost h2 { margin: 0; }
-	#content article .jiffypost { border-bottom: none; margin-bottom: 0; }
+	.single article .jiffypost { border-bottom: none; margin-bottom: 0; }
 
 /* Full page template 
 =================================================*/
@@ -1487,6 +1487,12 @@ Version: 0.1
 	.pager .pagesize { width: auto; }
 	.pager .pagenav-wrapper	{ position: absolute; right: 0; top: 0; }
 	.pager .pagesize-wrapper { position: absolute; left: 0; top: 0; }
+
+	.source {
+		font-size: 12px;
+		color: #999;
+		text-transform: uppercase;
+	}
 
 	/* Caspio */
 	#caspioform table { 
