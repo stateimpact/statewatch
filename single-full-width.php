@@ -37,23 +37,7 @@
 <?php endif; ?>
 </div>
 <div class="grid_8">
-<div class="post-author clearfix">
-<?php echo get_avatar( get_the_author_meta( 'email' ), 60 ); ?>
-<h4><?php the_author_posts_link(); ?></h4>
-<h5><?the_author_meta( 'sw_title' ); ?></h5>
-<p><?php the_author_meta( 'description' ); ?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">More...</a></p>
-</div> <!-- /.post-author -->
 
-
-<nav>
-<ul class="post-nav clearfix">
-<?php if ( get_next_post() ): ?>
-<li class="n-post"><h5>Newer Post</h5><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link' ) . '</span>' ); ?></li>
-<?php endif; ?>
-<?php if ( get_previous_post() ): ?>
-<li class="p-post"><h5>Older Post</h5><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link' ) . '</span> %title' ); ?></li>
-<?php endif; ?>
-</ul></nav><!-- .post-nav -->
   
 <article>
     <a name="comments"></a>
