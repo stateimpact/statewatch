@@ -51,6 +51,15 @@ function remove_argo_actions() {
     remove_action( 'wp_footer', 'argo_build_network_panel' );
 }
 
+add_action( 'widgets_init', 'unload_argo_widgets', 15 );
+function unload_argo_widgets() {
+    unregister_widget( 'Bio_Widget' );
+    unregister_widget( 'Feedback_Widget' );
+    unregister_widget( 'Network_Widget' );
+    unregister_widget( 'Related_Widget' );
+    unregister_widget( 'Support_Widget' );
+}
+
 add_filter( 'bloginfo_rss', 'sw_fix_feed_title', 10, 2);
 function sw_fix_feed_title($info, $show) {
     if ($show != 'name') {
