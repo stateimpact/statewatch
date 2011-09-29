@@ -45,7 +45,10 @@ function sw_the_email_link() {
 
 add_filter('autocreate_taxonomies', 'sw_autocreate_taxonomies');
 function sw_autocreate_taxonomies($taxonomies) {
-    return array('National' => 'prominence');
+    return array(
+        'National' => 'prominence',
+        'Slideshow' => 'feature'
+    );
 }
 
 add_action( 'init', 'remove_argo_actions' );
