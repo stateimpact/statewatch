@@ -53,7 +53,9 @@ function sw_autocreate_taxonomies($taxonomies) {
 
 add_filter('autocreate_menus', 'sw_autocreate_menus');
 function sw_autocreate_menus($menus) {
-    return array();
+    return array(
+        'categories' => 'Categories List',
+    );
 }
 
 add_action( 'init', 'remove_argo_actions' );
