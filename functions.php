@@ -51,6 +51,11 @@ function sw_autocreate_taxonomies($taxonomies) {
     );
 }
 
+add_filter('autocreate_menus', 'sw_autocreate_menus');
+function sw_autocreate_menus($menus) {
+    return array();
+}
+
 add_action( 'init', 'remove_argo_actions' );
 function remove_argo_actions() {    
     remove_action( 'navis_top_strip', 'argo_network_div' );
