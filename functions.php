@@ -20,6 +20,7 @@ require_once( 'includes/settings.php' );
 require_once( SW_ROOT . '/includes/taxonomy.php' );
 require_once( 'includes/template.php' );
 require_once( 'includes/media.php' );
+require_once( SW_ROOT . '/includes/admin.php' );
 
 add_action( 'admin_init', 'sw_agg_settings' );
 function sw_agg_settings() {
