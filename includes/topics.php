@@ -156,4 +156,24 @@ function sw_get_topic_featured_links($post) {
     return $results;
 }
 
+function sw_get_topics_for_post($post_id) {
+    $built = array();
+    $bare = array();
+    $terms = wp_get_object_terms($post_id, array('post_tag', 'category'));
+    foreach($terms as $term) {
+        $topic = argo_get_topic_for($term);
+        error_log( $topic->post_title );
+        if (has_post_thumbnail($topic->ID)) {
+            $built[] = $topic;
+        } else {
+            $bare[] = $topic;
+        }
+    }
+    
+    return array(
+        'topics' => $built,
+        'terms' => $bare
+    );
+}
+
 ?>
