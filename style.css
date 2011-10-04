@@ -864,7 +864,7 @@ Version: 0.1
 		margin: 0;
 	}
 	#content .related-content .links, #content .related-content .topics {
-		border-style: solid; border-width: 0 1px 1px 1px; border-color: #ccc; margin: 0; padding: 10px; 
+		border-style: solid; border-width: 0 1px 1px 1px; border-color: #ccc; margin: 0; padding: 10px; overflow: hidden;
 		-webkit-box-shadow: 0 1px 0 #fff;
 		   -moz-box-shadow: 0 1px 0 #fff;
 		        box-shadow: 0 1px 0 #fff;
