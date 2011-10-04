@@ -166,7 +166,7 @@ function sw_get_topics_for_post($post_id) {
         if (has_post_thumbnail($topic->ID)) {
             $built[] = $topic;
         } else {
-            $bare[] = $topic;
+            $bare[] = $term;
         }
     }
     
@@ -174,6 +174,37 @@ function sw_get_topics_for_post($post_id) {
         'topics' => $built,
         'terms' => $bare
     );
+}
+
+add_action('after_the_content', 'sw_show_related_topics');
+function sw_show_related_topics() {
+    global $post;
+    extract(sw_get_topics_for_post($post->ID));
+    ?>
+    <div id="taxonomy">
+        <?php if ($topics): ?>
+        <div class="topics">
+            <h4>Related Topics</h4>
+            <?php foreach ($topics as $i => $topic): ?>
+                <div class="topic clearfix">
+                <?php echo get_the_post_thumbnail($topic->ID, 'thumbnail', array('class'=>'alignleft')); ?>
+                <p>
+                    <a href="<?php echo get_permalink($topic); ?>"><?php echo apply_filters('the_title', $topic->post_title); ?></a>
+                </p>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+        <div class="terms">
+            <h5>Tags</h5>
+            <p>
+                <?php foreach($terms as $i => $term): ?>
+                    <span class="post-tag-link"><a href="<?php echo get_term_link($term->name, $term->taxonomy); ?>"title="<?php echo $term->name; ?>"><?php echo $term->name; ?></a></span><?php if ($i+1 < count($terms) ): ?>, <?php endif; ?>
+                <?php endforeach; ?>
+            </p>
+        </div>
+    </div>
+    <?php
 }
 
 ?>

@@ -38,10 +38,12 @@
 
 
     </div> <!-- #post-## --> 
+    
+<?php do_action('after_the_content'); ?>
 
 <?php if ( argo_has_categories_or_tags() ): ?>
 <p class="tags">Filed under: <?php echo argo_the_categories_and_tags(); ?></p>
-<?php endif; ?>    
+<?php endif; ?>
 
 
 <nav>
