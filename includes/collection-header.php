@@ -15,9 +15,10 @@ $first_link = $links[0];
 		    <li class="twitter"> 
 		        <a href="<?php echo esc_url( 'http://twitter.com/share?url=' . $topic->guid . '&text=' ) . rawurlencode( $topic->post_title ); ?>" class="twitter-share-button" data-count="horizontal">Tweet</a>
 		    </li>
-		    <li class="fb">
-		        <a name="fb_share" share_url="<?php echo esc_url( $topic->guid ); ?>" type="button_count" href="<?php echo esc_url( 'http://www.facebook.com/sharer.php?u=' . $topic->guid . '&t=' ) . rawurlencode( $topic->post_title );  ?>">Share</a>
-		    </li>
+            <li class="fb">
+                <div id="fb-root"></div>
+                <div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+            </li>
 		</ul>	
 	<?php else: ?>
 	    <h2><?php echo $cat->name; ?></h2>
