@@ -38,45 +38,14 @@
 </div>
 <div class="grid_8">
 
+<?php do_action('after_the_content'); ?>
   
-<article>
-    <a name="comments"></a>
+<article class="article-comments clearfix">
+    <h2>Comments</h2>
     <?php comments_template( '', true ); ?>
 </article><!-- / comments -->
 
-<?php $rel_topics = argo_get_post_related_topics( 6 ); if ( $rel_topics ) { ?>
-<div id="related-posts" class="idTabs clearfix">
-    <ul id="related-post-nav">
-        <li><h4>MORE POSTS ABOUT</h4></li>
-        <?php foreach ( $rel_topics as $count => $topic ): ?>
-        <li><a href="#rp<?php echo $count; ?>"><?php echo $topic->name; ?><span class="fold"></span></a></li>
-        <?php endforeach; ?>
-    </ul>
-    <div class="items">
-        <?php foreach ( $rel_topics as $count => $topic ): ?>
-        <div id="rp<?php echo $count; ?>">  
-            <?php $rel_posts = argo_get_recent_posts_for_term( $topic, 3 ); ?>
-            <ul>
-                <?php $top_post = array_shift( $rel_posts ); ?>
-                <li class="top-related clearfix">
-                    <h3><a href="<?php echo get_permalink( $top_post->ID ); ?>" onClick="_gaq.push(['_trackEvent', 'RelatedPost', '<?php echo esc_attr($topic->name); ?>', '<?php echo esc_attr($top_post->post_title); ?>']);">
-                    <?php echo $top_post->post_title; ?></a></h3>
-                    
-                    <?php if ( has_post_thumbnail( $top_post->ID ) ) { ?>
-                        <img src="<?php echo argo_get_post_thumbnail_src( $top_post, '60x60' ); ?>" alt="related" width="60" height="60" />
-                    <?php } ?>
-                    <p><?php echo argo_get_excerpt( $top_post ); ?> <a href="<?php echo get_permalink( $top_post->ID ); ?>" onClick="_gaq.push(['_trackEvent', 'RelatedPost', '<?php echo esc_attr($topic->name); ?>', '<?php echo esc_attr($top_post->post_title); ?>']);"><b>Read More</b></a></p>
-                </li>
-                <?php foreach ( $rel_posts as $rel_post ): ?>
-                    <li><a href="<?php echo get_permalink( $rel_post->ID ); ?>" onClick="_gaq.push(['_trackEvent', 'RelatedPost', '<?php echo esc_attr($topic->name); ?>', '<?php echo esc_attr($rel_post->post_title); ?>']);"><?php echo $rel_post->post_title; ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-                <p><a href="<?php echo get_term_link( $topic, $topic->taxonomy ); ?>" onClick="_gaq.push(['_trackEvent', 'RelatedPost', '<?php echo esc_attr($topic->name); ?>', 'archive page']);"><strong>View All <?php echo $topic->name; ?> Posts &raquo;</strong></a></p>
-        </div> <!-- /#rpX -->
-        <?php endforeach; ?>
-    </div> <!-- /.items -->
-</div> <!-- /#related-posts -->
-<?php } // if ( $rel_posts ) ?>
+
 </div>
 <?php endwhile; // end of the loop. ?>
 
@@ -85,6 +54,5 @@
 </aside> <!-- /.grid_4 -->
 </article><!-- / #content .grid12 -->
 
-<?php get_template_part( 'featured-topics' ); ?>
 
 <?php get_footer(); ?>
