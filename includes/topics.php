@@ -38,20 +38,24 @@ class SW_Topics_Walker extends Walker {
     
     var $tree_type = array( 'post_type', 'taxonomy', 'custom' );
     var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
-    
+
     function start_el( &$output, $item, $depth, $args ) {
+        if ($item->menu_order > 3) return;
+        if ($item->menu_order == 1) $counter = 'alpha';
+        if ($item->menu_order == 3) $counter = 'omega'; 
     	$obj = get_post( $item->object_id );
     	if ( $obj->post_type == "topic" ) {
     	    // get term for topic, use term permalink
     	}
-    	$output .= '<div class="grid_3">';
+    	$output .= '<div class="grid_4 ' . $counter . ' topic">';
     	if ( has_post_thumbnail( $obj->ID ) ) {
-    	    $output .= get_the_post_thumbnail( $obj->ID, array(60, 60) );
+    	    $output .= get_the_post_thumbnail( $obj->ID, array(140, 140) );
     	}
     	$output .= '	<h3><a href="'. sw_get_topic_permalink( $obj ) . '">' . $obj->post_title . '</a></h3>';
     }
     
     function end_el( &$output, $item, $depth ) {
+        if ($item->menu_order > 3) return;
         $output .= '	</div>';
     }
 }
