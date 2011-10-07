@@ -49,7 +49,7 @@ class SW_Topics_Walker extends Walker {
     	}
     	$output .= '<div class="grid_4 ' . $counter . ' topic">';
     	if ( has_post_thumbnail( $obj->ID ) ) {
-    	    $output .= get_the_post_thumbnail( $obj->ID, array(140, 140) );
+    	    $output .= '<a href="'. sw_get_topic_permalink( $obj ) . '">' . get_the_post_thumbnail( $obj->ID, array(140, 140) ) . '</a>';
     	}
     	$output .= '	<h3><a href="'. sw_get_topic_permalink( $obj ) . '">' . $obj->post_title . '</a></h3>';
     }
