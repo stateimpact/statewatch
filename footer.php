@@ -84,7 +84,6 @@ $blogger = argo_get_primary_blogger();
 	    <li><a href="<?php echo get_option('privacy_link'); ?>">Privacy Policy</a></li>
 		<li class="npr">A reporting project of local public media and <a class="nprlogo" href="http://npr.org" title="Visit npr.org">NPR</a></li>
 	</ul>
-    <?php wp_nav_menu( array( 'theme_location' => 'footer', 'container' => false ) ); ?>
     <p class="back-to-top visuallyhidden"><a href="#main">Back To Top &uarr;</a></p>
 </div>
 <!-- /.grid_12 -->
