@@ -839,6 +839,7 @@ Version: 0.1
 
 	#content .aligncenter, #content .centered {
 		width: auto;
+		margin: 0 auto 20px;
 	}
 	
 	/* Related Content Sidebar */
