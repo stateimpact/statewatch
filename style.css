@@ -553,17 +553,16 @@ Version: 0.1
 
 	/* featured topics/posts module */
 	ul#menu-featured-topics { overflow: hidden; margin-bottom: 0; }
-	.home .featured-topics { padding-bottom: 20px; border-bottom: 4px solid #ddd; }
-	.single .featured-topics { border-top: 4px solid #ddd; }
+	.home .featured-topics { padding-bottom: 20px; border-bottom: 1px solid #ddd; }
 		.single .featured-topics h2 { padding-top: 5px; }
 	.featured-topics { margin-bottom: 20px; position: relative; width: 940px; overflow: hidden; }
 		.featured-topics .grid_3 { margin: 0 0 0 20px; }
 		.featured-topics .grid_3:first-child { margin: 0; }
-		
-		.featured-topics img { float: left; margin-top: 3px; }
-		.featured-topics h2 { font-size: 12px; line-height: 1; font-weight: normal; font-family: proxima-nova,sans-serif; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
-		.featured-topics h3 { font-size: 18px; font-family: proxima-nova-extra-condensed,sans-serif; font-weight: 600; }
-		.featured-topics h3, .featured-topics h4 { margin:0 0 0 70px; }
+		.featured-topics .topic { background: #f5f5f5; height: 140px; overflow: hidden; }
+		.featured-topics img { float: left; }
+		.featured-topics h2 { font-size: 12px; line-height: 1; font-weight: normal; font-family: proxima-nova,sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+		.featured-topics h3 { font-size: 20px; line-height: 1.2; font-family: proxima-nova,sans-serif; font-weight: 300; padding: 5px; }
+		.featured-topics h3, .featured-topics h4 { margin:0 5px 0 145px; }
 		.featured-topics h4 { font-size: 12px; }
 		#wrapper .featured-topics h3 a { 
 			color: #333; } 
