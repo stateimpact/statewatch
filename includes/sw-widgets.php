@@ -263,7 +263,7 @@ class Featured_Posts_Walker extends Walker_Nav_Menu {
             $thumb = get_the_post_thumbnail($item->object_id, '60x60', array(
                 'class' => 'alignright'
             ));
-            $output .= $thumb;
+            $output .= '<a href="' . $item->url . '">' . $thumb . '</a>';
         }
         $output .= '<a href="' . $item->url . '">' . $item->title . '</a>';
     }

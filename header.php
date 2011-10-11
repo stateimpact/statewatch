@@ -36,6 +36,9 @@
 	
 	<script type="text/javascript" src="http://use.typekit.com/yey2zgp.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript">
+		var disqus_developer = 1;
+	</script>
 	
 	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicon.png"/>
 	<link rel="apple-touch-icon-precomposed" href="<?php bloginfo('stylesheet_directory'); ?>/img/apple-touch-icon-precomposed.png"/> 

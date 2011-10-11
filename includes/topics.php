@@ -38,20 +38,24 @@ class SW_Topics_Walker extends Walker {
     
     var $tree_type = array( 'post_type', 'taxonomy', 'custom' );
     var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
-    
+
     function start_el( &$output, $item, $depth, $args ) {
+        if ($item->menu_order > 3) return;
+        if ($item->menu_order == 1) $counter = 'alpha';
+        if ($item->menu_order == 3) $counter = 'omega'; 
     	$obj = get_post( $item->object_id );
     	if ( $obj->post_type == "topic" ) {
     	    // get term for topic, use term permalink
     	}
-    	$output .= '<div class="grid_3">';
+    	$output .= '<div class="grid_4 ' . $counter . ' topic">';
     	if ( has_post_thumbnail( $obj->ID ) ) {
-    	    $output .= get_the_post_thumbnail( $obj->ID, array(60, 60) );
+    	    $output .= '<a href="'. sw_get_topic_permalink( $obj ) . '">' . get_the_post_thumbnail( $obj->ID, array(140, 140) ) . '</a>';
     	}
     	$output .= '	<h3><a href="'. sw_get_topic_permalink( $obj ) . '">' . $obj->post_title . '</a></h3>';
     }
     
     function end_el( &$output, $item, $depth ) {
+        if ($item->menu_order > 3) return;
         $output .= '	</div>';
     }
 }
@@ -154,6 +158,57 @@ function sw_get_topic_featured_links($post) {
     }
     
     return $results;
+}
+
+function sw_get_topics_for_post($post_id) {
+    $built = array();
+    $bare = array();
+    $terms = wp_get_object_terms($post_id, array('post_tag', 'category'));
+    foreach($terms as $term) {
+        $topic = argo_get_topic_for($term);
+        error_log( $topic->post_title );
+        if (has_post_thumbnail($topic->ID)) {
+            $built[] = $topic;
+        } else {
+            $bare[] = $term;
+        }
+    }
+    
+    return array(
+        'topics' => $built,
+        'terms' => $bare
+    );
+}
+
+add_action('after_the_content', 'sw_show_related_topics');
+function sw_show_related_topics() {
+    global $post;
+    extract(sw_get_topics_for_post($post->ID));
+    ?>
+    <div id="taxonomy">
+        <?php if ($topics): ?>
+        <div class="topics">
+            <h4>Featured Topics</h4>
+            <ul>
+            <?php foreach ($topics as $i => $topic): ?>
+                <li class="topic clearfix">
+                <?php echo get_the_post_thumbnail($topic->ID, 'thumbnail', array('class'=>'alignleft')); ?>
+                <h3><a href="<?php echo get_permalink($topic); ?>"><?php echo apply_filters('the_title', $topic->post_title); ?></a></h3>
+                </li>
+            <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php endif; ?>
+        <div class="terms">
+            <h4>More Topics</h4>
+            <ul>
+                <?php foreach($terms as $i => $term): ?>
+                    <li class="post-tag-link"><a href="<?php echo get_term_link($term->name, $term->taxonomy); ?>"title="<?php echo $term->name; ?>"><?php echo $term->name; ?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <?php
 }
 
 ?>
