@@ -185,6 +185,7 @@ function sw_show_related_topics() {
     global $post;
     extract(sw_get_topics_for_post($post->ID));
     ?>
+    <?php if ($topics || $terms): ?>
     <div id="taxonomy">
         <?php if ($topics): ?>
         <div class="topics">
@@ -199,6 +200,7 @@ function sw_show_related_topics() {
             </ul>
         </div>
         <?php endif; ?>
+        <?php if ($terms): ?>
         <div class="terms">
             <h4>More Topics</h4>
             <ul>
@@ -207,7 +209,9 @@ function sw_show_related_topics() {
                 <?php endforeach; ?>
             </ul>
         </div>
+        <?php endif; ?>
     </div>
+    <?php endif; ?>
     <?php
 }
 
