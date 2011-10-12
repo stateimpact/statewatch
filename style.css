@@ -1460,14 +1460,14 @@ Version: 0.1
 	.blue6 { background: #D3EAF7; }
 
 	/* Tables */
-	.post table .text { text-align: left; }
-	.post table .num { text-align: right; }
-	.post table { font-family: proxima-nova-extra-condensed,sans-serif; font-size: 16px; }
-	.post table td, .post table th { text-align: left; border: 1px solid #ddd; background: #EEF3F7; }
-	.post table thead tr:first-child td, article table thead tr:first-child th { border: 1px solid #ddd; background: transparent; text-transform: uppercase; }
-	.post table tr:nth-child(even) td { background: #fff; }
-	.post table tr:nth-child(odd) td { background: #f5f5f5; }
-	#content .post table thead tr .headerSortDown, #content .post table thead tr .headerSortUp { background-color: #C9DAE8; }
+	article#content table .text { text-align: left; }
+	article#content table .num { text-align: right; }
+	article#content table { font-family: proxima-nova-extra-condensed,sans-serif; font-size: 16px; }
+	article#content table td, .post table th { text-align: left; border: 1px solid #ddd; background: #EEF3F7; }
+	article#content table thead tr:first-child td, article table thead tr:first-child th { border: 1px solid #ddd; background: transparent; text-transform: uppercase; }
+	article#content table tr:nth-child(even) td { background: #fff; }
+	article#content table tr:nth-child(odd) td { background: #f5f5f5; }
+	article#content table thead tr .headerSortDown, #content .post table thead tr .headerSortUp { background-color: #C9DAE8; }
 
 	.table-filter { width: 220px; float: left; }
 	.table-filter label { display: none; }
