@@ -7,6 +7,6 @@
     </li>
     <li class="fb">
         <div id="fb-root"></div>
-        <div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+        <div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" data-action="recommend"></div>
     </li>
 </ul>
