@@ -193,9 +193,7 @@ function sw_show_related_topics() {
             <ul>
             <?php foreach ($topics as $i => $topic): ?>
                 <li class="topic clearfix">
-                <?php if ( has_post_thumbnail() ): ?>
                     <a href="<?php echo get_permalink($topic); ?>"><?php echo get_the_post_thumbnail($topic->ID, 'thumbnail', array('class'=>'alignleft')); ?></a>
-                <?php endif; ?>
                 <h3><a href="<?php echo get_permalink($topic); ?>"><?php echo apply_filters('the_title', $topic->post_title); ?></a></h3>
                 </li>
             <?php endforeach; ?>
