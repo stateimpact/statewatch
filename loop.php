@@ -31,7 +31,7 @@ query_posts( argo_post_types_qs() );
     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 <?php endif; ?>
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
-            <p><?php navis_the_raw_excerpt(); // the_excerpt(); ?> <a href="<?php the_permalink(); ?>">Continue reading <span class="meta-nav">&rarr;</span></a></p> 
+            <p><?php navis_the_raw_excerpt(); // the_excerpt(); ?> <br><a href="<?php the_permalink(); ?>">Continue reading <span class="meta-nav">&rarr;</span></a></p> 
         </div>
 
 <?php elseif (sw_is_rich_media()): ?>
