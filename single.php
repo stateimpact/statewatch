@@ -9,7 +9,7 @@
     <article id="content" class="grid_8" role="main">
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-    <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
+    <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix post-content'); ?>>
 <header>
 <h1 class="entry-title"><?php the_title(); ?></h1>
 
