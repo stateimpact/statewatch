@@ -883,10 +883,10 @@ Version: 0.1
 	.single .terms li { display: inline-block; }
 	.single .terms a { display: inline-block; background: whiteSmoke; padding: 5px; }
 	#content .tags { font-size: 14px; }
-	.single #content .topics ul { margin-bottom: 0; }
-	.single #content .topics .topic { border-top: 1px solid #ddd; padding-top: 5px; margin-bottom: 5px; }
-	.single #content .topics .topic h3 a { font-family: "Proxima Nova", sans-serif; font-size: 28px; font-weight: 400; color: #333; }
-	.single #taxonomy h4 { font: 300 16px/1.4 "Proxima Nova",sans-serif; text-transform: uppercase; padding: 5px 0 0; margin: 0 0 5px;  }
+	#taxonomy .topics ul { margin-bottom: 0; }
+	#taxonomy .topics .topic { border-top: 1px solid #ddd; padding-top: 5px; margin-bottom: 5px; }
+	#taxonomy .topics .topic h3 a { font-family: "Proxima Nova", sans-serif; font-size: 28px; font-weight: 400; color: #333; }
+	#taxonomy h4 { font: 300 16px/1.4 "Proxima Nova",sans-serif; text-transform: uppercase; padding: 5px 0 0; margin: 0 0 5px;  }
 
 	/* Sharing */
 	#content .meta-gestures li { line-height: 18px; font-size: 11px; margin: 0 15px 5px 0; height: 20px; width:160px; }
