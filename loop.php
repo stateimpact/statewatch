@@ -25,29 +25,7 @@ query_posts( argo_post_types_qs() );
 <?php while (have_posts()) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class('grid_8 alpha'); ?>>
     <?php if ( is_front_page() && is_sticky() ):  ?>
-<?php    if ( navis_post_has_features() ): 
-            $feature = navis_get_the_main_feature();
-            $feature_posts = argo_get_recent_posts_for_term( $feature, 3, 1 );
-            if ( $feature_posts ):
-?>
-        <div class="sticky-related clearfix"> 
-           <dl> 
-                <dt><?php echo $feature->name; ?></dt> 
-<?php           foreach ( $feature_posts as $feature_post ): ?>
-
-                    <dd><a href="<?php echo get_permalink( $feature_post->ID ); ?>"><?php echo get_the_title( $feature_post->ID ); ?></a></dd> 
-<?php           endforeach; ?>
-                
-                <?php if ( count( $feature_posts ) == 3 ): ?>
-                    <dd class="sticky-all"><a href="<?php echo get_term_link( $feature, $feature->taxonomy ); ?>">Full coverage <span class="meta-nav">&rarr;</span></a></dd> 
-                <?php endif; ?>
-            </dl> 
-<?php       else: // feature_posts ?>
         <div class="sticky-solo clearfix">
-<?php       endif; // feature_posts
-        else: // navis_post_has_features ?> 
-        <div class="sticky-solo clearfix">
-<?php endif; // navis_post_has_features(); ?>
             <h5>Featured</h5> 
 <?php if ( has_post_thumbnail() ): ?>
     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
