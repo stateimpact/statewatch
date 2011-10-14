@@ -797,7 +797,7 @@ Version: 0.1
 	}
 	#content .entry-title a:hover { color: #BF3119; text-decoration: none; }
 	.post p { line-height: 1.5; margin-bottom: 24px; }
-	.post-content li { font-size: 16px; }
+	.post li { font-size: 16px; }
 	.post blockquote, .coll-desc blockquote { 
 		background: transparent; 
 		color: #666; 
