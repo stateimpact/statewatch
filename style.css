@@ -734,9 +734,9 @@ Version: 0.1
 			border-top: 1px solid #ddd; 
 			border-bottom: 1px solid #ddd;
 		}
-		#content .post-metadata h6 { font-weight: normal; font-size: 13px; margin-bottom: 5px; }
+		#content .post-metadata h6 { font-weight: normal; font-size: 12px; margin-bottom: 5px; text-transform: uppercase; }
 		.post-metadata a { font-weight: bold; }
-		.post-metadata p { font-size: 13px; margin-bottom: 0; }
+		.post-metadata p { font-size: 12px; margin-bottom: 0; }
 		.post-metadata li { margin: 0; font-size: 13px; /* background: transparent url(../argo-foundation/img/icons-buttons.png) no-repeat top left; */
 	list-style-type: none; }
 		.post-metadata .meta-comments { background-position: 0 -222px; height: 18px; padding-left: 20px; } 
@@ -778,7 +778,7 @@ Version: 0.1
 =================================================*/
 
 	article header h2 { font-weight: 900; }
-	#content .entry-date { font-size:13px; margin-bottom:0; font-weight:normal; }
+	#content .entry-date { margin-bottom:0; font-weight:normal; }
 	.post-author { margin-bottom:20px; padding:10px 0 15px 0; border-bottom:1px solid #ddd; border-top:4px solid #ddd; }
 	.post-author img { float:left; margin: 3px 20px 0 0; }
 	.post-author h4,.post-author h5,.post-author p { margin-left:80px;margin-bottom:0; }
@@ -881,8 +881,9 @@ Version: 0.1
 
 	.single #taxonomy { border-top: 4px solid #ddd; }
 	.single .terms li { display: inline-block; }
-	.single .terms a { display: inline-block; background: whiteSmoke; padding: 5px; }
-	#content .tags { font-size: 14px; }
+	.single #content .terms a, .single #content .terms a:visited { display: inline-block; background: whiteSmoke; padding: 5px; font-size: 12px; }
+	.single #content .terms a:hover { text-decoration: none; color: #fff; background: #999; }
+	#content .tags { font-size: 12px; }
 	#taxonomy .topics ul { margin-bottom: 0; }
 	#taxonomy .topics .topic { border-top: 1px solid #ddd; padding-top: 5px; margin-bottom: 5px; }
 	#taxonomy .topics .topic h3 a { font-family: "Proxima Nova", sans-serif; font-size: 28px; font-weight: 400; color: #333; }
