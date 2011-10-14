@@ -881,7 +881,7 @@ Version: 0.1
 
 	.single #taxonomy { border-top: 4px solid #ddd; }
 	.single .terms li { display: inline-block; }
-	.single #content .terms a, .single #content .terms a:visited { display: inline-block; background: whiteSmoke; padding: 5px; font-size: 12px; }
+	.single #content .terms a, .single #content .terms a:visited { display: inline-block; background: whiteSmoke; padding: 5px; font-size: 12px; margin-bottom: 5px; }
 	.single #content .terms a:hover { text-decoration: none; color: #fff; background: #999; }
 	#content .tags { font-size: 12px; }
 	#taxonomy .topics ul { margin-bottom: 0; }
