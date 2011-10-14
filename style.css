@@ -802,6 +802,7 @@ Version: 0.1
 		background: transparent; 
 		color: #666; 
 		margin: 24px; 
+		padding: 0;
 		font-size: 14px;
 	}
 	.post img { margin-bottom: 3px; }
