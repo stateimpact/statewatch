@@ -734,7 +734,7 @@ Version: 0.1
 			border-top: 1px solid #ddd; 
 			border-bottom: 1px solid #ddd;
 		}
-		#content .post-metadata h6 { font-weight: normal; font-size: 12px; font-family: proxima-nova,sans-serif; margin-bottom: 5px; text-transform: uppercase; }
+		#content .post-metadata h6 { font-weight: normal; font-size: 12px; margin-bottom: 5px; text-transform: uppercase; }
 		.post-metadata a { font-weight: bold; }
 		.post-metadata p { font-size: 12px; margin-bottom: 0; }
 		.post-metadata li { margin: 0; font-size: 13px; /* background: transparent url(../argo-foundation/img/icons-buttons.png) no-repeat top left; */
