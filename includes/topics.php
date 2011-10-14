@@ -166,7 +166,6 @@ function sw_get_topics_for_post($post_id) {
     $terms = wp_get_object_terms($post_id, array('post_tag', 'category'));
     foreach($terms as $term) {
         $topic = argo_get_topic_for($term);
-        error_log( $topic->post_title );
         if (has_post_thumbnail($topic->ID)) {
             $built[] = $topic;
         } else {
@@ -192,10 +191,12 @@ function sw_show_related_topics() {
             <h4>Featured Topics</h4>
             <ul>
             <?php foreach ($topics as $i => $topic): ?>
-                <li class="topic clearfix">
-                    <a href="<?php echo get_permalink($topic); ?>"><?php echo get_the_post_thumbnail($topic->ID, 'thumbnail', array('class'=>'alignleft')); ?></a>
-                <h3><a href="<?php echo get_permalink($topic); ?>"><?php echo apply_filters('the_title', $topic->post_title); ?></a></h3>
-                </li>
+                <?php if ($topic->post_title): ?>
+                    <li class="topic clearfix">
+                        <a href="<?php echo get_permalink($topic); ?>"><?php echo get_the_post_thumbnail($topic->ID, 'thumbnail', array('class'=>'alignleft')); ?></a>
+                    <h3><a href="<?php echo get_permalink($topic); ?>"><?php echo apply_filters('the_title', $topic->post_title); ?></a></h3>
+                    </li>
+                <?php endif; ?>
             <?php endforeach; ?>
             </ul>
         </div>
