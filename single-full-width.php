@@ -16,7 +16,14 @@
 	<div class="post-metadata clearfix">
 		<div class="grid_3 alpha">
 	        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
-			<h6>By <?php the_author_posts_link(); ?></h6>
+			<h6>By 
+			<?php
+			if (function_exists('coauthors_posts_links')):
+                coauthors_posts_links();
+            else:
+                the_author_posts_link();
+            endif; ?>
+            </h6>
 		</div>
 		<div class="grid_5 omega">
 		<?php get_template_part( 'post', 'meta' ); ?>
