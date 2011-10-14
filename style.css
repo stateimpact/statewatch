@@ -837,7 +837,7 @@ Version: 0.1
 	}
 	
 	/* Related Content Sidebar */
-	#content .related-content { border: none !important; }
+	#content .related-content { border: none !important; font-style: normal !important; }
 	#content .related-content div { padding: 0; }
 	#content .related-content h4 {
 		font-family: proxima-nova-extra-condensed,sans-serif;
