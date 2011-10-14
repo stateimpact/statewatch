@@ -46,7 +46,7 @@
 <?php endif; ?>
 -->
   
-<article id="respond" class="article-comments clearfix">
+<article id="comments" class="article-comments clearfix">
     <h2>Comments</h2>
     <?php comments_template( '', true ); ?>
 </article><!-- / comments -->
