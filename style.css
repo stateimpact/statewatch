@@ -801,9 +801,7 @@ Version: 0.1
 	.post blockquote, .coll-desc blockquote { 
 		background: transparent; 
 		color: #666; 
-		border-left: 1px solid #ddd; 
-		padding: 0 0 0 20px; 
-		font-style: normal;
+		margin: 24px; 
 		font-size: 14px;
 	}
 	.post img { margin-bottom: 3px; }
