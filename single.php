@@ -40,14 +40,9 @@
     </div> <!-- #post-## --> 
     
 <?php do_action('after_the_content'); ?>
-<!-- 
-<?php if ( argo_has_categories_or_tags() ): ?>
-<p class="tags">Filed under: <?php echo argo_the_categories_and_tags(); ?></p>
-<?php endif; ?>
--->
   
 <article id="comments" class="article-comments clearfix">
-    <h2>Comments</h2>
+    <h2 id="respond">Comments</h2>
     <?php comments_template( '', true ); ?>
 </article><!-- / comments -->
 
