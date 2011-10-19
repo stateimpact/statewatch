@@ -140,4 +140,9 @@ function sw_add_map_taxonomies($taxonomies) {
     return $taxonomies;
 }
 
+add_filter('navis_related_content_post_types', 'sw_related_content_types');
+function sw_related_content_types($post_types) {
+    return array('post', 'topic', 'fusiontablesmap');
+}
+
 ?>
