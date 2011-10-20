@@ -44,7 +44,7 @@
 <?php do_action('after_the_content'); ?>
   
 <article id="comments" class="article-comments clearfix">
-    <h2>Comments</h2>
+    <h2 id="respond">Comments</h2>
     <?php comments_template( '', true ); ?>
 </article><!-- / comments -->
 
