@@ -798,6 +798,8 @@ Version: 0.1
 	#content .entry-title a:hover { color: #BF3119; text-decoration: none; }
 	.post p { line-height: 1.5; margin-bottom: 24px; }
 	.post li { font-size: 16px; }
+	#content .post-content h3 { font-family: proxima-nova,sans-serif; font-weight: 300; text-transform: uppercase; }
+	#content .post-content h4 { font-family: proxima-nova-extra-condensed,sans-serif; font-size: 24px; }
 	.post blockquote, .coll-desc blockquote { 
 		background: transparent; 
 		color: #666; 
@@ -912,7 +914,7 @@ Version: 0.1
 	}
 
 	/* Jiffy Posts */
-	#content article.jiffypost h2 { margin: 0; }
+	#content article.jiffypost h2 { margin: 0; font-family: proxima-nova-extra-condensed,sans-serif; font-size: 28px; }
 	.single article .jiffypost { border-bottom: none; margin-bottom: 0; }
 
 /* Full page template 
