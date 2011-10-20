@@ -23,7 +23,7 @@ query_posts( argo_post_types_qs() );
 	 */ ?>
 
 <?php while (have_posts()) : the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class('grid_8 alpha'); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('grid_8 alpha post-content'); ?>>
     <?php if ( is_front_page() && is_sticky() ):  ?>
         <div class="sticky-solo clearfix">
             <h5>Featured</h5> 
