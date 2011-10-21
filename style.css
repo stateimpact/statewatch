@@ -1273,7 +1273,7 @@ Version: 0.1
 /* Collection page (tag.php,category.php)
 =================================================*/
 	#coll-intro { color:#333; margin-bottom:10px; }
-	#coll-intro h2 { 
+	#coll-intro h1 { 
 		font-size:42px; 
 		line-height: 1.1;
 		font-family: proxima-nova,sans-serif;

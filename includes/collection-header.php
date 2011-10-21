@@ -9,7 +9,7 @@ $first_link = $links[0];
 	<div class="coll-header">
 		<h5><a href="<? echo get_permalink( $topics->ID ); ?>">Topics</a></h5>
 	<?php if ($topic->post_title): ?>
-	    <h2><?php echo $topic->post_title; ?></h2>
+	    <h1><?php echo $topic->post_title; ?></h1>
 		<ul class="meta-gestures">
 			<li class="subscribe"><a href="<?php echo get_term_feed_link( $cat->term_id, $cat->taxonomy ); ?>">Follow this topic</a></li>
 		    <li class="twitter"> 
@@ -21,7 +21,7 @@ $first_link = $links[0];
             </li>
 		</ul>	
 	<?php else: ?>
-	    <h2><?php echo $cat->name; ?></h2>
+	    <h1><?php echo $cat->name; ?></h1>
 		<ul class="meta-gestures">
 			<li class="subscribe tag-subscribe"><a rel="alternate nofollow" href="<?php echo get_term_feed_link( $tag->term_id, $tag->taxonomy ); ?>">Follow this topic</a></li>
 		</ul>
