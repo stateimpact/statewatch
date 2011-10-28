@@ -139,7 +139,7 @@
 		  <dd>State Budget</dd>
         <dt><a href="/pennsylvania/">Pennsylvania</a></dt>
 		  <dd>Energy</dd>
-        <dt><strong>Texas</strong></dt>
+        <dt><a href="/texas/">Texas</a></dt>
 		  <dd>Energy</dd>
     </dl>
 </div> <!-- /#sw-network-partners -->
