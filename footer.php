@@ -259,7 +259,7 @@ $(document).ready(function(){
 			<h5>Energy</h5>
 			<ul>
 				<li><a href="/pennsylvania/">Pennsylvania</a></li>
-				<li><a href="/pennsylvania/">Texas</a></li>
+				<li><a href="/texas/">Texas</a></li>
 			</ul>
 		</div>
 
