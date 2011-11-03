@@ -21,12 +21,24 @@ function sw_meta_description() {
     
     // just to be sure
     $excerpt = esc_attr(strip_tags($excerpt), ENT_QUOTES);
-    if (is_single() || is_category() || is_tag() ): ?>
+    if (is_single() ): ?>
 	    <meta name="description" content="<?php echo $excerpt; ?>">
         <meta property="og:title" content="<?php echo esc_attr(get_the_title()); ?>" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="<?php the_permalink(); ?>" />
         <meta property="og:image" content="<?php echo wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) ); ?>" />
+        <meta property="og:site_name" content="StateImpact <?php echo get_option('blogname'); ?>" />
+        <meta property="fb:admins" content="10217706" />
+        <meta property="og:description" content="<?php echo $excerpt; ?>">
+    <?php elseif ( is_category() || is_tag() ): 
+            $cat = $wp_query->get_queried_object();
+            $topic = argo_get_topic_for( $cat );    
+    ?>
+        <meta name="description" content="<?php echo $excerpt; ?>">
+        <meta property="og:title" content="<?php echo esc_attr( $topic->post_title ); ?>" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="<?php echo esc_url($topic->guid); ?>" />
+        <meta property="og:image" content="<?php echo wp_get_attachment_thumb_url( get_post_thumbnail_id( $topic->ID ) ); ?>" />
         <meta property="og:site_name" content="StateImpact <?php echo get_option('blogname'); ?>" />
         <meta property="fb:admins" content="10217706" />
         <meta property="og:description" content="<?php echo $excerpt; ?>">
