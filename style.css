@@ -914,7 +914,7 @@ Version: 0.1
 	}
 
 	/* Jiffy Posts */
-	#content article.jiffypost h2 { margin: 0; font-family: proxima-nova-extra-condensed,sans-serif; font-size: 28px; }
+	#wrapper #content .jiffypost h2 { margin: 0; font-size: 32px !important; }
 	.single article .jiffypost { border-bottom: none; margin-bottom: 0; }
 
 /* Full page template 
