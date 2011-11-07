@@ -29,7 +29,7 @@ function sw_staff_fields( $user ) { ?>
 		        <input type="checkbox" name="sw_is_staff" id="sw_is_staff" value="1" <?php checked( 1, get_the_author_meta( 'sw_is_staff', $user->ID ) ); ?> /><br />
 		        <span class="description">Staff reporters show up in the site footer</span>
 		    </td>
-		</tr>
+		</tr>		
 	</table>
     <?php
 }
@@ -42,18 +42,20 @@ function sw_update_staff_fields( $user_id ) {
 	if ( !current_user_can( 'edit_user', $user_id ) )
 		return false;
 
-	update_usermeta( $user_id, 'sw_title', $_POST['sw_title'] );
-	update_usermeta( $user_id, 'sw_twitter', $_POST['sw_twitter'] );
-	update_usermeta( $user_id, 'sw_is_staff', $_POST['sw_is_staff']);
+	$fields = array('sw_title', 'sw_twitter', 'sw_is_staff', 'sw_order');
+	foreach($fields as $field) {
+	    if (isset($_POST[$field])) {
+	        update_usermeta( $user_id, $field, $_POST[$field]);
+	    }
+	}
 }
 
 function sw_get_staff() {
-    return get_users(
-            array(
+    return get_users( array(
                 'meta_key' => 'sw_is_staff',
-                'meta_value' => 1
-            )
-        );
+                'meta_value' => 1,
+                'orderby' => 'registered',
+            ) );
 }
 
 ?>
