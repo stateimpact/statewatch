@@ -104,9 +104,9 @@ query_posts( argo_post_types_qs() );
 	<nav>
 		<ul class="list-pagination">
 		    <?php if ($next): ?>
-		    <li class="older-posts"><?php next_posts_link( '&laquo; Older posts' ); ?></li>
+		    <li class="older-posts"><?php next_posts_link( '&laquo; Older posts', $wp_query->max_num_pages ); ?></li>
 		    <?php endif; ?><?php if ($previous): ?>
-		    <li class="newer-posts"><?php previous_posts_link( 'Newer posts &raquo;' ); ?></li>
+		    <li class="newer-posts"><?php previous_posts_link( 'Newer posts &raquo;', $wp_query->max_num_pages ); ?></li>
 		    <?php endif; ?>
 		</ul>
 	</nav><!-- .list-pagination -->

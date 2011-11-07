@@ -37,7 +37,7 @@
     <?php endif; ?>
 </h3>
 
-<nav>		
+<nav>
 <ul class="list-pagination">
     <li class="older-posts"><?php next_posts_link( 'Older posts' ); ?></li>
     <li class="newer-posts"><?php previous_posts_link( 'Newer posts' ); ?></li>
