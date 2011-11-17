@@ -26,7 +26,9 @@ function sw_meta_description() {
         <meta property="og:title" content="<?php echo esc_attr(get_the_title()); ?>" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="<?php the_permalink(); ?>" />
+    <?php if (wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) ); ?>
         <meta property="og:image" content="<?php echo wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) ); ?>" />
+    <?php endif; ?>
         <meta property="og:site_name" content="StateImpact <?php echo get_option('blogname'); ?>" />
         <meta property="fb:admins" content="10217706" />
         <meta property="og:description" content="<?php echo $excerpt; ?>">
