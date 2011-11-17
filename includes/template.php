@@ -14,9 +14,9 @@ function sw_meta_description() {
     
     $excerpt = $post->post_excerpt;
     if ( !$excerpt ) {
-        $words = explode(' ', $post->post_content);
+        $words = strip_shortcodes( $post->post_content );
+        $words = explode(' ', $words);
         $excerpt = implode(' ', array_slice($words, 0, 55) );
-        $excerpt = strip_shortcodes( $excerpt );
     }
     
     // just to be sure
