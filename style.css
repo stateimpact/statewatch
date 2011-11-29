@@ -1470,7 +1470,7 @@ Version: 0.1
 	.post-content table thead tr:first-child td, article table thead tr:first-child th { border: 1px solid #ddd; background: transparent; text-transform: uppercase; font-size: 11px; }
 	.post-content table tr:nth-child(odd) td { background: #fff; }
 	.post-content table tr:nth-child(even) td { background: #f5f5f5; }
-	.post-content table thead tr .headerSortDown, #content .post table thead tr .headerSortUp { background-color: #C9DAE8; }
+	.post-content table thead tr .headerSortDown, #content .post table thead tr .headerSortUp { background-color: #ddd !important; }
 
 	.table-filter { width: 300px; float: left; }
 	.table-filter label { display: inline; }
