@@ -828,11 +828,15 @@ Version: 0.1
 	
 	article ul.playlist { 
 		margin-bottom: 25px; 
-		background: #f9f9f9;
-		border: 1px solid #eee;
 		clear: both;
 	}
-	article ul.playlist li { margin-bottom: 0; }
+	article ul.playlist li { 
+		background: #f9f9f9; 
+		border: 1px solid #eee; 
+		-webkit-border-radius: 0;
+		   -moz-border-radius: 0;
+		        border-radius: 0;
+	}
 
 	#content .aligncenter, #content .centered {
 		width: auto;
