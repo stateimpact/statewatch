@@ -17,7 +17,7 @@ $topic = argo_get_topic_for( $tag );
 		<ul class="meta-gestures">
 			<li class="subscribe"><a href="<?php echo get_term_feed_link( $cat->term_id, $cat->taxonomy ); ?>">Follow this topic</a></li>
 		</ul>	
-</div> 
+
 <?php
 /* Run the loop for the tag archive to output the posts
  * If you want to overload this in a child theme then include a file
@@ -25,6 +25,7 @@ $topic = argo_get_topic_for( $tag );
  */
  get_template_part( 'includes/topic_loop', 'tag' );
 ?>
+</div> 
 </div>
 <!-- /.grid_8 #content -->
 			

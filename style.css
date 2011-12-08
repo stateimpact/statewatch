@@ -1309,7 +1309,7 @@ Version: 0.1
 		text-transform: uppercase; 
 		letter-spacing: .1em;
 	}
-	#content #crp h6,
+	
 	.coll-desc h6 { 
 		margin-bottom: 0; 
 		border-top: 4px solid #ddd; 
@@ -1324,7 +1324,7 @@ Version: 0.1
 	.coll-desc { position: relative; }
 
 	#content .coll-desc .meta-gestures, 
-	#crp .meta-gestures { position: absolute; top: 13px; right: 0; text-align: right; width: auto; }
+	#crp .meta-gestures { position: absolute; top: 10px; right: 0; text-align: right; width: auto; }
 	#content .coll-desc .meta-gestures li { list-style: none; margin: 0; display: inline-block; width: auto; }
 	.coll-desc li { list-style: disc; margin: 0 0 20px 10px; }
 
@@ -1351,9 +1351,15 @@ Version: 0.1
 	.coll { border-bottom: none; }
 
 	/* Loop */
-	#crp { position: relative; }
-	.tag article.first, .category article.first { border-top: 1px solid #ddd; }
-	
+	#crp { position: relative; border-top: 4px solid #ccc; padding-top: 10px; }
+	#crp h6 { margin-bottom: 0; }
+	#crp .day { border-top: 1px solid #ccc; padding-top: 20px; margin-top: 10px;  }
+	#content #crp article { margin-left: 20px; margin-bottom: 0; padding-bottom: 0; border-top: 0; padding-top: 0; }
+	#content #crp article.prefix_2 { padding-left: 160px; margin-left: 0; }
+	#content #crp article h2.entry-title { font-size: 24px; margin-bottom: 10px; }
+	#crp article.headerrule h2 { border-top: 1px solid #ccc; padding-top: 20px; }
+	#content #crp h6.entry-date { border-top: none; padding-top: 0; font-family: "Helvetica Neue",arial,sans-serif; font-size: 11px; color: #999; }
+	#crp article p { font-size: 14px; }
 	
 	/* Sidebar */
 	.tag #sidebar .widget-list:first-child .ad, .category #sidebar .widget-list:first-child .ad { border-top: 4px solid #ddd; padding-top: 10px; }

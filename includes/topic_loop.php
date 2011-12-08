@@ -24,11 +24,11 @@ query_posts( argo_post_types_qs() );
 
 <?php while (have_posts()) : the_post(); ?>
 <?php if(is_new_day()): ?>
-<div class="day storywrapper">
+<div class="day storywrapper clearfix">
     <?php the_date('F j, Y', '<h6 class="entry-date grid_2 alpha">', '</h2>'); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class('grid_6 omega post-content'); ?>>
 <?php else: ?>
-<div class="storywrapper">
+<div class="storywrapper clearfix">
     <article id="post-<?php the_ID(); ?>" <?php post_class('grid_6 prefix_2 alpha omega headerrule post-content'); ?>>
 <?php endif; ?>
 
@@ -36,7 +36,7 @@ query_posts( argo_post_types_qs() );
             <?php if ( has_post_thumbnail() ): ?>
                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
             <?php endif; ?>
-            <p><?php the_excerpt(); ?></p> 
+            <?php the_excerpt(); ?>
     </article><!-- #post-## -->
     <?php comments_template( '', true ); ?>
 </div><!-- .storywrapper -->
@@ -54,5 +54,4 @@ query_posts( argo_post_types_qs() );
 		</ul>
 	</nav><!-- .list-pagination -->
 </div> <!-- .grid_8 alpha -->
-<div class="clearfix"></div>
 <?php endif; // check for pagination ?>
