@@ -18,7 +18,7 @@ $topic = argo_get_topic_for( $cat );
 * If you want to overload this in a child theme then include a file
 * called loop-category.php and that will be used instead.
 */
-get_template_part( 'loop', 'category' ); ?>
+get_template_part( 'includes/topic_loop', 'category' ); ?>
 </div>
 <!-- /.grid_8 #content -->
 

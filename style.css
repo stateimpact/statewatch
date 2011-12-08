@@ -1287,6 +1287,7 @@ Version: 0.1
 		background: #fff;
 		margin-bottom: 5px;
 	}
+	#coll-intro img { float: left; margin: 0 20px 0 0; }
 	#coll-intro .wp-media-credit, #coll-intro .wp-caption-text { font-size: 11px; color: #666; }
 		#coll-intro .wp-media-credit { text-align: right; display: block; font-size: 10px; margin-bottom: 5px; text-transform: uppercase; }
 		#coll-intro p.wp-caption-text { font-size: 12px; line-height: 1.3; }
@@ -1320,6 +1321,11 @@ Version: 0.1
 	.coll-links li { font-size:13px; margin-bottom:10px; }
 	.coll-links li a { font-weight: bold; }
 
+	.coll-desc { position: relative; }
+
+	#content .coll-desc .meta-gestures, 
+	#crp .meta-gestures { position: absolute; top: 13px; right: 0; text-align: right; width: auto; }
+	#content .coll-desc .meta-gestures li { list-style: none; margin: 0; display: inline-block; width: auto; }
 	.coll-desc li { list-style: disc; margin: 0 0 20px 10px; }
 
 	/* description and links */
@@ -1345,6 +1351,7 @@ Version: 0.1
 	.coll { border-bottom: none; }
 
 	/* Loop */
+	#crp { position: relative; }
 	.tag article.first, .category article.first { border-top: 1px solid #ddd; }
 	
 	
