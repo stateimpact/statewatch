@@ -2,8 +2,8 @@
 $topics = get_static_page('topic-index');
 $cat = $wp_query->get_queried_object();
 $topic = argo_get_topic_for( $cat );
-$links = sw_get_topic_featured_links( $topic );
-$first_link = $links[0];
+// $links = sw_get_topic_featured_links( $topic );
+// $first_link = $links[0];
 ?>
 <div id="coll-intro" class="grid_12"> 
 	<div class="coll-header">
