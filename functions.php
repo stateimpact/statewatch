@@ -15,7 +15,7 @@ require_once( INCLUDES . 'users.php' );
 require_once( INCLUDES . 'sidebars.php' );
 require_once( INCLUDES . 'stations.php' );
 // require_once( INCLUDES . 'static-widgets.php' );
-require_once( INCLUDES . 'si-topics.php' );
+require_once( INCLUDES . 'topics/topics.php' );
 require_once( INCLUDES . 'sw-widgets.php');
 require_once( INCLUDES . 'settings.php' );
 require_once( INCLUDES . 'taxonomy.php' );

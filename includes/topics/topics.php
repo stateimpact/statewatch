@@ -6,20 +6,20 @@ class SI_Topics {
     
     function __construct() {
         // unhook argo events
-        add_action('init', array($this, 'unhook_argo_events'));
+        add_action('init', array(&$this, 'unhook_argo_events'));
         
         // check for post type, create if necessary
         // push this down the stack to account for the parent theme
         add_action('init', array($this, 'create_post_type'), 15);
         
         // create topic on created_term
-        add_action('created_term', array($this, 'create_topic'), 10, 3);
+        add_action('created_term', array(&$this, 'create_topic'), 10, 3);
         
         // update topic on edited_term
-        add_action('edited_term', array($this, 'update_topic'), 10, 3);
+        add_action('edited_term', array(&$this, 'update_topic'), 10, 3);
         
         // metaboxes
-        add_action('add_meta_boxes', array($this, 'add_metaboxes'));
+        add_action('add_meta_boxes', array(&$this, 'add_metaboxes'));
         
         // save links on save_post, fixing old data model if needed
         add_action('save_post', array($this, 'save_post'));
@@ -32,6 +32,15 @@ class SI_Topics {
             array( &$this, 'register_admin_scripts' )
         );
         
+        // ajax
+        add_action('wp_ajax_get_posts_for_topic',
+            array(&$this, 'ajax_fetch'));
+        
+        add_action('wp_ajax_get_featured_posts_for_topic',
+            array(&$this, 'ajax_get_featured_posts'));
+        
+        add_action('wp_ajax_save_featured_posts',
+            array(&$this, 'ajax_save'));
     }
     
     function unhook_argo_events() {
@@ -49,16 +58,133 @@ class SI_Topics {
         }
     }
     
+    function get_term_for_topic($topic) {
+        $taxonomies = array('post_tag', 'category');
+        $terms = wp_get_object_terms($topic->ID, $taxonomies);
+        if (is_array($terms)) {
+            return $terms[0];
+        } else {
+            return false;
+        }
+    }
+    
+    function ajax_fetch() {
+        $posts = $this->query($_POST);
+        header( "Content-Type: application/json" );
+        echo json_encode($posts);
+        die();
+    }
+    
+    function ajax_save() {
+        if ($_POST['post_parent']) {
+            $post_id = $_POST['post_parent'];
+            update_post_meta($post_id, 'featured-posts', $_POST['featured-posts']);
+        } else {
+            error_log("No post_parent");
+        }
+        die();
+    }
+    
+    function ajax_get_featured_posts() {
+        if ($_POST['post_parent']) {
+            $post_id = $_POST['post_parent'];
+            $ids = (array)get_post_meta($post_id, 'featured-posts', true);
+            $posts = $this->query(array('post__in' => $ids));
+            header( "Content-Type: application/json" );
+            echo json_encode($posts);
+        }
+        die();
+    }
+    
+    function query( $args = array() ) {
+        // borrowed rather shamelessly from wordpress itself
+        // wp-admin/includes/internal-linking.php
+        
+    	$query = array(
+    		'post_type' => array('post', 'roundup', 'fusiontablesmap'),
+    		'suppress_filters' => true,
+    		'update_post_term_cache' => false,
+    		'update_post_meta_cache' => false,
+    		'post_status' => 'publish',
+    		'order' => 'DESC',
+    		'orderby' => 'post_date',
+    		'posts_per_page' => 50,
+    	);
+
+    	$args['pagenum'] = isset( $args['pagenum'] ) ? absint( $args['pagenum'] ) : 1;
+
+    	if ( isset( $args['s'] ) )
+    		$query['s'] = $args['s'];
+
+    	$query['offset'] = $args['pagenum'] > 1 ? $query['posts_per_page'] * ( $args['pagenum'] - 1 ) : 0;
+
+    	// Do main query.
+    	$get_posts = new WP_Query;
+    	$posts = $get_posts->query( $query );
+    	// Check if any posts were found.
+    	if ( ! $get_posts->post_count )
+    		return array();
+
+    	// Build results.
+    	$results = array();
+    	foreach ( $posts as $post ) {
+    		if ( 'post' == $post->post_type )
+    			$info = mysql2date( __( 'Y/m/d' ), $post->post_date );
+    		else
+    			$info = $pts[ $post->post_type ]->labels->singular_name;
+
+    		$data = array(
+    			'id' => $post->ID,
+    			'title' => trim( esc_html( strip_tags( get_the_title( $post ) ) ) ),
+    			'permalink' => get_permalink( $post->ID ),
+    			'date' => mysql2date(__( 'Y/m/d' ), $post->post_date),
+    		);
+    		
+    		if (has_post_thumbnail($post->ID)) {
+    		    $thumbnail = wp_get_attachment_image_src(
+    		        get_post_thumbnail_id($post->ID), '60x60');
+    		    if (is_array($thumbnail)) {
+    		        $data['thumbnail'] = $thumbnail[0];
+    		    }
+    		}
+    		
+    		$data['type'] = get_post_type($post->ID);
+    		
+    		$results[] = $data;
+    	}
+
+    	return $results;
+    }
+    
+    
     function add_metaboxes() {
         add_meta_box('featured-posts', 'Featured Posts', array($this, 'featured_posts_form'),
                     'topic', 'normal', 'high');
         
         add_meta_box( 'featured-links', 'Featured Links', array($this, 'featured_links_form'),
                       'topic', 'normal', 'high');
+        
+        add_meta_box( 'topic-term', 'Term', array(&$this, 'topic_term_metabox'),
+                    'topic', 'side', 'high');
     }
     
-    function featured_posts_form($post) {
-        
+    function topic_term_metabox($post) {
+        $term = $this->get_term_for_topic($post);
+        if ($term): ?>
+        <h4><?php echo $term->name; ?></h4>
+        <p>Content for this topic buildout will show up with this term.</p>
+        <?php endif;
+    }
+    
+    function featured_posts_form($post) { ?>
+        <div id="featured-posts">
+            <h2>Featured</h2>
+            <div class="posts"></div>
+        </div>
+        <div id="latest-posts">
+            <div class="posts"></div>
+        </div>
+        <?php
     }
     
     function featured_links_form($post) { ?>
