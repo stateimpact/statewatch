@@ -18,8 +18,20 @@ class SI_Topics {
         // update topic on edited_term
         add_action('edited_term', array($this, 'update_topic'), 10, 3);
         
+        // metaboxes
+        add_action('add_meta_boxes', array($this, 'add_metaboxes'));
+        
         // save links on save_post, fixing old data model if needed
         add_action('save_post', array($this, 'save_post'));
+        
+        // include assets
+        add_action( 'admin_print_scripts-topic.php', 
+            array( &$this, 'register_admin_scripts' )
+        );
+        add_action( 'admin_print_scripts-topic-new.php', 
+            array( &$this, 'register_admin_scripts' )
+        );
+        
     }
     
     function unhook_argo_events() {
@@ -35,6 +47,47 @@ class SI_Topics {
                 remove_action($action, $callback);
             }
         }
+    }
+    
+    function add_metaboxes() {
+        add_meta_box('featured-posts', 'Featured Posts', array($this, 'featured_posts_form'),
+                    'topic', 'normal', 'high');
+        
+        add_meta_box( 'featured-links', 'Featured Links', array($this, 'featured_links_form'),
+                      'topic', 'normal', 'high');
+    }
+    
+    function featured_posts_form($post) {
+        
+    }
+    
+    function featured_links_form($post) { ?>
+        <table class="form-table">
+            <tr>
+                <td></td>
+                <th>Link Title</th>
+                <th>URL</th>
+                <th>Source</th>
+            </tr>
+
+            <?php // this feels dirty ?>
+            <?php foreach( range(0, 4) as $i ): ?>
+            <tr>
+                <td><?php echo $i + 1; ?></td>
+                <?php $fields = array( 'title', 'url', 'source' ); ?>
+                <?php foreach( $fields as $field ): ?>
+                <td>
+                    <?php $name = "link_" . $i . "_" . $field; ?>
+                    <?php $value = get_post_meta( $post->ID, $name, true ); ?>
+                    <input type="text" id="<?php echo $name; ?>" 
+                           name="<?php echo $name; ?>" 
+                           value="<?php echo $value; ?>" />
+                </td>
+                <?php endforeach; ?>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php
     }
     
     function create_post_type() {
@@ -144,6 +197,18 @@ class SI_Topics {
         }
         ***/
     }
+    
+    function register_admin_scripts() {
+        $jslibs = array(
+            'underscore' => plugins_url('js/underscore-min.js', __FILE__),
+            'backbone' => plugins_url('js/backbone-min.js', __FILE__),
+        );
+        
+        wp_enqueue_script( 'underscore', $jslibs['underscore']);
+        wp_enqueue_script( 'backbone', $jslibs['backbone'],
+            array('underscore', 'jquery'));
+    }
+    
     
     function convert_old_links($post_id, $delete=false) {
         $links = (array)get_post_meta($post_id, 'topic_links', true);
