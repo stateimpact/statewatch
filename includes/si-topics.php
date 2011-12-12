@@ -13,7 +13,7 @@ class SI_Topics {
         add_action('init', array($this, 'create_post_type'), 15);
         
         // create topic on created_term
-        add_action('created_term', array($this, 'create_topic'), 10, 2);
+        add_action('created_term', array($this, 'create_topic'), 10, 3);
         
         // update topic on edited_term
         add_action('edited_term', array($this, 'update_topic'), 10, 3);
@@ -58,16 +58,69 @@ class SI_Topics {
             'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
             'public' => true,
             'menu_position' => 8,
-            'taxonomies' => array( 'feature', 'post_tag', 'category' ),
+            // 'taxonomies' => array( 'feature', 'post_tag', 'category' ),
         ) );
     }
     
-    function create_topic($term_id, $tt_id) {
+    function create_topic($term_id, $tt_id, $taxonomy) {
+        $term = get_term( $term_id, $taxonomy );
+        error_log('Creating topic from term: ' . $term->name);
         
+        $topics = new WP_Query(array(
+            'post_name' => $term->slug,
+            'post_type' => $this->POST_TYPE
+        ));
+        if ($topics->post_count > 0) {
+            // we already have this topic, bail out
+            return;
+        }
+        
+        // Gather attributes
+        $atts = array(
+            'post_title' => $term->name,
+            'post_type' => $this->POST_TYPE,
+            'post_status' => 'publish',
+            'post_content' => $term->description,
+            'post_excerpt' => $term->description,
+            'post_name' => $term->slug
+        );
+        if ( $taxonomy == 'post_tag' ) {
+            $atts[ 'tags_input' ] = array( $term->slug );
+        };
+        if ( $taxonomy == 'category' ) {
+            $atts[ 'post_category' ] = array( $term_id );
+        }
+        wp_insert_post( $atts );
     }
     
     function update_topic($term_id, $tt_id, $taxonomy) {
+        $term = get_term( $term_id, $taxonomy );
+        $topic = $this->get_topic($term, $taxonomy);
+        error_log('Updating topic: ' . $topic->post_title);
+    }
+    
+    function get_topic($term, $taxonomy) {
+        // get a topic (post type) for a given term
+        // creating one if it doesn't already exist
+        $args = array(
+            'post_name' => $term->slug,
+            'post_type' => $this->POST_TYPE,
+            'numberposts' => 1
+        );
         
+        if ($taxonomy == 'category') {
+            $args['cat'] = $term->term_id;
+        } elseif ($taxonomy == 'post_tag') {
+            $args['tag'] = $term->slug;
+        }
+        
+        $topics = new WP_Query($args);
+        if ($topics->post_count === 0) {
+            return $this->create_topic($term_id, $tt_id, $taxonomy);
+        }
+        
+        $topic = $topics->posts[0];
+        return $topic;
     }
     
     function save_post($post_id) {
@@ -75,6 +128,7 @@ class SI_Topics {
         if (get_post_type($post_id) !== $this->POST_TYPE) return;
         
         // convert old links, but only once
+        /***
         if (!get_post_meta($post_id, '_links_converted', true)) {
             $old_links = $this->convert_old_links($post_id);
         }
@@ -88,6 +142,7 @@ class SI_Topics {
                 }
             }
         }
+        ***/
     }
     
     function convert_old_links($post_id, $delete=false) {
@@ -105,10 +160,12 @@ class SI_Topics {
             }
             $links[] = $link;
         }
-        update_post_meta()
+        // update_post_meta()
         return $links;
     }
 }
+
+$sw_topics = new SI_Topics;
 
 class SW_Topics_Walker extends Walker {
     
@@ -134,6 +191,21 @@ class SW_Topics_Walker extends Walker {
         if ($item->menu_order > 3) return;
         $output .= '	</div>';
     }
+}
+
+function sw_get_topic_featured_links($post) {
+    $results = array();
+    $fields = array( 'title', 'url', 'source' );
+    foreach( range(0, 4) as $i ) {
+        $link = array();
+        foreach( $fields as $field ) {
+            $name = "link_" . $i . "_" . $field;
+            $link[$field] = get_post_meta( $post->ID, $name, true );
+        }
+        $results[$i] = $link;
+    }
+    
+    return $results;
 }
 
 
