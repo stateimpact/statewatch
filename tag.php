@@ -12,8 +12,10 @@ $topic = argo_get_topic_for( $tag );
 
 <div id="content" class="grid_8" role="main">
 <?php get_template_part( 'includes/collection-background' ); ?>	
-<div id="crp">
-	<h6>Recent Posts</h6>
+<?php get_template_part( 'includes/collection-featured' ); ?>	
+
+<div class="topic-posts">
+	<h2 class="section-hed">Recent Posts</h2>
 		<ul class="meta-gestures">
 			<li class="subscribe"><a href="<?php echo get_term_feed_link( $cat->term_id, $cat->taxonomy ); ?>">Follow this topic</a></li>
 		</ul>	
@@ -31,6 +33,7 @@ $topic = argo_get_topic_for( $tag );
 			
 <aside id="sidebar" class="grid_4">
 	<?php get_template_part( 'includes/collection-links' ); ?>
+	<?php get_template_part( 'includes/collection-multimedia' ); ?>
     <?php get_sidebar('topic'); ?>
 </aside>
 <!-- /.grid_4 -->

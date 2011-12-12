@@ -3,8 +3,8 @@ $cat = $wp_query->get_queried_object();
 $topic = argo_get_topic_for( $cat );
 ?>
 <?php if ( $topic->post_content ): ?>
-	<div class="coll-desc post clearfix"> 
-		<h6>Background</h6>
+	<div class="topic-intro post clearfix"> 
+		<h2 class="section-hed">Background</h2>
 		<ul class="meta-gestures">
 		    <li class="twitter"> 
 		        <a href="<?php echo esc_url( 'http://twitter.com/share?url=' . $topic->guid . '&text=' ) . rawurlencode( $topic->post_title ); ?>" class="twitter-share-button" data-count="horizontal">Tweet</a>
