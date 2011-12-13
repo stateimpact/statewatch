@@ -2,9 +2,9 @@
     
     Backbone.sync = function(method, model, options) {
         var actions = {
-            'create': 'save_related_content',
-            'update': 'save_related_content',
-            'read'  : 'fetch_related_content'
+            'create': 'save_featured_posts',
+            'update': 'save_featured_posts',
+            'read'  : 'get_posts_for_topic'
         };
         
         var data = options.data || {};
@@ -44,16 +44,22 @@
         url: window.ajaxurl
     });
     
-    var StoryList = Backbone.Collection.extend({
+    window.StoryList = Backbone.Collection.extend({
         
         model: Story,
         
         url: window.ajaxurl,
         
         initialize: function(models, options) {
-            this.name = options.name || "latest";
+            if (options) {
+                this.name = options.name || "latest";
+            } else {
+                this.name = "latest";
+            }
+            this.view = new StoryListView({ collection: this });
+            
             return this;
-        }
+        },
         
         comparator: function(story) {
             if (this.name = "latest") {
@@ -66,19 +72,120 @@
     
     
     var StoryView = Backbone.View.extend({
-        classname: "story",
+        className: "story",
         
-        events: {},
+        events: {
+            'click a.toggle' : 'toggleStory'
+        },
+                
+        initialize: function(options) {
+            _.bindAll(this);
+            this.template = _.template( $('#story-template').html() );
+            
+            return this.render();
+        },
+        
+        render: function() {
+            $(this.el).html(this.template(this.model.toJSON()));
+            return this;
+        },
+        
+        toggleStory: function(e) {
+            e.preventDefault();
+            var story = this.model;
+            if (story.collection.name === "latest") {
+                story.collection.remove(story);
+                window.featuredstories.featured.add(story);
+            } else {
+                story.collection.remove(story);
+                window.featuredstories.latest.add(story);
+            }
+        }
+        
+    });
+    
+    var StoryListView = Backbone.View.extend({
         
         initialize: function(options) {
             _.bindAll(this);
-            return this.render();
-        }
+            this.el = $('#' + this.collection.name);
+            this.collection.bind('reset', this.render);
+            this.collection.bind('add', this.addStory);
+            
+            var that = this;
+            if (this.collection.name === "featured") {
+                var el = $(this.el);
+                el.sortable({
+                    cursor: 'pointer',
+                    update: function(event, ui) {
+                        el.children('div.story').each(function(i) {
+                            var id = $(this).find('a.toggle').attr('id');
+                            var story = that.collection.get(id);
+                            story.set({ order: i });
+                        });
+                        window.featuredstories.save();
+                    }
+                });
+            }
+            
+        },
         
         render: function() {
-            
-            return this;
+            var el = this.el;
+            $(el).empty();
+            this.collection.each(function(story, i, stories) {
+                $(el).append(story.view.el);
+            });
+        },
+        
+        addStory: function(link) {
+            $(this.el).append(link.view.el);
         }
+        
     });
     
+    window.FeaturedStories = Backbone.View.extend({
+        
+        el: "#featured-posts",
+        
+        initialize: function(options) {
+            _.bindAll(this);
+            this.post_parent = options.post_parent;
+            if (this.post_parent) {
+                this.latest = new StoryList([], { name: 'latest' });
+                this.latest.fetch({ data: 
+                    { post_parent: this.post_parent, action: 'get_posts_for_topic' }
+                });
+                    
+                this.featured = new StoryList([], { name: 'featured' });
+                this.featured.fetch({ data: 
+                    { post_parent: this.post_parent, action: 'get_featured_posts_for_topic' }
+                });
+            }
+            
+            $('form').submit(this.save);
+            return this;
+        },
+        
+        save: function() {
+            var data = {
+                featured_posts: this.featured.pluck('id'),
+                post_parent: this.post_parent,
+                action: 'save_featured_posts'
+            }
+            
+            $.ajax({ 
+                url: window.ajaxurl,
+                type: 'POST',
+                data: data,
+                success: function(resp) {
+                    console.log(resp);
+                }
+            });
+            return this;
+        }
+        
+    });
+    
+
 })(window.jQuery);

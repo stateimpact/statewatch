@@ -25,11 +25,20 @@ class SI_Topics {
         add_action('save_post', array($this, 'save_post'));
         
         // include assets
-        add_action( 'admin_print_scripts-topic.php', 
+        add_action( 'admin_print_scripts-post.php', 
             array( &$this, 'register_admin_scripts' )
         );
-        add_action( 'admin_print_scripts-topic-new.php', 
+        add_action( 'admin_print_scripts-post-new.php', 
             array( &$this, 'register_admin_scripts' )
+        );
+        
+        add_action( 
+            'admin_print_styles-post.php', 
+            array( &$this, 'add_admin_stylesheet' ) 
+        );
+        add_action( 
+            'admin_print_styles-post-new.php', 
+            array( &$this, 'add_admin_stylesheet' ) 
         );
         
         // ajax
@@ -69,16 +78,30 @@ class SI_Topics {
     }
     
     function ajax_fetch() {
-        $posts = $this->query($_POST);
-        header( "Content-Type: application/json" );
-        echo json_encode($posts);
+        if (isset($_POST['post_parent'])) {
+            $post_id = $_POST['post_parent'];
+            $featured = (array)get_post_meta($post_id, 'featured_posts', true);
+            $categories = wp_get_object_terms($post_id, 'category', array('fields'=>'ids'));
+            $tags = wp_get_object_terms($post_id, 'post_tag', array('fields'=>'ids'));
+            $args = array( 'post__not_in' => $featured );
+            if ($categories) { $args['category__in'] = $categories; }
+            if ($tags) { $args['tag__in'] = $tags; }
+            
+            $posts = $this->query($args);
+            header( "Content-Type: application/json" );
+            echo json_encode($posts);
+        } else {
+            header( "Content-Type: application/json" );
+            echo json_encode(array());
+        }
         die();
     }
     
     function ajax_save() {
         if ($_POST['post_parent']) {
             $post_id = $_POST['post_parent'];
-            update_post_meta($post_id, 'featured-posts', $_POST['featured-posts']);
+            error_log(print_r( $_POST['featured_posts'], true ));
+            update_post_meta($post_id, 'featured-posts', $_POST['featured_posts']);
         } else {
             error_log("No post_parent");
         }
@@ -88,8 +111,14 @@ class SI_Topics {
     function ajax_get_featured_posts() {
         if ($_POST['post_parent']) {
             $post_id = $_POST['post_parent'];
-            $ids = (array)get_post_meta($post_id, 'featured-posts', true);
-            $posts = $this->query(array('post__in' => $ids));
+            $ids = get_post_meta($post_id, 'featured-posts', true);
+            if (is_array($ids)) { 
+                error_log(print_r($ids, true));
+                error_log(count($ids));
+                $posts = $this->query(array('post__in' => $ids));
+            } else {
+                $posts = array();
+            }
             header( "Content-Type: application/json" );
             echo json_encode($posts);
         }
@@ -110,6 +139,8 @@ class SI_Topics {
     		'orderby' => 'post_date',
     		'posts_per_page' => 50,
     	);
+    	
+    	wp_parse_args($args, $query);
 
     	$args['pagenum'] = isset( $args['pagenum'] ) ? absint( $args['pagenum'] ) : 1;
 
@@ -176,14 +207,24 @@ class SI_Topics {
         <?php endif;
     }
     
-    function featured_posts_form($post) { ?>
-        <div id="featured-posts">
+    function featured_posts_form($post) { 
+        ?>
+        <div class="featured">
             <h2>Featured</h2>
-            <div class="posts"></div>
+            <div id="featured"></div>
         </div>
-        <div id="latest-posts">
-            <div class="posts"></div>
+        <div class="latest">
+            <h2>Latest</h2>
+            <div id="latest"></div>
         </div>
+        <script type="x-jst" id="story-template">
+        <h4><a id="<%= id %>" class="toggle" href="#"><%= title %></a></h4>
+        <span class="date"><%= date %></span> | 
+        <a href="<%= permalink %>" target="_blank">View</a>
+        </script>
+        <script>
+        var featuredstories = new FeaturedStories({ post_parent: <?php echo $post->ID ?> });
+        </script>
         <?php
     }
     
@@ -305,36 +346,33 @@ class SI_Topics {
     function save_post($post_id) {
         // we only care about topics
         if (get_post_type($post_id) !== $this->POST_TYPE) return;
-        
-        // convert old links, but only once
-        /***
-        if (!get_post_meta($post_id, '_links_converted', true)) {
-            $old_links = $this->convert_old_links($post_id);
-        }
-        
-        // links
-        if ( isset($_POST['topic_links']) ) {
-            $links = get_post_meta($post_id, 'topic_links', true);
-            foreach($_POST['topics_links'] as $i => $link) {
-                if (isset($_POST['topic_links'][$i]['url'])) {
-                    $links[$i] = $link;
-                }
-            }
-        }
-        ***/
+    }
+    
+    function add_admin_stylesheet() {
+        $css = get_stylesheet_directory_uri() . '/includes/topics/css/topics-admin.css';
+        wp_enqueue_style(
+            'topics-admin', $css, array(), '0.1'
+        );
     }
     
     function register_admin_scripts() {
-        $jslibs = array(
-            'underscore' => plugins_url('js/underscore-min.js', __FILE__),
-            'backbone' => plugins_url('js/backbone-min.js', __FILE__),
-        );
-        
-        wp_enqueue_script( 'underscore', $jslibs['underscore']);
-        wp_enqueue_script( 'backbone', $jslibs['backbone'],
-            array('underscore', 'jquery'));
+        global $post;
+        if ($post->post_type === $this->POST_TYPE) {
+            $js = array(
+                'underscore' => get_stylesheet_directory_uri() . '/js/underscore-min.js',
+                'backbone' => get_stylesheet_directory_uri() . '/js/backbone-min.js',
+                'featured-posts' => get_stylesheet_directory_uri() . '/includes/topics/js/featured-posts.js'
+            );
+
+            wp_enqueue_script( 'underscore', $js['underscore']);
+            wp_enqueue_script( 'backbone', $js['backbone'],
+                array('underscore', 'jquery'));
+            wp_enqueue_script( 'jquery-ui-sortable' );
+            wp_enqueue_script( 'featured-posts', $js['featured-posts'], 
+                array('underscore', 'backbone', 'jquery', 'jquery-ui-sortable'), '0.1');
+            
+        }
     }
-    
     
     function convert_old_links($post_id, $delete=false) {
         $links = (array)get_post_meta($post_id, 'topic_links', true);
