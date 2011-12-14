@@ -14,6 +14,24 @@ $topic = argo_get_topic_for( $cat );
                 <div class="fb-like" data-href="<?php echo esc_url($topic->guid); ?>" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false" data-action="recommend"></div>
             </li>
 		</ul>	
-	    <?php echo apply_filters( 'the_content', $topic->post_content ); ?>
+	    <?php 
+		    $content = apply_filters( 'the_content', $topic->post_content ); 
+		    $content = explode('<!--more-->', $content);
+		    echo $content[0];
+		    if ($content[1]){
+		   		echo '<div id="more">' . $content[1] . '</div>';
+		    }
+	    ?>
 	</div>
+	<script>
+        jQuery(function($) {
+            $('#more').fadeOut()
+            		  .after('<a id="more-button" href="javascript:void">Read more &raquo;</a>');
+            $('#more-button').click(function() {
+				$('#more').fadeToggle();
+				$('#more-button').remove();
+			});
+          
+        });
+    </script>
 <?php endif; ?>
