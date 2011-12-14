@@ -8,9 +8,9 @@ $multimedia = sw_get_topic_multimedia($topic->ID);
 	<h2 class="section-hed">Multimedia</h2>
     <?php while ($multimedia->have_posts()): $multimedia->the_post(); ?>
 	<?php if (has_post_thumbnail()): ?>
-	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('multimedia-thumb'); ?></a>
+	<a href="<?php echo get_post_meta($post->ID, 'multimedia_url', true); ?>"><?php the_post_thumbnail('multimedia-thumb'); ?></a>
 	<?php endif; ?>
-	<h4 class="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+	<h4 class="headline"><a href="<?php echo get_post_meta($post->ID, 'multimedia_url', true); ?>"><?php the_title(); ?></a></h4>
     <?php endwhile; ?>
 </div>
 <?php endif; ?>
