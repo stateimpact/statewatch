@@ -1,4 +1,21 @@
+#featured-posts-wrapper {
+    height: 500px;
+    overflow-y: scroll;
+}
+
 #featured-posts div.story {
     border-bottom: 1px solid #ddd;
     padding-bottom: 1em;
+}
+
+div#latest-wrapper {
+    float: left;
+    width: 47%;
+    border-right: 1px solid #ddd;
+}
+
+div#featured-wrapper {
+    float: left;
+    width: 47%;
+    margin-left: 2%;
 }

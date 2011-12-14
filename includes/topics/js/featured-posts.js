@@ -63,7 +63,7 @@
         
         comparator: function(story) {
             if (this.name = "latest") {
-                return this.post_date;
+                return Date.parse(story.get('date'));
             } else {
                 return this.order;
             }

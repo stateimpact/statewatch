@@ -80,10 +80,12 @@ class SI_Topics {
     function ajax_fetch() {
         if (isset($_POST['post_parent'])) {
             $post_id = $_POST['post_parent'];
-            $featured = (array)get_post_meta($post_id, 'featured_posts', true);
+            $featured = get_post_meta($post_id, 'featured_posts', true);
             $categories = wp_get_object_terms($post_id, 'category', array('fields'=>'ids'));
             $tags = wp_get_object_terms($post_id, 'post_tag', array('fields'=>'ids'));
-            $args = array( 'post__not_in' => $featured );
+            $args = array();
+            
+            if ( $featured) { $args['post__not_in'] = $featured; }
             if ($categories) { $args['category__in'] = $categories; }
             if ($tags) { $args['tag__in'] = $tags; }
             
@@ -100,8 +102,7 @@ class SI_Topics {
     function ajax_save() {
         if ($_POST['post_parent']) {
             $post_id = $_POST['post_parent'];
-            error_log(print_r( $_POST['featured_posts'], true ));
-            update_post_meta($post_id, 'featured-posts', $_POST['featured_posts']);
+            update_post_meta($post_id, 'featured_posts', $_POST['featured_posts']);
         } else {
             error_log("No post_parent");
         }
@@ -111,7 +112,7 @@ class SI_Topics {
     function ajax_get_featured_posts() {
         if ($_POST['post_parent']) {
             $post_id = $_POST['post_parent'];
-            $ids = get_post_meta($post_id, 'featured-posts', true);
+            $ids = get_post_meta($post_id, 'featured_posts', true);
             if (is_array($ids)) { 
                 error_log(print_r($ids, true));
                 error_log(count($ids));
@@ -140,7 +141,7 @@ class SI_Topics {
     		'posts_per_page' => 50,
     	);
     	
-    	wp_parse_args($args, $query);
+    	$query = wp_parse_args($args, $query);
 
     	$args['pagenum'] = isset( $args['pagenum'] ) ? absint( $args['pagenum'] ) : 1;
 
@@ -209,13 +210,19 @@ class SI_Topics {
     
     function featured_posts_form($post) { 
         ?>
-        <div class="featured">
-            <h2>Featured</h2>
-            <div id="featured"></div>
-        </div>
-        <div class="latest">
-            <h2>Latest</h2>
-            <div id="latest"></div>
+        <div id="featured-posts-wrapper">
+            <div id="latest-wrapper">
+                <div class="latest">
+                    <h2>Latest</h2>
+                    <div id="latest"></div>
+                </div>
+            </div>
+            <div id="featured-wrapper">
+                <div class="featured">
+                    <h2>Featured</h2>
+                    <div id="featured"></div>
+                </div>
+            </div>
         </div>
         <script type="x-jst" id="story-template">
         <h4><a id="<%= id %>" class="toggle" href="#"><%= title %></a></h4>
