@@ -1422,7 +1422,7 @@ Version: 0.1
 /* Open States Modules
 =================================================*/
 
-#main .openstates-module { margin-bottom: 20px; }
+#main .openstates-module { width: 220px; margin-bottom: 20px; }
 
 #main .openstates-module,
 #main .openstates-module h3 { font-family: proxima-nova,sans-serif; }
