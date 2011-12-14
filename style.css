@@ -1330,6 +1330,7 @@ Version: 0.1
 
 	/* Key stories */
 
+	#main .topic-featured { margin-bottom: 20px; }
 	#main .topic-featured .story { border-top: 1px solid #ccc; padding-top: 10px; margin-bottom: 10px; clear: both; }
 	#main .topic-featured .pub-date { font-size: 11px; text-transform: uppercase; font-weight: normal; color: #999; margin-bottom: 0; }
 	.topic-featured .thumbnail { float: right; margin: 0 0 10px 10px; }
@@ -1346,7 +1347,14 @@ Version: 0.1
 	#content .topic-posts article.prefix_2 { padding-left: 160px; margin-left: 0; }
 	#content .topic-posts article h2.entry-title { font-size: 24px; margin-bottom: 10px; }
 	.topic-posts article.headerrule h2 { border-top: 1px solid #ccc; padding-top: 20px; }
-	#content .topic-posts h6.entry-date { border-top: none; padding-top: 0; font-family: "Helvetica Neue",arial,sans-serif; font-size: 11px; color: #999; }
+	#content .topic-posts h6.entry-date { 
+		border-top: none; 
+		padding-top: 0; 
+		font-family: "Helvetica Neue",arial,sans-serif; 
+		font-size: 11px; 
+		text-transform: uppercase;
+		color: #999; 
+	}
 	.topic-posts article p { font-size: 14px; }
 	
 	/* Sidebar */
