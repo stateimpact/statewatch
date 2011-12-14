@@ -5,7 +5,7 @@ class SI_Multimedia {
     function __construct() {
         
         // create a post type
-        add_action('init', array(&$this, 'add_post_type'));
+        add_action('init', array(&$this, 'add_post_type'), 15);
         
         // metaboxes
         add_action( 'add_meta_boxes', array(&$this, 'add_metaboxes'));
@@ -36,7 +36,7 @@ class SI_Multimedia {
             'public' => false,
             'show_ui' => true,
             'supports' => array('title', 'excerpt', 'thumbnail'),
-            'taxonomies' => array('category', 'post_tag'),
+            'taxonomies' => array('category', 'post_tag', 'feature'),
         ));
     }
     
