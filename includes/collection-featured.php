@@ -13,7 +13,7 @@ $featured = sw_get_topic_featured_posts( $topic->ID );
     		<?php if (has_post_thumbnail()): ?>
                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(100,100), array('class'=>'alignright')); ?></a>
     		<?php else: ?>
-    		    <?php sw_the_first_image($post->ID); ?>
+    		    <?php sw_the_first_image($post->ID, array('size'=>array(100,100), 'class'=>'alignright')); ?>
     		<?php endif; ?>
     		<h3 class="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
     	</div>
