@@ -98,6 +98,7 @@
                 window.featuredstories.featured.add(story);
             } else {
                 story.collection.remove(story);
+                story.set({ order: 0 });
                 window.featuredstories.latest.add(story);
             }
         }
@@ -204,7 +205,7 @@
         
         save: function() {
             var data = {
-                featured_posts: this.featured.pluck('id'),
+                featured_posts: this.featured.sort().pluck('id').join(','),
                 post_parent: this.post_parent,
                 action: 'save_featured_posts'
             }

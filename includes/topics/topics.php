@@ -81,6 +81,7 @@ class SI_Topics {
         if (isset($_POST['post_parent'])) {
             $post_id = $_POST['post_parent'];
             $featured = get_post_meta($post_id, 'featured_posts', true);
+            error_log(print_r($featured, true));
             $categories = wp_get_object_terms($post_id, 'category', array('fields'=>'ids'));
             $tags = wp_get_object_terms($post_id, 'post_tag', array('fields'=>'ids'));
             $args = array();
@@ -101,9 +102,11 @@ class SI_Topics {
     }
     
     function ajax_save() {
-        if ($_POST['post_parent']) {
+        if ($_POST['post_parent'] && $_POST['featured_posts']) {
             $post_id = $_POST['post_parent'];
-            update_post_meta($post_id, 'featured_posts', $_POST['featured_posts']);
+            $featured = $_POST['featured_posts'];
+            $featured = explode(',', $featured);
+            update_post_meta($post_id, 'featured_posts', $featured);
         } else {
             error_log("No post_parent");
         }
@@ -224,7 +227,9 @@ class SI_Topics {
                 </div>
             </div>
             <div id="featured-wrapper">
-                <p class="howto">Drag to reorder stories. Click a headline to remove it from features.</p>
+                <p class="howto">Drag to reorder stories. Click a headline to remove it from features.
+                Only the <strong>first three</strong> stories will be shown.
+                </p>
                 <div class="featured">
                     <h2>Featured</h2>
                     <div id="featured"></div>
@@ -456,7 +461,7 @@ function sw_get_topic_featured_posts($post_id) {
     
     if (count($featured)) {
         $posts = array();
-        foreach($featured as $id) {
+        foreach(array_slice($featured, 0, 3) as $id) {
             if ($id) $posts[] = get_post($id);
         }
         return $posts;
