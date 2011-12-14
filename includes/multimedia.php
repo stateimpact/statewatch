@@ -12,6 +12,8 @@ class SI_Multimedia {
         
         // save it all
         add_action( 'save_post', array(&$this, 'save'));
+        
+        add_action( 'init', array(&$this, 'image_size'));
     }
     
     function add_post_type() {
@@ -36,6 +38,10 @@ class SI_Multimedia {
             'supports' => array('title', 'excerpt', 'thumbnail'),
             'taxonomies' => array('category', 'post_tag'),
         ));
+    }
+    
+    function image_size() {
+        add_image_size( 'multimedia-thumb', 300, 9999, true ); 
     }
     
     function add_metaboxes() {
