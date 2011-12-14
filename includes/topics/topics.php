@@ -88,6 +88,7 @@ class SI_Topics {
             if ( $featured) { $args['post__not_in'] = $featured; }
             if ($categories) { $args['category__in'] = $categories; }
             if ($tags) { $args['tag__in'] = $tags; }
+            if ($_POST['s']) { $args['s'] = $_POST['s']; }
             
             $posts = $this->query($args);
             header( "Content-Type: application/json" );
@@ -212,12 +213,18 @@ class SI_Topics {
         ?>
         <div id="featured-posts-wrapper">
             <div id="latest-wrapper">
+                <p class="howto">Click a story to feature it on this topic page.</p>
                 <div class="latest">
                     <h2>Latest</h2>
+                    <div>
+                        <input type="text" name="s" placeholder="Search posts" class="search">
+                        <input type="button" value="Search" class="button">
+                    </div>
                     <div id="latest"></div>
                 </div>
             </div>
             <div id="featured-wrapper">
+                <p class="howto">Drag to reorder stories. Click a headline to remove it from features.</p>
                 <div class="featured">
                     <h2>Featured</h2>
                     <div id="featured"></div>

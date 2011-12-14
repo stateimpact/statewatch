@@ -148,6 +148,13 @@
         
         el: "#featured-posts",
         
+        events: {
+            'click input.button' : 'search',
+            'keyup input.search' : 'search',
+            'focus input.search' : 'disableSubmit',
+            'blur  input.search' : 'enableSubmit'
+        },
+        
         initialize: function(options) {
             _.bindAll(this);
             this.post_parent = options.post_parent;
@@ -164,6 +171,34 @@
             }
             
             $('form').submit(this.save);
+            return this;
+        },
+        
+        disabler: function(e) { e.preventDefault(); },
+        
+        disableSubmit: function(e) {
+            $('form').bind('submit', this.disabler);
+        },
+        
+        enableSubmit: function(e) {
+            $('form').unbind('submit', this.disabler);
+        },
+        
+        search: function(e) {
+            var query = this.$('input.search').val();
+            if (query.length > 3) {
+                this.latest.fetch({ 
+                    data: {
+                        s: query,
+                        post_parent: this.post_parent,
+                        action: 'get_posts_for_topic'
+                    }
+                });
+            } else if (query.length == 0) {
+                this.latest.fetch({
+                    data: { post_parent: this.post_parent }
+                });
+            }
             return this;
         },
         
