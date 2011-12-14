@@ -117,9 +117,11 @@
 	
 
 	<h4>Issues That Matter. Close To Home.</h4>
-	    <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives.</p>
-	    <p>We aim to put news in context, providing insight and background rather than just the latest headlines. We work to give you the information they need to hold state government accountable. We look at the costs of government action, and of not taking action. Our reporters travel the state to learn about issues from the people affected by them, and we invite discussion on this site about those issues.</p>
-	    <p>StateImpact is a collaboration of local public radio stations in eight states and NPR. The participating stations in each state have chosen one of four policy areas to focus on: state budgets, education, energy and the economy.</p>
+	<p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives. The eight-state network is a collaboration among local member stations and NPR.</p>
+
+	<p>We aim to put news in context by providing insight, data-driven analysis and background. We work to give you the information you need to hold state government accountable. Our reporters travel the state to learn about public policy issues from the people affected by them, and we invite discussion on this site about those issues.</p>
+
+	<p>The participating stations in each state have chosen one of four policy areas to focus on: state budgets, education, energy and the economy. <a href="http://stateimpact.npr.org" title="StateImpact">Read more about the network at our hub.</a></p>
 </div> <!-- /#sw-abt-network -->
 
 <div id="sw-network-partners">
