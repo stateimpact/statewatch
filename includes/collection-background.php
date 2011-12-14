@@ -15,9 +15,12 @@ $topic = argo_get_topic_for( $cat );
             </li>
 		</ul>	
 	    <?php 
-	    $content = apply_filters( 'the_content', $topic->post_content ); 
-	    $content = str_replace('<!--more-->', '<div id="more">', $content);
-	    echo $content . '</div>';
+		    $content = apply_filters( 'the_content', $topic->post_content ); 
+		    $content = explode('<!--more-->', $content);
+		    echo $content[0];
+		    if ($content[1]){
+		   		echo '<div id="more">' . $content[1] . '</div>';
+		    }
 	    ?>
 	</div>
 	<script>
