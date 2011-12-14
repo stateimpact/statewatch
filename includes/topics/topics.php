@@ -444,5 +444,18 @@ function sw_get_topic_featured_links($post) {
     return $results;
 }
 
+function sw_get_topic_featured_posts($post_id) {
+    $featured = (array)get_post_meta($post_id, 'featured_posts', true);
+    
+    if ($featured) {
+        $posts = array();
+        foreach($featured as $id) {
+            $posts[] = get_post($id);
+        }
+        return $posts;
+    } else {
+        return false;
+    }
+}
 
 ?>
