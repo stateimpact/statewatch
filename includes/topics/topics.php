@@ -458,4 +458,15 @@ function sw_get_topic_featured_posts($post_id) {
     }
 }
 
+function sw_get_topic_multimedia($post_id) {
+    $categories = wp_get_object_terms($post_id, 'category', array('fields'=>'ids'));
+    $tags = wp_get_object_terms($post_id, 'post_tag', array('fields'=>'ids'));
+    $args = array('post_type' => 'multimedia');
+    
+    if ($categories) { $args['category__in'] = $categories; }
+    if ($tags) { $args['tag__in'] = $tags; }
+    
+    return new WP_Query($args);
+}
+
 ?>

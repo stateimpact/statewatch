@@ -22,6 +22,7 @@ require_once( INCLUDES . 'taxonomy.php' );
 require_once( INCLUDES . 'template.php' );
 require_once( INCLUDES . 'media.php' );
 require_once( INCLUDES . 'admin.php' );
+require_once( INCLUDES . 'multimedia.php' );
 
 add_action( 'admin_init', 'sw_agg_settings' );
 function sw_agg_settings() {
