@@ -14,7 +14,7 @@ $multimedia = sw_get_topic_multimedia($topic->ID);
 	<h4 class="headline">
 	    <a href="<?php echo get_post_meta($post->ID, 'multimedia_url', true); ?>">
 	    <?php if ($cts): ?>
-	        <strong><?php echo $cts[0]->name; ?></strong>
+	        <strong><?php echo $cts[0]->name; ?>: </strong>
 	    <?php endif; ?>
 	        <?php the_title(); ?>
 	    </a>

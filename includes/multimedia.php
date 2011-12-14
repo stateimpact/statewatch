@@ -41,7 +41,7 @@ class SI_Multimedia {
     }
     
     function image_size() {
-        add_image_size( 'multimedia-thumb', 300, 9999, true ); 
+        add_image_size( 'multimedia-thumb', 300, 100, true ); 
     }
     
     function add_metaboxes() {
