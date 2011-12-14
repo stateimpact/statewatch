@@ -9,9 +9,9 @@ $featured = sw_get_topic_featured_posts( $topic->ID );
     	<h2 class="section-hed">Key Stories</h2>
         <?php foreach($featured as $post): ?>
     	<div class="story">
-    		<h4 class="pub-date"><?php the_date('F j, Y'); ?></h4>
+    		<h4 class="pub-date"><?php the_time('F j, Y'); ?></h4>
     		<?php if (has_post_thumbnail()): ?>
-                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(100, 100), array('class'=>'alignright')); ?></a>
+                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(100,100), array('class'=>'alignright')); ?></a>
     		<?php else: ?>
     		    <?php sw_the_first_image($post->ID, array('size'=>array(100,100), 'class'=>'alignright')); ?>
     		<?php endif; ?>
