@@ -4,7 +4,7 @@ $topic = argo_get_topic_for( $tag );
 $featured = sw_get_topic_featured_posts( $topic->ID );
 ?>
 
-<?php if ($featured !== false): ?>
+<?php if ($featured): ?>
     <div class="topic-featured">
     	<h2 class="section-hed">Key Stories</h2>
         <?php foreach($featured as $post): ?>
