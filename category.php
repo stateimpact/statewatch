@@ -13,7 +13,7 @@ $topic = argo_get_topic_for( $cat );
 <div id="content" class="grid_8" role="main">
 <?php get_template_part( 'includes/collection-background' ); ?>	
 <div class="topic-posts">
-	<h2 class="section-hed">Recent Posts</h2>
+	<h2 class="section-hed">Latest News</h2>
 		<ul class="meta-gestures">
 			<li class="subscribe"><a href="<?php echo get_term_feed_link( $cat->term_id, $cat->taxonomy ); ?>">Follow this topic</a></li>
 		</ul>	

@@ -6,7 +6,7 @@ $first_link = $links[0];
 ?>
 <?php if ( $first_link['url'] ) { ?>
 	<div class="topic-links">
-	    <h2 class="section-hed">Key Links</h2>
+	    <h2 class="section-hed">Related Links</h2>
 	    <ul>
 	    <?php foreach( $links as $link ): ?>
 	        <?php if ( $link['url'] ): ?>
