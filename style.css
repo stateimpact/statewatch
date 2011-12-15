@@ -1329,13 +1329,17 @@ Version: 0.1
 	.topic-links .key-source { text-transform: uppercase; font-size: 11px; }
 
 	/* Key stories */
-
 	#main .topic-featured { margin-bottom: 20px; }
 	#main .topic-featured .story { border-top: 1px solid #ccc; padding-top: 10px; margin-bottom: 10px; clear: both; }
 	#main .topic-featured .pub-date { font-size: 11px; text-transform: uppercase; font-weight: normal; color: #999; margin-bottom: 0; }
 	.topic-featured .thumbnail { float: right; margin: 0 0 10px 10px; }
 	#main .topic-featured .headline a { font: bold 28px/1.2 proxima-nova,sans-serif; color: #000; }
 	#main .topic-featured .headline a:hover { color: #BF3119; }
+	
+	/* Topic multimedia */
+	#main .topic-multimedia .headline { font-weight: bold; }
+	#main .topic-multimedia .headline strong { text-transform: uppercase; color: #BF3119; }
+	
 	/* Loop */
 	#content .topic-posts { 
 		padding-bottom:10px; 
