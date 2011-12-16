@@ -926,7 +926,8 @@ Version: 0.1
 =================================================*/
 
 	.page-template-full-page-php table p { font-size: 14px; }
-
+	.widepost .post-content p, 
+	.widepost .post-content li { padding-right: 160px; }
 
 /* Rich post assets 
 =================================================*/
