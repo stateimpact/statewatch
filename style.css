@@ -1462,7 +1462,7 @@ Version: 0.1
 	border-width: 0 1px 1px 1px; 
 	padding: 10px 10px 0;
 }
-#main #content .openstates-module p { font-size: 14px; line-height: 1.2; }
+#main #content .openstates-module p { font-size: 14px; line-height: 1.2; margin-bottom: 10px; }
 #main #content .openstates-module h3 { border: none; font-weight: 600; margin: 0; text-transform: none; font-size: 18px; }
 #main #content .openstates-module .district { font: normal 14px/1.2 proxima-nova,sans-serif; }
 #main #content .openstates-module .info-hed { font-weight: 700; text-transform: uppercase; margin: 0; }
