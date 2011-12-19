@@ -81,7 +81,6 @@ class SI_Topics {
         if (isset($_POST['post_parent'])) {
             $post_id = $_POST['post_parent'];
             $featured = get_post_meta($post_id, 'featured_posts', true);
-            error_log(print_r($featured, true));
             $categories = wp_get_object_terms($post_id, 'category', array('fields'=>'ids'));
             $tags = wp_get_object_terms($post_id, 'post_tag', array('fields'=>'ids'));
             $args = array();
@@ -102,10 +101,12 @@ class SI_Topics {
     }
     
     function ajax_save() {
-        if ($_POST['post_parent'] && $_POST['featured_posts']) {
+        if ($_POST['post_parent']) {
             $post_id = $_POST['post_parent'];
             $featured = $_POST['featured_posts'];
-            $featured = explode(',', $featured);
+            if ($featured) {
+                $featured = explode(',', $featured);
+            }
             update_post_meta($post_id, 'featured_posts', $featured);
         } else {
             error_log("No post_parent");
@@ -119,15 +120,16 @@ class SI_Topics {
             $ids = get_post_meta($post_id, 'featured_posts', true);
             $posts = array();
             if (is_array($ids)) { 
-                foreach($ids as $id) {
+                foreach($ids as $i => $id) {
                     if (!$id) continue;
-                    $post = get_post($id);
+                    $post = get_post(intval($id));
             		$posts[] = array(
             			'id' => $post->ID,
             			'title' => trim( esc_html( strip_tags( get_the_title( $post ) ) ) ),
             			'permalink' => get_permalink( $post->ID ),
             			'date' => mysql2date(__( 'Y/m/d' ), $post->post_date),
-            			'type' => $post->post_type
+            			'type' => $post->post_type,
+            			'order' => $i
             		);
                 }
             }
@@ -244,7 +246,7 @@ class SI_Topics {
             </div>
         </div>
         <script type="x-jst" id="story-template">
-        <h4><a id="<%= id %>" class="toggle" href="#"><%= title %></a></h4>
+        <h4><a id="<%= id %>" class="toggle" href="#"><%= order %>: <%= title %></a></h4>
         <span class="date"><%= date %></span> | 
         <a href="<%= permalink %>" target="_blank">View</a>
         </script>
