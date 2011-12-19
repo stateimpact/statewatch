@@ -1,6 +1,5 @@
 (function($) {
-    
-    Backbone.sync = function(method, model, options) {
+    var sync = function(method, model, options) {
         var actions = {
             'create': 'save_featured_posts',
             'update': 'save_featured_posts',
@@ -38,13 +37,15 @@
             type: "post",
             thumbnail: "",
             order: 0,
-            post_date: null
+            date: null
         },
         
         url: window.ajaxurl
     });
     
     window.StoryList = Backbone.Collection.extend({
+        
+        sync: sync,
         
         model: Story,
         
@@ -61,13 +62,14 @@
             return this;
         },
         
+        /***
         comparator: function(story) {
             if (this.name = "latest") {
                 return -Date.parse(story.get('date'));
             } else {
                 return this.order;
             }
-        }
+        } ***/
     });
     
     
@@ -205,7 +207,7 @@
         
         save: function() {
             var data = {
-                featured_posts: this.featured.sort().pluck('id').join(','),
+                featured_posts: this.featured.pluck('id').join(','),
                 post_parent: this.post_parent,
                 action: 'save_featured_posts'
             }

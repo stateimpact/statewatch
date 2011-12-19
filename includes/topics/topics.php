@@ -117,12 +117,19 @@ class SI_Topics {
         if ($_POST['post_parent']) {
             $post_id = $_POST['post_parent'];
             $ids = get_post_meta($post_id, 'featured_posts', true);
+            $posts = array();
             if (is_array($ids)) { 
-                error_log(print_r($ids, true));
-                error_log(count($ids));
-                $posts = $this->query(array('post__in' => $ids));
-            } else {
-                $posts = array();
+                foreach($ids as $id) {
+                    if (!$id) continue;
+                    $post = get_post($id);
+            		$posts[] = array(
+            			'id' => $post->ID,
+            			'title' => trim( esc_html( strip_tags( get_the_title( $post ) ) ) ),
+            			'permalink' => get_permalink( $post->ID ),
+            			'date' => mysql2date(__( 'Y/m/d' ), $post->post_date),
+            			'type' => $post->post_type
+            		);
+                }
             }
             header( "Content-Type: application/json" );
             echo json_encode($posts);
