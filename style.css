@@ -1469,6 +1469,7 @@ Version: 0.1
 #main #content .openstates-module .info-hed a,
 #main #content .openstates-module .name a { color: #333; }
 #main #content .openstates-module .jump-link { color: #BF3119; text-transform: uppercase; }
+#main #content .openstates-module .source { text-transform: none; }
 
 /* Social Icons
 =================================================*/
