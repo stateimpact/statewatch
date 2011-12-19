@@ -1,6 +1,5 @@
 (function($) {
-    
-    Backbone.sync = function(method, model, options) {
+    var sync = function(method, model, options) {
         var actions = {
             'create': 'save_featured_posts',
             'update': 'save_featured_posts',
@@ -38,13 +37,15 @@
             type: "post",
             thumbnail: "",
             order: 0,
-            post_date: null
+            date: null
         },
         
         url: window.ajaxurl
     });
     
     window.StoryList = Backbone.Collection.extend({
+        
+        sync: sync,
         
         model: Story,
         
@@ -59,15 +60,8 @@
             this.view = new StoryListView({ collection: this });
             
             return this;
-        },
-        
-        comparator: function(story) {
-            if (this.name = "latest") {
-                return -Date.parse(story.get('date'));
-            } else {
-                return this.order;
-            }
         }
+        
     });
     
     
@@ -81,7 +75,7 @@
         initialize: function(options) {
             _.bindAll(this);
             this.template = _.template( $('#story-template').html() );
-            
+            this.model.bind('change', this.render);
             return this.render();
         },
         
@@ -98,6 +92,7 @@
                 window.featuredstories.featured.add(story);
             } else {
                 story.collection.remove(story);
+                story.set({ order: 0 });
                 window.featuredstories.latest.add(story);
             }
         }
@@ -111,6 +106,7 @@
             this.el = $('#' + this.collection.name);
             this.collection.bind('reset', this.render);
             this.collection.bind('add', this.addStory);
+            // this.collection.bind('change:order', this.render);
             
             var that = this;
             if (this.collection.name === "featured") {
@@ -122,6 +118,7 @@
                             var id = $(this).find('a.toggle').attr('id');
                             var story = that.collection.get(id);
                             story.set({ order: i });
+                            console.log(story.get('title'));
                         });
                         window.featuredstories.save();
                     }
@@ -158,6 +155,7 @@
         initialize: function(options) {
             _.bindAll(this);
             this.post_parent = options.post_parent;
+            var that = this;
             if (this.post_parent) {
                 this.latest = new StoryList([], { name: 'latest' });
                 this.latest.fetch({ data: 
@@ -165,9 +163,19 @@
                 });
                     
                 this.featured = new StoryList([], { name: 'featured' });
-                this.featured.fetch({ data: 
-                    { post_parent: this.post_parent, action: 'get_featured_posts_for_topic' }
+                this.featured.fetch({ data: { 
+                    post_parent: this.post_parent, 
+                    action: 'get_featured_posts_for_topic'
+                    }
                 });
+                
+                this.featured.comparator = function(story) {
+                    return story.get('order');
+                }
+                
+                this.latest.comparator = function(story) {
+                    return -Date.parse(story.get('date'));
+                }
             }
             
             $('form').submit(this.save);
@@ -202,9 +210,29 @@
             return this;
         },
         
+        setOrder: function() {
+            var el = this.featured.view.el;
+            var featured = this.featured;
+            _.each( $(el).children(), function(div, i, children) {
+                var id = $(div).find('a.toggle').attr('id');
+                var story = featured.get(id);
+                story.set({ order: i });
+                console.log(story.get('title'));
+            });
+        },
+        
+        getIds: function() {
+            var el = this.featured.view.el;
+            var ids = _.map(el.children('div.story'), function(div, i) {
+                return $(div).find('a.toggle').attr('id');
+            });
+            return ids;
+        },
+        
         save: function() {
+            // this.setOrder();
             var data = {
-                featured_posts: this.featured.pluck('id'),
+                featured_posts: this.getIds().join(','),
                 post_parent: this.post_parent,
                 action: 'save_featured_posts'
             }

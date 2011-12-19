@@ -34,7 +34,7 @@ class SW_Fancybox {
 
 new SW_Fancybox;
 
-function sw_the_first_image($post_id, $attrs) {
+function sw_the_first_image($post_id, $attrs=array()) {
     $defaults = array(
         'size'=>'thumbnail',
         'class'=>'current alignleft'

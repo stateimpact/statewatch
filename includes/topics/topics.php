@@ -103,7 +103,11 @@ class SI_Topics {
     function ajax_save() {
         if ($_POST['post_parent']) {
             $post_id = $_POST['post_parent'];
-            update_post_meta($post_id, 'featured_posts', $_POST['featured_posts']);
+            $featured = $_POST['featured_posts'];
+            if ($featured) {
+                $featured = explode(',', $featured);
+            }
+            update_post_meta($post_id, 'featured_posts', $featured);
         } else {
             error_log("No post_parent");
         }
@@ -114,12 +118,20 @@ class SI_Topics {
         if ($_POST['post_parent']) {
             $post_id = $_POST['post_parent'];
             $ids = get_post_meta($post_id, 'featured_posts', true);
+            $posts = array();
             if (is_array($ids)) { 
-                error_log(print_r($ids, true));
-                error_log(count($ids));
-                $posts = $this->query(array('post__in' => $ids));
-            } else {
-                $posts = array();
+                foreach($ids as $i => $id) {
+                    if (!$id) continue;
+                    $post = get_post(intval($id));
+            		$posts[] = array(
+            			'id' => $post->ID,
+            			'title' => trim( esc_html( strip_tags( get_the_title( $post ) ) ) ),
+            			'permalink' => get_permalink( $post->ID ),
+            			'date' => mysql2date(__( 'Y/m/d' ), $post->post_date),
+            			'type' => $post->post_type,
+            			'order' => $i
+            		);
+                }
             }
             header( "Content-Type: application/json" );
             echo json_encode($posts);
@@ -224,7 +236,9 @@ class SI_Topics {
                 </div>
             </div>
             <div id="featured-wrapper">
-                <p class="howto">Drag to reorder stories. Click a headline to remove it from features.</p>
+                <p class="howto">Drag to reorder stories. Click a headline to remove it from features.
+                Only the <strong>first three</strong> stories will be shown.
+                </p>
                 <div class="featured">
                     <h2>Featured</h2>
                     <div id="featured"></div>
@@ -232,7 +246,7 @@ class SI_Topics {
             </div>
         </div>
         <script type="x-jst" id="story-template">
-        <h4><a id="<%= id %>" class="toggle" href="#"><%= title %></a></h4>
+        <h4><a id="<%= id %>" class="toggle" href="#"><%= order %>: <%= title %></a></h4>
         <span class="date"><%= date %></span> | 
         <a href="<%= permalink %>" target="_blank">View</a>
         </script>
@@ -456,7 +470,7 @@ function sw_get_topic_featured_posts($post_id) {
     
     if (count($featured)) {
         $posts = array();
-        foreach($featured as $id) {
+        foreach(array_slice($featured, 0, 3) as $id) {
             if ($id) $posts[] = get_post($id);
         }
         return $posts;
