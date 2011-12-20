@@ -118,7 +118,7 @@
                             var id = $(this).find('a.toggle').attr('id');
                             var story = that.collection.get(id);
                             story.set({ order: i });
-                            console.log(story.get('title'));
+                            //console.log(story.get('title'));
                         });
                         window.featuredstories.save();
                     }
@@ -217,7 +217,7 @@
                 var id = $(div).find('a.toggle').attr('id');
                 var story = featured.get(id);
                 story.set({ order: i });
-                console.log(story.get('title'));
+                //console.log(story.get('title'));
             });
         },
         
@@ -242,7 +242,7 @@
                 type: 'POST',
                 data: data,
                 success: function(resp) {
-                    console.log(resp);
+                    // console.log(resp);
                 }
             });
             return this;

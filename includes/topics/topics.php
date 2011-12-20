@@ -246,7 +246,7 @@ class SI_Topics {
             </div>
         </div>
         <script type="x-jst" id="story-template">
-        <h4><a id="<%= id %>" class="toggle" href="#"><%= order %>: <%= title %></a></h4>
+        <h4><a id="<%= id %>" class="toggle" href="#"><%= title %></a></h4>
         <span class="date"><%= date %></span> | 
         <a href="<%= permalink %>" target="_blank">View</a>
         </script>
