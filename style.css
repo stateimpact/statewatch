@@ -818,8 +818,10 @@ Version: 0.1
 		line-height: 1.2;
 	}
 	#content .pull-quote h6 { font-style: normal; color: #666; font-size: 14px; }
+	
 	#content .aside dt { font-family: proxima-nova-extra-condensed,sans-serif; font-weight: 600; font-size: 24px; }
-
+	#content .aside p,
+	#content .aside li { font-size: 12px; }
 	.post-nav { 
 		border-top: 1px solid #DDD;
 		border-bottom: 1px solid #DDD;
