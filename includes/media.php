@@ -55,7 +55,7 @@ function sw_the_first_image($post_id, $attrs=array()) {
 	if ($attachments) {
 		foreach($attachments as $attachment) {
 			$image_attributes = wp_get_attachment_image_src( $attachment->ID, $attrs['size'] )  ? wp_get_attachment_image_src( $attachment->ID, $attrs['size'] ) : wp_get_attachment_image_src( $attachment->ID, 'full' );
-			echo "<img src=\"" . wp_get_attachment_thumb_url($attachment->ID) . "\" class=\"" . $args['class'] . "\">";
+			echo "<img src=\"" . $image_attributes[0] . "\" class=\"" . $attrs['class'] . "\">";
 		}
 	}
 }
