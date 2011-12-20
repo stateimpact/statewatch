@@ -3,6 +3,7 @@
 // site names should just be state names
 DEFINE( 'SITE_NAME_PREFIX', 'StateImpact ' );
 DEFINE( 'SW_ROOT', dirname(__FILE__));
+DEFINE( 'INCLUDES', SW_ROOT . '/includes/' );
 
 // for template checking in loop
 // since constants can't be arrays, this is a space-separated list
@@ -10,17 +11,18 @@ DEFINE( 'RICH_CONTENT_TYPES', 'fusiontablesmap');
 DEFINE( 'SINGLE_FULL_WIDTH', 'single-full-width.php' );
 
 // includes
-require_once( 'includes/users.php' );
-require_once( 'includes/sidebars.php' );
-require_once( 'includes/stations.php' );
-require_once( 'includes/static-widgets.php' );
-require_once( 'includes/topics.php' );
-require_once( 'includes/sw-widgets.php');
-require_once( 'includes/settings.php' );
-require_once( SW_ROOT . '/includes/taxonomy.php' );
-require_once( 'includes/template.php' );
-require_once( 'includes/media.php' );
-require_once( SW_ROOT . '/includes/admin.php' );
+require_once( INCLUDES . 'users.php' );
+require_once( INCLUDES . 'sidebars.php' );
+require_once( INCLUDES . 'stations.php' );
+// require_once( INCLUDES . 'static-widgets.php' );
+require_once( INCLUDES . 'topics/topics.php' );
+require_once( INCLUDES . 'sw-widgets.php');
+require_once( INCLUDES . 'settings.php' );
+require_once( INCLUDES . 'taxonomy.php' );
+require_once( INCLUDES . 'template.php' );
+require_once( INCLUDES . 'media.php' );
+require_once( INCLUDES . 'admin.php' );
+require_once( INCLUDES . 'multimedia.php' );
 
 add_action( 'admin_init', 'sw_agg_settings' );
 function sw_agg_settings() {

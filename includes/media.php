@@ -34,4 +34,30 @@ class SW_Fancybox {
 
 new SW_Fancybox;
 
+function sw_the_first_image($post_id, $attrs=array()) {
+    $defaults = array(
+        'size'=>'thumbnail',
+        'class'=>'current alignleft'
+    );
+    $attrs = wp_parse_args($attrs, $defaults);
+	
+	$args = array(
+    	'numberposts' => 1,
+    	'order'=> 'ASC',
+    	'post_mime_type' => 'image',
+    	'post_parent' => $post_id,
+    	'post_status' => null,
+    	'post_type' => 'attachment'
+	);
+	
+	$attachments = get_children($args);
+
+	if ($attachments) {
+		foreach($attachments as $attachment) {
+			$image_attributes = wp_get_attachment_image_src( $attachment->ID, $attrs['size'] )  ? wp_get_attachment_image_src( $attachment->ID, $attrs['size'] ) : wp_get_attachment_image_src( $attachment->ID, 'full' );
+			echo "<img src=\"{wp_get_attachment_thumb_url($attachment->ID)}\" class=\"{$args['class']}\">";
+		}
+	}
+}
+
 ?>

@@ -1,15 +1,12 @@
-<?php if ( have_posts() ) while ( have_posts() ): the_post();
-    // var_dump($post);
-    $url = sw_get_topic_permalink($post);
-    if ($url) { 
-        wp_redirect( $url ); exit; 
+<?php 
+if ( have_posts() ) while ( have_posts() ): the_post();
+    $taxonomies = array('post_tag', 'category');
+    $terms = wp_get_object_terms($post->ID, $taxonomies);
+    if (is_array($terms)) {
+        $url = get_term_link($terms[0]);
+        // error_log('Redirecting to ' . $url);
+        wp_redirect($url);
+        exit;
     }
-
-    // we've got tags
-    $tags = get_the_tags();
-    foreach($tags as $i => $tag) {
-        $url = get_tag_link($tag->term_id);
-        if ($url) wp_redirect( $url ); exit;
-    }
-    endwhile;
+endwhile;
 ?>
