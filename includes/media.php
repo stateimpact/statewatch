@@ -36,8 +36,8 @@ new SW_Fancybox;
 
 function sw_the_first_image($post_id, $attrs=array()) {
     $defaults = array(
-        'size'=>'thumbnail',
-        'class'=>'current alignleft'
+        'size'=>'thumb-100',
+        'class'=>'current alignright'
     );
     $attrs = wp_parse_args($attrs, $defaults);
 	
@@ -55,7 +55,7 @@ function sw_the_first_image($post_id, $attrs=array()) {
 	if ($attachments) {
 		foreach($attachments as $attachment) {
 			$image_attributes = wp_get_attachment_image_src( $attachment->ID, $attrs['size'] )  ? wp_get_attachment_image_src( $attachment->ID, $attrs['size'] ) : wp_get_attachment_image_src( $attachment->ID, 'full' );
-			echo "<img src=\"{wp_get_attachment_thumb_url($attachment->ID)}\" class=\"{$args['class']}\">";
+			echo "<img src=\"" . wp_get_attachment_thumb_url($attachment->ID) . "\" class=\"" . $args['class'] . "\">";
 		}
 	}
 }
