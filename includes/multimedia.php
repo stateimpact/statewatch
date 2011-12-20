@@ -42,7 +42,9 @@ class SI_Multimedia {
     
     function image_size() {
         add_image_size( 'multimedia-thumb', 300, 100, true ); 
+        add_image_size( 'thumb-100', 100, 100, true ); 
     }
+
     
     function add_metaboxes() {
         add_meta_box( 'multimedia-url', 'URL', array(&$this, 'render_metabox'),
