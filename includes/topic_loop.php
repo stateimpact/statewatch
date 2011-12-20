@@ -36,7 +36,7 @@ query_posts( argo_post_types_qs() );
             <?php if ( has_post_thumbnail() ): ?>
                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumb-100', array('class'=>'alignright')); ?></a>
             <?php else: ?>
-                <?php sw_the_first_image($post->ID,'thumb-100','class'=>'alignright')); ?>
+                <?php sw_the_first_image($post->ID, array('size'=>'thumb-100','class'=>'alignright')); ?>
             <?php endif; ?>
             <?php the_excerpt(); ?>
     </article><!-- #post-## -->
