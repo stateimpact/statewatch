@@ -179,7 +179,7 @@ class Impact_Network_Widget extends WP_Widget {
         // actual template is html
         ?>
         <h6><?php echo $site_name; ?></h6>
-        <h5><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a></h5>
+        <h5><a rel="nofollow" href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a></h5>
     <?php endforeach; ?>
         </div> <!-- /.network-news -->
         
