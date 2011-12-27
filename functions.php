@@ -24,6 +24,15 @@ require_once( INCLUDES . 'media.php' );
 require_once( INCLUDES . 'admin.php' );
 require_once( INCLUDES . 'multimedia.php' );
 
+add_filter('pre_get_posts', 'filter_search');
+function filter_search($query) {
+    if ($query->is_search) {
+	    $query->set('post_type', array('post', 'topic', 'fusiontablesmap', 'roundup'));
+	    $query->set('orderby', 'modified');
+    };
+    return $query;
+};
+
 add_action( 'admin_init', 'sw_agg_settings' );
 function sw_agg_settings() {
     add_settings_field( 'network_feed_url', 'RSS Feed for Network Widget',
