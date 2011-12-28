@@ -500,4 +500,61 @@ function sw_get_topic_multimedia($post_id) {
     return new WP_Query($args);
 }
 
+function sw_get_topics_for_post($post_id) {
+    $built = array();
+    $bare = array();
+    $terms = wp_get_object_terms($post_id, array('post_tag', 'category'));
+    foreach($terms as $term) {
+        $topic = argo_get_topic_for($term);
+        if (has_post_thumbnail($topic->ID)) {
+            $built[] = $topic;
+        } else {
+            $bare[] = $term;
+        }
+    }
+    
+    return array(
+        'topics' => $built,
+        'terms' => $bare
+    );
+}
+
+add_action('after_the_content', 'sw_show_related_topics');
+function sw_show_related_topics() {
+    global $post;
+    extract(sw_get_topics_for_post($post->ID));
+    ?>
+    <?php if ($topics || $terms): ?>
+    <div id="taxonomy">
+        <?php if ($topics): ?>
+        <div class="topics">
+            <h4>Featured Topics</h4>
+            <ul>
+            <?php foreach ($topics as $i => $topic): ?>
+                <?php if ($topic->post_title): ?>
+                    <li class="topic clearfix">
+                        <a href="<?php echo get_permalink($topic); ?>"><?php echo get_the_post_thumbnail($topic->ID, 'thumbnail', array('class'=>'alignleft')); ?></a>
+                    <h3><a href="<?php echo get_permalink($topic); ?>"><?php echo apply_filters('the_title', $topic->post_title); ?></a></h3>
+                    </li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php endif; ?>
+        <?php if ($terms): ?>
+        <div class="terms">
+            <h4>More Topics</h4>
+            <ul>
+                <?php foreach($terms as $i => $term): ?>
+                    <li class="post-tag-link"><a href="<?php echo get_term_link($term->name, $term->taxonomy); ?>"title="<?php echo $term->name; ?>"><?php echo $term->name; ?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php endif; ?>
+    </div>
+    <?php endif; ?>
+    <?php
+}
+
+
 ?>
