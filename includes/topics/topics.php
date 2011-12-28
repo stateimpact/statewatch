@@ -374,6 +374,16 @@ class SI_Topics {
     function save_post($post_id) {
         // we only care about topics
         if (get_post_type($post_id) !== $this->POST_TYPE) return;
+        $fields = array( 'title', 'url', 'source' );
+        foreach( range(0, 4) as $i ) {
+            foreach( $fields as $field ) {
+                $name = "link_" . $i . "_" . $field;
+                if ( isset($_POST[$name]) ) {
+                    $value = $_POST[$name];
+                    update_post_meta( $post_id, $name, $value );
+                }
+            }
+        }
     }
     
     function add_admin_stylesheet() {
