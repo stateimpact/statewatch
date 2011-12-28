@@ -9,7 +9,15 @@ http://codex.wordpress.org/Template_Tags to understand
 /*
  * Loop query string modifier to include our custom post types
  */
-query_posts( argo_post_types_qs() ); 
+ global $wp_query;
+ $tag = $wp_query->get_queried_object();
+ $topic = argo_get_topic_for( $tag );
+ $featured = (array)get_post_meta($topic->ID, 'featured_posts', true);
+ $args = array(
+    'post_type' => get_post_types(array('public'=>true)),
+    'post__not_in' => $featured
+ );
+ query_posts( array_merge($wp_query->query, $args) );
 ?>
 <?php
 	/* Start the Loop.

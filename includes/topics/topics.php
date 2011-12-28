@@ -50,6 +50,7 @@ class SI_Topics {
         
         add_action('wp_ajax_save_featured_posts',
             array(&$this, 'ajax_save'));
+            
     }
     
     function unhook_argo_events() {
@@ -430,6 +431,7 @@ class SI_Topics {
         // update_post_meta()
         return $links;
     }
+    
 }
 
 $sw_topics = new SI_Topics;
