@@ -54,7 +54,7 @@
 		    <div class="partner-station logo-list clearfix">
 		    <?php if ( has_post_thumbnail() ) { ?>
 		        <a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>">
-		        <?php the_post_thumbnail( array(140) ); ?>
+		        <?php the_post_thumbnail( 'station-thumb' ); ?>
 				</a>
 			<?php } ?>
 	
