@@ -314,7 +314,8 @@ class SI_Topics {
     function create_topic($term_id, $tt_id, $taxonomy) {
         $term = get_term( $term_id, $taxonomy );
         error_log('Creating topic from term: ' . $term->name);
-        
+                
+        /***
         $topics = new WP_Query(array(
             'post_name' => $term->slug,
             'post_type' => $this->POST_TYPE
@@ -323,7 +324,7 @@ class SI_Topics {
             // we already have this topic, bail out
             return;
         }
-        
+        ***/
         // Gather attributes
         $atts = array(
             'post_title' => $term->name,
@@ -339,7 +340,10 @@ class SI_Topics {
         if ( $taxonomy == 'category' ) {
             $atts[ 'post_category' ] = array( $term_id );
         }
-        wp_insert_post( $atts );
+        $created = wp_insert_post( $atts, false );
+        if ($created) {
+            error_log('Created topic: ' . $atts['post_title']);
+        }
     }
     
     function update_topic($term_id, $tt_id, $taxonomy) {
@@ -351,21 +355,22 @@ class SI_Topics {
     function get_topic($term, $taxonomy) {
         // get a topic (post type) for a given term
         // creating one if it doesn't already exist
+        // error_log('Getting topic for ' . $term->name);
         $args = array(
-            'post_name' => $term->slug,
+            'name' => $term->slug,
             'post_type' => $this->POST_TYPE,
-            'numberposts' => 1
+            'posts_per_page' => 1
         );
         
         if ($taxonomy == 'category') {
             $args['cat'] = $term->term_id;
         } elseif ($taxonomy == 'post_tag') {
-            $args['tag'] = $term->slug;
+            $args['tag_id'] = $term->term_id;
         }
         
         $topics = new WP_Query($args);
         if ($topics->post_count === 0) {
-            return $this->create_topic($term_id, $tt_id, $taxonomy);
+            return $this->create_topic($term->term_id, null, $taxonomy);
         }
         
         $topic = $topics->posts[0];
@@ -388,10 +393,13 @@ class SI_Topics {
     }
     
     function add_admin_stylesheet() {
-        $css = get_stylesheet_directory_uri() . '/includes/topics/css/topics-admin.css';
-        wp_enqueue_style(
-            'topics-admin', $css, array(), '0.1'
-        );
+        global $post;
+        if ($post->post_type === $this->POST_TYPE) {
+            $css = get_stylesheet_directory_uri() . '/includes/topics/css/topics-admin.css';
+            wp_enqueue_style(
+                'topics-admin', $css, array(), '0.1'
+            );
+        }
     }
     
     function register_admin_scripts() {
