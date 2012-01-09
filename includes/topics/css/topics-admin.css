@@ -19,3 +19,6 @@ div#featured-wrapper {
     width: 47%;
     margin-left: 2%;
 }
+
+#categorydiv { display: none; }
+#tagsdiv-post_tag { display: none; }
