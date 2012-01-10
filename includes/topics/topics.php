@@ -566,5 +566,25 @@ function sw_show_related_topics() {
     <?php
 }
 
+function sw_get_topics_by_letter($args=array()) {
+    $defaults = array(
+        'posts_per_page'=> -1,
+        'post_status'=>'publish',
+        'orderby'=>'name',
+        'order'=>'ASC'
+    );
+    $args = wp_parse_args($args, $defaults);
+    
+    // hard-coding this
+    $args['post_type'] = $sw_topics->POST_TYPE;
+    $topics = new WP_Query($args);
+    $letters = array();
+    foreach($topics->posts as $topic) {
+        $first = substr($topic->post_name, 0, 1);
+        $letters[$first][] = $topic;
+    }
+    ksort($letters);
+    return $letters;
+}
 
 ?>
