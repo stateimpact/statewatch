@@ -26,10 +26,12 @@ require_once( INCLUDES . 'multimedia.php' );
 
 add_filter('pre_get_posts', 'filter_search');
 function filter_search($query) {
-    if ($query->is_search) {
-	    $query->set('post_type', array('post', 'topic', 'fusiontablesmap', 'roundup'));
-	    $query->set('orderby', 'modified');
-    };
+    if (!is_admin()) {
+        if ($query->is_search && !$query->get('suppress_filters')) {
+    	    $query->set('post_type', array('post', 'topic', 'fusiontablesmap', 'roundup'));
+    	    $query->set('orderby', 'modified');
+        };
+    }
     return $query;
 };
 
