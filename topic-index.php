@@ -75,7 +75,7 @@ Template Name: Topic index
 	<?php
 	foreach($post_tags as $key => $tag) {
 		$newletter = substr($tag->slug, 0, 1);
-		if($newletter !== $letter && $key != 0) { ?>
+		if($newletter !== $letter/* && $key != 0*/) { ?>
 		</ul>
 		<p><a href="#content">Back to top  &uarr;</a></p>
 	</div>
