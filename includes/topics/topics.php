@@ -380,6 +380,7 @@ class SI_Topics {
     function save_post($post_id) {
         // we only care about topics
         if (get_post_type($post_id) !== $this->POST_TYPE) return;
+        
         $fields = array( 'title', 'url', 'source' );
         foreach( range(0, 4) as $i ) {
             foreach( $fields as $field ) {
@@ -504,8 +505,8 @@ function sw_get_topic_multimedia($post_id) {
     $tags = wp_get_object_terms($post_id, 'post_tag', array('fields'=>'ids'));
     $args = array('post_type' => 'multimedia');
     
-    if ($categories) { $args['category__in'] = $categories; }
     if ($tags) { $args['tag__in'] = $tags; }
+    elseif ($categories) { $args['category__in'] = $categories; }
     
     return new WP_Query($args);
 }
