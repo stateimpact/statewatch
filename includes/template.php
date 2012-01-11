@@ -92,4 +92,14 @@ function sw_enqueue_fb() {
     wp_enqueue_script('facebook', $fb);
 }
 
+function sw_search_topics($search_query, $count) {
+    $query = new WP_Query(array(
+        's' => $search_query,
+        'post_type' => 'topic',
+        'posts_per_page' => $count,
+        'suppess_filters' => true
+    ));
+    return $query;
+}
+
 ?>
