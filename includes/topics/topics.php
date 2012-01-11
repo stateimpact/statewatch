@@ -377,9 +377,19 @@ class SI_Topics {
         return $topic;
     }
     
+    function uncategorize($post_id) {
+        $tags = wp_get_object_terms($post_id, 'post_tag', 'id');
+        if ($tags) {
+            // remove all categories from this topic
+            wp_set_post_categories($post_id, array());
+        }
+    }
+    
     function save_post($post_id) {
         // we only care about topics
         if (get_post_type($post_id) !== $this->POST_TYPE) return;
+        
+        $this->uncategorize($post_id);
         
         $fields = array( 'title', 'url', 'source' );
         foreach( range(0, 4) as $i ) {
