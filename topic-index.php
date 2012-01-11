@@ -65,7 +65,7 @@ Template Name: Topic index
 		JOIN '.$wpdb->prefix.'terms
 		ON '.$wpdb->prefix.'term_taxonomy.term_id = '.$wpdb->prefix.'terms.term_id
 		WHERE '.$wpdb->prefix.'term_taxonomy.taxonomy = "post_tag"
-		ORDER by  '.$wpdb->prefix.'terms.name ASC
+		ORDER by  '.$wpdb->prefix.'terms.slug ASC
     ';
 	$post_tags = $wpdb->get_results($query_string);
 	?>
