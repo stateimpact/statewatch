@@ -24,6 +24,10 @@ require_once( INCLUDES . 'media.php' );
 require_once( INCLUDES . 'admin.php' );
 require_once( INCLUDES . 'multimedia.php' );
 
+function sw_loop_post_types() {
+    return array('post', 'fusiontablesmap', 'jiffypost', 'roundup');
+}
+
 add_filter('pre_get_posts', 'filter_search');
 function filter_search($query) {
     if (!is_admin()) {

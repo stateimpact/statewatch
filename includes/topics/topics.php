@@ -18,6 +18,9 @@ class SI_Topics {
         // update topic on edited_term
         add_action('edited_term', array(&$this, 'update_topic'), 10, 3);
         
+        // hide topic on delete_term
+        add_action('deleted_term_relationships', array(&$this, 'disable_topic'), 10, 2);
+        
         // metaboxes
         add_action('add_meta_boxes', array(&$this, 'add_metaboxes'));
         
@@ -377,9 +380,35 @@ class SI_Topics {
         return $topic;
     }
     
+    function disable_topic($object_id, $delete_terms) {
+        // when the last term relationship is removed from a topic
+        // make that topic draft status
+        if (get_post_type($object_id) !== $this->POST_TYPE) return;
+        
+        $terms = wp_get_object_terms($object_id, array('category', 'post_tag'));
+        if (!$terms || is_wp_error($terms)) {
+            error_log(print_r($terms, true));
+            wp_update_post(array(
+                'ID' => $object_id,
+                'post_status' => 'draft'
+            ));
+        }
+    }
+    
+    function uncategorize($post_id) {
+        $tags = wp_get_object_terms($post_id, 'post_tag', 'id');
+        if ($tags) {
+            // remove all categories from this topic
+            wp_set_post_categories($post_id, array());
+        }
+    }
+    
     function save_post($post_id) {
         // we only care about topics
         if (get_post_type($post_id) !== $this->POST_TYPE) return;
+        
+        $this->uncategorize($post_id);
+        
         $fields = array( 'title', 'url', 'source' );
         foreach( range(0, 4) as $i ) {
             foreach( $fields as $field ) {
@@ -504,8 +533,8 @@ function sw_get_topic_multimedia($post_id) {
     $tags = wp_get_object_terms($post_id, 'post_tag', array('fields'=>'ids'));
     $args = array('post_type' => 'multimedia');
     
-    if ($categories) { $args['category__in'] = $categories; }
     if ($tags) { $args['tag__in'] = $tags; }
+    elseif ($categories) { $args['category__in'] = $categories; }
     
     return new WP_Query($args);
 }
