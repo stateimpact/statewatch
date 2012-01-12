@@ -18,6 +18,9 @@ class SI_Topics {
         // update topic on edited_term
         add_action('edited_term', array(&$this, 'update_topic'), 10, 3);
         
+        // hide topic on delete_term
+        add_action('deleted_term_relationships', array(&$this, 'disable_topic'), 10, 2);
+        
         // metaboxes
         add_action('add_meta_boxes', array(&$this, 'add_metaboxes'));
         
@@ -375,6 +378,21 @@ class SI_Topics {
         
         $topic = $topics->posts[0];
         return $topic;
+    }
+    
+    function disable_topic($object_id, $delete_terms) {
+        // when the last term relationship is removed from a topic
+        // make that topic draft status
+        if (get_post_type($object_id) !== $this->POST_TYPE) return;
+        
+        $terms = wp_get_object_terms($object_id, array('category', 'post_tag'));
+        if (!$terms || is_wp_error($terms)) {
+            error_log(print_r($terms, true));
+            wp_update_post(array(
+                'ID' => $object_id,
+                'post_status' => 'draft'
+            ));
+        }
     }
     
     function uncategorize($post_id) {
