@@ -14,7 +14,7 @@ http://codex.wordpress.org/Template_Tags to understand
  $topic = argo_get_topic_for( $tag );
  $featured = (array)get_post_meta($topic->ID, 'featured_posts', true);
  $args = array(
-    'post_type' => get_post_types(array('public'=>true)),
+    'post_type' => sw_loop_post_types(),
     'post__not_in' => $featured
  );
  query_posts( array_merge($wp_query->query, $args) );
