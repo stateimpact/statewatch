@@ -16,28 +16,28 @@
 ?>
 
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
-<?php if ( ! have_posts() ) : ?>
-    <?php if ( ! is_tag() and ! is_category() ): ?>
-    <article id="post-0" class="post error404 not-found">
-        <h3 class="entry-title">Not Found</h3>
-        <div class="entry-content">
-            <p>We're sorry. No posts matched your search request.</p>
-        </div><!-- .entry-content -->
-    </article><!-- #post-0 -->
-    <?php endif; ?>
-<?php endif; ?>
 
+        <?php $topics = sw_search_topics(get_search_query(), 5); ?>
         <?php if (have_posts()) : ?>
+            <?php 
+                $story_label = ($wp_query->found_posts === 1) ? "story" : "stories";
+                $topics_label = (count($topics) === 1) ? "topic" : "topics";
+            ?>
 
-        	<p class="search-term"><?php _e('Your Search for', 'argo');?>
-        	    '<strong><?php the_search_query(); ?></strong>' 
-        	    <?php _e('returned', 'argo');?> 
-        	    <strong><?php echo $wp_query->found_posts; ?> 
-        	    <?php _e('results', 'argo');?></strong>
-        	</p>
+        	<p class="search-term"><?php _e('Search results for ', 'argo');?>
+        	    '<strong><?php the_search_query(); ?></strong>' </p>
             <?php do_action('before_search_results', get_search_query()); ?>
             
-            <?php $topics = sw_search_topics(get_search_query(), 5); ?>
+            <section class="topics">
+            <h1>Topics</h1>
+            <?php if ( $topics === null ) : ?>
+                <article id="post-0" class="post error404 not-found">
+                    <h3 class="entry-title">Not Found</h3>
+                    <div class="entry-content">
+                        <p>No topics matched your search request.</p>
+                    </div><!-- .entry-content -->
+                </article><!-- #post-0 -->
+            <?php endif; ?>
             <?php foreach ($topics->posts as $i => $topic): ?>
                 <article class="topic search-results clearfix">
                     <?php if (has_post_thumbnail($topic->ID)): ?>
@@ -47,7 +47,20 @@
                     <?php echo apply_filters('the_excerpt', get_the_excerpt($topic->ID)); ?>
                 </article>
             <?php endforeach ?>
+            </section>
             
+            <section class="posts">
+            <h1>Stories</h1>
+            <?php if ( ! have_posts() ) : ?>
+                <?php if ( ! is_tag() and ! is_category() ): ?>
+                <article id="post-0" class="post error404 not-found">
+                    <h3 class="entry-title">Not Found</h3>
+                    <div class="entry-content">
+                        <p>No stories matched your search request.</p>
+                    </div><!-- .entry-content -->
+                </article><!-- #post-0 -->
+                <?php endif; ?>
+            <?php endif; ?>
             <?php while (have_posts()) : the_post(); ?>
             <article class="search-results <?php echo $post->post_type; ?>">
                 <header>
@@ -61,10 +74,11 @@
                     </div>
                     <!-- /.post-meta -->
                 </header><!-- /result header -->
-                		<?php the_excerpt(); ?>
+                        <?php the_excerpt(); ?>
 
             </article><!-- /.search-results -->
     	    <?php endwhile; ?>
+            </section>
             <nav>
                 <p class="search-pagination"><?php argo_pagination() ?></p>
             </nav>
