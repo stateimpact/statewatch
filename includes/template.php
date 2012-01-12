@@ -95,9 +95,9 @@ function sw_enqueue_fb() {
 function sw_search_topics($search_query, $count) {
     $query = new WP_Query(array(
         's' => $search_query,
-        'post_type' => 'topic',
+        'post_type' => array('topic'),
         'posts_per_page' => $count,
-        'suppess_filters' => true
+        'suppress_filters' => true
     ));
     return $query;
 }

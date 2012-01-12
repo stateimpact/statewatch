@@ -387,7 +387,6 @@ class SI_Topics {
         
         $terms = wp_get_object_terms($object_id, array('category', 'post_tag'));
         if (!$terms || is_wp_error($terms)) {
-            error_log(print_r($terms, true));
             wp_update_post(array(
                 'ID' => $object_id,
                 'post_status' => 'draft'
