@@ -18,10 +18,10 @@
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 
         <?php $topics = sw_search_topics(get_search_query(), 5); ?>
-        <?php if (have_posts()) : ?>
+
             <?php 
                 $story_label = ($wp_query->found_posts === 1) ? "story" : "stories";
-                $topics_label = (count($topics) === 1) ? "topic" : "topics";
+                $topics_label = ($topics->post_count === 1) ? "topic" : "topics";
             ?>
 
         	<p class="search-term"><?php _e('Search results for ', 'argo');?>
@@ -30,7 +30,7 @@
             
             <section class="topics">
             <h1>Topics</h1>
-            <?php if ( $topics === null ) : ?>
+            <?php if ( $topics->post_count === 0 ) : ?>
                 <article id="post-0" class="post error404 not-found">
                     <h3 class="entry-title">Not Found</h3>
                     <div class="entry-content">
@@ -51,7 +51,7 @@
             
             <section class="posts">
             <h1>Stories</h1>
-            <?php if ( ! have_posts() ) : ?>
+            <?php if ( !have_posts() ) : ?>
                 <?php if ( ! is_tag() and ! is_category() ): ?>
                 <article id="post-0" class="post error404 not-found">
                     <h3 class="entry-title">Not Found</h3>
@@ -84,7 +84,6 @@
             </nav>
             <!-- /.search-pagination -->
                 
-		<?php endif; ?>
 
 </div><!--/ #content .grid_8-->
 

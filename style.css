@@ -1435,13 +1435,14 @@ Version: 0.1
 /* Search
 =================================================*/
 	
-	.search-results .search-term { font: 300 24px/1.1 proxima-nova,sans-serif; }
-	.search-results #content section h1 { margin: 0; padding: 10px 0 0; font: 400 16px/1 proxima-nova,sans-serif; text-transform: uppercase; border-top: 4px solid #ccc;  }
-	.search-results #content article { margin: 10px 0; padding: 0; border-width: 1px 0 0; }
-	.search-results #content article p { font-size: 14px; }
-	.search-results #content .post-meta h6 { font-style: normal; text-transform: uppercase; }
-	.search-results #main #content .topics h2 { font: 700 20px/1.1 proxima-nova,sans-serif; color: #000; }
-	.search-results #main #content .topics h2 a { font-weight: 700; color: #000; }
+	.search .search-term { font: 300 24px/1.1 proxima-nova,sans-serif; }
+	.search #content section h1 { margin: 0; padding: 10px 0 0; font: 400 16px/1 proxima-nova,sans-serif; text-transform: uppercase; border-top: 4px solid #ccc;  }
+	.search #content article { margin: 10px 0; padding: 0; border-width: 1px 0 0; }
+	.search #content .not-found h3 { margin-top: 10px; }
+	.search #content article p { font-size: 14px; }
+	.search #content .post-meta h6 { font-style: normal; text-transform: uppercase; }
+	.search #main #content .topics h2 { font: 700 20px/1.1 proxima-nova,sans-serif; color: #000; }
+	.search #main #content .topics h2 a { font-weight: 700; color: #000; }
 
 /* Open States Modules
 =================================================*/
