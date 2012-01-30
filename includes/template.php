@@ -97,7 +97,8 @@ function sw_search_topics($search_query, $count) {
         's' => $search_query,
         'post_type' => array('topic'),
         'posts_per_page' => $count,
-        'suppress_filters' => true
+        'suppress_filters' => true,
+        'orderby'=>'modified'
     ));
     return $query;
 }
