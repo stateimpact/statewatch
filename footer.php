@@ -226,24 +226,18 @@ $(document).ready(function(){
 
 <div id="apanel-content" class="container_12"> 
     <div id="argo-inner-panel">
-        <div id="panel-about" class="grid_4 alpha">
+        <div id="panel-about" class="grid_6 alpha">
             <h5>About StateImpact</h5>
             <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives. <br>
                 <a href="/">Learn More &raquo;</a></p>
         </div>
-
-        <div id="topic-budget" class="network-sites grid_2">
-			<h5>State Budget</h5>
-			<ul>
-				<li><a href="/oklahoma/">Oklahoma</a></li>
-			</ul>
-		</div>
 
 		<div id="topic-economy" class="network-sites grid_2">
 			 <h5>Economy</h5>
 			<ul>
 				<li><a href="/idaho/">Idaho</a></li>
 				<li><a href="/new-hampshire/">New Hampshire</a></li>
+                <li><a href="/oklahoma/">Oklahoma</a></li>
 			 </ul>
 	    </div>
 	
