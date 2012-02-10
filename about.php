@@ -130,15 +130,15 @@
         <dt><a href="/florida/">Florida</a></dt>
 		  <dd>Education</dd>
         <dt><a href="/idaho/">Idaho</a></dt>
-		  <dd>State economy</dd>
-        <dt><a href="/ohio/">Ohio</a></dt>
-		  <dd>Education</dd>
+		  <dd>Economy</dd>
         <dt><a href="/indiana/">Indiana</a></dt>
 		  <dd>Education</dd>
         <dt><a href="/new-hampshire/">New Hampshire</a></dt>
-		  <dd>State economy</dd>
+		  <dd>Economy</dd>
+        <dt><a href="/ohio/">Ohio</a></dt>
+		  <dd>Education</dd>
         <dt><a href="/oklahoma/">Oklahoma</a></dt>
-		  <dd>State Budget</dd>
+		  <dd>Economy</dd>
         <dt><a href="/pennsylvania/">Pennsylvania</a></dt>
 		  <dd>Energy</dd>
         <dt><a href="/texas/">Texas</a></dt>
