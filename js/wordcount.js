@@ -6,9 +6,9 @@ jQuery(function($) {
     excerpt.parent('div').append(target);
     excerpt.bind('keyup change paste focus blur', function(e) {
         var words = $(this).val().split(' ');
-        target.text('Word count: ' + words.length)
+        target.text('Word count: ' + words.length);
     });
     
     // trigger a change event to do initial count
     excerpt.change();
-})
+});
