@@ -498,6 +498,46 @@ class SW_Topics_Walker extends Walker {
     }
 }
 
+function argo_get_topic_for( $obj ) {
+    global $wp_query;
+    $args = array( 
+        'post_type' => 'topic',
+        'caller_get_posts' => 1,
+    );
+
+    // XXX: typesniffing by method existence is gross
+    if ( $obj->post_type ) { // NAV MENU ITEM
+        if ( $obj->post_type == 'nav_menu_item' ) {
+            if ( $obj->object == 'category' ) {
+                $args[ 'cat' ] = $obj->object_id;
+            }
+            elseif ( $obj->object == 'post_tag' ) {
+                $args[ 'tag__in' ] = array( $obj->object_id );
+            }
+        }
+    }
+    elseif ( $obj->term_id ) { // TAXONOMY ITEM
+        if ( $obj->taxonomy == 'category' ) {
+            $args[ 'cat' ] = $obj->term_id;
+        }
+        elseif ( $obj->taxonomy == 'post_tag' ) {
+            $args[ 'tag__in' ] = array( $obj->term_id );
+        }
+    }
+    else {
+        return null;
+    }
+
+    $topics = new WP_Query( $args );
+    if ( $topics->posts ) {
+        return $topics->posts[0];
+    }
+    else {
+        return null;
+    }
+}
+
+
 function sw_get_topic_featured_links($post) {
     $results = array();
     $fields = array( 'title', 'url', 'source' );

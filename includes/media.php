@@ -8,10 +8,13 @@ class SW_Fancybox {
         
         add_action('wp_enqueue_scripts', array(&$this, 'add_scripts'));
         add_action('wp_print_styles', array(&$this, 'add_stylesheet'));
-        
+        add_action('after_setup_theme', array(&$this, 'add_thumbnail_support'));
         $this->root = get_bloginfo( 'stylesheet_directory' );
     }
     
+    function add_thumbnail_support() {
+        add_theme_support('post-thumbnails');
+    }
     
     function add_stylesheet() {
         $src = $this->root . '/js/fancybox/jquery.fancybox-1.3.4.css';
