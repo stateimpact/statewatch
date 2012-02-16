@@ -623,8 +623,9 @@ function sw_show_related_topics() {
         <div class="terms">
             <h4>More Topics</h4>
             <ul>
-                <?php foreach($terms as $i => $term): ?>
-                    <li class="post-tag-link"><a href="<?php echo get_term_link($term->name, $term->taxonomy); ?>"title="<?php echo $term->name; ?>"><?php echo $term->name; ?></a></li>
+                <?php foreach($terms as $i => $term): 
+                    if (is_wp_error($term)) continue; ?>
+                    <li class="post-tag-link"><a href="<?php echo get_term_link($term, $term->taxonomy); ?>"title="<?php echo $term->name; ?>"><?php echo $term->name; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>
