@@ -5,7 +5,7 @@
  * Contains the closing of the id=main div and all content
  * after.  
  */
-$blogger = argo_get_primary_blogger(); 
+// $blogger = argo_get_primary_blogger(); 
 ?>
 	</div> <!-- #main .container_12 -->
 </div> <!-- #local-wrapper -->

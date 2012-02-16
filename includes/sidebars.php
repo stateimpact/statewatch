@@ -6,9 +6,17 @@ function sw_remove_some_widgets(){
 }
 add_action( 'init', 'sw_remove_some_widgets', 11 );
 
-
-
 function sw_register_sidebars() {
+    // primary
+    register_sidebar( array(
+        'name' => 'Primary',
+        'id' => 'primary-widget-area',
+        'description' => 'The primary widget area',
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
     
     // sidebar-about.php
     register_sidebar( array(

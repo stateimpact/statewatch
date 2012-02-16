@@ -425,6 +425,22 @@ function argo_pagination($range = 4){
   }
 }
 
+/**
+ * argo_get_twitter_screen_name(): provide the actual screen name or the blog's 
+ * name.
+ */
+function argo_get_twitter_screen_name() {
+    // XXX: change twitter_link property to only contain screename.
+    $turl = get_option( 'twitter_link' );
+    if ( $turl ) {
+        $screen_name = preg_replace( '/https?:\/\/twitter.com\/\#?\!?\/?/', '', $turl );
+        return '@' . $screen_name;
+    }
+    else {
+        return get_bloginfo( 'name' );
+    }
+}
+
 function argo_get_sanitized_title( $max_title_length = 140 ) {
     $title = get_the_title();
 
@@ -531,5 +547,16 @@ function argo_custom_taxonomy_terms( $post_id ) {
     return $post_terms;
 }
 endif;
+
+/**
+ * Builds the proper searchform action URL. This works around a condition with
+ * WordPress MultiSite that requires this URL to have a trailing slash.
+ *
+ */
+function navis_the_searchform_url() {
+    $url = get_bloginfo( 'url', 'display' );
+    echo ( $url ) ? trailingslashit( $url ) : $url;
+}
+
 
 ?>
