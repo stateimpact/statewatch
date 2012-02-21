@@ -310,7 +310,7 @@ class SI_Topics {
             'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
             'public' => true,
             'menu_position' => 8,
-            // 'taxonomies' => array( 'feature', 'post_tag', 'category' ),
+            'taxonomies' => array( 'post_tag', 'category' ),
         ) );
     }
     
