@@ -280,660 +280,7 @@ legend      { font-weight: bold;}
 /* Form fields
 -------------------------------------------------------------- */
 
-input[type=text],
-input.text, input.title, 
-textarea, select { 
-	background-color:#fff; 
-	border:1px solid #bbb; 
-}
-input[type=text]:focus, 
-input.text:focus, input.title:focus, 
-textarea:focus, select:focus { 
-	border-color:#666; 
-}
-
-input[type=text], 
-input.text, input.title,
-textarea, select {
-	margin:5px 0;
-}
-
-input.text, 
-input.title   { width: 300px; padding:5px; }
-input.title   { font-size:1.5em; }
-textarea      { width: 390px; height: 250px; padding:5px; }
-
-input[type=checkbox], input[type=radio], 
-input.checkbox, input.radio { 
-  position:relative; top:3px; 
-}
-
-form.inline { line-height:3; }
-form.inline p { margin-bottom:0; }
-
-/************* ARGO PANEL ******************/
-
-#argo-panel-wrapper { background: #3d3c3c url(../img/argo-panel-bg.png) repeat-x; border-bottom: 5px solid #3d3c3c; }
-#argo-panel { display: none; height: 170px; }
-#apanel-title { margin: 0; position: absolute; top: -10px; right: 6px; z-index: 1; }
-.ie6 #apanel-title { display: none }
-#wrapper #apanel-trigger { display: block; width: 77px; height: 45px; text-indent: -10000px; position: relative; outline: none; background-image: url(../img/panel-nav.png); background-position: 0 -190px; }
-#wrapper  #apanel-title .opanel { background-position: 0 0 }
-#wrapper  #apanel-title .cpanel { background-position: 0 -190px }
-#wrapper  #apanel-title .cpanel:hover { background-position: 0 -95px }
-#wrapper { border-top: none; position: relative; margin-top: 0 !important; }
-.ie6 #wrapper { position: static }
-#apanel-content { display: none; position: absolute; top: 5px; left: 0; width: 100%; color: #999; font-family: helvetica, arial, sans-serif; }
-#apanel-content a { color: #ddd; font-weight: bold; text-decoration: none; outline: none; }
-#apanel-content a:hover { color: #fff }
-#apanel-content h5 { font-size: 13px; margin: 0 0 5px 0; color: #ddd; }
-#argo-inner-panel { width: 960px; margin: 0 auto; height: 140px; position: relative; }
-#panel-about { width: 203px; overflow: hidden; height: 140px; position: absolute; top: 5px; left: -5px; }
-#panel-about p { font-size: 13px; font-style: italic; line-height: 1.4; }
-#panel-network,
-#panel-featured { border-left: 1px solid #666; padding-left: 8px; }
-#panel-network { position: absolute; top: 5px; left: 200px; overflow: hidden; height: 140px; width: 450px; }
-#panel-network ul { float: left; width: 135px; font-size: 11px; margin: 0 0 0 10px; border-left: 1px solid #666; }
-#panel-network #panel-network-first { margin-left: -9px; border-left: none; }
-#panel-network li { margin-bottom: 3px }
-#panel-network li a { padding-left: 15px }
-#panel-network .selected { background: transparent url(../img/argo-panel-selected.png) no-repeat 0 2px }
-#panel-featured { position: absolute; top: 5px; right: 0px; width: 290px; height: 140px; overflow: hidden; }
-#panel-featured div { display: none; margin-top: 12px; }
-#panel-featured img { float: left; margin-right: 10px; border: 1px solid #999; }
-#panel-featured h3 { font-size: 13px; margin: 0; }
-#panel-featured p { font-size: 11px; line-height: 1.2; border-top: 1px solid #999; color: #999; margin-top: 10px; padding-top: 5px; margin-left: 70px; }
-
-/************* GLOBAL NAVIGATION ******************/
-
-.global-nav-bg { background-color: #666; padding: 5px 0; margin-bottom: 10px; }
-.global-nav { margin-left: auto; margin-right: auto; width: 940px; color: #fff; font-size: 11px; position: relative; height: 40px; }
-.global-nav a,
-.global-nav a:visited,
-.global-nav a:hover,
-.global-nav a:active { color: #fff }
-.global-nav ul { margin: 0 }
-.global-nav li { float: left; margin: 10px 10px 0 0; }
-.global-nav .support a { background-color: #ccc; font-weight: bold; color: #666; padding: 3px 5px; }
-.global-nav .support a:hover { background-color: #fff; color: #333; text-decoration: none; }
-.global-nav .network-branding { position: absolute; top: 0; right: 0; margin: 0; background: transparent url(../img/argo-network-logo.png) no-repeat top right; text-indent: -10000px; width: 70px; height: 37px; }
-.network-branding a { display: block; width: 70px; height: 37px; }
-
-/* mega menu */
-
-#main-nav { margin-left: auto; margin-right: auto; margin-top: 5px; margin-bottom: 10px; width: 940px; min-height: 32px; position: relative; z-index: 100; }
-#topnav { margin: 0; padding: 0; float: left; width: 100%; list-style: none; font-size: 1.1em; }
-#topnav li { float: left; margin: 0 0 0 0; padding: 0; font-size: 15px; line-height: 1; }
-#topnav li a { float: left; padding: 5px 22px 5px 5px; margin: 0 5px; color: #000; background: transparent url(../img/arrow-down.png) no-repeat 95% 50%; }
-#topnav .first a { margin-left: -5px }
-#topnav li:hover a,
-#topnav li a:hover { background-color: #999; text-decoration: none; color: #fff; border-bottom: 7px solid #999; background: #999 url(../img/arrow-hover.png) no-repeat 95% 50%; }
-#topnav li .sub { position: absolute; top: 31px; left: -5px; float: left; width: 925px; display: none; border: 4px solid #999; }
-#topnav li .row { clear: both; float: left; width: 100%; margin-bottom: 10px; }
-#topnav li .sub ul { list-style: none; margin: 0; padding: 0; width: 915px; float: left; background-color: #fff; }
-#topnav .sub ul li { width: 100%; color: #333; border: none; background-color: #fff !important; padding: 5px; }
-#topnav .sub ul li a { float: none; text-indent: 0; /*--Reset text indent--*/ height: auto; background: none; text-decoration: none; color: #333; padding-left: 0; }
-.ie6 #topnav .sub ul li a { background-image: none !important }
-#topnav .sub ul li a:hover { color: #ddd; background-position: 5px 12px; }
-.inner-menu { width: 920px; padding: 10px; }
-#topnav .sub .inner-menu a { margin: 10px 0; border: none; }
-#topnav .sub .inner-menu a:hover { text-decoration: underline; color: #333; }
-.mega-feature { width: 320px; float: left; }
-.mega-feature h2 { font-size: 24px; line-height: 1.2; color: #666; padding-bottom: 15px; }
-.mega-feature img { float: left; margin-right: 20px; }
-.mega-feature h3 { font-size: 16px; line-height: 1.2; margin: 0 0 5px 0; }
-.mega-feature h3 a:hover { color: #333 !important; text-decoration: underline !important; }
-.mega-feature .read-more { font-weight: bold; font-size: 11px; }
-.category-articles { width: 320px; float: left; margin-left: 20px; }
-.category-articles h4 { font-size: 14px; line-height: 1.2; margin: 0 0 10px 0; padding-bottom: 8px !important; border-bottom: 1px solid #ddd; }
-.category-articles h4 a { font-weight: normal; margin: 0 !important; padding: 0 !important; }
-.category-articles h5 a { font-size: 12px; line-height: 1; margin: 0 0 5px 0; display: block; font-weight: bold; }
-#topnav .category-topics ul { width: 200px !important; padding: 0; }
-#topnav .category-topics li { margin: 0 0 10px 0 !important; font-size: 15px; padding: 0 0 10px !important; border-bottom: 1px solid #ddd !important; }
-.category-topics { width: 210px; margin-left: 20px; float: left; }
-.inner-menu h3 { font-size: 18px; color: #666; margin: 0 0 15px 0; }
-
-/******************** FOOTER ****************************/
-
-#site-footer { margin-top: 20px; color: #ccc; background-color: #666; padding: 10px 0; }
-#site-footer a { color: #fff }
-.bio p { font-size: 12px; line-height: 1.3; }
-#site-footer .bio h6 a { background-color: #ccc; padding: 5px; color: #666; }
-#site-footer .bio h6 a:hover { background-color: #fff; text-decoration: none; }
-.elsewhere h4 { font-size: 12px; margin-bottom: 5px; }
-.elsewhere img { float: left; margin: 2px 3px 0 0; }
-.elsewhere li { font-size: 12px; clear: both; margin: 0 0 5px 0; }
-
-/* podcast button */
-
-#site-footer .podcast { background: transparent url(../img/podcast.png) no-repeat 1px 0; padding-left: 22px; line-height: 27px; }
-.about-site h6 { float: right; font-size: 11px; margin-top: 7px; }
-#site-footer .about-site h6 a { background-color: #ccc; padding: 2px 4px; color: #666; }
-#site-footer .about-site h6 a:hover { background-color: #fff; text-decoration: none; }
-#site-footer h3 { margin: 10px 0 }
-.post-lead { clear: both; margin-top: 10px; }
-.post-lead img { float: left; margin-right: 10px; margin-bottom: 10px; }
-.post-lead h5 { margin: 0 0 5px 0; line-height: 1; font-size: 15px; }
-.post-lead p { font-size: 12px; line-height: 1.2; }
-#searchform-footer { clear: both; margin: 12px 0; }
-.ie8 #searchform-footer,
-.ie7 #searchform-footer,
-.ie6 #searchform-footer { margin-bottom: 22px }
-#s1 { height: 19px; width: 255px; padding: 2px; margin: 0 5px 0 0; float: left; font-size: 11px; color: #999; }
-.ie6 #s1 { width: 240px }
-#menu-read-more-about { margin-bottom: 2px }
-.must-read-footer { font-size: 12px }
-.must-read-footer li { border-bottom: 1px solid #999; padding-bottom: 3px; }
-.must-read-footer p { margin: 0; font-style: italic; }
-#site-footer ol { margin-left: 20px; margin-bottom: 5px; }
-#ft-archive { padding-bottom: 5px; margin-top: 20px; }
-#ft-archive select { width: 297px; padding: 3px; color: #666; background-color: #eee; }
-
-
-/* boilerplate text in footer */
-
-#boilerplate { font-size: 11px; border-top: 1px solid #999; padding-top: 20px; }
-.back-to-top { position: absolute; bottom: 0; right: 0; font-size: 11px; }
-#boilerplate dl { float: right; margin-bottom: 30px; }
-#boilerplate dt, #boilerplate dd { float: left; line-height: 30px; font-weight: normal; }
-#boilerplate p { margin-bottom: 5px; }
-#boilerplate li { float: left; margin: 0 5px 0 0; padding: 0 5px 0 0; line-height: 1; }
-
-/****************** AUDIO PLAYER ********************/
-
-ul.playlist li {
-	margin-left:0
-}
-
-/* base audio styles */
-
-.spectrum-container {
-	display:none;
-}
-
-ul.use-spectrum li.sm2_playing .spectrum-container {
-	position:absolute;
-	left:0px;
-	top:0px;
-	margin-left:-266px;
-	margin-top:-1px;
-	display:block;
-	background-color:#5588bb;
-	border:1px solid #99ccff;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-	border-radius:4px;
-}
-
-ul.use-spectrum .spectrum-box {
-	position:relative;
-	width:255px;
-	font-size:14px;
-	padding:2px 0px;
-	height:1.2em;
-	overflow:hidden;
-}
-
-ul.use-spectrum .spectrum-box .spectrum {
-	position:absolute;
-	left:0px;
-	top:-2px;
-	margin-top:20px;
-	display:block;
-	font-size:1px;
-	width:1px;
-	height:1px; /* set to 50px for a thick line, 1px for a thin line, etc. */
-	overflow:hidden;
-	background-color:#fff;
-}
-
-ul.playlist {
-	list-style-type:none;
-	margin:0px;
-	padding:0px;
-}
-
-ul.playlist li {
- /* assume all items will be sounds rather than wait for onload etc. in this example.. may differ for your uses. */
-	position:relative;
-	display:block;
-	width:auto;
-	font-size:2em;
-	border:none;
-	letter-spacing:-1px;
-	background-color: #f9f9f9;
-	border-radius:4px;
-	-webkit-border-radius:4px;
-	-moz-border-radius:4px;
-	min-height: 75px;
- /* ZOMG WEB X.0. ;) */
-}
-
-#content ul.playlist li span.caption {
-	color:#666;
-	letter-spacing: .3px;
-	text-shadow: 1px 1px 1px #fff;
-	display:block;
-	line-height: 1.3;
-	font-size: 11px;
-	font-family: 'Helvetica', Arial, sans-serif;
-	font-weight: normal;
-}
-
-ul.playlist li a.inline {
-	padding:0.45em 0.5em 0.45em 0.5em;
-	-webkit-transition-property: hover;
-	-webkit-transition: background-color 0.5s ease-in-out;
-	color: #666;
-	display:block;
-	text-decoration:none;
-	font-weight:normal;
-	font-size:22px;
-	outline:none;
-	position:relative;
-	z-index:2;
-	background: transparent url(./img/audio-play-default.png) no-repeat 22px 5px;
-	line-height: 1;
-	margin-bottom: 10px;
-	padding-left:90px;
-}
-
-#content ul.playlist li a.exclude {
-	font-family: 'Helvetica', Arial, sans-serif;
-	font-size: 11px;
-	font-weight: normal;
-	padding: 0 0 0 16px;
-	color: #aaa;
-	background: transparent url(./img/audio-download.png) no-repeat 0 1px;
-	position: absolute;
-	left: 10px;
-	top: 50px;
-	display:block;
-	z-index: 3;
-	width: 100px;
-	height: 30px;
-}
-
-ul.playlist li.sm2_playing,
-ul.playlist li.sm2_paused,
-ul.playlist li.sm2_playing a.inline {
-	color:#fff;
-	background-color: #eee;
-}
-
-#content ul.playlist li.sm2_playing a.inline,
-#content ul.playlist li.sm2_playing span.caption {
-	color: #666;
-}
-
-#content ul.playlist li.sm2_playing a.inline,
-#content ul.playlist li.sm2_paused a.inline {
-	max-width: 380px;
-}
-
-
-ul.playlist li a:hover.inline {
-	background: transparent url(./img/audio-play-hover.png) no-repeat 22px 5px;
-}
-
-ul.playlist li:hover {
-	background-color: #ededed;
-}
-
-ul.playlist li:hover a.inline {
-	color:#666;
-}
-
-ul.playlist li.sm2_playing,
-ul.playlist li.sm2_playing:hover {
-	background-color: #eee;
-}
-
-ul.playlist li.sm2_playing .inline,
-ul.playlist li.sm2_playing:hover .inline {
-	background: #eee url(./img/audio-play-pause.png) no-repeat 22px 5px;
-}
-
-ul.playlist li.sm2_paused {
-	background-color: #ededed
-}
-
-ul.playlist li.sm2_paused .inline {
-	background: transparent url(./img/audio-play-default.png) no-repeat 22px 5px;
-}
- 
-ul.playlist li.sm2_playing:hover a.inline,
-ul.playlist li.sm2_paused a.inline {
-	color:#fff;
-}
-
-ul.playlist li .controls {
-	display:none;
-	padding: 5px;
-	background:#eee; 
-	-webkit-border-bottom-right-radius: 4px;
-	-webkit-border-bottom-left-radius: 4px;
-	-moz-border-radius-bottomright: 4px;
-	-moz-border-radius-bottomleft: 4px;
-	border-bottom-right-radius: 4px;
-	border-bottom-left-radius: 4px;
-}
-
-ul.playlist li .peak,
-ul.playlist.use-peak li .peak {
-	display:none;
-	position:absolute;
-	top:0.55em;
-	right:0.5em;
-}
-
-ul.playlist li.sm2_playing .controls,
-ul.playlist li.sm2_paused .controls {
-	position:relative;
-	display:block;
-}
-
-ul.playlist.use-peak li.sm2_playing .peak,
-ul.playlist.use-peak li.sm2_paused .peak {
-	display:inline;
-	display:inline-block;
-}
-
-ul.playlist.use-peak li .peak {
-	display:none; /* IE 7 */
-}
-
-ul.playlist li.sm2_paused .controls {
-	background-color:#ddd;
-}
-
-ul.playlist li:hover .controls .statusbar {
-	position:relative;
-	cursor:ew-resize;
-	cursor:-moz-grab;
-	cursor:grab;
-}
-
-ul.playlist li.sm2_paused .controls .statusbar {
-	background-color:#eee;
-}
-
-ul.playlist li .controls {
-	position:relative;
-	margin-top:0.25em;
-	margin-bottom:0.25em;
-	background-color:#eee;
-}
-
-ul.playlist li .controls .statusbar {
-	position:relative;
-	height:0.5em;
-	background-color:#aaa;
-	overflow:hidden;
-	cursor:-moz-grab;
-	cursor:grab;
-}
-
-ul.playlist li .controls.dragging .statusbar {
-	cursor:-moz-grabbing;
-	cursor:grabbing;
-}
-
-ul.playlist li .controls .statusbar .position,
-ul.playlist li .controls .statusbar .loading,
-ul.playlist li .controls .statusbar .annotation {
-	position:absolute;
-	left:0px;
-	top:0px;
-	height:0.5em;
-}
-
-ul.playlist li .controls .statusbar .position {
-	background-color:#373737;
-	border-right:3px solid #373737;
-	border-radius:3px;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-}
-
-ul.playlist li.sm2_paused .controls .statusbar .position {
-	background-color:#aaa;
-	border-color:#aaa;
-}
-
-ul.playlist li .controls .statusbar .loading {
-	background-color:#fff;
-}
-
-ul.playlist li .controls .statusbar .position,
-ul.playlist li .controls .statusbar .loading {
-	width:0px;
-}
-
-ul.playlist li.sm2_playing a.sm2_link,
-ul.playlist li.sm2_paused a.sm2_link {
-	margin-right:4.5em; /* room for timing stuff */
-}
-
-ul.playlist li .timing {
-	position:absolute;
-	display:none;
-	text-align:right;
-	right:1em;
-	top:1em;
-	width:auto;
-	height:1em;
-	padding:3px 5px;
-	background-color:#aaa;
-	-moz-border-radius:4px;
-	-khtml-border-radius:4px;
-	border-radius:4px;
-	letter-spacing:0px;
-	font:44% monaco,"VT-100",terminal,"lucida console",courier,system;
-	line-height:1em;
-	vertical-align:middle;
-}
-
-ul.playlist.use-peak li .timing {
-	right:4.25em;
-}
-
-ul.playlist li:hover .timing {
-	z-index:2;
-}
-
-ul.playlist li .timing div.sm2_timing {
-	margin:0px;
-	padding:0px;
-	margin-top:-1em;
-}
-
-ul.playlist li.sm2_playing .timing,
-ul.playlist li.sm2_paused .timing {
-	display:block;
-}
-
-ul.playlist li.sm2_paused .timing .sm2_position {
-	text-decoration:blink; /* hee hee. first actual appropriate use? :D */
-}
-
-ul.playlist li.sm2_paused .timing,
-ul.playlist.use-peak li.sm2_paused .peak {
-	background-color:#aaa;
-}
-
-/* peak data */
-
-/* ul.playlist ... */
-
-ul.playlist.use-peak li .peak {
-	display:none;
-	zoom:1;
-	padding:2px;
-	height:0.55em;
-	-moz-border-radius:4px;
-	-khtml-border-radius:4px;
-	border-radius:4px;
-	background-color:#aaa;
-	width:0.8em;
-	height:0.55em;
-	margin-top:-3px;
-}
-
-ul.playlist.use-peak li .peak-box {
-	position:relative;
-	width:100%;
-	height:0.55em;
-	overflow:hidden;
-}
-
-ul.playlist li .peak .l,
-ul.playlist li .peak .r {
-	position:absolute;
-	left:0px;
-	top:0px;
-	width:7px;
-	height:50px;
-	background:#fff;
-	border:1px solid #fff;
-	-moz-border-radius:1px;
-	-khtml-border-radius:1px;
-	margin-top:1em;
-}
-
-ul.playlist li .peak .l {
-	margin-right:1px;
-}
-
-ul.playlist li .peak .r {
-	left:10px;
-}
-
-#control-template {
-	display:none;
-}
-
-/* flash player audio */
-
-/*
- SoundManager 2 + useFlashBlock
- Flash positioning and flashblock / clicktoflash handling
-*/
-
-#sm2-container {
- /*
-  where the SM2 flash movie goes. by default, relative container.
-  set relative or absolute here, and don't touch it later or bad things will happen (see below comments.)
- */
-	position:relative;
-	width:1px;
-	height:1px;
-	_overflow:hidden; /* screw IE 6, just make it display nice */
-}
-
-#sm2-container object,
-#sm2-container embed {
- /*
-  the actual movie bit.
-  SWF needs to be able to be moved off-screen without display: or position: changes. important.
-  changing display: or position: or overflow: here or on parent can cause SFW reload or other weird issues after unblock,
-  eg. SM2 starts but strange errors, no whileplaying() etc.
- */
-	position:absolute;
-}
-
-#sm2-container object,
-#sm2-container embed,
-#sm2-container.swf_timedout,
-#sm2-container.swf_timedout object,
-#sm2-container.swf_timedout embed {
- /* 
-  when SM2 didn't start normally, time-out case. flash blocked, missing SWF, no flash?
-  48px square flash placeholder is typically used by blockers.
- */
-	left:auto;
-	top:auto;
-	width:48px;
-	height:48px;
-}
-
-#sm2-container.swf_unblocked {
-	/* SWF unblocked, or was never blocked to begin with; try to collapse container as much as possible. */
-	width:1px;
-	height:1px;
-}
-
-#sm2-container.swf_unblocked object,
-#sm2-container.swf_unblocked embed {
-	/* hide flash off-screen (relative to container) when it has loaded OK */
-	left:-9999em;
-	top:-9999em;
-}
-
-#sm2-container.swf_error {
-	/* when there is a fatal error (flash loaded, but SM2 failed) */
-	display:none;
-}
-
-#sm2-container.high_performance {
-	/* "high performance" case: keep on-screen at all times */
-	position:absolute;
-	position:fixed;
-	_top:-9999px; /* IE 6 hax, no position:fixed */
-	_left:-9999px;
-	bottom:0px;
-	left:0px;
- /*
-  special case: show at first with w/h, hide when unblocked.
-  might be bad/annoying.
- */
-	width:48px;
-	height:48px;
-	z-index:99; /* try to stay on top */
-}
-
-#sm2-container.high_performance.swf_unblocked {
-	z-index:auto;
-}
-
-#sm2-container.high_performance.swf_unblocked,
-#sm2-container.high_performance.swf_unblocked object,
-#sm2-container.high_performance.swf_unblocked embed {
- /* 8x8px is required minimum to load in fx/win32 in some cases(?), 6x6+ good for fast performance, even better when on-screen via position:fixed */
-	width:8px;
-	height:8px;
-}
-
-#sm2-container.high_performance.swf_unblocked object,
-#sm2-container.high_performance.swf_unblocked embed {
- /* high-performance case must stay on-screen */
-	left:auto;
-	top:auto;
-}
-
-#sm2-container.high_performance.swf_timedout {
-	z-index:99; /* try to stay on top */
-}
-
-/* floated images */
-
-.alignleft,
-img.alignleft { display: inline; float: left; margin-right: 24px; margin-top: 4px; }
-
-.alignright,
-img.alignright { display: inline; float: right; margin-left: 24px; margin-top: 4px; }
-
-.aligncenter,
-img.aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto; }
-
-img.alignleft,
-img.alignright,
-img.aligncenter { margin-bottom: 12px; }
-
-/* Bootstrap 
-=================================================*/
-
-	/* Buttons */
+/* Buttons */
 	.btn {
 	  display: inline-block;
 	  background-color: #e6e6e6;
@@ -963,37 +310,10 @@ img.aligncenter { margin-bottom: 12px; }
 	  color: #333;
 	  text-decoration: none;
 	}
-	.primary {
-	  background-color: #0064cd;
-	  background-repeat: repeat-x;
-	  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
-	  background-image: -moz-linear-gradient(#049cdb, #0064cd);
-	  background-image: -ms-linear-gradient(#049cdb, #0064cd);
-	  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
-	  background-image: -webkit-linear-gradient(#049cdb, #0064cd);
-	  background-image: -o-linear-gradient(#049cdb, #0064cd);
-	  background-image: linear-gradient(#049cdb, #0064cd);
-	  color: #fff;
-	  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	  border: 1px solid #004b9a;
-	  border-bottom-color: #003f81;
-	}
-	.primary:hover {
-	  color: #fff;
-	}
 	.btn {
 	  -webkit-transition: 0.1s linear all;
 	  -moz-transition: 0.1s linear all;
 	  transition: 0.1s linear all;
-	}
-	.btn.primary {
-	  color: #fff;
-	  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	  border-color: #0064cd #0064cd #003f81;
-	  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-	}
-	.btn.primary:hover {
-	  color: #fff;
 	}
 	.btn.large {
 	  font-size: 16px;
@@ -1006,22 +326,6 @@ img.aligncenter { margin-bottom: 12px; }
 	  padding-right: 9px;
 	  padding-left: 9px;
 	  font-size: 11px;
-	}
-	.btn.disabled {
-	  background-image: none;
-	  filter: alpha(opacity=65);
-	  -khtml-opacity: 0.65;
-	  -moz-opacity: 0.65;
-	  opacity: 0.65;
-	  cursor: default;
-	}
-	.btn:disabled {
-	  background-image: none;
-	  filter: alpha(opacity=65);
-	  -khtml-opacity: 0.65;
-	  -moz-opacity: 0.65;
-	  opacity: 0.65;
-	  cursor: default;
 	}
 	.btn:active {
 	  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -1434,25 +738,107 @@ img.aligncenter { margin-bottom: 12px; }
 	#content a:hover,
 	#sidebar a:hover { color: #444; }
 
+
 /* Header  
 =================================================*/
 
-	.global-nav-bg { margin-bottom: 0; }
-	.global-nav { position: relative; height:35px; width: 940px; padding: 0 30px; font-size: 11px; }
-	.global-nav h2, .global-nav h3 { margin: 0; }
-	.global-nav h2 a { display: block; background: url(./img/logo.png) no-repeat; position: absolute; left: 10px; top: -15px; text-indent: -999px; width: 191px; height: 71px; }
-	.global-nav h4 a { display: block; background: url(./img/npr.png) no-repeat; position: absolute; left: 207px; top: 10px; text-indent: -999px; width: 279px; height: 17px; }
-	.global-nav .global-utils { position: absolute; float: left; right: 25px; bottom: 6px; line-height: 26px; height: 26px; overflow: hidden; }
-	.global-nav .global-utils li { display: block; float: left; font-size: 11px; margin: 0 0 0 10px; padding: 0; line-height: 26px; }
+
+	/* Panel */
+
+	#argo-panel { display: none; height: 200px; }
+	#wrapper { border-top: none; position: relative; margin-top: 0 !important; }
+	.ie6 #wrapper { position: static }
+	#apanel-content { 
+		display: none; 
+		position: absolute; 
+		top: 60px; 
+		left: 0; 
+		width: 100%; 
+		color: #222; 
+		font-family: helvetica, arial, sans-serif; 
+	}
+	#apanel-content a { color: #ddd; font-weight: bold; text-decoration: none; outline: none; }
+	#apanel-content a:hover { color: #fff }
+	#apanel-content h5 { font-size: 13px; margin: 0 0 5px 0; color: #ddd; }
+
+	#wrapper #apanel-trigger {
+		float: left;
+		height: 26px;
+		width: 102px;
+		outline: none;
+		background-image: url(./img/panel-button.png);
+		padding: 0;
+		line-height: 26px; 
+		-webkit-transition: none;
+		   -moz-transition: none;
+		        transition: none;
+	}
+	#wrapper #apanel-trigger:hover { background-position: 0 -26px; }
+	#wrapper .global-utils a.cpanel { background-position: 0 0; }
+	#wrapper .global-utils a.cpanel:hover { background-position: 0 -26px; }
+	#wrapper #apanel-trigger.opanel { background-position: 0 -52px; }
+	#wrapper #apanel-trigger.opanel:hover { background-position: 0 -78px; }
+	#argo-panel-wrapper { background: none; border: none; color: #222; }
+	#apanel-content h5 { 
+		font-family: proxima-nova,sans-serif;
+		font-size: 16px;
+		color: #000; 
+		margin-bottom: 6px; 
+		border-bottom: 4px solid #999; 
+	}
+	#apanel-content p { margin-bottom: 9px; font-size: 12px; }
+	#apanel-content li a { color: #000; }
+	#apanel-content li a:hover { color: #BF3119; }
+	#apanel-content li { color: #aaa; font-size: 12px; }
+	#argo-inner-panel { width: 940px; height: 170px; margin: 9px auto 0; padding: 9px 30px 0;  }
+	#argo-inner-panel>div { height: 170px; }
+	#panel-about { width: 300px; position: relative; left: auto; top: auto; }
+	#panel-about p { font-style: normal; font-size: 14px; }
+	#panel-about p a { padding-top: 10px; color: #174E82; display: block; }
+	#panel-about p a:hover { color: #444; text-decoration: underline; }
+	#global-branding { position: relative; z-index: 10; width: 940px; margin: 0 auto; padding: 36px 0 10px; }
+	#global-branding header { width: 460px; }
+	#global-branding header,
+	#topnav li>a { text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
+
+
+	/* Global nav */
+
+	.global-nav-bg { padding: 5px 0;}
+	.global-nav { margin-left: auto; margin-right: auto; width: 940px; color: #fff; font-size: 11px; position: relative; height:35px; padding: 0 30px; }
+	.global-nav ul { margin: 0 }
+	.global-nav li { float: left; margin: 10px 20px 0 0; }
+	.global-nav ul a { color: #222; font-weight: bold; }
+	.global-nav ul a:hover { color: #000; }
+
+	.global-nav h2, 
+	.global-nav h3 { margin: 0; }
+	.global-nav h2 a { 
+		display: block; 
+		background: url(./img/logo.png) no-repeat; 
+		position: absolute; 
+		left: 10px; 
+		top: -15px; 
+		text-indent: -999px; 
+		width: 191px; 
+		height: 71px; 
+	}
+	.global-nav h4 a { 
+		display: block; 
+		background: url(./img/npr.png) no-repeat; 
+		position: absolute; 
+		left: 207px; 
+		top: 10px; 
+		text-indent: -999px; 
+		width: 279px; 
+		height: 17px; 
+	}
+	.global-nav .global-utils { position: absolute; right: 25px; bottom: 6px; line-height: 26px; height: 26px; overflow: hidden; }
+	.global-nav .global-utils li { display: block; font-size: 11px; margin: 0 0 0 10px; padding: 0; line-height: 26px; }
 	.global-nav .global-utils a { font-weight: bold; color: #555; }
 
-	.global-nav-bg { background: transparent; border-bottom: none; }
-	.global-nav ul { margin-left: 0; }
-		.global-nav ul a { color: #222; font-weight: bold; }
-		.global-nav ul a:hover { color: #000; }
-		.global-nav li { float: left; margin: 10px 20px 0 0; }
-
-	#wrapper #global-branding header h3, #footerstate { 
+	#wrapper #global-branding header h3, 
+	#footerstate { 
 		font-family: proxima-nova,sans-serif;
 		font-size: 26px; 
 		font-weight: bold; 
@@ -1461,23 +847,92 @@ img.aligncenter { margin-bottom: 12px; }
 	#wrapper #global-branding header h3 a,
 	#footerstate a { color: #fff; }
 	#wrapper #global-branding header h3 a:hover,
-	#footerstate a:hover { 
-		text-shadow: 0 0 8px rgba(82, 168, 236, 0.4);
-	}
+	#footerstate a:hover { text-shadow: 0 0 8px rgba(82, 168, 236, 0.4); }
 	#wrapper #global-branding header h4 { font-family: proxima-nova,sans-serif; font-size: 18px; color: #fff; }
 
 
 
+/* Category nav*/
+	#category-nav{ position:absolute; right: 0; top: 69px; z-index:100; margin-left:320px; }
+	#topnav { margin: 0; padding: 0; float: left; width: 100%; list-style: none; font-size: 1.1em; }
+	#topnav li { 
+		float: left; 
+		margin: 0 0 0 0; 
+		padding: 0; 
+		font-size: 15px; 
+		line-height: 1; 
+		border-left: 1px solid rgba(0,0,0,.5); 
+	}
+	.no-rgba #topnav li { border-left: 1px solid #999; }
+	#topnav .first, 
+	.no-rgba #topnav .first,
+	#topnav .first a { border-left: none; }
+	#topnav li a { 
+		color: #fff; 
+		display: block; 
+		border-left: 1px solid rgba(255,255,255,.2); 
+		padding: 5px 15px; 
+		margin: 0; 
+		line-height: 18px;
+		font-size: 14px;			    
+	}
+	#topnav li:hover a,
+	#topnav li a:hover { text-decoration: none;	background-color: rgba(255,255,255,.1); }
+		
+		/* Hide category nav until typekit is loaded to prevent flash of Helvetica text */
+		.fontface #topnav { display: none; }
+		.wf-active #topnav { display: block; }
+
+		/* Only use these styles if webfonts are active to prevent layout problems */
+		.wf-active #topnav li a { 
+			font-family: proxima-nova-extra-condensed,sans-serif;
+			font-size: 18px;
+			font-weight: 600; 
+			letter-spacing: .1em;
+			text-transform: uppercase;
+		}
+
+/* Mega-menus */
+	#topnav li .sub { 
+		position: absolute; 
+		display: none; 			
+		z-index: 5;
+		right: -10px; 
+		top: 28px; 
+		width: 620px;
+		background: #fff;
+		-webkit-box-shadow: 0 3px 10px #333;
+		   -moz-box-shadow: 0 3px 10px #333;
+		        box-shadow: 0 3px 10px #333;
+	}
+	.no-borderradius #category-nav #topnav .sub { border: 2px solid #ccc; }
+	#topnav li .sub ul { list-style: none; margin: 0; padding: 0; float: left;  }
+	#topnav .sub ul li a { display: inline; color: #333; padding-left: 0; }
+	.inner-menu { padding: 10px; }
+	#topnav li .sub a { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; letter-spacing: 0; text-shadow: none; }
+	#topnav li .sub a:hover { color: #BF3119; text-decoration: none; }
+	.mega-feature { width: 600px; }
+	.mega-feature h2 { font-size: 16px; line-height: 1.4; padding-bottom: 0; color: #333; }
+	.inner-menu h3 { font-size: 12px; font-weight: bold; color: #000; padding: 6px 0; border-bottom: 4px solid #ccc; margin-bottom: 0; }
+	.category-topics, 
+	.category-articles { float: left; margin-bottom: 10px; }
+	.category-articles { width: 360px; margin-left: 20px; }
+	.category-topics { margin-left: 0; width: 220px; }
+	#topnav .category-topics ul { width: 220px; }
+	#topnav .category-topics li, 
+	#topnav .category-articles h4 { 
+		border-top: 1px solid #ddd; 
+		border-left: none;
+		padding: 5px 0 0 0; 
+		margin: 5px 0 0 0; 
+		display: block;
+		float: none;
+	}
+	#topnav .category-topics li a, 
+	#topnav .category-articles h4 a { font-size: 12px; }
+	#topnav .category-topics li:first-child, 
+	#topnav .category-articles h3+h4 { border-top: none; padding-top: 0; }
 	
-	/*global nav */
-
-	.global-nav h4{ float:left; margin:9px 0 0 0; font-size:13px; line-height:1; }
-	#npr-bug{position:absolute;top:8px;right:0;}
-
-	/*category nav */
-	#category-nav{position:relative;z-index:100;margin-left:320px;}
-	#category-nav #topnav .sub{left:-318px;}
-
 
 	/* featured topics/posts module */
 	ul#menu-featured-topics { overflow: hidden; margin-bottom: 0; }
@@ -1498,114 +953,7 @@ img.aligncenter { margin-bottom: 12px; }
 		.alltopics { position: absolute; top: 0; right: 0; font-size: 12px; line-height: 1; font-weight: bold;  }
 			.single .alltopics { top: 5px; }
 
-			
-	/* Network Panel */
-	#argo-panel { height: 200px; }
-	#wrapper #apanel-trigger {
-		display: block;
-		float: left;
-		width: auto;
-		height: 26px;
-		width: 102px;
-		text-indent: 0;
-		position: static;
-		outline: none;
-		background-image: url(./img/panel-button.png);
-		background-repeat: no-repeat; 
-		background-position: 0 0;
-		text-indent: -999em;
-		padding: 0;
-		line-height: 26px; 
-		overflow: hidden;
-		-webkit-transition: none;
-		   -moz-transition: none;
-		        transition: none;
-		    
-	}
-		#wrapper #apanel-trigger:hover { background-position: 0 -26px; }
-		#wrapper .global-utils a.cpanel { background-position: 0 0; }
-			#wrapper .global-utils a.cpanel:hover { background-position: 0 -26px; }
-		#wrapper #apanel-trigger.opanel { background-position: 0 -52px; }
-			#wrapper #apanel-trigger.opanel:hover { background-position: 0 -78px; }
-	#argo-panel-wrapper { background: none; border: none; color: #222; }
-	#apanel-content { top: 60px; color: #222; }
-		#apanel-content h5 { 
-			font-family: proxima-nova,sans-serif;
-			font-size: 16px;
-			color: #000; 
-			margin-bottom: 6px; 
-			border-bottom: 4px solid #999; 
-		}
-		#apanel-content p { margin-bottom: 9px; font-size: 12px; }
-		#apanel-content li a { color: #000; }
-		#apanel-content li a:hover { color: #BF3119; }
-		#apanel-content li { color: #aaa; font-size: 12px; }
-	#argo-inner-panel { width: 940px; height: 170px; margin: 9px auto 0; padding: 9px 30px 0;  }
-		#argo-inner-panel>div { height: 170px; }
-		#panel-about { width: 300px; position: relative; left: auto; top: auto; }
-			#panel-about p { font-style: normal; font-size: 14px; }
-			#panel-about p a { padding-top: 10px; color: #174E82; display: block; }
-			#panel-about p a:hover { color: #444; text-decoration: underline; }
-	#global-branding { position: relative; z-index: 10; width: 940px; margin: 0 auto; padding: 36px 0 10px; text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
-	#global-branding header { width: 460px; }
-	#category-nav { position: absolute; right: 0; top: 69px; }
-		#topnav li { border-left: 1px solid rgba(0,0,0,.5); padding: 0; }
-			.no-rgba #topnav li { border-left: 1px solid #999; }
-		#topnav .first, .no-rgba #topnav .first { border-left: none; }
-			#topnav .first a { margin-left: 0; }
-		#topnav li a { 
-			color: #fff; 
-			background-image: none; 
-			border-left: 1px solid rgba(255,255,255,.2); 
-			padding: 5px 15px; 
-			margin: 0; 
-			line-height: 18px;
-			font-size: 14px;			    
-		}
-
-		/* Hide category nav until typekit is loaded to prevent flash of Helvetica text */
-		.fontface #topnav { display: none; }
-		.wf-active #topnav { display: block; }
-
-		/* Only use these styles if webfonts are active to prevent layout problems */
-		.wf-active #topnav li a { 
-			font-family: proxima-nova-extra-condensed,sans-serif;
-			font-size: 18px;
-			font-weight: 600; 
-			letter-spacing: .1em;
-			text-transform: uppercase;
-		}
-	#topnav .first a { border-left: none; }
-	#topnav li a:hover, #topnav li:hover a { background-color: rgba(255,255,255,.1); background-image: none; border-bottom: none; text-shadow: 0 0 8px rgba(82, 168, 236, 0.4) }
-	#category-nav #topnav .sub { 
-		z-index: 5;
-		right: -10px; 
-		left: auto; 
-		top: 28px; 
-		width: 620px;
-		border: none; 
-		box-shadow: 0 3px 10px #333;
-		-webkit-box-shadow: 0 3px 10px #333;
-		-moz-box-shadow: 0 3px 10px #333;
-	}
-	.no-borderradius #category-nav #topnav .sub { border: 2px solid #ccc; }
-	#topnav li .sub a { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; letter-spacing: 0; text-shadow: none; }
-	#topnav li .sub a:hover { color: #BF3119 !important; text-decoration: none !important; }
-	#topnav li .sub ul { width: 620px; }
-	#topnav li .sub ul li {	padding: 0;	}
-		
-	.mega-feature { width: 600px; }
-	.mega-feature h2 { font-size: 16px; line-height: 1.4; padding-bottom: 0; color: #333; }
-	.category-topics { margin-left: 0; width: 220px; }
-	.category-articles { width: 360px; }
-	.category-topics, .category-articles { margin-bottom: 10px; }
-	#topnav .category-topics ul { width: 220px !important; }
-	#topnav .category-topics li, .category-articles h4 { border-bottom: none !important; border-top: 1px solid #ddd !important; padding: 5px 0 0 0 !important; margin: 5px 0 0 0 !important; }
-	#topnav .category-topics li a, #topnav .category-articles h4 a { font-size: 12px; }
-	#topnav .category-topics li:first-child, #topnav .category-articles h3 + h4 { border-top: none !important; padding-top: 0 !important; }
-	.inner-menu { width: auto; text-shadow: none; }
-	.inner-menu h3 { font-size: 12px; font-weight: bold; color: #000; padding: 6px 0; border-bottom: 4px solid #ccc; margin-bottom: 0; }
-
+	
 
 /* Loop  
 =================================================*/
@@ -1941,6 +1289,7 @@ img.aligncenter { margin-bottom: 12px; }
 	.widget-container, .widget { 
 		border-bottom: none; 
 		margin-bottom: 25px;
+		line-height: 1.3;
 	}
 
 	.link-list li a { font-weight: bold; display: block; }
@@ -1998,14 +1347,19 @@ img.aligncenter { margin-bottom: 12px; }
 =================================================*/
 
 	#site-footer { 
-		background: #000 url(./img/footer-bg.png) repeat-x; 
-		text-shadow: #000 0 1px 3px; 
-		-webkit-font-smoothing: antialiased; 
 		width: 100%; 
 		min-width: 1000px;
 		overflow: hidden; 
+		margin-top: 20px; 
+		color: #ccc; 
+		background: #000 url(./img/footer-bg.png) repeat-x; 
+		text-shadow: #000 0 1px 3px; 
+		-webkit-font-smoothing: antialiased;  
 		padding: 10px 0 0;
 	}
+	#site-footer a { color: #fff; font-weight: bold; }
+	#ft-archive { margin: 20px 0; }
+	#ft-archive select { width: 297px; padding: 3px; color: #666; background-color: #eee; }
 	#site-footer h3 { 
 		font-family: proxima-nova,sans-serif;
 		font-size: 16px; 
@@ -2026,7 +1380,6 @@ img.aligncenter { margin-bottom: 12px; }
 	.ft-reporter img { float:left; margin-bottom:10px; margin-right:10px; }
 	.ft-reporter h4 { margin:0; line-height:1; font-weight: bold; }
 	.ft-reporter h5 { margin-bottom:10px; font-weight:normal; }
-	#site-footer a { font-weight: bold; }
 	#site-footer .donate { margin-top:5px; }
 	#site-footer .donate a { 
 		font-family: proxima-nova,sans-serif;
@@ -2059,9 +1412,19 @@ img.aligncenter { margin-bottom: 12px; }
 	#colophon { font-size: 13px; line-height: 36px;  }
 		#colophon .copyright { border-right: 1px solid #222; padding-right: 15px; }
 		#site-footer .donate { margin-top: 20px; }
-#boilerplate { padding: 5px 0; margin-top: 10px;  height: 36px; border-top: 1px solid #222; color: #666; }
+
+	#boilerplate { 
+		font-size: 11px; 
+		border-top: 1px solid #222; 
+		padding: 5px 0; 
+		margin-top: 10px;  
+		height: 36px;  
+		color: #666; 
+	}
+	.back-to-top { position: absolute; bottom: 0; right: 0; font-size: 11px; }
+	#boilerplate p { margin-bottom: 5px; }
+	#boilerplate li { float: left; margin-right: 15px; padding-right: 0; line-height: 36px; }
 	#boilerplate a { color: #999; }
-	#boilerplate li { margin-right: 15px; padding-right: 0; line-height: 36px; }
 	#boilerplate .npr { float: right; line-height: 36px; }
 	#boilerplate .nprlogo { display: inline-block; text-indent: -999em; width: 51px; height: 36px; background: url(./img/npr-transparent.png) center center no-repeat; margin: 0 0 0 3px; }
 
@@ -2604,6 +1967,497 @@ img.aligncenter { margin-bottom: 12px; }
 	#caspioform div table td, #caspioform div table th { border: 1px solid #ddd !important; padding: 5px !important; }
 	#caspioform div table tr:nth-child(even) td { background: #f5f5f5 !important; }
 	#caspioform div table tr:nth-child(odd) td { background: #fff !important; }
+
+/****************** AUDIO PLAYER ********************/
+
+ul.playlist li {
+	margin-left:0
+}
+
+/* base audio styles */
+
+.spectrum-container {
+	display:none;
+}
+
+ul.use-spectrum li.sm2_playing .spectrum-container {
+	position:absolute;
+	left:0px;
+	top:0px;
+	margin-left:-266px;
+	margin-top:-1px;
+	display:block;
+	background-color:#5588bb;
+	border:1px solid #99ccff;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+
+ul.use-spectrum .spectrum-box {
+	position:relative;
+	width:255px;
+	font-size:14px;
+	padding:2px 0px;
+	height:1.2em;
+	overflow:hidden;
+}
+
+ul.use-spectrum .spectrum-box .spectrum {
+	position:absolute;
+	left:0px;
+	top:-2px;
+	margin-top:20px;
+	display:block;
+	font-size:1px;
+	width:1px;
+	height:1px; /* set to 50px for a thick line, 1px for a thin line, etc. */
+	overflow:hidden;
+	background-color:#fff;
+}
+
+ul.playlist {
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+
+ul.playlist li {
+ /* assume all items will be sounds rather than wait for onload etc. in this example.. may differ for your uses. */
+	position:relative;
+	display:block;
+	width:auto;
+	font-size:2em;
+	border:none;
+	letter-spacing:-1px;
+	background-color: #f9f9f9;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	min-height: 75px;
+ /* ZOMG WEB X.0. ;) */
+}
+
+#content ul.playlist li span.caption {
+	color:#666;
+	letter-spacing: .3px;
+	text-shadow: 1px 1px 1px #fff;
+	display:block;
+	line-height: 1.3;
+	font-size: 11px;
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-weight: normal;
+}
+
+ul.playlist li a.inline {
+	padding:0.45em 0.5em 0.45em 0.5em;
+	-webkit-transition-property: hover;
+	-webkit-transition: background-color 0.5s ease-in-out;
+	color: #666;
+	display:block;
+	text-decoration:none;
+	font-weight:normal;
+	font-size:22px;
+	outline:none;
+	position:relative;
+	z-index:2;
+	background: transparent url(./img/audio-play-default.png) no-repeat 22px 5px;
+	line-height: 1;
+	margin-bottom: 10px;
+	padding-left:90px;
+}
+
+#content ul.playlist li a.exclude {
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	padding: 0 0 0 16px;
+	color: #aaa;
+	background: transparent url(./img/audio-download.png) no-repeat 0 1px;
+	position: absolute;
+	left: 10px;
+	top: 50px;
+	display:block;
+	z-index: 3;
+	width: 100px;
+	height: 30px;
+}
+
+ul.playlist li.sm2_playing,
+ul.playlist li.sm2_paused,
+ul.playlist li.sm2_playing a.inline {
+	color:#fff;
+	background-color: #eee;
+}
+
+#content ul.playlist li.sm2_playing a.inline,
+#content ul.playlist li.sm2_playing span.caption {
+	color: #666;
+}
+
+#content ul.playlist li.sm2_playing a.inline,
+#content ul.playlist li.sm2_paused a.inline {
+	max-width: 380px;
+}
+
+
+ul.playlist li a:hover.inline {
+	background: transparent url(./img/audio-play-hover.png) no-repeat 22px 5px;
+}
+
+ul.playlist li:hover {
+	background-color: #ededed;
+}
+
+ul.playlist li:hover a.inline {
+	color:#666;
+}
+
+ul.playlist li.sm2_playing,
+ul.playlist li.sm2_playing:hover {
+	background-color: #eee;
+}
+
+ul.playlist li.sm2_playing .inline,
+ul.playlist li.sm2_playing:hover .inline {
+	background: #eee url(./img/audio-play-pause.png) no-repeat 22px 5px;
+}
+
+ul.playlist li.sm2_paused {
+	background-color: #ededed
+}
+
+ul.playlist li.sm2_paused .inline {
+	background: transparent url(./img/audio-play-default.png) no-repeat 22px 5px;
+}
+ 
+ul.playlist li.sm2_playing:hover a.inline,
+ul.playlist li.sm2_paused a.inline {
+	color:#fff;
+}
+
+ul.playlist li .controls {
+	display:none;
+	padding: 5px;
+	background:#eee; 
+	-webkit-border-bottom-right-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+ul.playlist li .peak,
+ul.playlist.use-peak li .peak {
+	display:none;
+	position:absolute;
+	top:0.55em;
+	right:0.5em;
+}
+
+ul.playlist li.sm2_playing .controls,
+ul.playlist li.sm2_paused .controls {
+	position:relative;
+	display:block;
+}
+
+ul.playlist.use-peak li.sm2_playing .peak,
+ul.playlist.use-peak li.sm2_paused .peak {
+	display:inline;
+	display:inline-block;
+}
+
+ul.playlist.use-peak li .peak {
+	display:none; /* IE 7 */
+}
+
+ul.playlist li.sm2_paused .controls {
+	background-color:#ddd;
+}
+
+ul.playlist li:hover .controls .statusbar {
+	position:relative;
+	cursor:ew-resize;
+	cursor:-moz-grab;
+	cursor:grab;
+}
+
+ul.playlist li.sm2_paused .controls .statusbar {
+	background-color:#eee;
+}
+
+ul.playlist li .controls {
+	position:relative;
+	margin-top:0.25em;
+	margin-bottom:0.25em;
+	background-color:#eee;
+}
+
+ul.playlist li .controls .statusbar {
+	position:relative;
+	height:0.5em;
+	background-color:#aaa;
+	overflow:hidden;
+	cursor:-moz-grab;
+	cursor:grab;
+}
+
+ul.playlist li .controls.dragging .statusbar {
+	cursor:-moz-grabbing;
+	cursor:grabbing;
+}
+
+ul.playlist li .controls .statusbar .position,
+ul.playlist li .controls .statusbar .loading,
+ul.playlist li .controls .statusbar .annotation {
+	position:absolute;
+	left:0px;
+	top:0px;
+	height:0.5em;
+}
+
+ul.playlist li .controls .statusbar .position {
+	background-color:#373737;
+	border-right:3px solid #373737;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+ul.playlist li.sm2_paused .controls .statusbar .position {
+	background-color:#aaa;
+	border-color:#aaa;
+}
+
+ul.playlist li .controls .statusbar .loading {
+	background-color:#fff;
+}
+
+ul.playlist li .controls .statusbar .position,
+ul.playlist li .controls .statusbar .loading {
+	width:0px;
+}
+
+ul.playlist li.sm2_playing a.sm2_link,
+ul.playlist li.sm2_paused a.sm2_link {
+	margin-right:4.5em; /* room for timing stuff */
+}
+
+ul.playlist li .timing {
+	position:absolute;
+	display:none;
+	text-align:right;
+	right:1em;
+	top:1em;
+	width:auto;
+	height:1em;
+	padding:3px 5px;
+	background-color:#aaa;
+	-moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius:4px;
+	letter-spacing:0px;
+	font:44% monaco,"VT-100",terminal,"lucida console",courier,system;
+	line-height:1em;
+	vertical-align:middle;
+}
+
+ul.playlist.use-peak li .timing {
+	right:4.25em;
+}
+
+ul.playlist li:hover .timing {
+	z-index:2;
+}
+
+ul.playlist li .timing div.sm2_timing {
+	margin:0px;
+	padding:0px;
+	margin-top:-1em;
+}
+
+ul.playlist li.sm2_playing .timing,
+ul.playlist li.sm2_paused .timing {
+	display:block;
+}
+
+ul.playlist li.sm2_paused .timing .sm2_position {
+	text-decoration:blink; /* hee hee. first actual appropriate use? :D */
+}
+
+ul.playlist li.sm2_paused .timing,
+ul.playlist.use-peak li.sm2_paused .peak {
+	background-color:#aaa;
+}
+
+/* peak data */
+
+/* ul.playlist ... */
+
+ul.playlist.use-peak li .peak {
+	display:none;
+	zoom:1;
+	padding:2px;
+	height:0.55em;
+	-moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius:4px;
+	background-color:#aaa;
+	width:0.8em;
+	height:0.55em;
+	margin-top:-3px;
+}
+
+ul.playlist.use-peak li .peak-box {
+	position:relative;
+	width:100%;
+	height:0.55em;
+	overflow:hidden;
+}
+
+ul.playlist li .peak .l,
+ul.playlist li .peak .r {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:7px;
+	height:50px;
+	background:#fff;
+	border:1px solid #fff;
+	-moz-border-radius:1px;
+	-khtml-border-radius:1px;
+	margin-top:1em;
+}
+
+ul.playlist li .peak .l {
+	margin-right:1px;
+}
+
+ul.playlist li .peak .r {
+	left:10px;
+}
+
+#control-template {
+	display:none;
+}
+
+/* flash player audio */
+
+/*
+ SoundManager 2 + useFlashBlock
+ Flash positioning and flashblock / clicktoflash handling
+*/
+
+#sm2-container {
+ /*
+  where the SM2 flash movie goes. by default, relative container.
+  set relative or absolute here, and don't touch it later or bad things will happen (see below comments.)
+ */
+	position:relative;
+	width:1px;
+	height:1px;
+	_overflow:hidden; /* screw IE 6, just make it display nice */
+}
+
+#sm2-container object,
+#sm2-container embed {
+ /*
+  the actual movie bit.
+  SWF needs to be able to be moved off-screen without display: or position: changes. important.
+  changing display: or position: or overflow: here or on parent can cause SFW reload or other weird issues after unblock,
+  eg. SM2 starts but strange errors, no whileplaying() etc.
+ */
+	position:absolute;
+}
+
+#sm2-container object,
+#sm2-container embed,
+#sm2-container.swf_timedout,
+#sm2-container.swf_timedout object,
+#sm2-container.swf_timedout embed {
+ /* 
+  when SM2 didn't start normally, time-out case. flash blocked, missing SWF, no flash?
+  48px square flash placeholder is typically used by blockers.
+ */
+	left:auto;
+	top:auto;
+	width:48px;
+	height:48px;
+}
+
+#sm2-container.swf_unblocked {
+	/* SWF unblocked, or was never blocked to begin with; try to collapse container as much as possible. */
+	width:1px;
+	height:1px;
+}
+
+#sm2-container.swf_unblocked object,
+#sm2-container.swf_unblocked embed {
+	/* hide flash off-screen (relative to container) when it has loaded OK */
+	left:-9999em;
+	top:-9999em;
+}
+
+#sm2-container.swf_error {
+	/* when there is a fatal error (flash loaded, but SM2 failed) */
+	display:none;
+}
+
+#sm2-container.high_performance {
+	/* "high performance" case: keep on-screen at all times */
+	position:absolute;
+	position:fixed;
+	_top:-9999px; /* IE 6 hax, no position:fixed */
+	_left:-9999px;
+	bottom:0px;
+	left:0px;
+ /*
+  special case: show at first with w/h, hide when unblocked.
+  might be bad/annoying.
+ */
+	width:48px;
+	height:48px;
+	z-index:99; /* try to stay on top */
+}
+
+#sm2-container.high_performance.swf_unblocked {
+	z-index:auto;
+}
+
+#sm2-container.high_performance.swf_unblocked,
+#sm2-container.high_performance.swf_unblocked object,
+#sm2-container.high_performance.swf_unblocked embed {
+ /* 8x8px is required minimum to load in fx/win32 in some cases(?), 6x6+ good for fast performance, even better when on-screen via position:fixed */
+	width:8px;
+	height:8px;
+}
+
+#sm2-container.high_performance.swf_unblocked object,
+#sm2-container.high_performance.swf_unblocked embed {
+ /* high-performance case must stay on-screen */
+	left:auto;
+	top:auto;
+}
+
+#sm2-container.high_performance.swf_timedout {
+	z-index:99; /* try to stay on top */
+}
+
+/* floated images */
+
+.alignleft,
+img.alignleft { display: inline; float: left; margin-right: 24px; margin-top: 4px; }
+
+.alignright,
+img.alignright { display: inline; float: right; margin-left: 24px; margin-top: 4px; }
+
+.aligncenter,
+img.aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto; }
+
+img.alignleft,
+img.alignright,
+img.aligncenter { margin-bottom: 12px; }
 
 
 /* Stats image
