@@ -53,7 +53,7 @@ function django_admin_panel( $topic ) {
         }
     }
 
-    $inc_url = sprintf( '/aggregator/%s/topic/%s?embedded=true', $app, $slug );
+    $inc_url = sprintf( '%s/aggregator/%s/topic/%s?embedded=true', $url, $app, $slug );
     ?>
     
     <div id="latest-links-container"></div>
