@@ -3,6 +3,30 @@ define('MAP_TERM', 'Map');
 define('DOCUMENTS_TERM', 'Documents');
 define('TABLES_TERM', 'Data');
 
+add_action('init', 'sw_custom_taxonomies');
+function sw_custom_taxonomies() {
+    // PROMINENCE
+    if ( ! taxonomy_exists( 'prominence' ) ) {
+        register_taxonomy( 'prominence', 'post', array(
+            'hierarchical' => true,
+            'label' => 'Post Prominence',
+            'query_var' => true,
+            'rewrite' => true,
+        ) );
+    }
+
+    // FEATURES
+    if ( ! taxonomy_exists( 'feature' ) ) {
+        register_taxonomy( 'feature', 'post', array(
+            'hierarchical' => true,
+            'label' => 'Features',
+            'query_var' => true,
+            'rewrite' => true,
+        ) );
+    }
+}
+
+
 function sw_get_or_create_term($name, $taxonomy) {
     $term = get_term_by( 'name', $name, $taxonomy );
     if (!$term) {

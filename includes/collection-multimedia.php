@@ -7,14 +7,14 @@ $multimedia = sw_get_topic_multimedia($topic->ID);
 <div class="topic-multimedia">
 	<h2 class="section-hed">Multimedia</h2>
     <?php while ($multimedia->have_posts()): $multimedia->the_post(); ?>
-    <?php $cts = wp_get_object_terms($post->ID, 'feature'); ?>
+    <?php $content_types = wp_get_object_terms($post->ID, 'feature'); ?>
 	<?php if (has_post_thumbnail()): ?>
 	<a href="<?php echo get_post_meta($post->ID, 'multimedia_url', true); ?>"><?php the_post_thumbnail('multimedia-thumb'); ?></a>
 	<?php endif; ?>
 	<h4 class="headline">
 	    <a href="<?php echo get_post_meta($post->ID, 'multimedia_url', true); ?>">
-	    <?php if ($cts): ?>
-	        <strong><?php echo $cts[0]->name; ?>: </strong>
+	    <?php if ($content_types): ?>
+	        <strong><?php echo $content_types[0]->name; ?>: </strong>
 	    <?php endif; ?>
 	        <?php the_title(); ?>
 	    </a>

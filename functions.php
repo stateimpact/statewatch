@@ -311,11 +311,12 @@ function argo_get_latest_posts_for_category( $cat ) {
 /**
  * Same as argo_get_post_thumbnail_src(), but for use inside The Loop.
  */
+if (!function_exists('argo_get_the_post_thumbnail_src')):
 function argo_get_the_post_thumbnail_src( $size = 'npr_thumb' ) {
     global $post;
     return argo_get_post_thumbnail_src( $post, $size );
 }
-
+endif;
 /*
  * XXX: this may not be necessary the_post_thumbnail takes sizes. -- ML
  */
