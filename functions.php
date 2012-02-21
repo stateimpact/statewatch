@@ -163,13 +163,21 @@ function sw_related_content_types($post_types) {
     return array('post', 'topic', 'fusiontablesmap');
 }
 
+add_action('wp_enqueue_scripts', 'sw_social');
+function sw_social() {
+    $twitter = 'http://platform.twitter.com/widgets.js';
+    $fb = 'http://static.ak.fbcdn.net/connect.php/js/FB.Share';
+    wp_enqueue_script('twitter-widgets', $twitter);
+    wp_enqueue_script('facebook', $fb);
+}
+
 add_action('wp_enqueue_scripts', 'sw_analytics');
 function sw_analytics() {
     $src = get_bloginfo('stylesheet_directory') . '/js/analytics.js';
-    wp_enqueue_script('sw-analytics', $src, array(), '0.1', true);
+    wp_enqueue_script('sw-analytics', $src, array(), '0.1', false);
 }
 
-add_action('wp_head', 'sw_state');
+//add_action('wp_head', 'sw_state');
 function sw_state() { ?>
     <script>window.SI_STATE_NAME = "<?php bloginfo('name'); ?>"</script>
     <?php

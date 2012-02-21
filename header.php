@@ -33,7 +33,7 @@
 		}
 	?>
 	</title>
-	
+	<script>window.SI_STATE_NAME = "<?php bloginfo('name'); ?>"</script>
 	<script type="text/javascript" src="http://use.typekit.com/yey2zgp.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<script type="text/javascript">

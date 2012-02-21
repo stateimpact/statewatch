@@ -1,4 +1,4 @@
-jQuery(function($) {
+(function($) {
     var _gaq = window._gaq || [];
     
     // facebook
@@ -23,4 +23,4 @@ jQuery(function($) {
     if (SI_STATE_NAME) {
         _gaq.push(['_setCustomVar', 1, 'State', SI_STATE_NAME, 3]);
     }
-});
+})(window.jQuery);
