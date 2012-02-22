@@ -704,10 +704,9 @@ legend      { font-weight: bold;}
 =================================================*/
 
 	body { font-family: "Helvetica Neue",Arial,sans-serif; color: #444; }
-	#wrapper { position: static; } /* Defeats foundation.css style that contributed to IE7 jumping margins bug */
 	.container_12 { background: transparent; }
 	#local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; width: 100%; min-width: 1000px; }
-	#main { background: url(./img/content-bg.png) no-repeat; width: 960px; padding: 25px 20px;  }
+	#main { background: url(./img/content-bg.png) no-repeat; width: 960px; margin: 0 auto; padding: 25px 20px;  }
 
 	#content h1, 
 	#content h2, 
@@ -746,8 +745,6 @@ legend      { font-weight: bold;}
 	/* Panel */
 
 	#argo-panel { display: none; height: 200px; }
-	#wrapper { border-top: none; position: relative; margin-top: 0 !important; }
-	.ie6 #wrapper { position: static }
 	#apanel-content { 
 		display: none; 
 		position: absolute; 
@@ -763,6 +760,7 @@ legend      { font-weight: bold;}
 
 	#wrapper #apanel-trigger {
 		float: left;
+		display: block;
 		height: 26px;
 		width: 102px;
 		outline: none;
@@ -823,15 +821,22 @@ legend      { font-weight: bold;}
 		width: 191px; 
 		height: 71px; 
 	}
-	.global-nav h4 a { 
+	.global-nav h4 { 
 		display: block; 
-		background: url(./img/npr.png) no-repeat; 
 		position: absolute; 
 		left: 207px; 
 		top: 10px; 
+		color: #999;
+		font-size: 12px;
+		line-height: 17px;
+		height: 17px;
+	}
+	.global-nav h4 a { 
+		background: url(./img/npr.png) 100% 0 no-repeat; 
 		text-indent: -999px; 
-		width: 279px; 
+		width: 51px; 
 		height: 17px; 
+		display: inline-block;
 	}
 	.global-nav .global-utils { position: absolute; right: 25px; bottom: 6px; line-height: 26px; height: 26px; overflow: hidden; }
 	.global-nav .global-utils li { display: block; font-size: 11px; margin: 0 0 0 10px; padding: 0; line-height: 26px; }
@@ -899,7 +904,9 @@ legend      { font-weight: bold;}
 		z-index: 5;
 		right: -10px; 
 		top: 28px; 
-		width: 620px;
+		width: 600px;
+		padding: 10px;
+		border: none;
 		background: #fff;
 		-webkit-box-shadow: 0 3px 10px #333;
 		   -moz-box-shadow: 0 3px 10px #333;
@@ -907,11 +914,10 @@ legend      { font-weight: bold;}
 	}
 	.no-borderradius #category-nav #topnav .sub { border: 2px solid #ccc; }
 	#topnav li .sub ul { list-style: none; margin: 0; padding: 0; float: left;  }
+	#topnav .sub li { border-left: none; }
 	#topnav .sub ul li a { display: inline; color: #333; padding-left: 0; }
-	.inner-menu { padding: 10px; }
 	#topnav li .sub a { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; letter-spacing: 0; text-shadow: none; }
 	#topnav li .sub a:hover { color: #BF3119; text-decoration: none; }
-	.mega-feature { width: 600px; }
 	.mega-feature h2 { font-size: 16px; line-height: 1.4; padding-bottom: 0; color: #333; }
 	.inner-menu h3 { font-size: 12px; font-weight: bold; color: #000; padding: 6px 0; border-bottom: 4px solid #ccc; margin-bottom: 0; }
 	.category-topics, 
@@ -997,7 +1003,9 @@ legend      { font-weight: bold;}
 		padding: 0 0 10px;
 	}
 
-	.post embed, .post object, .post img, { max-width: 100%; }
+	.post embed, 
+	.post object, 
+	.post img { max-width: 100%; }
 	.image.centered { width: 100% !important; }
 
 	.post-metadata { 
@@ -1025,7 +1033,7 @@ legend      { font-weight: bold;}
 
 	#content article.has-features { padding-top: 50px; position: relative;}
 	#content article.has-features.sticky { padding-top: 0; }
-	#content .has-features .labels { position: absolute; top: 0; left: 0; margin-top: 1px; border-bottom: 1px solid #ddd; list-style: none; width: 100%; line-height: 28px; }
+	#content .has-features .labels { position: absolute; top: 0; left: 0; margin:0; border-bottom: 1px solid #ddd; list-style: none; width: 100%; line-height: 28px; }
 	#content .has-features .labels li:first-child { margin-left: 0; padding-left: 0; margin-left: 0; border-left: none; }
 	#content .has-features .labels li { float: left; margin: 2px 0 2px 10px; padding-left: 5px; border-left: 1px solid #ddd; }
 	#content .has-features .labels li a { font-family: proxima-nova, sans-serif; font-size: 14px; font-weight: bold; color: #BF3119; background: none; padding: 0; }
@@ -1076,10 +1084,13 @@ legend      { font-weight: bold;}
 	}
 	#content .entry-title a:hover { color: #BF3119; text-decoration: none; }
 	.post-content,
-	.post p { font-size: 16px; line-height: 1.5;  }
-	.post p { margin-bottom: 24px; }
-	.post li { font-size: 16px; }
-	#content .post-content h3 { font-family: proxima-nova,sans-serif; font-weight: 300; text-transform: uppercase; color: #000; }
+	.post-content p { font-size: 16px; line-height: 1.5;  }
+	.post-content p { margin-bottom: 24px; }
+	.post-content ul { list-style: disc; margin-left: 20px; }
+	.post-content ul,
+	.post-content ol { font-size: 16px; }
+	.post-content li { margin-bottom: 5px; }
+	#content .post-content h3 { font-family: proxima-nova,sans-serif; font-weight: 700; text-transform: uppercase; color: #000; font-size: 18px; margin-top: 40px; }
 	#content .post-content h4 { font-family: proxima-nova-extra-condensed,sans-serif; font-size: 24px; color: #000; }
 	.post blockquote, .topic-intro blockquote { 
 		background: transparent; 
@@ -1089,8 +1100,6 @@ legend      { font-weight: bold;}
 		font-size: 14px;
 	}
 	.post img { margin-bottom: 3px; }
-	#content .credit, #content .wp-media-credit { font-style: normal; text-transform: uppercase; }
-	#content .caption, #content .wp-caption-text { font-style: normal; line-height: 1.3; }
 	.post blockquote p, .post blockquote li, .topic-intro blockquote p { font-size: inherit; }
 	#content .pull-quote, #content .pull-quote p {
 		font-family: proxima-nova-extra-condensed,sans-serif;
@@ -1127,9 +1136,9 @@ legend      { font-weight: bold;}
 	.image p { display: inline; font-size: 10px; }
 	.image img { display: block }
 	#content .credit,
-	#content .wp-media-credit { font-size: 10px; margin: 0; text-align: right; color: #666; line-height: 1; display: block; }
+	#content .wp-media-credit { font-size: 10px; margin: 0; text-align: right; color: #666; line-height: 1; display: block; font-style: normal; text-transform: uppercase; }
 	#content .caption,
-	#content .wp-caption-text { font-size: 12px; margin: 5px 0 0 0; color: #666; font-style: italic; line-height: 1; display: block; }
+	#content .wp-caption-text { font-size: 12px; margin: 5px 0 0 0; color: #666; line-height: 1.3; display: block; }
 	#content .permalink { display: block }
 	#content .half { width: 300px; font-size: 11px; }
 	#content .aligncenter,
@@ -1182,7 +1191,9 @@ legend      { font-weight: bold;}
 		font: 400 14px/1 proxima-nova,sans-serif;
 		text-transform: uppercase;
 	}
-	#content .related-content .topics p, #content .related-content .links li { line-height: 1.2; }
+	#content .related-content .topics p, 
+	#content .related-content .links li { font-size: 14px; line-height: 1.2; }
+	#content .related-content .topics img { margin-right: 10px; }
 
 	/* Related Posts */
 	#content #related-post-nav a.selected { color: #fff; background: url(./img/related-arrow.png) 0 center no-repeat; border: none; font-weight: bold; }
@@ -1194,8 +1205,9 @@ legend      { font-weight: bold;}
 
 
 	.single #taxonomy { border-top: 4px solid #ddd; }
-	.single .terms li { display: inline-block; }
-	.single #content .terms a, .single #content .terms a:visited { display: inline-block; background: whiteSmoke; padding: 5px; font-size: 12px; margin-bottom: 5px; }
+	.single .terms { width: 100%; overflow: hidden; margin-bottom: 10px; }
+	.single .terms li { display: block; float: left; margin-right: 5px; }
+	.single #content .terms a, .single #content .terms a:visited { display: inline-block; background: whiteSmoke; padding: 5px; font-size: 12px; margin-bottom: 5px; float: left; }
 	.single #content .terms a:hover { text-decoration: none; color: #fff; background: #999; }
 	#content .tags { font-size: 12px; }
 	#taxonomy .topics ul { margin-bottom: 0; }
@@ -1244,6 +1256,8 @@ legend      { font-weight: bold;}
 	/* Jiffy Posts */
 	#content article.jiffypost h2 { margin: 0; font-size: 28px; }
 	.single article .jiffypost { border-bottom: none; margin-bottom: 0; }
+	ul.embed-metadata { margin-left: 0; }
+	.embed-metadata li { font-size: 11px; margin-left: 0; }
 
 /* Full page template 
 =================================================*/
@@ -1526,7 +1540,7 @@ legend      { font-weight: bold;}
 		
 	/* Recent entries */
 	
-	.widget_recent_entries li { list-style: disc; margin-left: 20px; margin-bottom: 5px; }
+	.widget_recent_entries li { color: #BF3119; list-style: disc; margin-left: 20px; margin-bottom: 5px; }
 	
 	
 	/* Search  */
