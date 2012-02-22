@@ -3,7 +3,7 @@ $cat = $wp_query->get_queried_object();
 $topic = argo_get_topic_for( $cat );
 ?>
 <?php if ( $topic->post_content ): ?>
-	<div class="topic-intro post clearfix"> 
+	<div class="topic-intro post post-content clearfix"> 
 		<h2 class="section-hed">Background</h2>
 		<ul class="meta-gestures">
 		    <li class="twitter"> 
