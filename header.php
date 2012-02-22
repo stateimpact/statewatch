@@ -102,12 +102,12 @@ _clickEvents = [
     <div class="global-nav-bg"> 
 		<nav class="global-nav">
 	
-				<h2><a href="/" title="StateImpact" class="unitPng">StateImpact</a></h2>
-				<h4><a href="http://npr.org" title="Visit npr.org">In partnership with NPR</a></h4>
+				<h2><a href="/" title="StateImpact" class="ir unitPng">StateImpact</a></h2>
+				<h4>A reporting project of local public media and <a href="http://npr.org" title="Visit npr.org">NPR</a></h4>
 				<ul class="global-utils">
 				    <?php $about = get_static_page('about'); ?>
 					<li><a href="<?php echo get_permalink( $about->ID ); ?>">About StateImpact</a> </li>
-					<li><a id="apanel-trigger" href="#">Other states</a></li>
+					<li><a id="apanel-trigger" class="ir" href="#">Other states</a></li>
 				</ul>
 		        <span class="visuallyhidden"><a href="#main" title="Skip to content">Skip to content</a></span>
 
