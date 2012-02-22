@@ -870,7 +870,9 @@ legend      { font-weight: bold;}
 	.post-content,
 	.post-content p { font-size: 16px; line-height: 1.5;  }
 	.post-content p { margin-bottom: 15px; }
-	.post-content ul { list-style: disc; margin-left: 20px; }
+	.post-content ul,
+	.post-content ol { margin-left: 20px; }
+	.post-content ul { list-style: disc; }
 	.post-content ul,
 	.post-content ol { font-size: 16px; }
 	.post-content li { margin-bottom: 5px; }
@@ -1057,6 +1059,21 @@ legend      { font-weight: bold;}
 	}
 	.roundup p em { font-size: 12px; color: #909090; }
 	.roundup .module p { background: none !important; padding-left: 0 !important; }
+
+
+/* Q&A
+=================================================*/
+
+#content .question { position: relative; padding-left: 30px; font-weight: bold; }
+#content .answer { position: relative; padding-left: 30px; }
+.question .abbr, 
+.answer .abbr { position: absolute; top: 0; left: 0; color: #999; font-size: 20px; line-height: 1; font-weight: normal; }
+.question abbr, 
+.answer abbr { border-bottom: none; }
+#content .contenttype-short-post blockquote, 
+#content .contenttype-quote blockquote { background-color: transparent; padding: 0 20px; border-left: 4px solid #333; margin: 10px 0; }
+#content .contenttype-short-post blockquote p, 
+#content .contenttype-quote blockquote p { margin: 0 0 10px 0; }
 
 
 /* Full page template 
