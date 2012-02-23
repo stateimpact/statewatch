@@ -844,7 +844,7 @@ legend      { font-weight: bold;}
 		#content .sticky h2 a { color: #000; font-weight: bold; }
 		#content .sticky h2 a:hover { color: #BF3119; text-decoration: none; }
 		#content .sticky p { margin-bottom: 0; font-size: 14px;	}
-		#content .sticky img { border: 1px solid #999; box-shadow: none; }
+		#content .sticky img { border: 1px solid #999; box-shadow: none; float: left; margin: 0 10px 10px 0; }
 		
 		
 /* Post 
