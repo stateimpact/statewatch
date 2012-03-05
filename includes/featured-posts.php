@@ -49,7 +49,7 @@ class Featured_Posts_Walker extends Walker_Nav_Menu {
     function start_el( &$output, $item, $depth, $args ) {
         $output .= '<li class="featured-post clearfix">';
         if (has_post_thumbnail($item->object_id)) {
-            $thumb = get_the_post_thumbnail($item->object_id, array(60,60), array(
+            $thumb = get_the_post_thumbnail($item->object_id, 'featured-thumb', array(
                 'class' => 'alignright'
             ));
             $output .= '<a href="' . $item->url . '">' . $thumb . '</a>';
