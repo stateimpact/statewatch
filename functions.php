@@ -26,6 +26,7 @@ require_once( INCLUDES . 'nav.php');
 require_once( INCLUDES . 'admin.php' );
 require_once( INCLUDES . 'multimedia.php' );
 require_once( INCLUDES . 'roundups/link-roundups.php' );
+require_once( INCLUDES . 'featured-posts.php' );
 
 function sw_loop_post_types() {
     return array('post', 'fusiontablesmap', 'jiffypost', 'roundup');
