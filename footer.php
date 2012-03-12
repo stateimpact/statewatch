@@ -108,7 +108,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.textPlaceholder.js"></script>
 
 <script type="text/javascript">
-        jQuery(document).ready(function() {
+        jQuery(document).ready(function($) {
             //html5 placeholders
             $("input[placeholder]").textPlaceholder();
 
@@ -179,7 +179,7 @@ if ( current_user_can( 'administrator' ) ) {
 <script src="<?php bloginfo('template_url'); ?>/js/jquery.idTabs.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/jquery.collapser.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
+jQuery(document).ready(function($){
     $('#apanel-trigger').collapser({
         target: '#argo-panel',
         expandHtml: 'Other states',
