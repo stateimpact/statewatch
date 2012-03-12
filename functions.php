@@ -28,6 +28,9 @@ require_once( INCLUDES . 'multimedia.php' );
 require_once( INCLUDES . 'roundups/link-roundups.php' );
 require_once( INCLUDES . 'featured-posts.php' );
 
+// add editor styles
+add_editor_style();
+
 function sw_loop_post_types() {
     return array('post', 'fusiontablesmap', 'jiffypost', 'roundup');
 }
