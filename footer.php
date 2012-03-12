@@ -134,13 +134,12 @@
             $("ul#topnav li").hoverIntent(config);
         });
 </script>
-
-
+<?php /***
 <script src="<?php bloginfo('template_directory'); ?>/js/sm.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/sm.playlist.js"></script>
 
 <script>
-soundManager.url = '<?php bloginfo('template_directory'); ?>/inc/audio/';
+soundManager.url = '<?php bloginfo('template_directory'); ?>/includes/audio/';
 
 function setTheme(sTheme) {
   var o = document.getElementsByTagName('ul')[0];
@@ -149,8 +148,8 @@ function setTheme(sTheme) {
 }
 
 </script>
-
-<?php get_template_part( 'audio-controls' ); ?>
+***/ ?>
+<?php // get_template_part( 'audio-controls' ); ?>
 <?php
 	/* Always have wp_footer() just before the closing </body>
 	 * tag of your theme, or you will break many plugins, which
