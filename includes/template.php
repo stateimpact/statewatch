@@ -92,7 +92,7 @@ function sw_enqueue_fb() {
     wp_enqueue_script('facebook', $fb);
 }
 
-function sw_search_topics($search_query, $count) {
+function sw_search_topics($search_query, $count=5) {
     $query = new WP_Query(array(
         's' => $search_query,
         'post_type' => array('topic'),
