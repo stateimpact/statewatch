@@ -43,7 +43,7 @@
                     <?php if (has_post_thumbnail($post->ID)): ?>
                         <?php echo get_the_post_thumbnail($post->ID, array(60, 60), array('class'=>'alignleft')); ?>
                     <?php endif ?>
-                    <h2><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a></h2>
+                    <h2><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h2>
                     <?php the_excerpt(); ?>
                 </article>
             <?php endwhile; ?>
