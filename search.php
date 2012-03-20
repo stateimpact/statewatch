@@ -21,7 +21,7 @@
 
             <?php 
                 $story_label = ($wp_query->found_posts === 1) ? "story" : "stories";
-                $topics_label = ($topics->post_count === 1) ? "topic" : "topics";
+                $topics_label = ($topics->found_posts === 1) ? "topic" : "topics";
             ?>
 
         	<p class="search-term"><?php _e('Search results for ', 'argo');?>
@@ -38,15 +38,15 @@
                     </div><!-- .entry-content -->
                 </article><!-- #post-0 -->
             <?php endif; ?>
-            <?php foreach ($topics->posts as $i => $topic): ?>
+            <?php while ( $topics->have_posts() ) : $topics->the_post(); ?>
                 <article class="topic search-results clearfix">
-                    <?php if (has_post_thumbnail($topic->ID)): ?>
-                        <?php echo get_the_post_thumbnail($topic->ID, array(60, 60), array('class'=>'alignleft')); ?>
+                    <?php if (has_post_thumbnail($post->ID)): ?>
+                        <?php echo get_the_post_thumbnail($post->ID, array(60, 60), array('class'=>'alignleft')); ?>
                     <?php endif ?>
-                    <h2><a href="<?php echo get_permalink($topic->ID); ?>"><?php echo get_the_title($topic->ID); ?></a></h2>
-                    <?php echo apply_filters('the_excerpt', get_the_excerpt($topic->ID)); ?>
+                    <h2><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a></h2>
+                    <?php the_excerpt(); ?>
                 </article>
-            <?php endforeach ?>
+            <?php endwhile; ?>
             </section>
             
             <section class="posts">
