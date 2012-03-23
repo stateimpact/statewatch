@@ -108,7 +108,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.textPlaceholder.js"></script>
 
 <script type="text/javascript">
-        jQuery(document).ready(function() {
+        jQuery(document).ready(function($) {
             //html5 placeholders
             $("input[placeholder]").textPlaceholder();
 
@@ -134,13 +134,12 @@
             $("ul#topnav li").hoverIntent(config);
         });
 </script>
-
-
+<?php /***
 <script src="<?php bloginfo('template_directory'); ?>/js/sm.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/sm.playlist.js"></script>
 
 <script>
-soundManager.url = '<?php bloginfo('template_directory'); ?>/inc/audio/';
+soundManager.url = '<?php bloginfo('template_directory'); ?>/includes/audio/';
 
 function setTheme(sTheme) {
   var o = document.getElementsByTagName('ul')[0];
@@ -149,8 +148,8 @@ function setTheme(sTheme) {
 }
 
 </script>
-
-<?php get_template_part( 'audio-controls' ); ?>
+***/ ?>
+<?php // get_template_part( 'audio-controls' ); ?>
 <?php
 	/* Always have wp_footer() just before the closing </body>
 	 * tag of your theme, or you will break many plugins, which
@@ -179,7 +178,7 @@ if ( current_user_can( 'administrator' ) ) {
 <script src="<?php bloginfo('template_url'); ?>/js/jquery.idTabs.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/jquery.collapser.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
+jQuery(document).ready(function($){
     $('#apanel-trigger').collapser({
         target: '#argo-panel',
         expandHtml: 'Other states',
