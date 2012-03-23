@@ -28,7 +28,7 @@ query_posts( argo_post_types_qs() );
         <div class="sticky-solo clearfix">
             <h5>Featured</h5> 
 <?php if ( has_post_thumbnail() ): ?>
-    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
 <?php endif; ?>
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
             <p><?php navis_the_raw_excerpt(); // the_excerpt(); ?> <br><a href="<?php the_permalink(); ?>">Continue reading <span class="meta-nav">&rarr;</span></a></p> 
