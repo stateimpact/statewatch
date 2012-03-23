@@ -211,6 +211,8 @@ h3 {
 	line-height: 1;
 }
 
+h1,h2,h3,h4,h5,h6 { color: #000; }
+
 
 /* lists */
 
@@ -273,7 +275,7 @@ caption     { background: #eee; }
 /* forms */
 
 label       { font-weight: bold; }
-fieldset    { padding:5px; margin: 0 0 5px 0; border: 1px solid #ccc; }
+fieldset    { padding: 5px; margin: 0 0 5px 0; border: 1px solid #ccc; }
 legend      { font-weight: bold;}
 
 
@@ -994,7 +996,7 @@ legend      { font-weight: bold;}
 	#content #related-posts .items li a { font-weight: bold; font-size: 12px; }
 
 
-	.single #taxonomy { border-top: 4px solid #ddd; }
+	.single #taxonomy { border-top: 1px solid #ddd; }
 	.single .terms { width: 100%; overflow: hidden; margin-bottom: 10px; }
 	.single .terms li { display: block; float: left; margin-right: 5px; }
 	.single #content .terms a, .single #content .terms a:visited { display: inline-block; background: whiteSmoke; padding: 5px; font-size: 12px; margin-bottom: 5px; float: left; }
@@ -1003,7 +1005,7 @@ legend      { font-weight: bold;}
 	#taxonomy .topics ul { margin-bottom: 0; }
 	#taxonomy .topics .topic { border-top: 1px solid #ddd; padding-top: 5px; margin-bottom: 5px; }
 	#taxonomy .topics .topic h3 a { font-family: proxima-nova, sans-serif; font-size: 28px; font-weight: 400; color: #333; }
-	#taxonomy h4 { font: 300 16px/1.4 proxima-nova,sans-serif; text-transform: uppercase; padding: 5px 0 0; margin: 0 0 5px;  }
+	#taxonomy h4 { font: 700 18px/1.4 proxima-nova,sans-serif; color: #000; text-transform: uppercase; padding: 5px 0 0; margin: 0 0 5px;  }
 
 	/* Sharing */
 
@@ -1017,14 +1019,13 @@ legend      { font-weight: bold;}
 
 	/* Comments */
 
-	.single .article-comments h2 { border-top: 4px solid #ddd; font: 700 32px/1.3 proxima-nova,sans-serif; margin: 40px 0 0; padding: 5px 0; }
+	.single .article-comments h2 { border-top: 1px solid #ddd; color: #000; font: 700 18px/1.3 proxima-nova,sans-serif; text-transform: uppercase; margin: 40px 0 0; padding: 5px 0; }
 
 	#dsq-content h3 {
 		margin: 0 0 10px;
 		position: static;
 		font-family: proxima-nova,sans-serif;
-		font-weight: 300;
-		text-transform: uppercase;
+		font-weight: 400;
 		font-size: 16px;
 	}
 
@@ -1117,7 +1118,6 @@ legend      { font-weight: bold;}
 		border-top: 4px solid #DDD;
 		padding: 10px 0;
 		margin: 0 0 10px;
-		color: #333;
 		clear:both;
 	}
 	#sidebar li:first-child h3 { border-top: none; padding-top: 0; }
