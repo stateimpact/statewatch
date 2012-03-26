@@ -534,12 +534,7 @@ function argo_term_to_label( $term ) {
 if ( ! function_exists( 'argo_the_post_labels' ) ) :
 function argo_the_post_labels( $post_id ) {
     $post_terms = argo_custom_taxonomy_terms( $post_id );
-    $all_labels = $post_terms;
-    foreach ( $all_labels as $term ) {
-        // XXX: temporary hack
-        if ( strtolower( $term->name ) == 'short post' ) {
-            continue;
-        }
+    foreach ( $post_terms as $term ) {
         echo argo_term_to_label( $term );
     }
 }
