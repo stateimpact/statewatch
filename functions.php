@@ -27,6 +27,7 @@ require_once( INCLUDES . 'admin.php' );
 require_once( INCLUDES . 'multimedia.php' );
 require_once( INCLUDES . 'roundups/link-roundups.php' );
 require_once( INCLUDES . 'featured-posts.php' );
+require_once( INCLUDES . 'editor.php' );
 
 // add editor styles
 add_editor_style();
@@ -566,6 +567,39 @@ endif;
 function navis_the_searchform_url() {
     $url = get_bloginfo( 'url', 'display' );
     echo ( $url ) ? trailingslashit( $url ) : $url;
+}
+
+/**
+ * Constructs the appropriate URL for theme-based script files.
+ *
+ * @param $filename relative filename of the file being requested
+ * @return url|null
+ */
+function navis_get_theme_script_url( $filename ) {
+    return navis_get_theme_resource_url( 'js', $filename );
+}
+
+/**
+ * Constructs the appropriate URL for theme-based style files.
+ *
+ * @param $filename relative filename of the file being requested
+ * @return url|null
+ */
+function navis_get_theme_style_url( $filename ) {
+    return navis_get_theme_resource_url( 'css', $filename );
+}
+
+/**
+ * Constructs the appropriate URL for theme-based resources. 
+ *
+ * @todo make this look in the child theme as well, like get_template_part()
+ * @param $type the type of resource to find: js, css, etc. 
+ * @param $filename relative filename of the file being requested
+ * @return url|null
+ */
+function navis_get_theme_resource_url( $type, $filename ) {
+    return trailingslashit( get_bloginfo( 'template_url' ) ) . 
+        trailingslashit( $type ) . $filename;
 }
 
 
