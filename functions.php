@@ -28,6 +28,7 @@ require_once( INCLUDES . 'multimedia.php' );
 require_once( INCLUDES . 'roundups/link-roundups.php' );
 require_once( INCLUDES . 'featured-posts.php' );
 require_once( INCLUDES . 'editor.php' );
+require_once( INCLUDES . 'feedburner.php' );
 
 // add editor styles
 add_editor_style();
