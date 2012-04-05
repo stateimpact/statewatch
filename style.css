@@ -1,11 +1,10 @@
 /*   
-Theme Name: StateImpact
+Theme Name: StateWatch
 Description: StateImpact theme
 Author: NPR
-Version: 0.1
+Version: 0.3
 */
-@import url(../argo-foundation/css/960.css?v=1);
-/* @import url(../argo-foundation/css/foundation.css?v=1); */
+@import url(css/960.css?v=1);
 
 /**
  * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
