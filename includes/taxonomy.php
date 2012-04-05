@@ -3,6 +3,8 @@ define('MAP_TERM', 'Map');
 define('DOCUMENTS_TERM', 'Documents');
 define('TABLES_TERM', 'Data');
 
+$CUSTOM_TAXONOMIES = array( 'feature', );
+
 add_action('init', 'sw_custom_taxonomies');
 function sw_custom_taxonomies() {
     // PROMINENCE

@@ -4,7 +4,7 @@ function sw_remove_some_widgets(){
 	// Unregister foundation post sidebar to fix widget title bar markup
 	unregister_sidebar( 'post' );
 }
-add_action( 'init', 'sw_remove_some_widgets', 11 );
+// add_action( 'init', 'sw_remove_some_widgets', 11 );
 
 function sw_register_sidebars() {
     // primary
