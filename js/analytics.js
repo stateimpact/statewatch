@@ -1,5 +1,5 @@
-(function($) {
-    var _gaq = window._gaq || [];
+jQuery(function($) {
+    window._gaq = _gaq || [];
     
     // facebook
     if (FB && FB.Event) {
@@ -23,4 +23,4 @@
     if (SI_STATE_NAME) {
         _gaq.push(['_setCustomVar', 1, 'State', SI_STATE_NAME, 3]);
     }
-})(window.jQuery);
+});

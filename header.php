@@ -89,7 +89,10 @@
 _clickEvents = [
     // selector, category
     {category: 'Featured Topics', selector: 'div.featured-topics a'},
-    {category: 'Mega Menu', selector: '#topnav a'}
+    {category: 'Mega Menu', selector: '#category-nav div.category-articles a', action: 'Latest Posts'},
+    {category: 'Mega Menu', selector: '#category-nav div.category-topics a', action: 'Related Topics'},
+    {category: 'Global Nav', selector: 'nav.global-nav a'},
+    {category: 'Site Header', selector: '#global-branding header a'}
 ];
 
 </script>
