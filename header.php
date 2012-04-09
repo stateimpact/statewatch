@@ -45,7 +45,7 @@
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 	
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=48" />
-	<link rel="stylesheet" media="handheld" href="<?php bloginfo('template_directory'); ?>/css/handheld.css?v=1" />
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="<?php bloginfo('stylesheet_directory'); ?>/css/adaptive.css" charset="utf-8" />
 
 <script src="<?php bloginfo('template_directory'); ?>/js/modernizr-1.6.min.js"></script>
 

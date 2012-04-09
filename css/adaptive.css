@@ -1,0 +1,58 @@
+/* Reset grid */
+
+.container_12 {
+	width: auto !important;
+}
+
+.container_12 .grid_1,
+.container_12 .grid_2,
+.container_12 .grid_3,
+.container_12 .grid_4,
+.container_12 .grid_5,
+.container_12 .grid_6,
+.container_12 .grid_7,
+.container_12 .grid_8,
+.container_12 .grid_9,
+.container_12 .grid_10,
+.container_12 .grid_11,
+.container_12 .grid_12 {
+	display: block;
+	width: auto !important;
+	margin: 0;
+}
+
+.global-nav {
+	width: auto;
+	height: 45px;
+	padding: 0;
+	margin: 0;
+}
+
+.global-utils { display: none; }
+
+#global-branding {
+	width: auto;
+	margin: 0;
+	padding: 0;
+}
+
+#global-branding .sitesearch { display: none; }
+
+#local-wrapper { 
+	min-width: 0;
+	background: #fff;
+}
+#main {
+	width: auto;
+	margin: 0;
+	padding: 0 10px;
+	background: #fff;
+}
+
+#site-footer {
+	min-width: 0;
+}
+
+
+.image.right,
+.image.left { max-width: 50%; height: auto; }
