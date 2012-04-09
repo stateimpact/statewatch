@@ -107,7 +107,8 @@ _clickEvents = [
     // topic pages
     {category: 'Topics', selector: 'div.topic-posts h2 a', action: 'Latest News headline'},
     {category: 'Topics', selector: 'div.topic-links a', action: 'Related Links'},
-    {category: 'Topics', selector: 'div.topic-multimedia a', action: 'Topic Multimedia'}
+    {category: 'Topics', selector: 'div.topic-multimedia a', action: 'Topic Multimedia'},
+    {category: 'Topics', selector: 'div.topic-featured a', action: 'Topic Featured'}
 ];
 
 </script>
