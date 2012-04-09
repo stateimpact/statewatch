@@ -611,7 +611,7 @@ function sw_show_related_topics() {
             <?php foreach ($topics as $i => $topic): ?>
                 <?php if ($topic->post_title): ?>
                     <li class="topic clearfix">
-                        <a href="<?php echo get_permalink($topic); ?>"><?php echo get_the_post_thumbnail($topic->ID, 'thumbnail', array('class'=>'alignleft')); ?></a>
+                        <a class="thumb-link" href="<?php echo get_permalink($topic); ?>"><?php echo get_the_post_thumbnail($topic->ID, 'thumbnail', array('class'=>'alignleft')); ?></a>
                     <h3><a href="<?php echo get_permalink($topic); ?>"><?php echo apply_filters('the_title', $topic->post_title); ?></a></h3>
                     </li>
                 <?php endif; ?>
