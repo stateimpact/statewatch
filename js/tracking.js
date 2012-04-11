@@ -11,18 +11,26 @@ jQuery(document).ready(function($) {
             {category: 'a.trackme', category: 'Links I want to track'}
         ]
     
+    trackArray: ['_trackEvent', category, action, label, value, non-interact]
+
     ***/
     var events = window._clickEvents || [];
     
     $.each(events, function(i) {
         var selector = this.selector,
-            category = this.category;
+            category = this.category,
+            action   = this.action,
+            label    = this.label,
+            value    = this.value
         
         $(selector).each(function(i) {
             var trackArray = [
-                '_trackEvent',
-                category,
-                $(this).text()
+                '_trackEvent', 
+                category, 
+                action || $(this).text().trim(), 
+                label  || $(this).attr('href'), 
+                value  || 1, 
+                true
             ];
             
             $(this).click(function(e) {
