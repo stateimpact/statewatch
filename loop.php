@@ -9,7 +9,12 @@ http://codex.wordpress.org/Template_Tags to understand
 /*
  * Loop query string modifier to include our custom post types
  */
-query_posts( argo_post_types_qs() ); 
+// This is inefficient and should be fixed at some point.
+// Plugins that add custom post types should inject those types
+// into the loop without relying on the theme. See JiffyPosts.
+global $wp_query;
+$args = array_merge( $wp_query->query, array( 'post_type' => sw_loop_post_types() ));
+query_posts( $args ); 
 ?>
 <?php
 	/* Start the Loop.

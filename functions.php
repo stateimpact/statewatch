@@ -35,7 +35,7 @@ require_once( INCLUDES . 'ads.php' );
 add_editor_style();
 
 function sw_loop_post_types() {
-    return array('post', 'fusiontablesmap', 'jiffypost', 'roundup');
+    return array('post', 'fusiontablesmap', 'roundup');
 }
 
 add_filter('pre_get_posts', 'filter_search');
