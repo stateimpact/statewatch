@@ -55,7 +55,7 @@ query_posts( argo_post_types_qs() );
                 <div class="clearfix"></div>
             </div> <!-- /.post-metadata-->
             <?php if ( has_post_thumbnail() ): ?>
-            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
         <?php endif; ?>
             <p><?php navis_the_raw_excerpt(100); // the_excerpt(); ?> <a href="<?php the_permalink(); ?>">Continue reading <span class="meta-nav">&rarr;</span></a></p> 
         </div>
