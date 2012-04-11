@@ -1,5 +1,7 @@
 /* Reset grid */
 
+html { overflow-y: auto; }
+
 .container_12 {
 	width: auto !important;
 }
@@ -22,21 +24,53 @@
 }
 
 .global-nav {
-	width: auto;
+	width: 100%;
 	height: 45px;
 	padding: 0;
+	overflow: visible;
 	margin: 0;
+	background: url(http://stateimpact.npr.org/wp-content/themes/si-hub/img/nav-bg.png) repeat-x;
 }
+
+.global-nav-bg { background: #f5f5f5; padding: 0; }
+.global-nav h2 a { 
+	width: 140px; 
+	height: 45px; 
+	background: url(../img/mobile-si-logo.png) no-repeat; 
+	top: 0;
+	left: 0;
+}
+.global-nav h4 { top: 5px; left: 150px; font-size: 13px; margin: 0; }
+.global-nav h4 a { background: url(../img/npr-transparent.png) no-repeat; }
 
 .global-utils { display: none; }
 
 #global-branding {
 	width: auto;
-	margin: 0;
-	padding: 0;
+	margin: 0 0 15px;
+	padding: 10px;
+	background: #f5f5f5;
+	border-bottom: 1px solid #ddd;
 }
+#global-branding header { width: auto; }
+#global-branding h4 { margin: 0; }
 
+#wrapper #global-branding header h3 a,
+#topnav li a,
+#wrapper #global-branding header h4 { 
+	color: #000;
+	text-shadow: none;
+	-webkit-font-smoothing: auto;
+}
 #global-branding .sitesearch { display: none; }
+
+#category-nav { position: static; margin: 0; }
+#topnav { display: none !important; }
+#topnav li a {
+	padding: 0 5px 0 0; 
+	border-left: 1px solid #ccc;
+}
+#topnav li { margin: 0 5px 0 0; }
 
 #local-wrapper { 
 	min-width: 0;
@@ -56,3 +90,10 @@
 
 .image.right,
 .image.left { max-width: 50%; height: auto; }
+
+
+
+/* Post page */
+
+.single .post-metadata { background: none; }
+#content .related-content { width: 50%; }
