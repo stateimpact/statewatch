@@ -3,7 +3,14 @@
  * Page for displaying a single post.
  */
 ?>
+<?php
+	add_action('wp_head','addMobileStyle');
+	function addMobileStyle() { ?>
+		<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="<?php bloginfo('stylesheet_directory')?>/css/adaptive.css" charset="utf-8" />
+		<?php
+	}
 
+?>
 <?php get_header(); ?>
 
     <article id="content" class="grid_8" role="main">
@@ -66,3 +73,4 @@
 </aside> <!-- /.grid_4 -->
 
 <?php get_footer(); ?>
+

@@ -89,7 +89,7 @@ html { overflow-y: auto; }
 
 
 .image.right,
-.image.left { max-width: 50%; height: auto; }
+.image.left { max-width: 50% !important; height: auto; }
 
 
 
@@ -97,3 +97,14 @@ html { overflow-y: auto; }
 
 .single .post-metadata { background: none; }
 #content .related-content { width: 50%; }
+
+
+
+
+/* Retina images */
+@media all and (-webkit-min-device-pixel-ratio: 2) {
+    .global-nav h2 a { 
+    	background: url(../img/mobile-si-logo@2x.png) no-repeat; 
+    	background-size: 140px 45px;
+    }
+}
