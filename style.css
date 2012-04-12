@@ -522,6 +522,7 @@ legend      { font-weight: bold;}
 	#content a:hover,
 	#sidebar a:hover { color: #444; }
 
+	p.back-to-top { display: none; }
 
 /* Header  
 =================================================*/
