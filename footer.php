@@ -192,6 +192,14 @@ jQuery(document).ready(function($){
         $('#apanel-content').slideToggle(400);
         return false;
     });
+
+    $('.mobile-nav-toggle').click(function(){
+        $('#topnav').slideToggle(200);
+        $('#global-branding .sitesearch').fadeToggle(200);
+    });
+        
+    
+
 	
     // delay image loading
     var delayedLoad = function(event) {
