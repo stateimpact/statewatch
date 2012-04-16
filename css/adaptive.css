@@ -40,7 +40,7 @@ html { overflow-y: auto; }
 	top: 0;
 	left: 0;
 }
-.global-nav h4 { top: 10px; left: 150px; font-size: 10px; line-height: 1.2; margin: 0; padding-right: 40px; }
+.global-nav h4 { top: 10px; left: 150px; font-size: 10px; line-height: 1.2; margin: 0; padding-right: 38px; }
 .global-nav h4 a { background: url(../img/mobile-npr.png) no-repeat; }
 
 .global-utils { display: none; }
