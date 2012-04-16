@@ -192,6 +192,11 @@ function sw_state() { ?>
     <?php
 }
 
+add_filter('argolinkroundups_taxonomies', 'sw_linkroundups_taxonomies');
+function sw_linkroundups_taxonomies($taxonomies) {
+    return array();
+}
+
 // argo-foundation functions.php
 if ( ! function_exists( 'argo_the_page_number' ) ) :
 /**
