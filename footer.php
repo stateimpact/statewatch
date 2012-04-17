@@ -131,7 +131,9 @@
             };
 
             $("ul#topnav li .sub").css({'opacity':'0'});
-            $("ul#topnav li").hoverIntent(config);
+            if ($(window).width() > 480){
+                $("ul#topnav li").hoverIntent(config);
+            }; 
         });
 </script>
 <?php /***
@@ -196,6 +198,7 @@ jQuery(document).ready(function($){
     $('.mobile-nav-toggle').click(function(){
         $('#topnav').slideToggle(200);
         $('#global-branding .sitesearch').fadeToggle(200);
+        $(this).toggleClass('active');
     });
         
     
