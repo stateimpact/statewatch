@@ -58,7 +58,7 @@ html { overflow-y: auto; }
 	background-image: -o-linear-gradient(#385377, #252C33);
 	background-image: -ms-linear-gradient(#385377, #252C33);
 	background-image: linear-gradient(#385377, #252C33);
-	border-top: 1px solid rgba(255,255,255,.5);
+	border-top: 1px solid rgba(0,0,0,.5);
 }
 #global-branding header { width: auto; }
 #global-branding h4 { margin: 0; }
@@ -67,7 +67,7 @@ html { overflow-y: auto; }
 #topnav li a,
 #wrapper #global-branding header h4 { 
 	color: #fff;
-	text-shadow: none;
+	text-shadow: 0 1px 2px rgba(0,0,0,.5);
 	-webkit-font-smoothing: antialiased;
 }
 #global-branding .sitesearch { 
