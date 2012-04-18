@@ -56,10 +56,10 @@
 <nav>
 <ul class="post-nav clearfix">
 <?php if ( get_next_post() ): ?>
-<li class="n-post"><h5>Newer Post</h5><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link' ) . '</span>' ); ?></li>
+<li class="n-post"><h5>Next Post</h5><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link' ) . '</span>' ); ?></li>
 <?php endif; ?>
 <?php if ( get_previous_post() ): ?>
-<li class="p-post"><h5>Older Post</h5><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link' ) . '</span> %title' ); ?></li>
+<li class="p-post"><h5>Previous Post</h5><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link' ) . '</span> %title' ); ?></li>
 <?php endif; ?>
 </ul></nav><!-- .post-nav -->
 
