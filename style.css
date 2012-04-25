@@ -752,41 +752,17 @@ legend      { font-weight: bold;}
 /* Loop  
 =================================================*/
 
-	.home .post, 
-	.archive .post, 
-	.search .post, 
-	.home .jiffypost, 
-	.archive .jiffypost, 
-	.search .jiffypost, 
-	.home .fusiontablesmap, 
-	.archive .fusiontablesmap, 
-	.search .fusiontablesmap,
-	.home .roundup, 
-	.archive .roundup, 
-	.search .roundup, 
-	.home .slideshow, 
-	.archive .slideshow, 
-	.search .slideshow {
+	.home #main article, 
+	.archive #main article, 
+	.search #main article, {
 		border-top: 4px solid #ddd; 
 		border-bottom: none;
 		padding: 20px 0 10px;
 	}
 
-	.home .post:first-child, 
-	.archive .post:first-child, 
-	.search .post:first-child, 
-	.home .jiffypost:first-child, 
-	.archive .jiffypost:first-child, 
-	.search .jiffypost:first-child, 
-	.home .fusiontablesmap:first-child, 
-	.archive .fusiontablesmap:first-child, 
-	.search .fusiontablesmap:first-child, 
-	.home .roundup:first-child, 
-	.archive .roundup:first-child, 
-	.search .roundup:first-child, 
-	.home .slideshow:first-child, 
-	.archive .slideshow:first-child, 
-	.search .slideshow:first-child {
+	.home .#main article:first-child, 
+	.archive #main article:first-child, 
+	.search #main article:first-child {
 		border-top: none; 
 		padding: 0 0 10px;
 	}
