@@ -754,7 +754,7 @@ legend      { font-weight: bold;}
 
 	.home #main article, 
 	.archive #main article, 
-	.search #main article, {
+	.search #main article {
 		border-top: 4px solid #ddd; 
 		border-bottom: none;
 		padding: 20px 0 10px;
