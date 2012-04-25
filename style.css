@@ -752,17 +752,17 @@ legend      { font-weight: bold;}
 /* Loop  
 =================================================*/
 
-	.home #content article, 
-	.archive #content article, 
-	.search #content article, {
+	.home #main article, 
+	.archive #main article, 
+	.search #main article, {
 		border-top: 4px solid #ddd; 
 		border-bottom: none;
 		padding: 20px 0 10px;
 	}
 
-	.home #content article:first-child, 
-	.archive #content article:first-child, 
-	.search #content article:first-child {
+	.home #main article:first-child, 
+	.archive #main article:first-child, 
+	.search #main article:first-child {
 		border-top: none; 
 		padding: 0 0 10px;
 	}
