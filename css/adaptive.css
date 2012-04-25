@@ -237,6 +237,9 @@ html { overflow-y: auto; }
 	   -moz-box-sizing: border-box;
 }
 
+#taxonomy .topic img { width: 100px; height: 100px; margin-right: 10px; }
+#taxonomy .topic h3 a { font-size: 18px; }
+
 #sidebar h3, 
 #sidebar .widgettitle { 
 	border-top: 1px solid #ccc;
@@ -258,12 +261,16 @@ footer .container_12 .grid_3 {
 	padding: 0 10px;
 }
 #site-footer h3 {
-	border-top: 1px solid #666;
+	border-top: 1px solid #333;
 	border-bottom: 0;
-	padding: 5px 0 0;
-	margin: 5px 0;
+	padding: 10px 0 0;
+	margin: 10px 0;
 	clear: both;
 }
+#site-footer .grid_3:first-child {
+	display: none;
+}
+
 #site-footer .ft-reporter,
 #site-footer .partner-station {
 	width: 50%;
@@ -272,7 +279,13 @@ footer .container_12 .grid_3 {
 	padding: 0 10px 10px 0;
 	float:left;
 }
-#boilerplate { height: auto; padding: 10px; }
+#boilerplate { 
+	height: auto; 
+	width: 100% !important; 
+	margin: 0; 
+	border-top: none;
+}
+#site-footer #colophon { margin: 10px; border-top: 1px solid #333; }
 #site-footer #colophon li { 
 	float: none;
 	border: none;
