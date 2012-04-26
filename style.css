@@ -796,41 +796,17 @@ legend      { font-weight: bold;}
 /* Loop  
 =================================================*/
 
-	.home .post, 
-	.archive .post, 
-	.search .post, 
-	.home .jiffypost, 
-	.archive .jiffypost, 
-	.search .jiffypost, 
-	.home .fusiontablesmap, 
-	.archive .fusiontablesmap, 
-	.search .fusiontablesmap,
-	.home .roundup, 
-	.archive .roundup, 
-	.search .roundup, 
-	.home .slideshow, 
-	.archive .slideshow, 
-	.search .slideshow {
+	.home #main article, 
+	.archive #main article, 
+	.search #main article {
 		border-top: 4px solid #ddd; 
 		border-bottom: none;
 		padding: 20px 0 10px;
 	}
 
-	.home .post:first-child, 
-	.archive .post:first-child, 
-	.search .post:first-child, 
-	.home .jiffypost:first-child, 
-	.archive .jiffypost:first-child, 
-	.search .jiffypost:first-child, 
-	.home .fusiontablesmap:first-child, 
-	.archive .fusiontablesmap:first-child, 
-	.search .fusiontablesmap:first-child, 
-	.home .roundup:first-child, 
-	.archive .roundup:first-child, 
-	.search .roundup:first-child, 
-	.home .slideshow:first-child, 
-	.archive .slideshow:first-child, 
-	.search .slideshow:first-child {
+	.home #main article:first-child, 
+	.archive #main article:first-child, 
+	.search #main article:first-child {
 		border-top: none; 
 		padding: 0 0 10px;
 	}
@@ -863,8 +839,8 @@ legend      { font-weight: bold;}
 	.newer-posts { float: right; }
 	.ie6 .newer-posts {	text-align: right; }
 
-	#content article.has-features { padding-top: 50px; position: relative;}
-	#content article.has-features.sticky { padding-top: 0; }
+	#main #content article.has-features { padding-top: 50px; position: relative;}
+	#main #content article.has-features.sticky { padding-top: 0; }
 	#content .has-features .labels { position: absolute; top: 0; left: 0; margin:0; border-bottom: 1px solid #ddd; list-style: none; width: 100%; line-height: 28px; }
 	#content .has-features .labels li:first-child { margin-left: 0; padding-left: 0; margin-left: 0; border-left: none; }
 	#content .has-features .labels li { float: left; margin: 2px 0 2px 10px; padding-left: 5px; border-left: 1px solid #ddd; }
@@ -1690,7 +1666,7 @@ legend      { font-weight: bold;}
 	
 	.search .search-term { font: 300 24px/1.1 proxima-nova,sans-serif; }
 	.search #content section h1 { margin: 0; padding: 10px 0 0; font: 400 16px/1 proxima-nova,sans-serif; text-transform: uppercase; border-top: 4px solid #ccc;  }
-	.search #content article { margin: 10px 0; padding: 0; border-width: 1px 0 0; }
+	.search #content article { margin: 10px 0; padding: 10px 0; border-width: 1px 0 0; }
 	.search #content .not-found h3 { margin-top: 10px; }
 	.search #content article p { font-size: 14px; }
 	.search #content .post-meta h6 { font-style: normal; text-transform: uppercase; }

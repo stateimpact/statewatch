@@ -35,7 +35,7 @@ require_once( INCLUDES . 'ads.php' );
 add_editor_style();
 
 function sw_loop_post_types() {
-    return array('post', 'fusiontablesmap', 'jiffypost', 'roundup');
+    return array('post', 'fusiontablesmap', 'roundup');
 }
 
 add_filter('pre_get_posts', 'filter_search');
@@ -190,6 +190,11 @@ function sw_analytics() {
 function sw_state() { ?>
     <script>window.SI_STATE_NAME = "<?php bloginfo('name'); ?>"</script>
     <?php
+}
+
+add_filter('argolinkroundups_taxonomies', 'sw_linkroundups_taxonomies');
+function sw_linkroundups_taxonomies($taxonomies) {
+    return array();
 }
 
 // argo-foundation functions.php

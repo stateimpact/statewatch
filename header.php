@@ -43,8 +43,9 @@
 	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicon.png"/>
 	<link rel="apple-touch-icon-precomposed" href="<?php bloginfo('stylesheet_directory'); ?>/img/apple-touch-icon-precomposed.png"/> 
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
+
 	<meta name="viewport" content="width=device-width; initial-scale=1.0;"/>
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=48" />
+	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=50" />
 	
 <script src="<?php bloginfo('template_directory'); ?>/js/modernizr-1.6.min.js"></script>
 
@@ -86,9 +87,28 @@
 <script>
 // what things can i click on that should be tracked
 _clickEvents = [
-    // selector, category
+    // selector, category, [action, lable, value]
+    // header
     {category: 'Featured Topics', selector: 'div.featured-topics a'},
-    {category: 'Mega Menu', selector: '#topnav a'}
+    {category: 'Mega Menu', selector: '#category-nav div.category-articles a', action: 'Latest Posts'},
+    {category: 'Mega Menu', selector: '#category-nav div.category-topics a', action: 'Related Topics'},
+    {category: 'Global Nav', selector: 'nav.global-nav a'},
+    {category: 'Site Header', selector: '#global-branding header a'},
+
+    // right rail
+    {category: 'Right rail', selector: 'div.menu-featured-posts-container a', action: 'Featured Posts Widget'},
+    {category: 'Right rail', selector: 'li.widget_recent_entries a', action: 'Recent Posts Widget'},
+
+    // posts
+    {category: 'Related Content Module', selector: 'div.related-content a'},
+    {category: 'Related Topics', selector: '#taxonomy div.topics h3 a'},
+    {category: 'Related Topics', selector: '#taxonomy div.topics a.thumb-link', action: 'Thumbnail'},
+
+    // topic pages
+    {category: 'Topics', selector: 'div.topic-posts h2 a', action: 'Latest News headline'},
+    {category: 'Topics', selector: 'div.topic-links a', action: 'Related Links'},
+    {category: 'Topics', selector: 'div.topic-multimedia a', action: 'Topic Multimedia'},
+    {category: 'Topics', selector: 'div.topic-featured a', action: 'Topic Featured'}
 ];
 
 </script>

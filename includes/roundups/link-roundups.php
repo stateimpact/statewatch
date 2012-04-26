@@ -9,15 +9,15 @@ class SW_Link_Roundups {
     function post_type() {
         register_post_type( 'roundup', array(
             'labels' => array(
-                'name' => 'Link Roundups',
-                'singular_name' => 'Link Roundup',
+                'name' => 'Link Roundups (old)',
+                'singular_name' => 'Link Roundup (old)',
                 'add_new' => 'Add New',
-                'add_new_item' => 'Add New Link Roundup',
+                'add_new_item' => 'Add New Link Roundup (old)',
                 'edit' => 'Edit',
-                'edit_item' => 'Edit Link Roundup',
+                'edit_item' => 'Edit Link Roundup (old)',
                 'view' => 'View',
-                'view_item' => 'View Link Roundup',
-                'search_items' => 'Search Link Roundups',
+                'view_item' => 'View Link Roundup (old)',
+                'search_items' => 'Search Link Roundups (old)',
                 'not_found' => 'No link roundups found',
                 'not_found_in_trash' => 'No link roundups found in Trash',
             ),
