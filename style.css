@@ -795,8 +795,8 @@ legend      { font-weight: bold;}
 	.newer-posts { float: right; }
 	.ie6 .newer-posts {	text-align: right; }
 
-	#content article.has-features { padding-top: 50px; position: relative;}
-	#content article.has-features.sticky { padding-top: 0; }
+	#main #content article.has-features { padding-top: 50px; position: relative;}
+	#main #content article.has-features.sticky { padding-top: 0; }
 	#content .has-features .labels { position: absolute; top: 0; left: 0; margin:0; border-bottom: 1px solid #ddd; list-style: none; width: 100%; line-height: 28px; }
 	#content .has-features .labels li:first-child { margin-left: 0; padding-left: 0; margin-left: 0; border-left: none; }
 	#content .has-features .labels li { float: left; margin: 2px 0 2px 10px; padding-left: 5px; border-left: 1px solid #ddd; }
