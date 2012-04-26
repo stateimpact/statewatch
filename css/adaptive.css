@@ -218,7 +218,11 @@ html { overflow-y: auto; }
 .image.left { max-width: 50% !important; height: auto; }
 
 .image.right img,
-.image.left img { width: 100% !important; }
+.image.left img { 
+	max-width: 100% !important; 
+	height: auto;
+	width: auto;
+}
 
 /* Post page */
 
@@ -233,9 +237,24 @@ html { overflow-y: auto; }
 }
 .single .post-metadata { background: none; border: none; }
 #content .related-content { 
-	width: 100% !important; 
+	width: 50% !important; 
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
+}
+#content .related-content .topics,
+#content .related-content .links h5 { display: none; }
+#content .related-content .links ul { margin: 0; }
+#content .related-content .link { 
+	list-style: none; 
+	border-top: 1px solid #ddd; 
+	padding: 5px 0 0 0;
+	margin: 5px 0 0 0;
+}
+#content .related-content .link a { font-size: 12px; }
+#content .related-content .link:first-child {
+	border-top: none;
+	padding-top: 0;
+	margin-top: 0;
 }
 
 #taxonomy .topic img { width: 100px; height: 100px; margin-right: 10px; }
@@ -268,8 +287,49 @@ footer .container_12 .grid_3 {
 	margin: 10px 0;
 	clear: both;
 }
-#site-footer .grid_3:first-child {
-	display: none;
+#site-footer {
+	position: relative;
+}
+#footerlogo a {
+	width: 140px; 
+	height: 45px; 
+	background: url(../img/mobile-si-logo.png) no-repeat; 
+	top: 0;
+	left: 0;
+	position: absolute;
+	border-bottom: 1px solid #111;
+}
+#footerstate { 
+	position: absolute; 
+	top: 0;
+	left: 140px;
+	line-height: 45px;
+	width: 100%;
+	font-size: 22px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	padding: 0 10px;
+	background-color: #111;
+	background-position: 0;
+	background-image: -moz-linear-gradient(top, #444444, #000000);
+	background-image: -ms-linear-gradient(top, #444444, #000000);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#000000));
+	background-image: -webkit-linear-gradient(top, #444444, #000000);
+	background-image: -o-linear-gradient(top, #444444, #000000);
+	background-image: linear-gradient(top, #444444, #000000);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#000000', GradientType=0);
+	filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+	border-bottom: 1px solid #111;
+}
+
+#site-footer .donate a {
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	margin-top: 5 px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
 }
 
 #site-footer .ft-reporter,
@@ -301,7 +361,8 @@ footer .container_12 .grid_3 {
 
 /* Retina images */
 @media all and (-webkit-min-device-pixel-ratio: 2) {
-    .global-nav h2 a { 
+    .global-nav h2 a,
+    #footerlogo a { 
     	background: url(../img/mobile-si-logo@2x.png) no-repeat; 
     	background-size: 140px 45px;
     }

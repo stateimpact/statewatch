@@ -134,10 +134,7 @@
             if ($(window).width() > 480){
                 // Only enable megamenu hover behavior for large displays
                 $("ul#topnav li").hoverIntent(config);
-            } else {
-                // Remove height/width attributes from article images for small displays
-                $('article .image img').removeAttr("height").removeAttr("width"); 
-            }; 
+            };
 
         });
 </script>
