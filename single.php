@@ -4,7 +4,10 @@
  */
 ?>
 <?php
-	add_action('wp_head','addMobileStyle');
+	if (!sw_is_rich_media()){
+		add_action('wp_head','addMobileStyle');
+	};
+	
 	function addMobileStyle() { ?>
 		<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="<?php bloginfo('stylesheet_directory')?>/css/adaptive.css" charset="utf-8" />
 		<?php

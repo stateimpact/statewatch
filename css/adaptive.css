@@ -213,6 +213,12 @@ html { overflow-y: auto; }
 }
 
 .module.image { width: 140px !important }
+.module.image.center { width: 100% !important; }
+img.size-large { 
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
 
 .image.right,
 .image.left { max-width: 50% !important; height: auto; }
@@ -257,6 +263,12 @@ html { overflow-y: auto; }
 	margin-top: 0;
 }
 
+.DV-container {
+	max-width: 100%;
+	width: 100% !important;
+	height: 320px !important;
+}
+
 #taxonomy .topic img { width: 100px; height: 100px; margin-right: 10px; }
 #taxonomy .topic h3 a { font-size: 18px; }
 
@@ -270,6 +282,16 @@ html { overflow-y: auto; }
 	width: 50%;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
+}
+
+.module.aside {
+	max-width: 100% !important;
+	width: 100% !important;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	padding: 10px;
+	border: 1px solid #ddd;
+
 }
 
 /* Footer */
@@ -327,7 +349,7 @@ footer .container_12 .grid_3 {
 	width: 100%;
 	display: inline-block;
 	text-align: center;
-	margin-top: 5 px;
+	margin-top: 5px;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 }
