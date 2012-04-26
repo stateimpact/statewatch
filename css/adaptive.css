@@ -223,12 +223,13 @@ html { overflow-y: auto; }
 /* Post page */
 
 
-.meta-gestures li {
-	width: 50% !important; 
+#content .meta-gestures li {
+	width: auto !important; 
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	padding: 0 5px 5px 0;
-	float: left;
+	float: none;
+	display: inline-block !important;
 }
 .single .post-metadata { background: none; border: none; }
 #content .related-content { 
@@ -285,12 +286,17 @@ footer .container_12 .grid_3 {
 	margin: 0; 
 	border-top: none;
 }
-#site-footer #colophon { margin: 10px; border-top: 1px solid #333; }
+#site-footer #colophon { margin: 10px; padding: 10px 0; border-top: 1px solid #333; }
 #site-footer #colophon li { 
 	float: none;
 	border: none;
 	display: block;
+	line-height: 1.3;
 }
+
+#ft-archive,
+#searchform-footer { display: none; }
+
 #site-footer #colophon li.npr { display: none; }
 
 /* Retina images */
