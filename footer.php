@@ -108,6 +108,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.textPlaceholder.js"></script>
 
 <script type="text/javascript">
+        var size = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
         jQuery(document).ready(function($) {
             //html5 placeholders
             $("input[placeholder]").textPlaceholder();
@@ -131,7 +132,8 @@
             };
 
             $("ul#topnav li .sub").css({'opacity':'0'});
-            if ($(window).width() > 480){
+            
+            if (size !== 'smallscreen'){
                 // Only enable megamenu hover behavior for large displays
                 $("ul#topnav li").hoverIntent(config);
             };
@@ -197,11 +199,15 @@ jQuery(document).ready(function($){
         return false;
     });
 
-    $('.mobile-nav-toggle').click(function(){
-        $('#topnav').slideToggle(200);
-        $('#global-branding .sitesearch').fadeToggle(200);
-        $(this).toggleClass('active');
-    });
+
+    if (size == 'smallscreen'){
+        $('.mobile-nav-toggle').click(function(){
+            $('#topnav').slideToggle(200);
+            $('#global-branding .sitesearch').fadeToggle(200);
+            $(this).toggleClass('active');
+        });
+    };
+    
         
     
 

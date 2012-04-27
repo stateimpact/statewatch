@@ -2,6 +2,11 @@
 
 html { overflow-y: auto; }
 
+body:after {
+    content: 'smallscreen';
+    display: none;
+}
+
 .container_12 {
 	width: auto !important;
 }
@@ -284,15 +289,114 @@ img.size-large {
 	   -moz-box-sizing: border-box;
 }
 
-.module.aside {
+#content .module.aside {
 	max-width: 100% !important;
 	width: 100% !important;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	padding: 10px;
 	border: 1px solid #ddd;
-
+	overflow: auto;
 }
+
+#content .module.aside table,
+#content table,
+#content .pull-quote { 
+	max-width: 100% !important; 
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	margin: 0 0 20px;
+}
+
+#content .pull-quote { 
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: #ccc;
+	padding: 10px 0;
+	float: none;
+}
+
+article {
+	-webkit-text-size-adjust:100%;
+}
+
+ul.playlist {
+	max-width: 100% !important; 
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+}
+
+#content ul.playlist li a.exclude {
+	display: none;
+}
+
+#content ul.playlist li a.inline {
+	padding: 50px 10px 10px 10px;
+	background-position: 10px 5px; 
+}
+
+#content .playlist { text-align:left; }
+#content .playlist li {
+  width:100%;
+  float:none !important;
+  border:1px solid #eeeeee;
+  margin-bottom:15px;
+  letter-spacing:0;
+}
+#content .playlist li:hover, 
+#content .playlist li.sm2_paused, 
+#content .playlist li.sm2_paused:hover, 
+#content .playlist li.sm2_playing, 
+#content .playlist li.sm2_playing:hover { background:whitesmoke; }
+#content .playlist li .sm2_link { font-weight:bold; }
+#content .playlist li a {
+  background-color:transparent !important;
+  background-position:10px 10px !important;
+}
+#content .playlist li a.inline { padding-left:60px; }
+#content .playlist li a.exclude {
+  font-size:14px;
+  position:absolute;
+  top:10px;
+  right:10px;
+  z-index:10;
+}
+#content .playlist li.sm2_paused .controls { background:transparent !important; }
+#content .playlist li .controls {
+  margin-bottom:0;
+  padding:0;
+}
+#content .playlist li .controls .statusbar { background:transparent !important; }
+
+#content .playlist li .controls .statusbar,
+#content .playlist li .controls .statusbar .position,
+#content .playlist li .controls .statusbar .loading {
+	height: 40px !important;
+	-webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+}
+#content .playlist li .controls .statusbar .loading { 
+	background-color: magenta; 
+	display: block !important;
+	z-index: 100;
+	border: 3px solid red;
+}
+#content .playlist li .timing {
+  display: block !important;
+  font-size: 14px !important;
+  right: 10px !important;
+  top: 15px !important;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#content .playlist li .peak, 
+#content .playlist li .peak-box { display:none !important; }
+
+ul.playlist li.sm2_playing a.sm2_link, 
+ul.playlist li.sm2_paused a.sm2_link { margin-right: 0; }
+
+#content .playlist li>div { width: 100% !important; height: 40px !important; overflow: hidden; border: 1px solid magenta;}
+
 
 /* Footer */
 
