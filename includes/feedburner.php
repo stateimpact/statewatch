@@ -6,7 +6,7 @@ class Feedburner_Widget extends WP_Widget {
             'classname' => 'feedburner',
             'description' => 'Feedburner'
         );
-        $this->WP_Widget( 'feedburner-subscribe-widget', 'Subscribe by Email', $widget_ops );
+        $this->WP_Widget( 'feedburner-subscribe-widget', 'Subscribe by Email', $widget_opts );
     }
     
     function widget($args, $instance) {
