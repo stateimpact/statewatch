@@ -212,8 +212,8 @@ endif;
 
 function argo_get_related_topics_for_category( $obj ) { 
     $MAX_RELATED_TOPICS = 5;
-
     $cat_id = $obj->cat_ID;
+
     if ( $obj->post_type ) {
         if ( $obj->post_type == 'nav_menu_item' ) {
             $cat_id = $obj->object_id;
@@ -260,7 +260,11 @@ function _tags_associated_with_category( $cat_id, $max = 5 ) {
         $ptags = get_the_tags( $post->ID );
         if ( $ptags ) {
             foreach ( $ptags as $tag ) {
-                $tags[ $tag->term_id ]++;
+                if (isset($tags[$tag->term_id])) {
+                    $tags[ $tag->term_id ]++;
+                } else {
+                    $tags[$tag->term_id] = 0;
+                }
                 $tag_objs[ $tag->term_id ] = $tag;
             }
         }
