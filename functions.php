@@ -25,7 +25,7 @@ require_once( INCLUDES . 'media.php' );
 require_once( INCLUDES . 'nav.php');
 require_once( INCLUDES . 'admin.php' );
 require_once( INCLUDES . 'multimedia.php' );
-require_once( INCLUDES . 'roundups/link-roundups.php' );
+// require_once( INCLUDES . 'roundups/link-roundups.php' );
 require_once( INCLUDES . 'featured-posts.php' );
 require_once( INCLUDES . 'editor.php' );
 require_once( INCLUDES . 'feedburner.php' );

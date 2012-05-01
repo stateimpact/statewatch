@@ -92,7 +92,7 @@ class SI_Topics {
             if ( $featured) { $args['post__not_in'] = $featured; }
             if ($categories) { $args['category__in'] = $categories; }
             if ($tags) { $args['tag__in'] = $tags; }
-            if ($_POST['s']) { $args['s'] = $_POST['s']; }
+            if (isset($_POST['s'])) { $args['s'] = $_POST['s']; }
             
             $posts = $this->query($args);
             header( "Content-Type: application/json" );
