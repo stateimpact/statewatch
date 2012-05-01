@@ -10,6 +10,8 @@ function sw_meta_description() {
     } elseif ( is_category() or is_tag() ) {
         $cat = $wp_query->get_queried_object();
         $post = argo_get_topic_for( $cat );
+    } else {
+        global $post;
     }
     
     $excerpt = $post->post_excerpt;
