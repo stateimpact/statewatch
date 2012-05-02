@@ -831,7 +831,7 @@ legend      { font-weight: bold;}
 		.post-metadata p { font-size: 12px; margin-bottom: 0; }
 		.post-metadata li { margin: 0; font-size: 13px; /* background: transparent url(../argo-foundation/img/icons-buttons.png) no-repeat top left; */
 	list-style-type: none; }
-		.post-metadata .meta-comments { background-position: 0 -222px; height: 18px; padding-left: 20px; } 
+		.post-metadata .meta-comments { background-position: 0 -222px; height: 18px; } 
 		.meta-gestures { float: right; width: 380px; margin: 0 0 5px; }
 	.list-pagination { clear: both; border-top: 1px solid #ddd; border-bottom: none; padding-top: 10px; }
 	.list-pagination a { background: none; padding: 0; display: inline; }
@@ -1045,9 +1045,9 @@ legend      { font-weight: bold;}
 	/* Sharing */
 
 	#content .meta-gestures li { float: left; line-height: 18px; font-size: 11px; margin: 0 15px 5px 0; height: 20px; width:160px; }
-	#content .meta-gestures li a { color: #666; font-weight: normal; }
-	#content .meta-gestures .meta-comments { background: url(./img/comment_16.png) no-repeat; padding-left: 25px; width: 135px; }
-	#content .meta-gestures .meta-email { background: url(./img/email_16.png) no-repeat; padding-left: 30px; width: 130px; clear: right; }
+	#content .meta-gestures li a { color: #666; font-weight: normal; display: inline-block; }
+	#content .meta-gestures .meta-comments a { background: url(./img/comment_16.png) no-repeat; padding-left: 25px; width: 135px;  }
+	#content .meta-gestures .meta-email a { background: url(./img/email_16.png) no-repeat; padding-left: 30px; width: 130px; clear: right;  }
 	.meta-gestures .twitter { clear: left; }
 	#content .meta-gestures .subscribe { background: none; padding-left: 0; float: right; }
 	#main .meta-gestures .subscribe a { background: url(./img/rss_20x20.png) no-repeat; padding-left: 25px; color: #666; font-weight: bold; display: inline-block; height: 20px; float: right; }
