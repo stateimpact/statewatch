@@ -53,22 +53,23 @@
 </div>
 <!-- /.grid_3 -->
 
-<div class="grid_3">
+<div class="grid_3" id="ft-archive">
 
-<div id="ft-archive">
+
     <h3>Archives</h3>
+
+    <form role="search" method="get" class="sitesearch" id="searchform-footer" action="<?php echo trailingslashit(get_bloginfo('url')); ?>">
+        <div><label class="visuallyhidden" for="s1">Search for:</label>
+        <input type="text" class="footer-search" placeholder="Search This Site" value="" name="s" id="s1" />
+        <input type="submit" alt="Submit" width="36" height="36" class="search-submit" />
+        </div>
+    </form>
     
    <select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'> 
   <option value="">Select Month</option> 
   <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?> </select>
-</div>
 
-<form role="search" method="get" class="sitesearch" id="searchform-footer" action="<?php echo trailingslashit(get_bloginfo('url')); ?>">
-	<div><label class="visuallyhidden" for="s1">Search for:</label>
-	<input type="text" class="footer-search" placeholder="Search This Site" value="" name="s" id="s1" />
-	<input type="submit" alt="Submit" width="36" height="36" class="search-submit" />
-	</div>
-</form>
+
 <!-- /#searchform-footer -->
 
 <?php $topics = get_static_page('topic-index'); ?>
