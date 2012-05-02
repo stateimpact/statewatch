@@ -237,15 +237,41 @@ img.size-large {
 
 /* Post page */
 
+#content .entry-title {
+	line-height: 1.1;
+}
+.post-content, 
+.post-content p {
+	line-height: 1.4;
+}
 
-#content .meta-gestures li {
+#content .meta-gestures { margin-top: 10px; }
+
+#content .meta-gestures li,
+#content .meta-gestures li a {
 	width: auto !important; 
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
-	padding: 0 5px 5px 0;
-	float: none;
+	padding: 0;
+	margin: 0 5px 5px 0;
+	float: left;
 	display: inline-block !important;
+	clear: none;
 }
+#content .meta-gestures .meta-comments,
+#content .meta-gestures .meta-email { 
+	width: 20px;
+	overflow: hidden;
+}
+#content .meta-gestures .meta-comments a,
+#content .meta-gestures .meta-email a {
+	width: 25px !important;
+	height: 20px;
+	text-indent: 100%;
+	overflow: hidden;
+	padding: 0;
+}
+#content .meta-comments a span { display: none; }
 .single .post-metadata { background: none; border: none; }
 #content .related-content { 
 	width: 50% !important; 
