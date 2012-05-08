@@ -35,15 +35,15 @@ require_once( INCLUDES . 'ads.php' );
 add_editor_style();
 
 function sw_loop_post_types() {
-    return array('post', 'fusiontablesmap', 'roundup');
+    return array('post', 'fusiontablesmap', 'argolinksroundup');
 }
 
 add_filter('pre_get_posts', 'filter_search');
 function filter_search($query) {
     if (!is_admin()) {
         if ($query->is_search && !$query->get('suppress_filters')) {
-    	    $query->set('post_type', array('post', 'topic', 'fusiontablesmap', 'roundup'));
-    	    $query->set('orderby', 'modified');
+    	    $query->set('post_type', array('post', 'topic', 'fusiontablesmap', 'argolinksroundup'));
+    	    // $query->set('orderby', 'modified');
         };
     }
     return $query;
@@ -388,6 +388,8 @@ function argo_post_types_qs() {
 
 
 /**
+* DEPRECATED
+* ----------
 * A pagination function
 * @param integer $range: The range of the slider, works best with even numbers
 * Used WP functions:
@@ -415,9 +417,12 @@ function argo_pagination($range = 4){
       // When closer to the beginning
       if($paged < $range){
         for($i = 1; $i <= ($range + 1); $i++){
-          echo "<a href='" . get_pagenum_link($i) ."'";
-          if($i==$paged) echo "class='current'";
-          echo ">$i</a>";
+            $current = $i === $paged ? "current" : "";
+            $link = get_pagenum_link($i);
+            echo "<a class=\"page-numbers $current\" href=\"$link\">$i</a>";
+            //echo '<a class=\"page-numbers\" href=\"' . get_pagenum_link($i);
+            //if($i==$paged) echo "class='current'";
+            //echo ">$i</a>";
         }
       }
       // When closer to the end

@@ -12,14 +12,16 @@
 /*
  * Loop query string modifier to include our custom post types
  */
-//query_posts( argo_post_types_qs() );
+//global $wp_query;
+//$args = array_merge( $wp_query->query, array( 'post_type' => sw_loop_post_types() ));
+//query_posts( $args ); 
 ?>
 
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 
-        <?php $topics = sw_search_topics(get_search_query(), 5); ?>
-
             <?php 
+                global $wp_query;
+                $topics = sw_search_topics(get_search_query(), 5);
                 $story_label = ($wp_query->found_posts === 1) ? "story" : "stories";
                 $topics_label = ($topics->found_posts === 1) ? "topic" : "topics";
             ?>
@@ -80,7 +82,14 @@
     	    <?php endwhile; ?>
             </section>
             <nav>
-                <p class="search-pagination"><?php argo_pagination() ?></p>
+                <?php $links = paginate_links(array(
+                    'base' => network_site_url('%_%') . '?s=' . get_search_query(),
+                    'total' => $wp_query->max_num_pages,
+                    'current' => max(1, get_query_var('paged')),
+                    'format' => 'page/%#%/',
+                    'end_size' => 2,
+                )); ?>
+                <p class="search-pagination"><?php echo $links; ?></p>
             </nav>
             <!-- /.search-pagination -->
                 

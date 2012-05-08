@@ -100,7 +100,8 @@ function sw_search_topics($search_query, $count=5) {
         'post_type' => array('topic'),
         'posts_per_page' => $count,
         'suppress_filters' => true,
-        'orderby'=>'modified'
+        'orderby' => 'modified',
+        'paged' => get_query_var('paged'),
     ));
     return $query;
 }
