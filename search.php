@@ -83,7 +83,7 @@
             </section>
             <nav>
                 <?php $links = paginate_links(array(
-                    'base' => network_site_url('%_%') . '?s=' . get_search_query(),
+                    'base' => home_url('%_%') . '?s=' . get_search_query(),
                     'total' => $wp_query->max_num_pages,
                     'current' => max(1, get_query_var('paged')),
                     'format' => 'page/%#%/',
