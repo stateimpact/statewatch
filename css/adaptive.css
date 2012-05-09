@@ -510,14 +510,14 @@ footer .container_12 .grid_3 {
 	   -moz-box-sizing: border-box;
 }
 
-#site-footer .ft-reporter,
-#site-footer .partner-station {
-	width: 50%;
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	padding: 0 10px 10px 0;
-	float:left;
+#site-footer .partner-station,
+#site-footer .ft-reporter {
+	width: 100%;
+	padding: 0 0 10px;
+	float: none;
 }
+#site-footer .ft-reporter h4 { margin-bottom:5px; }
+#site-footer .ft-reporter h5 { line-height: 1.1; }
 #boilerplate { 
 	height: auto; 
 	width: 100% !important; 
