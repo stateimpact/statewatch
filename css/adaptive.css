@@ -229,7 +229,11 @@ embed {
 }
 
 .module.image { width: 140px !important }
-.module.image.center { width: 100% !important; }
+.module.image.center { 
+	width: 100% !important; 
+	padding: 0 0 10px;
+	border-bottom: 1px solid #ddd;
+}
 .image.right,
 .image.left { max-width: 50% !important; height: auto; }
 
