@@ -217,7 +217,7 @@ body:after {
 	min-width: 0;
 }
 
-img.size-large 
+img.size-large, 
 img.size-full,
 .image.right img,
 .image.left img { 
