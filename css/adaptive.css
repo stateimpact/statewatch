@@ -345,7 +345,7 @@ article {
 
 /* Jiffy Posts */
 .embedded-object {
-	margin: 0 0 30px 30px;
+	margin: 0 0 30px 0;
 }
 .embedded-object blockquote {
 	font-style: italic;
