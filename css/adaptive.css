@@ -217,23 +217,20 @@ body:after {
 	min-width: 0;
 }
 
-.module.image { width: 140px !important }
-.module.image.center { width: 100% !important; }
-img.size-large { 
+img.size-large 
+img.size-full,
+.image.right img,
+.image.left img { 
 	max-width: 100%;
 	width: auto;
 	height: auto;
 }
 
+.module.image { width: 140px !important }
+.module.image.center { width: 100% !important; }
 .image.right,
 .image.left { max-width: 50% !important; height: auto; }
 
-.image.right img,
-.image.left img { 
-	max-width: 100% !important; 
-	height: auto;
-	width: auto;
-}
 
 /* Post page */
 
