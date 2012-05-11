@@ -407,6 +407,13 @@ article {
 	margin-left: 0 !important; /* No comment thread indents on mobile */
 	max-width: 100%; 
 }
+
+#dsq-content {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;	
+	max-width: 100%;
+}
+
 /*
 #content ul.playlist li a.inline {
 	padding: 50px 10px 10px 10px;
