@@ -365,9 +365,10 @@ article {
 	font-style: normal;
 	font-size: 14px;
 	margin-top: 20px;
-}
+} 
 
 
+/* Slideshows */
 #content .slides_container {
 	max-width: 100% !important;
 	width: 300px;
@@ -398,6 +399,12 @@ article {
 
 #content ul.playlist li a.exclude {
 	display: none;
+}
+
+/* Disqus */
+
+#dsq-content .dsq-comment {
+	margin-left: 0 !important; /* No comment thread indents on mobile */
 }
 /*
 #content ul.playlist li a.inline {
