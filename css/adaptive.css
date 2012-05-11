@@ -415,6 +415,7 @@ article {
 }
 
 #dsq-content .dsq-comment-text p a { 
+	display: inline-block;
 	max-width: 250px;
 }
 
