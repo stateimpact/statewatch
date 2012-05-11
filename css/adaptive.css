@@ -414,6 +414,10 @@ article {
 	max-width: 100%;
 }
 
+#dsq-content .dsq-comment-text p a { 
+	max-width: 250px;
+}
+
 /*
 #content ul.playlist li a.inline {
 	padding: 50px 10px 10px 10px;
