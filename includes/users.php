@@ -3,7 +3,14 @@
 add_action( 'show_user_profile', 'sw_staff_fields' );
 add_action( 'edit_user_profile', 'sw_staff_fields' );
 
-function sw_staff_fields( $user ) { ?>
+function get_blog_id() {
+	global $current_blog;
+	return $current_blog->blog_id;
+}
+
+function sw_staff_fields( $user ) { 
+	$blog_id = get_blog_id();
+	?>
     <h3>StateImpact</h3>
 
 	<table class="form-table">
@@ -26,7 +33,7 @@ function sw_staff_fields( $user ) { ?>
 		<tr>
 		    <th><label for="sw_is_staff">Staff reporter status</label></th>
 		    <td>
-		        <input type="checkbox" name="sw_is_staff" id="sw_is_staff" <?php checked( get_the_author_meta( 'sw_is_staff', $user->ID ), 1 ); ?> /><br />
+		        <input type="checkbox" name="sw_is_staff" id="sw_is_staff" <?php checked( get_the_author_meta( "sw_is_staff:" . $blog_id, $user->ID ), 1 ); ?> /><br />
 		        <span class="description">Staff reporters show up in the site footer</span>
 		    </td>
 		</tr>		
@@ -38,6 +45,7 @@ add_action( 'personal_options_update', 'sw_update_staff_fields' );
 add_action( 'edit_user_profile_update', 'sw_update_staff_fields' );
 
 function sw_update_staff_fields( $user_id ) {
+	$blog_id = get_blog_id();
 
 	if ( !current_user_can( 'edit_user', $user_id ) )
 		return false;
@@ -45,19 +53,20 @@ function sw_update_staff_fields( $user_id ) {
 	$fields = array('sw_title', 'sw_twitter', 'sw_order');
 	foreach($fields as $field) {
 	    if (isset($_POST[$field])) {
-	        update_usermeta( $user_id, $field, $_POST[$field]);
+	        update_user_meta( $user_id, $field, $_POST[$field]);
 	    }
 	}
 	if ($_POST['sw_is_staff'] == 'on') {
-	    update_usermeta($user_id, 'sw_is_staff', 1);
+	    update_user_meta($user_id, "sw_is_staff:" . $blog_id, 1);
 	} else {
-	    update_usermeta($user_id, 'sw_is_staff', 0);
+	    update_user_meta($user_id, "sw_is_staff:" . $blog_id, 0);
 	}
 }
 
 function sw_get_staff() {
+	$blog_id = get_blog_id();
     return get_users( array(
-                'meta_key' => 'sw_is_staff',
+                'meta_key' => "sw_is_staff:" . $blog_id,
                 'meta_value' => 1,
                 'orderby' => 'registered',
             ) );
