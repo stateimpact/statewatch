@@ -109,7 +109,9 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/jquery.textPlaceholder.js"></script>
 
 <script type="text/javascript">
-        var size = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
+        if (window.getComputedStyle){ // Make sure getComputedStyle is implemented so IE doesn't break
+            var size = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
+        };
         jQuery(document).ready(function($) {
             //html5 placeholders
             $("input[placeholder]").textPlaceholder();

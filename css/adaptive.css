@@ -217,23 +217,26 @@ body:after {
 	min-width: 0;
 }
 
-.module.image { width: 140px !important }
-.module.image.center { width: 100% !important; }
-img.size-large { 
+img.size-large, 
+img.size-full,
+.image.right img,
+.image.left img,
+.youtube-player,
+embed { 
 	max-width: 100%;
 	width: auto;
 	height: auto;
 }
 
+.module.image { width: 140px !important }
+.module.image.center { 
+	width: 100% !important; 
+	padding: 0 0 10px;
+	border-bottom: 1px solid #ddd;
+}
 .image.right,
 .image.left { max-width: 50% !important; height: auto; }
 
-.image.right img,
-.image.left img { 
-	max-width: 100% !important; 
-	height: auto;
-	width: auto;
-}
 
 /* Post page */
 
@@ -346,7 +349,26 @@ article {
 	-webkit-text-size-adjust:100%;
 }
 
+/* Jiffy Posts */
+.embedded-object {
+	margin: 0 0 30px 0;
+}
+#content .jiffypost .embedded-object blockquote {
+	font-style: italic;
+	margin: 0 0 0 30px;
+}
+.embed-metadata { width: 20px; }
+.jiffy-source {
+	display: none;
+}
+#content .jiffy-sourceurl {
+	font-style: normal;
+	font-size: 14px;
+	margin-top: 20px;
+} 
 
+
+/* Slideshows */
 #content .slides_container {
 	max-width: 100% !important;
 	width: 300px;
@@ -378,6 +400,25 @@ article {
 #content ul.playlist li a.exclude {
 	display: none;
 }
+
+/* Disqus */
+
+#dsq-content .dsq-comment {
+	margin-left: 0 !important; /* No comment thread indents on mobile */
+	max-width: 100%; 
+}
+
+#dsq-content {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;	
+	max-width: 100%;
+}
+
+#dsq-content .dsq-comment-text p a { 
+	display: inline-block;
+	max-width: 250px;
+}
+
 /*
 #content ul.playlist li a.inline {
 	padding: 50px 10px 10px 10px;
