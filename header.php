@@ -44,7 +44,7 @@
 	<link rel="apple-touch-icon-precomposed" href="<?php bloginfo('stylesheet_directory'); ?>/img/apple-touch-icon-precomposed.png"/> 
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 
-	<meta name="viewport" content="width=device-width; initial-scale=1.0;"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=50" />
 	
 <script src="<?php bloginfo('template_directory'); ?>/js/modernizr-1.6.min.js"></script>
