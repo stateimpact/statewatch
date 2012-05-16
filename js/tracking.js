@@ -15,19 +15,18 @@ jQuery(document).ready(function($) {
 
     ***/
     var events = window._clickEvents || [];
-    
+   
     $.each(events, function(i) {
         var selector = this.selector,
             category = this.category,
             action   = this.action,
             label    = this.label,
             value    = this.value
-        
         $(selector).each(function(i) {
             var trackArray = [
                 '_trackEvent', 
                 category, 
-                action || $(this).text().trim(), 
+                $.trim(action || $(this).text()), 
                 label  || $(this).attr('href'), 
                 value  || 1, 
                 true
