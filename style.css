@@ -1509,7 +1509,7 @@ legend      { font-weight: bold;}
 	}
 
 	/* Topic headline */
-	.topic-hed { color:#333; margin-bottom:10px; }
+	.topic-hed { color:#333; margin-bottom:10px; position: relative; }
 	.topic-hed h1 { 
 		font-size:42px; 
 		line-height: 1.1;
@@ -1565,7 +1565,7 @@ legend      { font-weight: bold;}
 		position: relative; 
 	}
 	.topic-posts .day { border-top: 1px solid #ccc; padding-top: 20px; }
-	#content .topic-posts article { margin-left: 20px; margin-bottom: 0; padding-bottom: 0; border-top: 0; padding-top: 0; }
+	#main #content .topic-posts article { margin-left: 20px; margin-bottom: 0; padding-bottom: 0; border-top: 0; padding-top: 0; }
 	#content .topic-posts article.prefix_2 { padding-left: 160px; margin-left: 0; }
 	#content .topic-posts article h2.entry-title { font-size: 24px; margin-bottom: 10px; }
 	.topic-posts article.headerrule h2 { border-top: 1px solid #ccc; padding-top: 20px; }
