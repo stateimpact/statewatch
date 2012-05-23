@@ -1587,20 +1587,20 @@ legend      { font-weight: bold;}
 /* Tag index 
 =================================================*/
 
-	
-	.abc_tags li {
+	.abc_tags th { 
+        border: none !important;
+        text-align: left;
+        padding: 5px 0;
+    }
+	.abc_tags tr td {
 		position: relative;
 		padding: 5px 0;
 		font-size: 14px;
 		border-top: 1px solid #ddd;
 	}
 
-	.abc_tags li a { color: #000; }
-	.abc_tags p { text-align: right; } .count {
-		position: absolute;
-		top: 0;
-		right: 0;
-		font-size: 16px;
+	.abc_tags .count {
+        text-align: right;
 	}
 	.tag-letter h3 { 
 		font-family: proxima-nova-extra-condensed,sans-serif; 

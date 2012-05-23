@@ -112,10 +112,11 @@ String.prototype.score = function(abbreviation,offset) {
 jQuery.fn.liveUpdate = function(list){
   list = jQuery(list);
   if ( list.length ) {
-    var rows = list.children('li'),
-      cache = rows.map(function(){
-        return this.firstChild.innerHTML.toLowerCase();
-      });
+    var rows = list.children('tr'),
+        cache = rows.map(function(){
+
+          return jQuery(this).first('a').text().toLowerCase();
+        });
       
     this
       .keyup(filter).keyup()
@@ -149,7 +150,7 @@ jQuery.fn.liveUpdate = function(list){
 
 
     jQuery(document).ready(function() {
-        jQuery('#term').liveUpdate('#tags').focus();
+        jQuery('#term').liveUpdate('#tags tbody').focus();
     });
 </script>
 
@@ -170,15 +171,24 @@ jQuery.fn.liveUpdate = function(list){
 	?>
 	
 	<div class="">
-		<ul id="tags" class="abc_tags">
+		<table id="tags" class="abc_tags">
+            <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th class="count">Posts</th>
+                </tr>
+            </thead>
+            <tbody>
 	<?php
 	foreach($post_tags as $key => $tag) {
     ?>
-			<li><a href="<?php echo get_tag_link($tag->term_id); ?>" title="<?php echo sprintf( __( "View all posts in %s" ), $tag->name ); ?>"><?php echo $tag->name.' </a><span class="count">'.$tag->count.'</span>';?></li>
-			
+			<tr>
+                <td><a href="<?php echo get_tag_link($tag->term_id); ?>" title="<?php echo sprintf( __( "View all posts in %s" ), $tag->name ); ?>"><?php echo $tag->name.' </a>';?></td>
+                <td class="count"><?php echo $tag->count;?></td>
+            </tr>
 	<?php }	?>
-		
-		</ul>
+		    </tbody>
+		</table>
 		
 	</div>
 	<!--/.letter-->
