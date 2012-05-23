@@ -153,7 +153,7 @@ jQuery.fn.liveUpdate = function(list){
     });
 </script>
 
-    <form method="get">
+    <form method="get" autocomplete="off">
         <div>
             <input type="text" value="" name="q" id="term" placeholder="Search all topics" />
         </div> 
