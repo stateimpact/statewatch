@@ -7,7 +7,7 @@ $SITEURL .= $_GET[ 'wpbase' ];
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Wrap content in module</title>
-    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="<?php echo $SITEURL; ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
     <script language="javascript" type="text/javascript" src="<?php echo $SITEURL; ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
     <script language="javascript" type="text/javascript" src="<?php echo $SITEURL; ?>/wp-content/themes/argo-foundation/js/tinymce/plugins/argo/tinymce.js"></script>
