@@ -90,8 +90,6 @@ function sw_feature_docs($post_id, $post, $taxonomy = 'feature') {
 
     if ($documents) {
         sw_add_post_term($post_id, $term, $taxonomy);
-    } else {
-        sw_remove_post_term($post_id, $term, $taxonomy);
     }
 }
 
@@ -101,8 +99,6 @@ function sw_feature_tables($post_id, $post, $taxonomy = 'feature') {
     
     if ( strpos($post->post_content, '[spreadsheet') !== false ) {
         sw_add_post_term($post_id, $term, $taxonomy);
-    } else {
-        sw_remove_post_term($post_id, $term, $taxonomy);
     }
 }
 ?>
