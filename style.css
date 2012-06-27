@@ -1085,6 +1085,7 @@ legend      { font-weight: bold;}
 	ul.embed-metadata { margin-left: 0; }
 	.embed-metadata li { font-size: 11px; margin-left: 0; }
 
+	.jiffy-source { overflow: hidden; text-overflow: ellipsis; }
 
 /* Link Roundup
 =================================================*/
