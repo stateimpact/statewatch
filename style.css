@@ -625,7 +625,6 @@ legend      { font-weight: bold;}
 	#panel-about p a { padding-top: 10px; color: #174E82; display: block; }
 	#panel-about p a:hover { color: #444; text-decoration: underline; }
 	#global-branding { position: relative; z-index: 10; width: 940px; margin: 0 auto; padding: 36px 0 10px; }
-	#global-branding header { width: 460px; }
 	#global-branding header,
 	#topnav li>a { text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
 
@@ -676,29 +675,40 @@ legend      { font-weight: bold;}
 
 	#wrapper #global-branding header h3, 
 	#footerstate { 
-		font-family: proxima-nova,sans-serif;
-		font-size: 26px; 
+		display: inline-block;
+		font-family: proxima-nova-extra-condensed,sans-serif;
+		font-size: 32px;
+		line-height: 36px;
+		text-transform: uppercase; 
 		font-weight: bold; 
-		margin-bottom: 10px; 
+		margin-right: 15px;
+		padding-right: 15px;
+		border-right: 1px solid rgba(255,255,255,.3); 
 	}	
 	#wrapper #global-branding header h3 a,
 	#footerstate a { color: #fff; }
 	#wrapper #global-branding header h3 a:hover,
 	#footerstate a:hover { text-shadow: 0 0 8px rgba(82, 168, 236, 0.4); }
-	#wrapper #global-branding header h4 { font-family: proxima-nova,sans-serif; font-size: 18px; color: #fff; }
+	#wrapper #global-branding header h4 {
+		font-family: proxima-nova,sans-serif; 
+		display: inline-block;
+		font-size: 24px; 
+		font-weight: 300;
+		line-height: 36px;
+		color: #fff;
+	}
 
 
 
 /* Category nav*/
-	#category-nav{ position:absolute; right: 0; top: 69px; z-index:100; margin-left:320px; }
-	#topnav { margin: 0; padding: 0; float: left; width: 100%; list-style: none; font-size: 1.1em; }
+	#category-nav{ z-index:100; margin-left:-15px; }
+	#topnav { position: relative; margin: 0; padding: 0; float: left; width: 100%; list-style: none; font-size: 1.1em; }
 	#topnav li { 
 		float: left; 
 		margin: 0 0 0 0; 
 		padding: 0; 
 		font-size: 15px; 
 		line-height: 1; 
-		border-left: 1px solid rgba(0,0,0,.5); 
 	}
 	.no-rgba #topnav li { border-left: 1px solid #999; }
 	#topnav .first, 
@@ -706,8 +716,7 @@ legend      { font-weight: bold;}
 	#topnav .first a { border-left: none; }
 	#topnav li a { 
 		color: #fff; 
-		display: block; 
-		border-left: 1px solid rgba(255,255,255,.2); 
+		display: block; ); 
 		padding: 5px 15px; 
 		margin: 0; 
 		line-height: 18px;
@@ -722,8 +731,8 @@ legend      { font-weight: bold;}
 
 		/* Only use these styles if webfonts are active to prevent layout problems */
 		.wf-active #topnav li a { 
-			font-family: proxima-nova-extra-condensed,sans-serif;
-			font-size: 18px;
+			font-family: proxima-nova,sans-serif;
+			font-size: 14px;
 			font-weight: 600; 
 			letter-spacing: .1em;
 			text-transform: uppercase;
@@ -734,7 +743,7 @@ legend      { font-weight: bold;}
 		position: absolute; 
 		display: none; 			
 		z-index: 5;
-		right: -10px; 
+		left: 0; 
 		top: 28px; 
 		width: 600px;
 		padding: 10px;
@@ -993,10 +1002,10 @@ legend      { font-weight: bold;}
 	#content .related-content div { padding: 0; }
 	#content .related-content h4 {
 		font-family: proxima-nova,sans-serif;
-		font-weight: 300;
-		font-size: 16px;
-		line-height: 24px;
+		font-weight: 400;
 		text-transform: uppercase;
+		font-size: 16px;
+		line-height: 1.3;
 		background-color: #252C33;
 		background-repeat: repeat-x;
 		background-image: -khtml-gradient(linear, left top, left bottom, from(#385377), to(#252C33));
@@ -1421,7 +1430,7 @@ legend      { font-weight: bold;}
 	/* Search  */
 
 	#s2 { position: static; }
-	header .sitesearch { position: absolute; top: 30px; right: 0; }
+	header .sitesearch { position: absolute; bottom: 10px; right: 0; margin-bottom: 0; }
 	.sitesearch { display: block; width: 220px; height: 33px; position: relative; }
 	input.sw-about-search, 
 	input#s1, .error404 #s2, .footer-search { 
