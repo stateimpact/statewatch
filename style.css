@@ -987,7 +987,12 @@ legend      { font-weight: bold;}
 
 	
 	/* Related Content Sidebar */
-	#content .related-content { border: none !important; font-style: normal !important; }
+	#content .related-content { 
+		border: none !important; 
+		font-style: normal !important;
+		position: relative;
+		z-index: 20; /* Fix for questions template link focus bug */ 
+	}
 	#content .related-content div { padding: 0; }
 	#content .related-content h4 {
 		font-family: proxima-nova-extra-condensed,sans-serif;
