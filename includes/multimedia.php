@@ -14,6 +14,8 @@ class SI_Multimedia {
         add_action( 'save_post', array(&$this, 'save'));
         
         add_action( 'init', array(&$this, 'image_size'));
+
+        add_filter( 'post_type_link', array(&$this, 'permalink'), 9, 4);
     }
     
     function add_post_type() {
@@ -33,7 +35,7 @@ class SI_Multimedia {
             ),
             'description' => 'Multimedia',
             'exclude_from_search' => true,
-            'public' => false,
+            'public' => true,
             'show_ui' => true,
             'supports' => array('title', 'excerpt', 'thumbnail'),
             'taxonomies' => array('category', 'post_tag', 'feature'),
@@ -66,6 +68,13 @@ class SI_Multimedia {
         if ((get_post_type($post_id) === 'multimedia') && isset($_POST['mm-url'])) {
             update_post_meta($post_id, 'multimedia_url', $_POST['mm-url']);
         }
+    }
+
+    function permalink($post_link, $post, $leavename, $sample) {
+        if ($post->post_type === "multimedia") {
+            return get_post_meta($post->ID, 'multimedia_url', true);
+        }
+        return $post_link;
     }
 }
 
