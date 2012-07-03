@@ -347,6 +347,7 @@ embed {
 
 article {
 	-webkit-text-size-adjust:100%;
+	    -ms-text-size-adjust:100%;
 }
 
 /* Jiffy Posts */
@@ -371,7 +372,6 @@ article {
 /* Slideshows */
 #content .slides_container {
 	max-width: 100% !important;
-	width: 300px;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;	
 }
