@@ -1,5 +1,72 @@
 <?php
 
+/**
+* Multimedia Widget displays most recent multimedia entries
+*/
+class SI_Multimedia_Widget extends WP_Widget {
+    
+    function __construct() {
+        $options = array(
+            'classname' => 'sw-multimedia',
+            'description' => 'Links to recent multimedia'
+        );
+        parent::__construct('multimedia-widget', 'Multimedia', $options);
+    }
+
+    function form($instance) {
+
+        if (isset($instance['title'])) {
+            $title = esc_attr(strip_tags($instance['title']));
+        } else {
+            $title = "Multimedia";
+        }
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> 
+            <input class="widefat" 
+                   id="<?php echo $this->get_field_id('title'); ?>" 
+                   name="<?php echo $this->get_field_name('title'); ?>" 
+                   type="text" value="<?php echo $title; ?>" />
+        </p>
+        <?php 
+    }
+
+    function widget($args, $instance) {
+        // render this thing
+        extract($args);
+        $multimedia = new WP_Query(array(
+            'post_type' => 'multimedia',
+            'posts_per_page' => 5,
+            'suppress_filters' => true
+        ));
+
+        echo $before_widget;
+        
+        if ( !empty( $instance['title'] ) ): ?>
+        <h3><?php echo $instance['title']; ?></h3>
+        <?php endif; ?>
+        
+        <?php while ($multimedia->have_posts()): $multimedia->the_post(); ?>
+            <?php $content_types = wp_get_object_terms($post->ID, 'feature'); ?>
+            <?php if (has_post_thumbnail()): ?>
+            <a href="<?php echo get_post_meta($post->ID, 'multimedia_url', true); ?>"><?php the_post_thumbnail('multimedia-thumb'); ?></a>
+            <?php endif; ?>
+            <h4 class="headline">
+                <a href="<?php echo get_post_meta($post->ID, 'multimedia_url', true); ?>">
+                <?php if ($content_types): ?>
+                    <strong><?php echo $content_types[0]->name; ?>: </strong>
+                <?php endif; ?>
+                    <?php the_title(); ?>
+                </a>
+            </h4>
+        <?php endwhile;
+        echo $after_widget;
+    }
+}
+
+register_widget('SI_Multimedia_Widget');
+
+
 class SI_Multimedia {
     
     function __construct() {
