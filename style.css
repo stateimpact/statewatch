@@ -928,6 +928,11 @@ legend      { font-weight: bold;}
 		        border-radius: 0;
 	}
 
+
+	#content .navis-slideshow {
+		-webkit-box-shadow: 0 1px 4px #ddd;
+		   -moz-box-shadow: 0 1px 4px #ddd;
+	}
 	.navis-slideshow a {
 		-webkit-transition: none;
 		   -moz-transition: none;
