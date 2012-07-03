@@ -311,8 +311,8 @@ embed {
 	border-top: 1px solid #ccc;
 }
 
-.p-post,
-.n-post { 
+#content .p-post,
+#content .n-post { 
 	width: 50%;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
