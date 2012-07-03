@@ -858,11 +858,8 @@ legend      { font-weight: bold;}
 			padding: 0; 
 			margin-top: 0;
 		}
- 		#content .sticky h2 { 
-			font-family: proxima-nova,sans-serif; 
-			line-height: 1.2;
-		}
-		#content .sticky h2 a { color: #000; font-weight: 300; }
+		#content .sticky h2 { line-height: 1.2; }
+		#content .sticky h2 a { font: 600 24px/1 proxima-nova,sans-serif; color: #000; }
 		#content .sticky h2 a:hover { color: #BF3119; text-decoration: none; }
 		#content .sticky p { margin-bottom: 0; font-size: 14px;	}
 		#content .sticky img { border: 1px solid #999; box-shadow: none; float: left; margin: 0 10px 10px 0; }
@@ -879,14 +876,10 @@ legend      { font-weight: bold;}
 	.post-author p { font-size:14px; }
 	#content .entry-title { 
 		margin-bottom: 15px; 
-		font-family: proxima-nova,sans-serif;
-		font-size: 32px; 
-		line-height: 1.2; 
-		font-weight: 300; 
-		color: #000;
+		font: 600 32px/1.2 proxima-nova,sans-serif;
 	}
-	#content .entry-title a { 
-		font-weight:300; 
+	#content .entry-title a {
+		font-weight: 600;
 		color: #000; 		    
 	}
 	#content .entry-title a:hover { color: #BF3119; text-decoration: none; }
@@ -1091,7 +1084,7 @@ legend      { font-weight: bold;}
 	.n-post { float: right; width: 300px; text-align: right; margin: 10px 0; }
 
 	/* Jiffy Posts */
-	#content article.jiffypost h2 { margin: 0; font-size: 28px; }
+	#content article.jiffypost h2 { margin: 0; }
 	.single article .jiffypost { border-bottom: none; margin-bottom: 0; }
 	ul.embed-metadata { margin-left: 0; }
 	.embed-metadata li { font-size: 11px; margin-left: 0; }
@@ -1517,7 +1510,6 @@ legend      { font-weight: bold;}
 		font-size: 16px; 
 		line-height: 1.1;	
 		text-transform: uppercase; 
-		letter-spacing: .1em;
 		margin-bottom: 0;
 		padding: 10px 0;
 		border-top: 1px solid #ccc; 
@@ -1564,9 +1556,9 @@ legend      { font-weight: bold;}
 	/* Key stories */
 	#main .topic-featured { margin-bottom: 20px; }
 	#main .topic-featured .story { border-top: 1px solid #eee; padding-top: 10px; margin-bottom: 10px; clear: both; }
-	#main .topic-featured .pub-date { font-size: 11px; text-transform: uppercase; font-weight: normal; color: #999; margin-bottom: 0; }
+	#main .topic-featured .pub-date { font-size: 11px; text-transform: uppercase; font-weight: normal; color: #999; margin-bottom: 5px; }
 	.topic-featured .thumbnail { float: right; margin: 0 0 10px 10px; }
-	#main .topic-featured .headline a { font: bold 28px/1.2 proxima-nova,sans-serif; color: #000; }
+	#main .topic-featured .headline a { font: 600 28px/1.2 proxima-nova,sans-serif; color: #000; }
 	#main .topic-featured .headline a:hover { color: #BF3119; }
 	
 	/* Topic multimedia */
@@ -1583,7 +1575,7 @@ legend      { font-weight: bold;}
 	#main #content .topic-posts article { margin-left: 20px; margin-bottom: 0; padding-bottom: 0; border-top: 0; padding-top: 0; }
 	#main #content .topic-posts article.prefix_2 { padding-left: 160px; margin-left: 0; }
 	#content .topic-posts article h2.entry-title { margin-bottom: 10px; line-height: 1.1; }
-	#content .topic-posts article h2.entry-title a { font-size: 24px; font-weight: 400; }
+	#content .topic-posts article h2.entry-title a { font-size: 24px; font-weight: 600; }
 	.topic-posts article.headerrule h2 { border-top: 1px solid #ccc; padding-top: 20px; }
 	#content .topic-posts h6.entry-date { 
 		border-top: none; 
