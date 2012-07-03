@@ -49,10 +49,10 @@ class SI_Multimedia_Widget extends WP_Widget {
         <?php while ($multimedia->have_posts()): $multimedia->the_post(); ?>
             <?php $content_types = wp_get_object_terms($post->ID, 'feature'); ?>
             <?php if (has_post_thumbnail()): ?>
-            <a href="<?php echo get_post_meta($post->ID, 'multimedia_url', true); ?>"><?php the_post_thumbnail('multimedia-thumb'); ?></a>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('multimedia-thumb'); ?></a>
             <?php endif; ?>
             <h4 class="headline">
-                <a href="<?php echo get_post_meta($post->ID, 'multimedia_url', true); ?>">
+                <a href="<?php the_permalink(); ?>">
                 <?php if ($content_types): ?>
                     <strong><?php echo $content_types[0]->name; ?>: </strong>
                 <?php endif; ?>
