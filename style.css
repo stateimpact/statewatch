@@ -534,7 +534,7 @@ legend      { font-weight: bold;}
 	body { font-family: "Helvetica Neue",Arial,sans-serif; color: #444; }
 	.container_12 { background: transparent; }
 	#local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; width: 100%; min-width: 1000px; }
-	#main { background: url(./img/content-bg.png) no-repeat; width: 960px; margin: 0 auto; padding: 25px 20px;  }
+	#main { background: url(./img/content-bg.png) 0 -6px no-repeat; width: 960px; margin: 0 auto; padding: 15px 20px;  }
 
 	#content h1, 
 	#content h2, 
@@ -624,7 +624,7 @@ legend      { font-weight: bold;}
 	#panel-about p { font-style: normal; font-size: 14px; }
 	#panel-about p a { padding-top: 10px; color: #174E82; display: block; }
 	#panel-about p a:hover { color: #444; text-decoration: underline; }
-	#global-branding { position: relative; z-index: 10; width: 940px; margin: 0 auto; padding: 36px 0 10px; }
+	#global-branding { position: relative; z-index: 10; width: 940px; margin: 0 auto; padding: 36px 0 0; }
 	#global-branding header,
 	#topnav li>a { text-shadow: #000 0 1px 3px; -webkit-font-smoothing: antialiased; }
 
@@ -717,13 +717,20 @@ legend      { font-weight: bold;}
 	#topnav li a { 
 		color: #fff; 
 		display: block; 
-		padding: 5px 15px; 
-		margin: 0; 
-		line-height: 18px;
-		font-size: 14px;			    
+		padding: 0 15px; 
+		margin: 0 1px 0 0; 
+		line-height: 36px;
+		height: 36px;
+		font-size: 14px;	
+		background: #3c4d5c;		    
 	}
-	#topnav li:hover a,
-	#topnav li a:hover { text-decoration: none;	background-color: rgba(255,255,255,.1); }
+	#wrapper #topnav li:hover a,
+	#wrapper #topnav li a:hover { 
+		text-decoration: none;	
+		background-color: #fff; 
+		color: #111;
+		text-shadow: none;
+	}
 		
 		/* Hide category nav until typekit is loaded to prevent flash of Helvetica text */
 		.fontface #topnav { display: none; }
@@ -742,11 +749,11 @@ legend      { font-weight: bold;}
 	#topnav li .sub { 
 		position: absolute; 
 		display: none; 			
-		z-index: 5;
+		z-index: -1;
 		left: 0; 
-		top: 28px; 
-		width: 600px;
-		padding: 10px;
+		top: 36px; 
+		width: 620px;
+		padding: 20px;
 		border: none;
 		background: #fff;
 		-webkit-box-shadow: 0 3px 10px #333;
@@ -756,14 +763,14 @@ legend      { font-weight: bold;}
 	.no-borderradius #category-nav #topnav .sub { border: 2px solid #ccc; }
 	#topnav li .sub ul { list-style: none; margin: 0; padding: 0; float: left;  }
 	#topnav .sub li { border-left: none; }
-	#topnav .sub ul li a { display: inline; color: #174E82; padding-left: 0; }
+	#wrapper #topnav .sub ul li a { display: inline; line-height: 18px; color: #174E82; background: #fff; padding-left: 0; }
 	#topnav li .sub a { font-family: "Helvetica Neue",Arial,sans-serif; text-transform: none; letter-spacing: 0; text-shadow: none; }
 	#topnav li .sub a:hover { color: #BF3119; text-decoration: none; }
 	.mega-feature h2 { font-size: 16px; line-height: 1.4; padding-bottom: 0; color: #333; }
 	.inner-menu h3 { font: 400 14px/1 proxima-nova,sans-serif; color: #000; padding: 6px 0; border-bottom: 1px solid #ccc; margin-bottom: 0; }
 	.category-topics, 
 	.category-articles { float: left; margin-bottom: 10px; }
-	.category-articles { width: 360px; margin-left: 20px; }
+	.category-articles { width: 380px; margin-left: 20px; }
 	.category-topics { margin-left: 0; width: 220px; }
 	#topnav .category-topics ul { width: 220px; }
 	#topnav .category-topics li, 
@@ -789,8 +796,8 @@ legend      { font-weight: bold;}
 		.featured-topics .grid_3:first-child { margin: 0; }
 		.featured-topics .topic { background: #f5f5f5; height: 140px; overflow: hidden; }
 		.featured-topics img { float: left; }
-		.featured-topics h2 { font-size: 14px; line-height: 1; font-weight: 400; font-family: proxima-nova,sans-serif; text-transform: uppercase; }
-		.featured-topics h3 { font-size: 18px; line-height: 1.2; font-family: proxima-nova,sans-serif; font-weight: 300; padding: 5px; }
+		.featured-topics h2 { font: 400 14px/1 proxima-nova,sans-serif; text-transform: uppercase; }
+		.featured-topics h3 { font: 300 18px/1.2 proxima-nova,sans-serif; padding: 5px; }
 		.featured-topics h3, .featured-topics h4 { margin:0 5px 0 145px; }
 		.featured-topics h4 { font-size: 12px; }
 		#wrapper .featured-topics h3 a { 
@@ -858,12 +865,10 @@ legend      { font-weight: bold;}
 	#content article.sticky { padding-top: 10px; }
 	.sticky-solo, .sticky-related { border: none; background: transparent; padding: 0; }
 		#content .sticky h5 { 
-			font-family: proxima-nova,sans-serif; 
-			font-size: 16px; 
+			font: 400 14px/1 proxima-nova,sans-serif; 
 			border-bottom: none; 
 			color: #333; 
 			text-transform: uppercase; 
-			font-weight: 400; 
 			padding: 0; 
 			margin-top: 0;
 		}
@@ -1430,7 +1435,7 @@ legend      { font-weight: bold;}
 	/* Search  */
 
 	#s2 { position: static; }
-	header .sitesearch { position: absolute; bottom: 10px; right: 0; margin-bottom: 0; }
+	header .sitesearch { position: absolute; z-index: 10; bottom: 0; right: 0; margin-bottom: 0; }
 	.sitesearch { display: block; width: 220px; height: 33px; position: relative; }
 	input.sw-about-search, 
 	input#s1, .error404 #s2, .footer-search { 
@@ -1543,7 +1548,7 @@ legend      { font-weight: bold;}
 	.topic-hed .wp-media-credit { text-align: right; display: block; font-size: 10px; margin-bottom: 5px; text-transform: uppercase; }
 	.topic-hed p.wp-caption-text { font-size: 12px; line-height: 1.3; }
 	.topic-hed { background: #fff; overflow: hidden; }
-	#main .topic-hed h2.section-hed { border-bottom: 1px solid #ddd; margin-bottom: 10px; padding-top: 0; border-top: none; }
+	#main .topic-hed h2.section-hed { border-bottom: 1px solid #ccc; margin-bottom: 10px; padding-top: 0; border-top: none; }
 	#main .topic-hed h2.section-hed a { color: #333; }
 	.topic-hed .meta-gestures { float: none; width: auto; }
 	.topic-hed .alltopics { top: 3px; }
@@ -1585,9 +1590,9 @@ legend      { font-weight: bold;}
 	.topic-posts .day { border-top: 1px solid #eee; padding-top: 20px; }
 	#main #content .topic-posts article { margin-left: 20px; margin-bottom: 0; padding-bottom: 0; border-top: 0; padding-top: 0; }
 	#main #content .topic-posts article.prefix_2 { padding-left: 160px; margin-left: 0; }
-	#content .topic-posts article h2.entry-title { margin-bottom: 10px; line-height: 1.1; }
-	#content .topic-posts article h2.entry-title a { font-size: 24px; font-weight: 600; }
-	.topic-posts article.headerrule h2 { border-top: 1px solid #ccc; padding-top: 20px; }
+	#content .topic-posts article h2.entry-title { margin-bottom: 10px; font: 600 32px/.8 proxima-nova,sans-serif }
+	#content .topic-posts article h2.entry-title a { font-size: 24px; line-height: 1.1; font-weight: 600; }
+	.topic-posts article.headerrule h2 { border-top: 1px solid #eee; padding-top: 20px; }
 	#content .topic-posts h6.entry-date { 
 		border-top: none; 
 		padding-top: 0; 
