@@ -534,7 +534,7 @@ legend      { font-weight: bold;}
 	body { font-family: "Helvetica Neue",Arial,sans-serif; color: #444; }
 	.container_12 { background: transparent; }
 	#local-wrapper { background: url(./img/site-nav-bg.png) repeat-x; width: 100%; min-width: 1000px; }
-	#main { background: url(./img/content-bg.png) 0 -6px no-repeat; width: 960px; margin: 0 auto; padding: 15px 20px;  }
+	#main { background: url(./img/content-bg.png) 0 -6px no-repeat; width: 960px; margin: 0 auto; padding: 20px;  }
 
 	#content h1, 
 	#content h2, 
