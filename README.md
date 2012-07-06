@@ -11,31 +11,33 @@ statewatch
    - settings/ (various theme-related settings)
      - argo.php
      - statewatch.php
-  - topics/
-  - admin.php
+
+  - topics/ (StateImpact topic buildouts)
+    - css
+    - js
+    - topics.php
+    - walker.php
+
+  - admin.php (sticky custom post types, plus any other editor mods)
   - collection-background.php
   - collection-featured.php
   - collection-header.php
   - collection-links.php
   - collection-multimedia.php
-  - editor.php
-  - featured-posts.php
-  - feedburner.php
-  - media.php
-  - multimedia.php
-  - nav.php
-  - settings
-  - sidebars.php
-  - static-pages.php
-  - static-widgets.php
-  - stations.php
-  - sw-widgets.php
-  - tables.php
-  - taxonomy.php
-  - template.php
+  - editor.php (editor mods)
+  - featured-posts.php (featured posts menu and sidebar widget)
+  - feedburner.php (feedburner email widget)
+  - media.php (image sizes and media handling)
+  - multimedia.php (custom post types linking to external content)
+  - nav.php (navigation mods)
+  - sidebars.php (define dynamic sidebars)
+  - static-pages.php (get and create required static pages, like About)
+  - stations.php (station and partner post types)
+  - sw-widgets.php (sidebar widgets)
+  - taxonomy.php (custom taxonomies)
+  - template.php (template modifications, including wide posts)
   - topic_loop.php
-  - topics
-  - users.php
+  - users.php (staff management)
  - 404.php
  - about.php
  - archive.php
