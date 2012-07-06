@@ -37,8 +37,8 @@ function sw_loop_post_types() {
     return array('post', 'fusiontablesmap', 'argolinksroundup');
 }
 
-add_filter('pre_get_posts', 'filter_search');
-function filter_search($query) {
+add_filter('pre_get_posts', 'sw_filter_search');
+function sw_filter_search($query) {
     if (!is_admin()) {
         if ($query->is_search && !$query->get('suppress_filters')) {
     	    $query->set('post_type', array('post', 'topic', 'fusiontablesmap', 'argolinksroundup'));
