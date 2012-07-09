@@ -25,7 +25,6 @@ require_once( INCLUDES . 'media.php' );
 require_once( INCLUDES . 'nav.php');
 require_once( INCLUDES . 'admin.php' );
 require_once( INCLUDES . 'multimedia.php' );
-// require_once( INCLUDES . 'roundups/link-roundups.php' );
 require_once( INCLUDES . 'featured-posts.php' );
 require_once( INCLUDES . 'editor.php' );
 require_once( INCLUDES . 'feedburner.php' );
@@ -38,8 +37,8 @@ function sw_loop_post_types() {
     return array('post', 'fusiontablesmap', 'argolinksroundup');
 }
 
-add_filter('pre_get_posts', 'filter_search');
-function filter_search($query) {
+add_filter('pre_get_posts', 'sw_filter_search');
+function sw_filter_search($query) {
     if (!is_admin()) {
         if ($query->is_search && !$query->get('suppress_filters')) {
     	    $query->set('post_type', array('post', 'topic', 'fusiontablesmap', 'argolinksroundup'));
