@@ -1,6 +1,8 @@
 Our WordPress blogs all run on the same theme: StateWatch. This theme was adapted from the Argo Foundation (it began as a child theme and still contains many `argo_`-prefixed functions) and is built around many of the lessons learned in Project Argo.
 
-Below is an outline of the theme's codebase. Top-level files control parts of the theme's presentation (`loop.php` and `404.php`) or are page templates (`about.php`).
+Below is an outline of the theme's codebase. Top-level files control parts of the theme's presentation (`loop.php` and `404.php`) or are page templates (`about.php`). These files are documented extensively on the [WordPress Codex](http://codex.wordpress.org/Theme_Development).
+
+Theme functionality is defined in `functions.php` and imported files. Specific pieces of functionality are grouped in files or directories under `includes`. Functionality should be extracted into plugins wherever possible. Where functionality can't be extracted or is intrinsic to the theme, we've tried to structure the code like a plugin. See `includes/topics` as an example.
 
 statewatch
  - css
