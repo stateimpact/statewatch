@@ -41,30 +41,57 @@ class SI_Multimedia_Widget extends WP_Widget {
         ));
 
         echo $before_widget;
-        
         if ( !empty( $instance['title'] ) ): ?>
         <h3><?php echo $instance['title']; ?></h3>
-        <?php endif; ?>
-        
-        <?php while ($multimedia->have_posts()): $multimedia->the_post(); ?>
-            <?php $content_types = wp_get_object_terms($post->ID, 'feature'); ?>
-            <?php if (has_post_thumbnail()): ?>
-            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('multimedia-thumb'); ?></a>
-            <?php endif; ?>
-            <h4 class="headline">
-                <a href="<?php the_permalink(); ?>">
-                <?php if ($content_types): ?>
-                    <strong><?php echo $content_types[0]->name; ?>: </strong>
-                <?php endif; ?>
-                    <?php the_title(); ?>
-                </a>
-            </h4>
-        <?php endwhile;
+        <?php endif;
+
+        if (has_nav_menu('featured-multimedia')):
+        wp_nav_menu(array(
+            'theme-location' => 'featured-multimedia',
+            'menu' => 'featured-multimedia',
+            'depth' => -1,
+            'walker' => new Featured_Multimedia_Walker
+        ));
+        endif;
         echo $after_widget;
     }
 }
 
 register_widget('SI_Multimedia_Widget');
+
+
+/**
+* Featured_Multimedia_Walker
+* Hanles presentation for multimedia widget
+*/
+class Featured_Multimedia_Walker extends Walker_Nav_Menu {
+    
+    function start_el( &$output, $item, $depth, $args ) {
+        if (!$item->object_id) return;
+        // open our div
+        $output .= '<div class="featured-multimedia clearfix">';
+        
+        // get feature terms
+        $content_types = wp_get_object_terms($item->object_id, 'feature');
+        if (has_post_thumbnail($item->object_id)):
+            $output .= "<a href=\"{$item->url}\">" . get_the_post_thumbnail($item->object_id, 'multimedia-thumb') . "</a>";
+        endif;
+        $output .= "<h4 class=\"headline\">";
+        $output .= "<a href=\"{$item->url}\">";
+        if ($content_types):
+            $output .= "<strong>{$content_types[0]->name}:</strong>";
+        endif;
+            $output .= $item->title;
+        $output .= "</a>";
+        $output .= "</h4>";
+    }
+
+    function end_el( &$output, $item, $depth ) {
+        if (!$item->object_id) return;
+        $output .= "</div>";
+    }
+
+}
 
 
 class SI_Multimedia {
@@ -74,6 +101,9 @@ class SI_Multimedia {
         // create a post type
         add_action('init', array(&$this, 'add_post_type'), 15);
         
+        // add menus
+        add_action('after_setup_theme', array(&$this, 'featured_multimedia_menu'));
+
         // metaboxes
         add_action( 'add_meta_boxes', array(&$this, 'add_metaboxes'));
         
@@ -107,6 +137,37 @@ class SI_Multimedia {
             'supports' => array('title', 'excerpt', 'thumbnail'),
             'taxonomies' => array('category', 'post_tag', 'feature'),
         ));
+    }
+
+    function featured_multimedia_menu() {
+        // in case we want to create more later
+        $menus = array(
+            'featured-multimedia' => 'Featured Multimedia'
+        );
+        register_nav_menus($menus);
+
+        /*
+         * Try to automatically link menus to each of the locations.
+         * Shamelessly copied from Argo Foundation
+         */
+        foreach ( $menus as $location => $label ) {
+            // if a location isn't wired up...
+            if ( ! has_nav_menu( $location ) ) {
+
+                // get or create the nav menu
+                $nav_menu = wp_get_nav_menu_object( $label );
+                if ( ! $nav_menu ) {
+                    $new_menu_id = wp_create_nav_menu( $label );
+                    $nav_menu = wp_get_nav_menu_object( $new_menu_id );
+                }
+
+                // wire it up to the location
+                $locations = get_theme_mod( 'nav_menu_locations' );
+                $locations[ $location ] = $nav_menu->term_id;
+                set_theme_mod( 'nav_menu_locations', $locations );
+            } 
+        }
+
     }
     
     function image_size() {
