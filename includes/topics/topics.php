@@ -5,6 +5,8 @@ require_once('walker.php');
 class SI_Topics {
     
     public $POST_TYPE = "topic";
+
+    public $taxonomies = array('post_tag', 'category');
     
     function __construct() {
         // unhook argo events
@@ -74,8 +76,8 @@ class SI_Topics {
     }
     
     function get_term_for_topic($topic) {
-        $taxonomies = array('post_tag', 'category');
-        $terms = wp_get_object_terms($topic->ID, $taxonomies);
+        
+        $terms = wp_get_object_terms($topic->ID, $this->taxonomies);
         if (is_array($terms)) {
             return $terms[0];
         } else {
@@ -312,12 +314,19 @@ class SI_Topics {
             'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
             'public' => true,
             'menu_position' => 8,
-            'taxonomies' => array( 'post_tag', 'category' ),
+            'taxonomies' => $this->taxonomies,
         ) );
     }
     
+    /*
+    * Create a topic for terms that don't have one
+    */
     function create_topic($term_id, $tt_id, $taxonomy) {
+        // bail out if it's not a taxonomy we care about
+        if (!in_array($taxonomy, $this->taxonomies)) return;
+
         $term = get_term( $term_id, $taxonomy );
+
         error_log('Creating topic from term: ' . $term->name);
                 
         /***
@@ -351,12 +360,20 @@ class SI_Topics {
         }
     }
     
+    /*
+    * Update topic when a term is edited. Basically a get or create for now.
+    */
     function update_topic($term_id, $tt_id, $taxonomy) {
+        if (!in_array($taxonomy, $this->taxonomies)) return;
+
         $term = get_term( $term_id, $taxonomy );
         $topic = $this->get_topic($term, $taxonomy);
         error_log('Updating topic: ' . $topic->post_title);
     }
     
+    /*
+    * Get a topic, creating if necessary
+    */
     function get_topic($term, $taxonomy) {
         // get a topic (post type) for a given term
         // creating one if it doesn't already exist
