@@ -790,7 +790,15 @@ legend      { font-weight: bold;}
 		#wrapper .featured-topics h3 a:hover { color: #BF3119; text-decoration: none; } 
 		.alltopics { position: absolute; top: 0; right: 0; font-size: 12px; line-height: 1; font-weight: bold;  }
 			.single .alltopics { top: 5px; }
-
+		.featured-topics .topic h3 strong {
+			font-size: 12px;
+			font-weight: 600;
+			display: block;
+			text-transform: uppercase;
+			margin-bottom: 3px;
+			line-height: 12px;
+			color: #BF3119;
+		}
 	
 
 /* Loop  
@@ -833,7 +841,7 @@ legend      { font-weight: bold;}
 	list-style-type: none; }
 		.post-metadata .meta-comments { background-position: 0 -222px; height: 18px; } 
 		.meta-gestures { float: right; width: 380px; margin: 0 0 5px; }
-	.list-pagination { clear: both; border-top: 1px solid #ddd; border-bottom: none; padding-top: 10px; }
+	.list-pagination { clear: both; border-top: 1px soli d #ddd; border-bottom: none; padding-top: 10px; }
 	.list-pagination a { background: none; padding: 0; display: inline; }
 	.older-posts { float: left; }
 	.newer-posts { float: right; }
