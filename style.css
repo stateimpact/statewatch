@@ -1607,27 +1607,20 @@ legend      { font-weight: bold;}
 /* Tag index 
 =================================================*/
 
-	
-	.alpha-nav a:hover { text-decoration: none; background-color: #333; }
-	.number { display: none; }
-	.tag-letter { float: left; width: 100px; }
-
-
-	.abc_tags ul { margin-left: 150px; }
-	.abc_tags li {
+	.abc_tags th { 
+        border: none !important;
+        text-align: left;
+        padding: 5px 0;
+    }
+	.abc_tags tr td {
 		position: relative;
-		padding: 5px;
-		margin: 5px 0;
+		padding: 5px 0;
 		font-size: 14px;
-		border-bottom: 1px solid #ddd;
+		border-top: 1px solid #ddd;
 	}
 
-	.abc_tags li a { color: #000; }
-	.abc_tags p { text-align: right; } .count {
-		position: absolute;
-		top: 0;
-		right: 0;
-		font-size: 16px;
+	.abc_tags .count {
+        text-align: right;
 	}
 	.tag-letter h3 { 
 		font-family: proxima-nova-extra-condensed,sans-serif; 
@@ -1646,42 +1639,6 @@ legend      { font-weight: bold;}
 		padding: 0; 
 		margin: 0;
 	}
-	.alpha-nav { margin-bottom: 20px; }
-	.alpha-nav li { float: left; }
-	.abc_tags { border-top: none; min-height: 110px; margin-bottom: 20px; }
-	.abc_tags p a { font-size: 12px; font-weight: bold; }
-	.abc_tags ul { margin-left: 130px; }
-	.abc_tags li:first-child { border-top: 4px solid #999; }
-	.abc_tags li { padding: 5px 0; }
-	#main .alpha-nav a { 
-		background-color: #ddd; 
-		color: #999; 
-		font-family: proxima-nova-extra-condensed,sans-serif; 
-		font-size: 18px;
-		-webkit-transition: .1s all ease-in; 
-		padding: 0;
-		margin: 0 1px 0 0;
-		width: 22px;
-		line-height: 22px;
-		display: inline-block;
-		text-align: center;
-		height: 22px;
-
-	}
-	#main .alpha-nav li:first-child a { 
-		padding-left: 3px;
-		-webkit-border-radius: 11px 0 0 11px; 
-		-moz-border-radius: 11px 0 0 11px; 
-		border-radius: 11px 0 0 11px; 
-	}
-	#main .alpha-nav li:last-child a { 
-		-webkit-border-radius: 0 11px 11px 0; 
-		-moz-border-radius: 0 11px 11px 0; 
-		border-radius: 0 11px 11px 0; 
-		padding-right: 3px;
-	}
-
-	#main .alpha-nav a:hover { background-color: #333; color: #fff; }
 
 /* Post feature agg page 
 =================================================*/
