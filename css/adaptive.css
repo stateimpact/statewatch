@@ -237,11 +237,32 @@ embed {
 .image.right,
 .image.left { max-width: 50% !important; height: auto; }
 
+/* Home page */
+.featured-topics h2 { margin-bottom: 0; }
+.featured-topics .topic { 
+	height: auto; 
+	background: transparent;
+	border-top: 1px solid #eee;
+	padding-top: 5px;
+	margin-top: 5px;
+}
+.featured-topics .topic .wp-post-image {
+	width: 60px;
+	height: 60px;
+}
+.featured-topics .topic h3 {
+	margin: 0 0 0 70px;
+	padding: 0;
+	font-weight: 400;
+}
+
 
 /* Post page */
 
 #content .entry-title {
 	line-height: 1.1;
+	font-size: 24px;
+	margin-bottom: 10px;
 }
 .post-content, 
 .post-content p {
