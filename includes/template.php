@@ -59,7 +59,7 @@ function sw_meta_description() {
 add_filter('single_template', 'sw_full_width_check');
 function sw_full_width_check($single_template) {
     global $post;
-    global $wide_assets = get_post_meta($post->ID, 'wide_assets', true);
+    $wide_assets = get_post_meta($post->ID, 'wide_assets', true);
     if (!$wide_assets) $wide_assets = array();
     foreach( $wide_assets as $key => $value ) {
         if ($value == true) {
@@ -107,10 +107,11 @@ function sw_search_topics($search_query, $count=5) {
 }
 
 // load a mobile stylesheet
-if (!$wide_assets){
-    add_action('wp_print_styles', 'sw_mobile_style', 15);
-}
+
+add_action('wp_print_styles', 'sw_mobile_style', 15);
 function sw_mobile_style() {
+    $wide_assets = get_post_meta($post->ID, 'wide_assets', true);
+    if (!$wide_assets) return;
     $css = get_template_directory_uri() . "/css/adaptive.css";
     $media = "screen and (max-width: 480px)";
     wp_enqueue_style('adaptive', $css, array(), '1', $media);
