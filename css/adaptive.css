@@ -244,8 +244,8 @@ embed {
 	height: auto; 
 	background: transparent;
 	border-top: 1px solid #eee;
-	padding-top: 5px;
-	margin-top: 5px;
+	padding-top: 10px;
+	margin-top: 10px;
 }
 .featured-topics .topic .wp-post-image {
 	width: 60px;
