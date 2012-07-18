@@ -257,6 +257,7 @@ embed {
 }
 
 #content .sticky h5 { margin-top: 10px; }
+#content .sticky img { width: 60px; height: 60px; border: none; }
 
 /* Loop pages */
 
