@@ -238,7 +238,7 @@ embed {
 .image.left { max-width: 50% !important; height: auto; }
 
 /* Home page */
-.featured-topics h2 { margin-bottom: 0; }
+.featured-topics h2 { margin-bottom: 5px; }
 .featured-topics .topic { 
 	height: auto; 
 	background: transparent;
@@ -255,6 +255,14 @@ embed {
 	padding: 0;
 	font-weight: 400;
 }
+
+#content .sticky h5 { margin-top: 10px; }
+
+/* Loop pages */
+
+.home #main article, 
+.archive #main article, 
+.search #main article { border-top: 1px solid #ccc; }
 
 
 /* Post page */
@@ -297,6 +305,7 @@ embed {
 }
 #content .meta-comments a span { display: none; }
 .single .post-metadata { background: none; border: none; }
+.post-metadata { padding: 10px 0; }
 #content .related-content { 
 	width: 50% !important; 
 	-webkit-box-sizing: border-box;
@@ -327,10 +336,6 @@ embed {
 #taxonomy .topic img { width: 100px; height: 100px; margin-right: 10px; }
 #taxonomy .topic h3 a { font-size: 18px; }
 
-#sidebar h3, 
-#sidebar .widgettitle { 
-	border-top: 1px solid #ccc;
-}
 
 .p-post,
 .n-post { 
@@ -438,6 +443,35 @@ article {
 #dsq-content .dsq-comment-text p a { 
 	display: inline-block;
 	max-width: 250px;
+}
+
+/* Topics pages */
+.container_12 .topic-hed.grid_12,
+#content .topic-hed h2.section-hed { width: 100% !important; margin-bottom: 10px; }
+.topic-hed img { height: 60px; width: 60px; margin-right: 10px; }
+.topic-hed h1 { font-size: 24px; font-weight: 400; }
+
+#main h2.section-hed { border-top: 1px solid #ccc; }
+#content .topic-posts ul.meta-gestures { margin-top: 0; }
+#content .topic-intro ul.meta-gestures { position: static; display: block; float: none; margin: 0; padding: 0 0 10px 0; width: auto; overflow: hidden; }
+#content .topic-intro ul.meta-gestures li { margin: 0 10px 0 0; }
+
+#main #content .topic-posts article { margin-left: 0; }
+#main #content .topic-posts article.prefix_2 { padding-left: 0; }
+
+.topic-posts .day,
+.topic-posts article.headerrule h2 { padding-top: 10px;}
+
+#content .topic-posts h6.entry-date { margin-bottom: 5px; }
+
+
+/* Sidebar */
+#sidebar { margin-top: 20px; }
+#sidebar h3, 
+#sidebar .widgettitle,
+#sidebar li:first-child h3 { 
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
 }
 
 /*
