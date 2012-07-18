@@ -107,7 +107,9 @@ function sw_search_topics($search_query, $count=5) {
 }
 
 // load a mobile stylesheet
-add_action('wp_print_styles', 'sw_mobile_style', 15);
+if (!$wide_assets){
+    add_action('wp_print_styles', 'sw_mobile_style', 15);
+}
 function sw_mobile_style() {
     $css = get_template_directory_uri() . "/css/adaptive.css";
     $media = "screen and (max-width: 480px)";
