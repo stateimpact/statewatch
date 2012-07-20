@@ -239,6 +239,7 @@ embed {
 .image.left { max-width: 50% !important; height: auto; }
 
 /* Home page */
+.featured-topics.grid_12 { margin-bottom: 10px; overflow: hidden; }
 .featured-topics h2 { margin-bottom: 5px; }
 .featured-topics .topic { 
 	height: auto; 
@@ -257,7 +258,7 @@ embed {
 	font-weight: 400;
 }
 
-#content .sticky h5 { margin-top: 10px; }
+#content .sticky h5 { margin-top: 0; }
 #content .sticky img { width: 60px; height: 60px; border: none; }
 
 /* Loop pages */
@@ -266,10 +267,13 @@ embed {
 .archive #main article, 
 .search #main article { border-top: 1px solid #ccc; }
 
+.list-pagination { margin-bottom: 10px; overflow: hidden; }
+
 
 /* Post page */
 
-#content .entry-title {
+#content .entry-title,
+#content .rich-media .entry-title {
 	line-height: 1.1;
 	font-size: 24px;
 	margin-bottom: 10px;
