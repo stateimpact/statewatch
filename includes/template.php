@@ -131,7 +131,8 @@ add_action('wp_print_styles', 'sw_mobile_style', 15);
 function sw_mobile_style() {
     if (is_single()) {
         global $post;
-        if (sw_has_wide_assets($post->ID)) {
+        if (sw_has_wide_assets($post->ID)
+            || get_post_meta($post->ID, 'custom_post_template', true) == SINGLE_FULL_WIDTH) {
             // error_log("Wide post. Not loading adaptive styles.");
             return;
         }
