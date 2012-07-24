@@ -36,7 +36,7 @@ class Featured_Posts_Widget extends WP_Widget {
         wp_nav_menu(array(
             'theme_location' => 'featured-posts',
             'menu' => 'featured-posts',
-            'depth' => 1,
+            'depth' => -1,
             'walker' => new Featured_Posts_Walker
         )); 
         echo $after_widget;

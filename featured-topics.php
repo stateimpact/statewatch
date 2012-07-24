@@ -5,8 +5,10 @@
 	<?php wp_nav_menu( array( 
 	    'theme_location' => 'featured-topics',
 	    'menu'           => 'featured-topics',
-	    'container'      => false,
-	    'walker'         => new SW_Topics_Walker
+	    'container'      => false, // don't wrap in a div
+	    'items_wrap'     => '%3$s', // no ul wrapping 
+	    'depth'          => -1, // flatten items
+	    'walker'         => new SW_Featured_Topics_Walker
 	) ); ?>
     <div class="alltopics"><a href="<? echo get_permalink( $topics->ID ); ?>">View All Topics &raquo;</a></div>
 </div><!-- .grid_12 -->

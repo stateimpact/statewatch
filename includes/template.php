@@ -56,6 +56,25 @@ function sw_meta_description() {
 	<?php
 }
 
+/*
+* Check for the wide_assets flag in post meta
+*/
+function sw_has_wide_assets($post_id) {
+    // error_log("Checking for wide assets in post " . get_the_title($post_id));
+    $wide_assets = get_post_meta($post_id, 'wide_assets', true);
+    if ( is_array($wide_assets) ) {
+        // Check for wide assets in each key.
+        // Continue the loop for each key not set
+        // to true. 
+        foreach ($wide_assets as $i => $value) {
+            if ($value == true) return true;
+        }
+    }
+    // If no key is set to true,
+    // finish the loop and return false.
+    return false;
+}
+
 add_filter('single_template', 'sw_full_width_check');
 function sw_full_width_check($single_template) {
     global $post;
@@ -107,9 +126,17 @@ function sw_search_topics($search_query, $count=5) {
 }
 
 // load a mobile stylesheet
+
 add_action('wp_print_styles', 'sw_mobile_style', 15);
 function sw_mobile_style() {
-    if (!is_single() || sw_is_rich_media()) return;
+    if (is_single()) {
+        global $post;
+        if (sw_has_wide_assets($post->ID)
+            || get_post_meta($post->ID, 'custom_post_template', true) == SINGLE_FULL_WIDTH) {
+            // error_log("Wide post. Not loading adaptive styles.");
+            return;
+        }
+    }
     $css = get_template_directory_uri() . "/css/adaptive.css";
     $media = "screen and (max-width: 480px)";
     wp_enqueue_style('adaptive', $css, array(), '1', $media);

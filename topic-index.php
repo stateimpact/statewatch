@@ -4,6 +4,14 @@ Template Name: Topic index
 */
 ?>
 
+<?php
+function sw_topic_filtering() {
+        $js = get_bloginfo('stylesheet_directory') . "/js/topic-filtering.js";
+        wp_enqueue_script('topicfilter', $js);
+}    
+add_action('wp_enqueue_scripts', 'sw_topic_filtering');
+?>
+
 <?php get_header(); ?>
 
 <article class="grid_8">
@@ -27,38 +35,11 @@ Template Name: Topic index
 
 </div><!-- #content -->
 
-<nav class="alpha-nav clearfix">
-    <ul>
-        <li><a href="#a">A</a></li>
-        <li><a href="#b">B</a></li>
-        <li><a href="#c">C</a></li>
-        <li><a href="#d">D</a></li>
-        <li><a href="#e">E</a></li>
-        <li><a href="#f">F</a></li>
-        <li><a href="#g">G</a></li>
-        <li><a href="#h">H</a></li>
-        <li><a href="#i">I</a></li>
-        <li><a href="#j">J</a></li>
-        <li><a href="#k">K</a></li>
-        <li><a href="#l">L</a></li>
-        <li><a href="#m">M</a></li>
-        <li><a href="#n">N</a></li>
-        <li><a href="#o">O</a></li>
-        <li><a href="#p">P</a></li>
-        <li><a href="#q">Q</a></li>
-        <li><a href="#r">R</a></li>
-        <li><a href="#s">S</a></li>
-        <li><a href="#t">T</a></li>
-        <li><a href="#u">U</a></li>
-        <li><a href="#v">V</a></li>
-        <li><a href="#w">W</a></li>
-        <li><a href="#x">X</a></li>
-        <li><a href="#y">Y</a></li>
-        <li><a href="#z">Z</a></li>
-    </ul>
-</nav>
-<!-- /.alpha-nav -->
-
+    <form method="get" autocomplete="off">
+        <div>
+            <input type="text" value="" name="q" id="term" placeholder="Search all topics" />
+        </div> 
+    </form>
 <?php
     $query_string = '
 		SELECT *,name FROM '.$wpdb->prefix.'term_taxonomy
@@ -70,32 +51,25 @@ Template Name: Topic index
 	$post_tags = $wpdb->get_results($query_string);
 	?>
 	
-	<div class="number abc_tags">
-		<ul>
+	<div class="">
+		<table id="tags" class="abc_tags">
+            <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th class="count">Posts</th>
+                </tr>
+            </thead>
+            <tbody>
 	<?php
 	foreach($post_tags as $key => $tag) {
-		$newletter = substr($tag->slug, 0, 1);
-		if($newletter !== $letter/* && $key != 0*/) { ?>
-		</ul>
-		<p><a href="#content">Back to top  &uarr;</a></p>
-	</div>
-	
-	<div class="<?php echo strtolower($newletter); ?> abc_tags clearfix">
-	
-	<div class="tag-letter">
-	<h3 id="<?php echo strtolower($newletter); ?>"><?php echo strtolower($newletter); ?></h3>
-	
-	</div>
-	
-		<ul>
-	<?php	} $letter = substr($tag->slug, 0, 1); ?>
-			<li><a href="<?php echo get_tag_link($tag->term_id); ?>" title="<?php echo sprintf( __( "View all posts in %s" ), $tag->name ); ?>"><?php echo $tag->name.' <span class="count">'.$tag->count.'</span>';?></a></li>
-			
-		<?php
-	}
-		?>
-		
-		</ul>
+    ?>
+			<tr>
+                <td><a href="<?php echo get_tag_link($tag->term_id); ?>" title="<?php echo sprintf( __( "View all posts in %s" ), $tag->name ); ?>"><?php echo $tag->name.' </a>';?></td>
+                <td class="count"><?php echo $tag->count;?></td>
+            </tr>
+	<?php }	?>
+		    </tbody>
+		</table>
 		
 	</div>
 	<!--/.letter-->
@@ -107,4 +81,5 @@ Template Name: Topic index
 <?php get_sidebar(); ?>
 </aside>
 <!-- /.grid_4 -->
+
 <?php get_footer(); ?>
