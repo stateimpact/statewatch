@@ -15,10 +15,10 @@ statewatch
      - statewatch.php
 
   - topics/ (StateImpact topic buildouts)
-    - css
-    - js
-    - topics.php
-    - walker.php
+     - css
+     - js
+     - topics.php
+     - walker.php
 
   - admin.php (sticky custom post types, plus any other editor mods)
   - collection-background.php
