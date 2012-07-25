@@ -323,15 +323,19 @@ embed {
 #content .related-content .topic { 
 	list-style: none; 
 	border-top: 1px dotted #ddd;
-	padding: 3px 0 0 0;
-	margin: 3px 0 0 0;
+	padding: 5px 0 0 0;
+	margin: 5px 0 0 0;
 }
 
-#content .related-content h5 { font-size: 12px; margin-bottom: 0; }
+#content .related-content .link:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+
+#content .related-content h5 { display: none; font-size: 12px; margin-bottom: 0; }
 
 #content .related-content .topic img { display: none; }
 #content .related-content .link a,
 #content .related-content .topic a { font-size: 12px; }
+
+#content .related-content .topics { display: none; }
 
 .DV-container {
 	max-width: 100%;

@@ -1545,7 +1545,7 @@ legend      { font-weight: bold;}
 	/* Topic background */
 	.topic-intro { position: relative; }
 	#content .topic-intro .meta-gestures, 
-	.topic-posts .meta-gestures { position: absolute; top: 15px; right: 0; text-align: right; width: auto; }
+	#main #content .topic-posts .meta-gestures { position: absolute; top: 15px; right: 0; text-align: right; width: auto; }
 	#content .topic-intro .meta-gestures li { list-style: none; margin: 0; display: inline-block; width: auto; }
 
 
@@ -1572,11 +1572,7 @@ legend      { font-weight: bold;}
 	#main .featured-multimedia .headline strong { text-transform: uppercase; color: #BF3119; }
 	
 	/* Loop */
-	#content .topic-posts { 
-		padding: 10px 0; 
-		overflow:hidden; 
-		position: relative; 
-	}
+	#content .topic-posts { overflow:hidden; position: relative; }
 	.topic-posts .day { border-top: 1px solid #eee; padding-top: 20px; }
 	#main #content .topic-posts article { margin-left: 20px; margin-bottom: 0; padding-bottom: 0; border-top: 0; padding-top: 0; }
 	#main #content .topic-posts article.prefix_2 { padding-left: 160px; margin-left: 0; }
