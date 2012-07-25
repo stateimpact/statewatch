@@ -846,7 +846,6 @@ legend      { font-weight: bold;}
 	.ie6 .newer-posts {	text-align: right; }
 
 	#main #content article.has-features { padding-top: 35px; position: relative;}
-	#main #content article.has-features.sticky { padding-top: 0; }
 	#content .has-features .labels { position: absolute; top: 5px; left: 0; margin:0; list-style: none; width: 100%; line-height: 1.5; }
 	#content .has-features .labels li:first-child { margin-left: 0; padding-left: 0; margin-left: 0; border-left: none; }
 	#content .has-features .labels li { float: left; margin: 2px 0 2px 10px; padding-left: 10px; border-left: 1px solid #ddd; }
