@@ -101,7 +101,14 @@
 </div><!-- #wrapper -->
 <!--[if lte IE 6]><script src="<?php bloginfo('template_directory'); ?>/js/unitpngfix.js"></script><![endif]-->
 
-<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=159002930837384";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.hoverIntent.minified.js"></script>
