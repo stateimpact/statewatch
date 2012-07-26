@@ -359,7 +359,6 @@ embed {
 
 #content .module.aside {
 	max-width: 100% !important;
-	width: 100% !important;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	padding: 10px;
@@ -383,6 +382,8 @@ embed {
 	border-color: #ccc;
 	padding: 10px 0;
 	float: none;
+	width: 100%;
+	clear: both;
 }
 
 article {
