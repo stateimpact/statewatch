@@ -389,6 +389,13 @@ article {
 	    -ms-text-size-adjust:100%;
 }
 
+/* Link roundups */
+
+p.link-roundup {
+	background: transparent;
+	padding-left: 0;
+}
+
 /* Jiffy Posts */
 .embedded-object {
 	margin: 0 0 30px 0;
