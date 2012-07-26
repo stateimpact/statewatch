@@ -107,12 +107,6 @@ function sw_is_rich_media($post_id = null) {
     }
 }
 
-add_action('wp_enqueue_scripts', 'sw_enqueue_fb');
-function sw_enqueue_fb() {
-    $fb = 'http://connect.facebook.net/en_US/all.js#xfbml=1';
-    wp_enqueue_script('facebook', $fb);
-}
-
 function sw_search_topics($search_query, $count=5) {
     $query = new WP_Query(array(
         's' => $search_query,
