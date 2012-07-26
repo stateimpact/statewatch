@@ -173,10 +173,10 @@ function sw_related_content_types($post_types) {
 
 add_action('wp_enqueue_scripts', 'sw_social');
 function sw_social() {
-    $twitter = 'http://platform.twitter.com/widgets.js';
+    $twitter = '//platform.twitter.com/widgets.js';
     $fb = 'http://static.ak.fbcdn.net/connect.php/js/FB.Share';
     wp_enqueue_script('twitter-widgets', $twitter);
-    wp_enqueue_script('facebook', $fb);
+    //wp_enqueue_script('facebook', $fb);
 }
 
 add_action('wp_enqueue_scripts', 'sw_analytics');
