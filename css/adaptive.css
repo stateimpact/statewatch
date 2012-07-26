@@ -65,15 +65,15 @@ body:after {
 	width: auto;
 	margin: 0 0 15px;
 	padding: 10px;
-	background-color: #252C33;
+	background-color: #222e38;
 	background-repeat: repeat-x;
-	background-image: -khtml-gradient(linear, left top, left bottom, from(#385377), to(#252C33));
-	background-image: -moz-linear-gradient(#385377, #252C33);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #385377), color-stop(100%, #252C33));
-	background-image: -webkit-linear-gradient(#385377, #252C33); 
-	background-image: -o-linear-gradient(#385377, #252C33);
-	background-image: -ms-linear-gradient(#385377, #252C33);
-	background-image: linear-gradient(#385377, #252C33);
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#344b61), to(#222e38));
+	background-image: -moz-linear-gradient(#344b61, #222e38);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #344b61), color-stop(100%, #222e38));
+	background-image: -webkit-linear-gradient(#344b61, #222e38); 
+	background-image: -o-linear-gradient(#344b61, #222e38);
+	background-image: -ms-linear-gradient(#344b61, #222e38);
+	background-image: linear-gradient(#344b61, #222e38);
 	border-top: 1px solid rgba(0,0,0,.5);
 }
 #global-branding header { width: auto; }
