@@ -2,13 +2,13 @@ jQuery(function($) {
     window._gaq = _gaq || [];
     
     // facebook
-    if (FB && FB.Event) {
-        FB.Event.subscribe('edge.create',
-            function(url) {
-                _gaq.push(['_trackSocial', 'Facebook', 'Like', url]); 
-            }
-        );
-    }
+    //if (FB && FB.Event) {
+    //    FB.Event.subscribe('edge.create',
+    //        function(url) {
+    //            _gaq.push(['_trackSocial', 'Facebook', 'Like', url]); 
+    //        }
+    //    );
+    //}
     
     // twitter
     if (twttr) {
