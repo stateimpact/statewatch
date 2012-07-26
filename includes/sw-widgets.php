@@ -173,7 +173,7 @@ class StateImpact_LikeBox extends WP_Widget {
             return;
         echo $before_widget; ?>
             
-            <iframe src="http://www.facebook.com/plugins/likebox.php?href=<?php echo urlencode(get_option( 'facebook_link' )); ?>&amp;width=300&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;height=290" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:290px;" allowTransparency="true"></iframe>
+            <iframe src="//www.facebook.com/plugins/likebox.php?href=<?php echo urlencode(get_option( 'facebook_link' )); ?>&amp;width=300&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true&amp;height=290" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:290px;" allowTransparency="true"></iframe>
         
         <?php
         echo $after_widget;
