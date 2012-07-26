@@ -370,6 +370,7 @@ embed {
 #content .module.aside table,
 #content table,
 #content .pull-quote { 
+	width: 100%;
 	max-width: 100% !important; 
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;

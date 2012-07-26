@@ -962,7 +962,13 @@ legend      { font-weight: bold;}
 	#content .left { float: left; margin: 5px 20px 10px 0; }
 	#content .alignright,
 	#content .right { float: right; margin: 0 0 10px 20px; }
-	#content .pull-quote { width: 300px; font-style: italic; line-height: 1.3; }
+	#content .pull-quote { 
+		width: 300px; 
+		font-style: italic; 
+		line-height: 1.3; 
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
 	#content .pull-quote,
 	#content .pull-quote p { font-size: 24px; }
 
@@ -973,6 +979,7 @@ legend      { font-weight: bold;}
 		font-weight: 600;
 		line-height: 1.2;
 	}
+	#content .pull-quote em,
 	#content .pull-quote h6 {
 		font-family: proxima-nova,sans-serif;
 		font-weight: normal;
