@@ -79,7 +79,7 @@ class Featured_Multimedia_Walker extends Walker_Nav_Menu {
         $output .= "<h4 class=\"headline\">";
         $output .= "<a href=\"{$item->url}\">";
         if ($content_types):
-            $output .= "<strong>{$content_types[0]->name}:</strong>";
+            $output .= "<strong>{$content_types[0]->name}:</strong> ";
         endif;
             $output .= $item->title;
         $output .= "</a>";
