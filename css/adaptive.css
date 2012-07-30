@@ -343,7 +343,7 @@ embed {
 }
 
 #taxonomy .topic img { width: 100px; height: 100px; margin-right: 10px; }
-#taxonomy .topic h3 a { font-size: 18px; }
+#taxonomy .topics .topic h3 a { font-size: 18px; font-weight: 400; }
 
 .post-nav { border: none; }
 #content .post-nav .p-post,
