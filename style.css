@@ -947,7 +947,8 @@ legend      { font-weight: bold;}
 	#content .module dl { margin: 0 }
 	#content .module dt { font-size: 14px; margin-bottom: 10px; }
 	#content .module dd { margin: 0 0 10px 0 }
-	#content .aside p { font-size: 11px }
+	#content .aside { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+	#content .aside p { font-size: 12px }
 	.image p { display: inline; font-size: 10px; }
 	.image img { display: block }
 	#content .credit,
