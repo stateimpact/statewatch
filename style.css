@@ -900,7 +900,7 @@ legend      { font-weight: bold;}
 	.post-content ol { font-size: 16px; }
 	.post-content li { margin-bottom: 5px; }
 	#content .post-content h3 { font-family: proxima-nova,sans-serif; font-weight: 700; text-transform: uppercase; color: #000; font-size: 18px; margin-top: 40px; }
-	#content .post-content h4 { font-family: proxima-nova-extra-condensed,sans-serif; font-size: 24px; color: #000; }
+	#content .post-content h4 { font-family: proxima-nova,sans-serif; font-size: 18px; color: #000; }
 	.post blockquote, .topic-intro blockquote { 
 		background: transparent; 
 		color: #666; 
