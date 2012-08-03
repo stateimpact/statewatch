@@ -1767,7 +1767,7 @@ legend      { font-weight: bold;}
 	table.sortable thead tr .headerSortDown, #content table.sortable thead tr .headerSortUp { background-color: #ccc !important; }
 	table.sortable tr.even td { background-color: #eee; }
 	table.sortable thead th { background: #ddd; text-align: left; }
-
+	table.sortable thead tr .header { background-position: center left; line-height: 1.2; padding-left: 25px; }
 	.table-filter { width: 300px; float: left; }
 	.table-filter label { display: inline; }
 	.table-filter input[type=search] {
