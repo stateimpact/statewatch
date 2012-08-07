@@ -311,7 +311,7 @@ class SI_Topics {
                 'not_found_in_trash' => 'No topics found in Trash',
             ),                                                                      
             'description' => 'Topic pages',
-            'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+            'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
             'public' => true,
             'menu_position' => 8,
             'taxonomies' => $this->taxonomies,
