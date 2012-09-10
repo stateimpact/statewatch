@@ -717,50 +717,53 @@ legend      { font-weight: bold;}
 		float: left; 
 		margin: 0 0 0 0; 
 		padding: 0; 
-		font-size: 15px; 
-		line-height: 1; 
+		font-size: 15px;
+		line-height: 1;
 	}
 	.no-rgba #topnav li { border-left: 1px solid #999; }
-	#topnav .first, 
+	#topnav .first,
 	.no-rgba #topnav .first,
 	#topnav .first a { border-left: none; }
-	#topnav li a { 
-		color: #fff; 
-		display: block; 
-		padding: 0 15px; 
-		margin: 0 1px 0 0; 
+	#topnav li a {
+		color: #fff;
+		display: block;
+		padding: 0 30px 0 15px;
+		margin: 0 1px 0 0;
 		line-height: 36px;
 		height: 36px;
-		font-size: 14px;	
-		background: #3c4d5c;		    
+		font-size: 14px;
+		background: #3c4d5c url(./img/menu-arrow.png) no-repeat 90% 16px;
+		-webkit-transition: background-color .2s ease-in-out;
+		   -moz-transition: background-color .2s ease-in-out;
+                transition: background-color .2s ease-in-out;
 	}
 	#wrapper #topnav li:hover a,
-	#wrapper #topnav li a:hover { 
-		text-decoration: none;	
-		background-color: #fff; 
+	#wrapper #topnav li a:hover {
+		text-decoration: none;
+		background: #fff url(./img/menu-arrow.png) no-repeat 90% -80px;
 		color: #111;
 		text-shadow: none;
 	}
-		
+
 		/* Hide category nav until typekit is loaded to prevent flash of Helvetica text */
 		.fontface #topnav { display: none; }
 		.wf-active #topnav { display: block; }
 
 		/* Only use these styles if webfonts are active to prevent layout problems */
-		.wf-active #topnav li a { 
+		.wf-active #topnav li a {
 			font-family: proxima-nova,sans-serif;
 			font-size: 14px;
-			font-weight: 600; 
+			font-weight: 600;
 			text-transform: uppercase;
 		}
 
 /* Mega-menus */
-	#topnav li .sub { 
-		position: absolute; 
-		display: none; 			
+	#topnav li .sub {
+		position: absolute;
+		display: none;
 		z-index: -1;
-		left: 0; 
-		top: 36px; 
+		left: 0;
+		top: 36px;
 		width: 620px;
 		padding: 20px;
 		border: none;
@@ -1481,6 +1484,7 @@ legend      { font-weight: bold;}
 		height: 36px !important; 
 		width: 159px !important; 
 		border: none !important; 
+		background: #526271 !important;
 		background: rgba(255,255,255,.2) !important; 
 		padding:0 10px !important; 
 		display: block; 
@@ -1506,6 +1510,7 @@ legend      { font-weight: bold;}
 	.error404 .search-submit { 
 		height: 36px; 
 		width: 40px; 
+		background: #7f8995 url(./img/search-glass.png) 2px center no-repeat !important; 
 		background: rgba(255,255,255,.4) url(./img/search-glass.png) 2px center no-repeat !important; 
 		text-indent: -999px; 
 		margin: 0; 
