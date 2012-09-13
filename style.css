@@ -710,7 +710,7 @@ legend      { font-weight: bold;}
 
 
 /* Category nav*/
-	#category-nav{ margin-left:-15px; }
+	#category-nav{ margin-left:-15px; height: 36px; }
 	#topnav { position: relative; z-index:100; margin: 0; padding: 0; float: left; width: 100%; list-style: none; font-size: 1.1em; }
 	.ie7 #topnav { left: -15px; }
 	#topnav li { 

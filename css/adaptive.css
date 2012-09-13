@@ -142,7 +142,7 @@ body:after {
 	        border-radius: 0;
 }
 
-#category-nav { position: static; margin: 0; }
+#category-nav { position: static; margin: 0; height: auto; }
 #category-nav #topnav { 
 	display:  none; 
 	position: absolute;
