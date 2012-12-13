@@ -11,7 +11,7 @@ jQuery(function($) {
     //}
     
     // twitter
-    if (twttr) {
+    if (window.twttr) {
         twttr.ready(function(twttr) {
             twttr.events.bind('tweet', function(event) {
                 _gaq.push(['_trackSocial', 'Twitter', event.type]); 
