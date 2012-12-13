@@ -473,7 +473,7 @@ function argo_get_twitter_screen_name() {
 }
 
 function argo_get_sanitized_title( $max_title_length = 140 ) {
-    $title = get_the_title();
+    $title = html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8');
 
     if ( strlen( $title ) > $max_title_length ) {
         $title = substr( $title, 0, $max_title_length - 3 ) . '...';
