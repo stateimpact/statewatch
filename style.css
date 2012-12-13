@@ -965,6 +965,11 @@ legend      { font-weight: bold;}
 		        transition: none;
 	}
 
+	#content .navis-slideshow .slide-nav .prev,
+	#content .navis-slideshow .slide-nav .next {
+		z-index: 10;
+	}
+
 	#content .navis-slideshow .slides_container p { border-top: none; padding-top: 0; }
 	#content .navis-slideshow a.next,
 	#content .navis-slideshow a.prev { z-index: 0; }
