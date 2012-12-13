@@ -39,6 +39,14 @@
 	<script type="text/javascript">
 		var disqus_developer = 1;
 	</script>
+	<script type="text/javascript" charset="utf-8">
+	  window.twttr = (function (d,s,id) {
+	    var t, js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+	    js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+	    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+	  }(document, "script", "twitter-wjs"));
+	</script>
 	
 	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicon.png"/>
 	<link rel="apple-touch-icon-precomposed" href="<?php bloginfo('stylesheet_directory'); ?>/img/apple-touch-icon-precomposed.png"/> 
