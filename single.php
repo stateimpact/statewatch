@@ -11,6 +11,9 @@
     <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix post-content'); ?>>
 <header>
 <h1 class="entry-title"><?php the_title(); ?></h1>
+<ul class="labels">
+    <?php argo_the_post_labels( get_the_ID() ); ?>
+</ul>
 
 	<div class="post-metadata clearfix">
 		<div class="grid_3 alpha">

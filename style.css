@@ -917,6 +917,25 @@ legend      { font-weight: bold;}
 		color: #000; 		    
 	}
 	#content .entry-title a:hover { color: #BF3119; text-decoration: none; }
+
+	.single-post #content .post.has-features header {
+		position: relative;
+		padding-top: 30px;
+	}
+
+	.single-post #content .post.has-features header .labels {
+		top: 0;
+		line-height: 1;
+	}
+
+	.single-post #content .post.has-features header .labels li {
+		margin: 0 0 0 10px;
+	}
+
+	.single-post #content .post.has-features header .labels li:first-child {
+		margin: 0;
+	}
+
 	.post-content,
 	.post-content p { font-size: 16px; line-height: 1.5;  }
 	.post-content p { margin-bottom: 15px; }
@@ -2400,6 +2419,74 @@ img.aligncenter { margin-bottom: 12px; }
 /* Stats image
 =================================================*/
 	img#wpstats{ width:0px; height:0px; overflow:hidden; position: absolute; }
+
+/* Adhesion
+=================================================*/
+
+.adhesion #bigbox {
+    display: none;
+}
+
+#adhesion {
+    position: fixed;
+    bottom: 0;
+    left: 0; /* Added for testing - DD. Guess: it's cuz of bootstrap */
+    width: 100%;
+    -webkit-transition: all .3s ease-in-out;
+    z-index: 1000;
+}
+
+#adhesion .adhesionWrapper {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+#adhesion img {
+    width: 100%;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+#adhesion #adhesionClose {
+    float: right;
+}
+
+#adhesion #adhesionClose img {
+    width: 33px;
+    float: right;
+}
+
+#adhesion .expand {
+    background: black;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+#adhesion .expand img {
+    bottom: 50%;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+/*}*/
+
+#adhesion {
+  position:fixed;
+  width:100%;
+}
+
+/* Get rid of stupid twitter tracking images
+   so android adhesion sits right. */
+body > img[src^="//r"],
+body > img[src^="//p"] {
+    display: none !important;
+    line-height: 0;
+    height: 0 !important;
+}
+
+@media only screen and (min-width: 1025px) {
+    #adhesion {
+        display: none;
+    }
+}
 
 /* Print styles
 =================================================*/
