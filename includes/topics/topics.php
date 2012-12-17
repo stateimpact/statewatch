@@ -612,18 +612,22 @@ function sw_show_related_topics() {
             </ul>
         </div>
         <?php endif; ?>
-        <?php if ($terms): ?>
+        <?php if (count($topics) > 2 || $terms): ?>
         <div class="terms">
             <ul>
+            <?php if (count($topics) > 2): ?>
                 <?php foreach ($topics as $i => $topic): ?>
                     <?php if ($topic->post_title && $i > 1): ?>
                     <li class="post-tag-link"><a href="<?php echo get_permalink($topic); ?>"><?php echo apply_filters('the_title', $topic->post_title); ?></a></li>
                     <?php endif; ?>
                 <?php endforeach; ?>
+            <?php endif; ?>
+            <?php if ($terms): ?>
                 <?php foreach($terms as $i => $term): 
                     if (is_wp_error($term)) continue; ?>
                     <li class="post-tag-link"><a href="<?php echo get_term_link($term, $term->taxonomy); ?>"title="<?php echo $term->name; ?>"><?php echo $term->name; ?></a></li>
                 <?php endforeach; ?>
+            <?php endif; ?>
             </ul>
         </div>
         <?php endif; ?>
