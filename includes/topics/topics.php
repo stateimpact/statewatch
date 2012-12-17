@@ -597,12 +597,12 @@ function sw_show_related_topics() {
     ?>
     <?php if ($topics || $terms): ?>
     <div id="taxonomy">
+        <h4>Topics</h4>
         <?php if ($topics): ?>
         <div class="topics">
-            <h4>Featured Topics</h4>
             <ul>
             <?php foreach ($topics as $i => $topic): ?>
-                <?php if ($topic->post_title): ?>
+                <?php if ($topic->post_title && $i < 2): ?>
                     <li class="topic clearfix">
                         <a class="thumb-link" href="<?php echo get_permalink($topic); ?>"><?php echo get_the_post_thumbnail($topic->ID, 'thumbnail', array('class'=>'alignleft')); ?></a>
                     <h3><a href="<?php echo get_permalink($topic); ?>"><?php echo apply_filters('the_title', $topic->post_title); ?></a></h3>
@@ -614,8 +614,12 @@ function sw_show_related_topics() {
         <?php endif; ?>
         <?php if ($terms): ?>
         <div class="terms">
-            <h4>More Topics</h4>
             <ul>
+                <?php foreach ($topics as $i => $topic): ?>
+                    <?php if ($topic->post_title && $i > 1): ?>
+                    <li class="post-tag-link"><a href="<?php echo get_permalink($topic); ?>"><?php echo apply_filters('the_title', $topic->post_title); ?></a></li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
                 <?php foreach($terms as $i => $term): 
                     if (is_wp_error($term)) continue; ?>
                     <li class="post-tag-link"><a href="<?php echo get_term_link($term, $term->taxonomy); ?>"title="<?php echo $term->name; ?>"><?php echo $term->name; ?></a></li>
