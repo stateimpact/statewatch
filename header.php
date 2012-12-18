@@ -47,6 +47,7 @@
 	    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
 	  }(document, "script", "twitter-wjs"));
 	</script>
+
 	
 	<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicon.png"/>
 	<link rel="apple-touch-icon-precomposed" href="<?php bloginfo('stylesheet_directory'); ?>/img/apple-touch-icon-precomposed.png"/> 
@@ -121,6 +122,30 @@ _clickEvents = [
 
 </script>
 <script src="<?php bloginfo('template_directory'); ?>/js/tracking.js"></script>
+<!-- AD CODE -->
+<script>
+    STATEIMPACT = {};
+    STATEIMPACT.PageInfo = {};
+    STATEIMPACT.PageInfo.getUrlParameter = function (param) {
+        return false;
+    };
+</script>
+
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/responsive-ad.js"></script>
+
+<script>
+AddNamespace('NPR.serverVars');
+jQuery.extend(NPR.serverVars, {
+    "storyId": "139482413",
+    "serverType": "prod",
+    "DFPtarget": "\/news_election_results;storyid=139482413",
+    "DFPuserver": "u.npr.org",
+    "DFPserver": "ad.doubleclick.net",
+    "DFPnetwork": "n6735",
+    "DFPsite": "NPR",
+    "DFPmobile": "NPR"
+});
+</script>
 </head>
 
 <body <?php body_class(); ?>>
