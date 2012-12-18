@@ -51,7 +51,7 @@
     
 <?php do_action('after_the_content'); ?>
 
-<?php if (!get_post_type($post) == 'jiffypost'): ?>
+<?php if (get_post_type($post) != 'jiffypost'): ?>
 <article id="comments" class="article-comments clearfix">
     <h2 id="respond">Comments</h2>
     <?php comments_template( '', true ); ?>
