@@ -860,7 +860,15 @@ legend      { font-weight: bold;}
 			border-top: 1px solid #ddd; 
 			border-bottom: 1px solid #ddd;
 		}
+
+		.single.single-jiffypost .post-metadata {
+			background: none;
+			border: none;
+		}
+
 		#content .post-metadata h6 { font-weight: normal; font-size: 12px; margin-bottom: 5px; text-transform: uppercase; }
+		#content .post-metadata h6.entry-date a { color: #000; }
+
 		.post-metadata a { font-weight: bold; }
 		.post-metadata p { font-size: 12px; margin-bottom: 0; }
 		.post-metadata li { margin: 0; font-size: 13px; /* background: transparent url(../argo-foundation/img/icons-buttons.png) no-repeat top left; */
@@ -915,6 +923,13 @@ legend      { font-weight: bold;}
 	#content .entry-title a {
 		font-weight: 600;
 		color: #000; 		    
+	}
+
+	#content .jiffypost .entry-title a:after {
+		content: ' \2192';
+		font-weight: 200;
+		font-size: 80%;
+		font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 	}
 	#content .entry-title a:hover { color: #BF3119; text-decoration: none; }
 

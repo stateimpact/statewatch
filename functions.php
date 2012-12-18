@@ -37,6 +37,17 @@ function sw_loop_post_types() {
     return array('post', 'fusiontablesmap', 'argolinksroundup');
 }
 
+function sw_headline_link() {
+    global $post;
+
+    if (get_post_type($post) == 'jiffypost'){
+        $sw_post_link = get_post_meta($post->ID, '_navis_embed_url', true);
+    } else {
+        $sw_post_link = the_permalink();
+    }
+    echo $sw_post_link;
+}
+
 add_filter('pre_get_posts', 'sw_filter_search');
 function sw_filter_search($query) {
     if (!is_admin()) {

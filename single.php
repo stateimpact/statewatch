@@ -10,14 +10,19 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix post-content'); ?>>
 <header>
-<h1 class="entry-title"><?php the_title(); ?></h1>
-<ul class="labels">
-    <?php argo_the_post_labels( get_the_ID() ); ?>
-</ul>
+<?php if (get_post_type($post) == 'jiffypost'): ?>
+    <h1 class="entry-title"><a href="<?php sw_headline_link(); ?>"><?php the_title(); ?></a></h1>
+<?php else: ?>
+    <h1 class="entry-title"><?php the_title(); ?></h1>
+<?php endif; ?>
+    <ul class="labels">
+        <?php argo_the_post_labels( get_the_ID() ); ?>
+    </ul>
 
 	<div class="post-metadata clearfix">
 		<div class="grid_3 alpha">
 	        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
+            <?php if (get_post_type($post) != 'jiffypost'): ?>
 			<h6>By 
 			<?php
 			if (function_exists('coauthors_posts_links')):
@@ -26,10 +31,13 @@
                 the_author_posts_link();
             endif; ?>
             </h6>
+            <?php endif; ?>
 		</div>
+        <?php if (get_post_type($post) != 'jiffypost'): ?>
 		<div class="grid_5 omega">
 		<?php get_template_part( 'post', 'meta' ); ?>
 		</div>
+        <?php endif; ?>
 		<div class="clearfix"></div>
 	</div> <!-- /.post-metadata-->
 	<div class="clearfix"></div>
@@ -42,11 +50,13 @@
     </div> <!-- #post-## --> 
     
 <?php do_action('after_the_content'); ?>
-  
+
+<?php if (!get_post_type($post) == 'jiffypost'): ?>
 <article id="comments" class="article-comments clearfix">
     <h2 id="respond">Comments</h2>
     <?php comments_template( '', true ); ?>
 </article><!-- / comments -->
+<?php endif; ?>
 
 <nav>
 <ul class="post-nav clearfix">

@@ -32,14 +32,14 @@ query_posts( $args );
     <?php if ( is_front_page() && is_sticky() ):  ?>
         <div class="sticky-solo clearfix">
             <h5>Featured</h5> 
-<?php if ( has_post_thumbnail() ): ?>
-    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
-<?php endif; ?>
+            <?php if ( has_post_thumbnail() ): ?>
+                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
+            <?php endif; ?>
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> 
             <p><?php navis_the_raw_excerpt(); // the_excerpt(); ?> <br><a href="<?php the_permalink(); ?>">Continue reading <span class="meta-nav">&rarr;</span></a></p> 
         </div>
 
-<?php elseif (sw_is_rich_media()): ?>
+    <?php elseif (sw_is_rich_media()): ?>
         <div class="sticky-solo clearfix">
             <ul class="labels">
                 <?php argo_the_post_labels( get_the_ID() ); ?>
@@ -49,7 +49,7 @@ query_posts( $args );
 
             <div class="post-metadata ">
 
-                    <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
+                    <h6 class="entry-date"><a href="<?php the_permalink(); ?>"><?php argo_posted_on(); ?></a></h6>
                     <h6>By <?php
                     if (function_exists('coauthors_posts_links')):
                         coauthors_posts_links();
@@ -65,40 +65,44 @@ query_posts( $args );
             <p><?php navis_the_raw_excerpt(100); // the_excerpt(); ?> <a href="<?php the_permalink(); ?>">Continue reading <span class="meta-nav">&rarr;</span></a></p> 
         </div>
 
-<?php else: ?>
-<header>
+    <?php else: ?>
+    <header>
 
-<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-    <ul class="labels">
-        <?php argo_the_post_labels( get_the_ID() ); ?>
-    </ul>
-	<div class="post-metadata grid_8 alpha omega">
 
-	        <h6 class="entry-date"><?php argo_posted_on(); ?> </h6>
-			<h6>By <?php
-			if (function_exists('coauthors_posts_links')):
-                coauthors_posts_links();
-            else:
-                the_author_posts_link();
-            endif; ?>
-			</h6>
-		<div class="clearfix"></div>
-	</div> <!-- /.post-metadata-->
-    <div class="clearfix"></div>    
-</header><!-- / entry header -->
+        <h2 class="entry-title"><a href="<?php sw_headline_link(); ?>"><?php the_title(); ?></a></h2>
 
-    <?php if ( is_archive() ) :  ?>
+        <ul class="labels">
+            <?php argo_the_post_labels( get_the_ID() ); ?>
+        </ul>
+    	<div class="post-metadata grid_8 alpha omega">
 
-            <?php the_content( 'Continue Reading <span class="meta-nav">&rarr;</span>' ); ?>
-	    <?php wp_link_pages( array( 'before' => '<div class="page-link">Pages:', 'after' => '</div>' ) ); ?>
-	
-    <?php else : ?>
-            <?php the_content( 'Continue Reading <span class="meta-nav">&rarr;</span>' ); ?>
+    	        <h6 class="entry-date"><a href="<?php the_permalink(); ?>"><?php argo_posted_on(); ?></a></h6>
+                <?php if (get_post_type($post->ID) != 'jiffypost'): ?>
+    			<h6>By <?php
+    			if (function_exists('coauthors_posts_links')):
+                    coauthors_posts_links();
+                else:
+                    the_author_posts_link();
+                endif; ?>
+    			</h6>
+                <?php endif; ?>
+    		<div class="clearfix"></div>
+    	</div> <!-- /.post-metadata-->
+        <div class="clearfix"></div>    
+    </header><!-- / entry header -->
 
-            <?php wp_link_pages( array( 'before' => '<div class="page-link">Pages:', 'after' => '</div>' ) ); ?>
+        <?php if ( is_archive() ) :  ?>
 
-    <?php endif; ?>
-<?php endif; // is_sticky() ?>
+                <?php the_content( 'Continue Reading <span class="meta-nav">&rarr;</span>' ); ?>
+    	    <?php wp_link_pages( array( 'before' => '<div class="page-link">Pages:', 'after' => '</div>' ) ); ?>
+    	
+        <?php else : ?>
+                <?php the_content( 'Continue Reading <span class="meta-nav">&rarr;</span>' ); ?>
+
+                <?php wp_link_pages( array( 'before' => '<div class="page-link">Pages:', 'after' => '</div>' ) ); ?>
+
+        <?php endif; ?>
+    <?php endif; // is_sticky() ?>
     <!--  ############## removed .entry-utility ######### -->
     </article><!-- #post-## -->
     <?php comments_template( '', true ); ?>
