@@ -2,7 +2,8 @@
 $cat = $wp_query->get_queried_object();
 $topic = argo_get_topic_for( $cat );
 ?>
-<?php if ( $topic->post_content ): ?>
+
+<?php if ( $topic->post_content || category_description( $category_id )): ?>
 	<div class="topic-intro post post-content clearfix"> 
 		<h2 class="section-hed">Background</h2>
 		<ul class="meta-gestures">
@@ -12,14 +13,20 @@ $topic = argo_get_topic_for( $cat );
 		    <li class="fb">
                 <div class="fb-like" data-href="<?php echo esc_url($topic->guid); ?>" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false" data-font="arial" data-action="recommend"></div>
             </li>
-		</ul>	
-	    <?php 
-		    $content = apply_filters( 'the_content', $topic->post_content ); 
-		    $content = explode('<!--more-->', $content);
-		    echo $content[0];
-		    if ($content[1]){
-		   		echo '<div id="more">' . $content[1] . '</div>';
-		    }
+		</ul>
+	    <?php
+	    	if ( $topic->post_content ){
+			    $content = apply_filters( 'the_content', $topic->post_content ); 
+			    $content = explode('<!--more-->', $content);
+			    echo $content[0];
+			    if ($content[1]){
+			   		echo '<div id="more">' . $content[1] . '</div>';
+			    }
+	    	} elseif (category_description( $category_id )) {
+	    		echo category_description( $category_id );
+	    	} else {
+	    		return;
+	    	}
 	    ?>
 	</div>
 	<script>
