@@ -636,6 +636,9 @@ function sw_modify_retrieve_password_messsage($message, $key){
      // Replace second open bracket
      $message = str_replace('>', '', $message);
 
+     // Convert line returns to <br>'s
+     $message = str_replace("\r\n", '<br>', $message);
+
      return $message;
 }
 add_filter('retrieve_password_message', 'sw_modify_retrieve_password_messsage', 10, 2);
