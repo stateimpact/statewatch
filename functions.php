@@ -628,5 +628,18 @@ function navis_get_theme_resource_url( $type, $filename ) {
         trailingslashit( $type ) . $filename;
 }
 
+function sw_modify_retrieve_password_messsage($message, $key){
+
+     // Replace first open bracket
+     $message = str_replace('<', '', $message);
+
+     // Replace second open bracket
+     $message = str_replace('>', '', $message);
+
+     return $message;
+}
+add_filter('retrieve_password_message', 'sw_modify_retrieve_password_messsage', 10, 2);
+
+
 
 ?>
