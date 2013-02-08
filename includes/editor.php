@@ -4,6 +4,14 @@ define( 'HALF_WIDTH', 300 );
  * TINYMCE CUSTOMIZATIONS
  */
 
+function si_format_tiny_mce($in)
+{
+ $in['extended_valid_elements']='span[!class|!id]';
+ $in['theme_advanced_disable'] = 'forecolor,underline,justifyfull';
+ return $in;
+}
+add_filter('tiny_mce_before_init', 'si_format_tiny_mce' );
+
 function add_argo_mce_plugin( $plugin_array ) {
     // XXX: gross path assumption
     $plugin_array[ 'modulize' ] = navis_get_theme_script_url( 'tinymce/plugins/argo/editor_plugin.js' );
