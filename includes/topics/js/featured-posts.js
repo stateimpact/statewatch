@@ -95,6 +95,7 @@
                 story.set({ order: 0 });
                 window.featuredstories.latest.add(story);
             }
+            window.featuredstories.save();
         }
         
     });
@@ -178,7 +179,10 @@
                 }
             }
             
-            $('form').submit(this.save);
+            // $('form').on('submit',function(e){
+            //     e.preventDefault();
+            //     that.save();
+            // });
             return this;
         },
         
@@ -195,7 +199,7 @@
         search: function(e) {
             var query = this.$('input.search').val();
             if (query.length > 3) {
-                this.latest.fetch({ 
+                this.latest.fetch({
                     data: {
                         s: query,
                         post_parent: this.post_parent,
