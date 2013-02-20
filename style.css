@@ -938,16 +938,16 @@ legend      { font-weight: bold;}
 		padding-top: 25px;
 	}
 
-	.single #content .post.has-features header .labels {
+	.single #content .post-content.has-features header .labels {
 		top: 0;
 		line-height: 1;
 	}
 
-	.single #content .post.has-features header .labels li {
+	.single #content .post-content.has-features header .labels li {
 		margin: 0 0 0 10px;
 	}
 
-	.single #content .post.has-features header .labels li:first-child {
+	.single #content .post-content.has-features header .labels li:first-child {
 		margin: 0;
 	}
 
