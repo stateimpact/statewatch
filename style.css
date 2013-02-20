@@ -933,21 +933,21 @@ legend      { font-weight: bold;}
 	}
 	#content .entry-title a:hover { color: #BF3119; text-decoration: none; }
 
-	.single-post #content .post.has-features header {
+	.single #content .post.has-features header {
 		position: relative;
 		padding-top: 25px;
 	}
 
-	.single-post #content .post.has-features header .labels {
+	.single #content .post.has-features header .labels {
 		top: 0;
 		line-height: 1;
 	}
 
-	.single-post #content .post.has-features header .labels li {
+	.single #content .post.has-features header .labels li {
 		margin: 0 0 0 10px;
 	}
 
-	.single-post #content .post.has-features header .labels li:first-child {
+	.single #content .post.has-features header .labels li:first-child {
 		margin: 0;
 	}
 
