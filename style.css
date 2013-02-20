@@ -933,7 +933,7 @@ legend      { font-weight: bold;}
 	}
 	#content .entry-title a:hover { color: #BF3119; text-decoration: none; }
 
-	.single #content .post.has-features header {
+	.single #content .post-content.has-features header {
 		position: relative;
 		padding-top: 25px;
 	}
