@@ -29,18 +29,7 @@
 <!-- /.grid_3 -->
 <div class="grid_3">
     <h3>Staff</h3>
-    <?php
-        $users = sw_get_staff();
-        $sw_current_staff = '';
-        // Remove duplicate display names from staff list because of WP get_users() bug
-        foreach ($users as $userKey => $user){
-            if ($sw_current_staff == $user->display_name ) {
-                unset($users[$userKey]);
-            } else {
-                $sw_current_staff = $user->display_name;
-            }
-        };
-    ?>
+    <?php $users = sw_get_staff(); ?>
     <?php foreach ( $users as $user ): ?>
         <div class="ft-reporter clearfix">
             <?php echo get_avatar( $user->ID, 60 ); ?>

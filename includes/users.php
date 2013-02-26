@@ -65,11 +65,22 @@ function sw_update_staff_fields( $user_id ) {
 
 function sw_get_staff() {
 	$blog_id = get_blog_id();
-    return get_users( array(
+	$sw_users = get_users( array(
                 'meta_key' => "sw_is_staff:" . $blog_id,
                 'meta_value' => 1,
                 'orderby' => 'registered',
-            ) );
+                ) );
+
+   // Remove duplicate display names from staff list because of WP get_users() bug
+	$sw_current_staff = '';
+    foreach ($sw_users as $userKey => $user){
+        if ($sw_current_staff == $user->user_login ) {
+            unset($sw_users[$userKey]);
+        } else {
+            $sw_current_staff = $user->user_login;
+        }
+    };
+    return $sw_users;
 }
 
 ?>
