@@ -130,7 +130,7 @@ _clickEvents = [
 		<nav class="global-nav">
 	
 				<h2><a href="/" title="StateImpact" class="ir unitPng">StateImpact</a></h2>
-				<h4>A reporting project of local public media and <a href="http://npr.org" title="Visit npr.org">NPR</a></h4>
+				<h4>A reporting project of &nbsp;<a href="http://npr.org" title="Visit npr.org">NPR</a> member stations</h4>
 				<a class="mobile-nav-toggle btn btn-navbar">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
