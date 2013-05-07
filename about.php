@@ -22,7 +22,7 @@
 	
 	<div class="sw-about abt-module grid_4 alpha">
 	
-		<h3 class="module-title">StateImpact <? bloginfo('name'); ?></h3>
+		<h3 class="module-title">StateImpact <?php bloginfo('name'); ?></h3>
 		<div class="content"><?php the_content(); ?></div>
 		
 	    <ul class="sw-social clearfix">
@@ -42,7 +42,7 @@
 
 	</div><!-- .sw-about -->
 	<!-- <?php $state_img = strtolower( str_replace(' ', '', get_bloginfo('name'))); ?>
-	<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/<?php echo $state_img; ?>.png" alt="<? bloginfo('name'); ?>" width="300" /> -->	
+	<img src="<?php bloginfo('stylesheet_directory'); ?>/img/dev-img/<?php echo $state_img; ?>.png" alt="<?php bloginfo('name'); ?>" width="300" /> -->	
 	
 	<div class="abt-module grid_4 omega">
 		<h3 class="module-title">Partners</h3>
@@ -107,7 +107,7 @@
 		    <h5><?php the_author_meta( 'sw_title', $user->ID ); ?></h5>
 		    <p><?php the_author_meta( 'description', $user->ID ); ?></p>
 		</div><!-- /.abt-staff -->
-		<? endforeach; ?>
+		<?php endforeach; ?>
 	</div>
 
 	
