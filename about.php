@@ -117,11 +117,8 @@
 	
 
 	<h4>Issues That Matter. Close To Home.</h4>
-	<p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives. The eight-state network is a collaboration among local member stations and NPR.</p>
-
-	<p>We aim to put news in context by providing insight, data-driven analysis and background. We work to give you the information you need to hold state government accountable. Our reporters travel the state to learn about public policy issues from the people affected by them, and we invite discussion on this site about those issues.</p>
-
-	<p>The participating stations in each state have chosen one of four policy areas to focus on: state budgets, education, energy and the economy. <a href="http://stateimpact.npr.org" title="StateImpact">Read more about the network at our hub.</a></p>
+	<p>StateImpact is a project of NPR member stations dedicated to examining how state policy and issues affect people and communities. With reporting teams in six states, the project seeks to inform and engage communities through explanatory, data-driven, accountability journalism. Our reporters work to put the news in context, providing insight, background and analysis around focused policy topics.</p>
+	<p><a href="/" title="Learn more about the project">Learn more about the project</a></p>
 </div> <!-- /#sw-abt-network -->
 
 <div id="sw-network-partners">
@@ -129,12 +126,8 @@
     <dl>
         <dt><a href="/florida/">Florida</a></dt>
 		  <dd>Education</dd>
-        <dt><a href="/idaho/">Idaho</a></dt>
-		  <dd>Economy</dd>
         <dt><a href="/indiana/">Indiana</a></dt>
 		  <dd>Education</dd>
-        <dt><a href="/new-hampshire/">New Hampshire</a></dt>
-		  <dd>Economy</dd>
         <dt><a href="/ohio/">Ohio</a></dt>
 		  <dd>Education</dd>
         <dt><a href="/oklahoma/">Oklahoma</a></dt>
@@ -146,10 +139,7 @@
     </dl>
 </div> <!-- /#sw-network-partners -->
 
-<div id="sw-abt-npr">
-	<h4 class="module-title">About NPR</h4>
-    <p><a href="http://npr.org"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/nprlogo_138x46.gif" class="right" /></a>A thriving media organization at the forefront of digital innovation, NPR creates and distributes award-winning news, information, and music programming to a network of 900 independent stations. Through them, NPR programming reaches 26.8 million listeners every week. <a href="http://www.npr.org/about/aboutnpr/">More information &raquo;</a></p>
-</div> <!-- /#sw-abt-npr -->
+<div id="sw-abt-npr"></div> <!-- /#sw-abt-npr -->
 
 <!--
 <div id="sw-sponsors">
