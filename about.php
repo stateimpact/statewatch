@@ -96,7 +96,7 @@
 		<div class="clearfix"></div>
 	</div>
 	<div class="abt-module grid_8 alpha omega abt-field">
-		<h3 class="module-title">Staff</h3>
+		<h3 class="module-title">Reporters</h3>
 		<?php $staff = sw_get_staff(); ?>
 		<?php foreach ( $staff as $key => $user ): ?>
 		<div class="abt-staff grid_4 <?php 
