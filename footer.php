@@ -28,7 +28,7 @@
 </div>
 <!-- /.grid_3 -->
 <div class="grid_3">
-    <h3>Staff</h3>
+    <h3>Reporters</h3>
     <?php $users = sw_get_staff(); ?>
     <?php foreach ( $users as $user ): ?>
         <div class="ft-reporter clearfix">
@@ -83,7 +83,7 @@
 	    <li class="comments-policy"><a href="http://stateimpact.npr.org/comments-policy/">Comments Policy</a></li>
 	    <li><a href="<?php echo get_option('tos_link'); ?>">Terms of Use</a></li>
 	    <li><a href="<?php echo get_option('privacy_link'); ?>">Privacy Policy</a></li>
-		<li class="npr">A reporting project of local public media and <a class="nprlogo" href="http://npr.org" title="Visit npr.org">NPR</a></li>
+		<li class="npr">A reporting project of <a class="nprlogo" href="http://npr.org" title="Visit npr.org">NPR</a> member stations.</li>
 	</ul>
     <p class="back-to-top visuallyhidden"><a href="#main">Back To Top &uarr;</a></p>
 </div>
@@ -261,8 +261,6 @@ jQuery(document).ready(function($){
 		<div id="topic-economy" class="network-sites grid_2">
 			 <h5>Economy</h5>
 			<ul>
-				<li><a href="/idaho/">Idaho</a></li>
-				<li><a href="/new-hampshire/">New Hampshire</a></li>
                 <li><a href="/oklahoma/">Oklahoma</a></li>
 			 </ul>
 	    </div>
