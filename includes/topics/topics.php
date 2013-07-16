@@ -495,21 +495,23 @@ function argo_get_topic_for( $obj ) {
     global $wp_query;
     $args = array( 
         'post_type' => 'topic',
-        'caller_get_posts' => 1,
+        'ignore_sticky_posts' => 1,
     );
 
+    //print_r($obj);
+
     // XXX: typesniffing by method existence is gross
-    if ( $obj->post_type ) { // NAV MENU ITEM
-        if ( $obj->post_type == 'nav_menu_item' ) {
-            if ( $obj->object == 'category' ) {
-                $args[ 'cat' ] = $obj->object_id;
-            }
-            elseif ( $obj->object == 'post_tag' ) {
-                $args[ 'tag__in' ] = array( $obj->object_id );
-            }
-        }
-    }
-    elseif ( $obj->term_id ) { // TAXONOMY ITEM
+    // if ( $obj->post_type ) { // NAV MENU ITEM
+    //     if ( $obj->post_type == 'nav_menu_item' ) {
+    //         if ( $obj->object == 'category' ) {
+    //             $args[ 'cat' ] = $obj->object_id;
+    //         }
+    //         elseif ( $obj->object == 'post_tag' ) {
+    //             $args[ 'tag__in' ] = array( $obj->object_id );
+    //         }
+    //     }
+    // }
+    /*else*/ if ( $obj->term_id ) { // TAXONOMY ITEM
         if ( $obj->taxonomy == 'category' ) {
             $args[ 'cat' ] = $obj->term_id;
         }
