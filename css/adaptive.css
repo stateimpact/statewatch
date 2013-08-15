@@ -429,7 +429,7 @@ p.link-roundup {
 	font-style: italic;
 	margin: 0 0 0 30px;
 }
-.embed-metadata { width: 20px; }
+.embed-metadata { width: 100%; }
 .jiffy-source {
 	display: none;
 }
