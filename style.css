@@ -746,7 +746,7 @@ legend      { font-weight: bold;}
 	}
 
 		/* Hide category nav until typekit is loaded to prevent flash of Helvetica text */
-		.fontface #topnav { display: none; }
+		.wf-loading .fontface #topnav { display: none; }
 		.wf-active #topnav { display: block; }
 
 		/* Only use these styles if webfonts are active to prevent layout problems */
