@@ -255,29 +255,29 @@ jQuery(document).ready(function($){
         <div id="panel-about" class="grid_6 alpha">
             <h5>About StateImpact</h5>
             <p>StateImpact seeks to inform and engage local communities with broadcast and online news focused on how state government decisions affect your lives. <br>
-                <a href="/">Learn More &raquo;</a></p>
+                <a href="http://stateimpact.npr.org">Learn More &raquo;</a></p>
         </div>
 
 		<div id="topic-economy" class="network-sites grid_2">
 			 <h5>Economy</h5>
 			<ul>
-                <li><a href="/oklahoma/">Oklahoma</a></li>
+                <li><a href="http://stateimpact.npr.org/oklahoma/">Oklahoma</a></li>
 			 </ul>
 	    </div>
 	
 		<div id="topic-education" class="network-sites grid_2">
 			<h5>Education</h5>
 			<ul>
-				<li><a href="/florida">Florida</a></li>
-				<li><a href="/indiana/">Indiana</a></li>
-				<li><a href="/ohio/">Ohio</a></li>
+				<li><a href="http://stateimpact.npr.org/florida">Florida</a></li>
+				<li><a href="http://indianapublicmedia.org/stateimpact">Indiana</a></li>
+				<li><a href="http://stateimpact.npr.org/ohio/">Ohio</a></li>
 			</ul>
 		</div>
 		<div id="topic-energy" class="network-sites grid_2 omega">
 			<h5>Energy</h5>
 			<ul>
-				<li><a href="/pennsylvania/">Pennsylvania</a></li>
-				<li><a href="/texas/">Texas</a></li>
+				<li><a href="http://stateimpact.npr.org/pennsylvania/">Pennsylvania</a></li>
+				<li><a href="http://stateimpact.npr.org/texas/">Texas</a></li>
 			</ul>
 		</div>
 

@@ -118,7 +118,7 @@
 
 	<h4>Issues That Matter. Close To Home.</h4>
 	<p>StateImpact is a project of NPR member stations dedicated to examining how state policy and issues affect people and communities. With reporting teams in six states, the project seeks to inform and engage communities through explanatory, data-driven, accountability journalism. Our reporters work to put the news in context, providing insight, background and analysis around focused policy topics.</p>
-	<p><a href="/" title="Learn more about the project">Learn more about the project</a></p>
+	<p><a href="http://stateimpact.npr.org" title="Learn more about the project">Learn more about the project</a></p>
 </div> <!-- /#sw-abt-network -->
 
 <div id="sw-network-partners">
