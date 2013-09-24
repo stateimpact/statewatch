@@ -36,7 +36,7 @@ function sw_register_sidebars() {
 	
 	// POST BOTTOM WIDGET
 	register_sidebar(array(
-        'name' => _('Post Bottom', 'post_bottom_banner' ),
+        'name' => 'Post Bottom',
 		 'description' => 'Widget to add uniform content below post',
         'before_widget' => '<div id="post-bottom-widget">',
         'after_widget' => '</div>',
