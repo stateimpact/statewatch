@@ -38,7 +38,7 @@ function sw_register_sidebars() {
 	register_sidebar(array(
         'name' => 'Post Bottom',
 		 'description' => 'Widget to add uniform content below post',
-        'before_widget' => '<div id="post-bottom-widget">',
+        'before_widget' => '<div id="post-bottom-widget"><hr/>',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="widget-title-hidden" style="display:none;">',
         'after_title' => '</h3>',
