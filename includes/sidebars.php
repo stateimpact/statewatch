@@ -33,6 +33,16 @@ function sw_register_sidebars() {
 		'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
     ) );
+	
+	// POST BOTTOM WIDGET
+	register_sidebar(array(
+        'name' => _('Post Bottom', 'post_bottom_banner' ),
+		 'description' => 'Widget to add uniform content below post',
+        'before_widget' => '<div id="post-bottom-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title-hidden" style="display:none;">',
+        'after_title' => '</h3>',
+	) );
 }
 add_action( 'init', 'sw_register_sidebars', 12 );
 

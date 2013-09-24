@@ -46,6 +46,8 @@
 
         <?php the_content(); ?>
 
+		<?php /* Widget Area for adding state-specific content to bottom of posts, i.e. fundraising/donation text */
+    			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Bottom') ) : ?><?php endif; ?>
 
     </div> <!-- #post-## --> 
     
