@@ -120,6 +120,7 @@ _clickEvents = [
 ];
 
 </script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/tracking.js"></script>
 </head>
 
