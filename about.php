@@ -69,7 +69,7 @@
 			<?php $supporters = sw_get_supporting_orgs(); ?>
 			<?php if ( $supporters->have_posts() ): ?>
 			<div class="supporting-orgs clearfix">
-			    <h4 class="module-title">Supporting Organizations</h4>
+			    <h4 class="module-title">Listen To Our Stories On:</h4>
 				<h5><?php while ( $supporters->have_posts() ): $supporters->the_post(); ?>
 					<?php $post_counter++; ?>
 			        <a href="<?php echo get_post_meta( get_the_ID(), 'url', true ); ?>"><?php the_title(); ?></a><?php if( $post_counter < $supporters->post_count ) echo ', '; ?>
