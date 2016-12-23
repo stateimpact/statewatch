@@ -24,7 +24,8 @@ function sw_meta_description() {
     // just to be sure
     $excerpt = esc_attr(strip_tags($excerpt), ENT_QUOTES);
     if (is_single() ): ?>
-	    <meta name="description" content="<?php echo $excerpt; ?>">
+        <meta name="description" content="<?php echo $excerpt; ?>">
+        <meta name="twitter:card" content="summary" />
         <meta property="og:title" content="<?php echo esc_attr(get_the_title()); ?>" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="<?php the_permalink(); ?>" />
@@ -39,6 +40,7 @@ function sw_meta_description() {
             $topic = argo_get_topic_for( $cat );    
     ?>
         <meta name="description" content="<?php echo $excerpt; ?>">
+        <meta name="twitter:card" content="summary" />
         <meta property="og:title" content="<?php echo esc_attr( $topic->post_title ); ?>" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="<?php echo esc_url($topic->guid); ?>" />
