@@ -10,5 +10,5 @@
 	    'depth'          => -1, // flatten items
 	    'walker'         => new SW_Featured_Topics_Walker
 	) ); ?>
-    <div class="alltopics"><a href="<? echo get_permalink( $topics->ID ); ?>">View All Topics &raquo;</a></div>
+    <div class="alltopics"><a href="<?php echo get_permalink( $topics->ID ); ?>">View All Topics &raquo;</a></div>
 </div><!-- .grid_12 -->
