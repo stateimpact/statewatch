@@ -13,5 +13,5 @@ $topic = argo_get_topic_for( $cat );
 	<?php else: ?>
 	    <h1><?php echo $cat->name; ?></h1>
 	<?php endif; ?>
-		<div class="alltopics"><a href="<? echo get_permalink( $topics->ID ); ?>">View All Topics &raquo;</a></div>
+		<div class="alltopics"><a href="<?php echo get_permalink( $topics->ID ); ?>">View All Topics &raquo;</a></div>
 </div> <!-- /#coll-intro .grid_12 -->
