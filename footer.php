@@ -73,7 +73,7 @@
 <!-- /#searchform-footer -->
 
 <?php $topics = get_static_page('topic-index'); ?>
-<h4><a href="<? echo get_permalink( $topics->ID ); ?>">View All Topics &raquo;</a></h4>
+<h4><a href="<?php echo get_permalink( $topics->ID ); ?>">View All Topics &raquo;</a></h4>
 
 </div>
 <!-- /.grid_3 -->
